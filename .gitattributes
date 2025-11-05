@@ -1,0 +1,4 @@
+# Exclude scripts directory from secret scanning
+# These are training/educational materials with example code and placeholders
+scripts/** linguist-generated=false -diff
+scripts/** -secret-scanning
