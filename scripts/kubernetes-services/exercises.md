@@ -1,10 +1,5 @@
 # Kubernetes Services - Lab Exercises Narration
 
-**Style:** Conversational voice-over for hands-on demonstration
-**Purpose:** Step-by-step narration following the lab exercises
-
----
-
 ## Introduction
 
 Welcome to the hands-on lab for Kubernetes Services! In this session, we're going to get our hands dirty with real Service configurations. We'll deploy Pods, create different types of Services, and explore how Kubernetes handles networking and service discovery.
@@ -27,37 +22,13 @@ Services and Pods are loosely coupled, meaning a Service finds its target Pods u
 
 Alright, let's deploy our first Pods. We're going to create two simple Pods using YAML definitions that include labels. These labels will be crucial when we connect Services to these Pods.
 
-[Screen: Show the terminal ready to execute commands]
-
 The first Pod we're deploying is called "whoami" - it's a simple web application that returns information about itself. The second is called "sleep" - we'll use this to run commands and test connectivity.
 
-Let's apply these Pod definitions. I'm running:
+We're applying these Pod definitions by running kubectl apply and pointing at the pods directory. Great! Notice that we can deploy multiple YAML files at once by pointing kubectl at a directory. Kubernetes will process all the YAML files it finds.
 
-```
-kubectl apply -f labs/kubernetes/services/specs/pods
-```
+Now let's check the status of our Pods and see their IP addresses and labels using kubectl get pods with the -o wide and --show-labels flags. Perfect! Look at the output here. Each Pod has been assigned an IP address, and you can see the labels in the last column. The whoami Pod has the label "app equals whoami" and the sleep Pod has "app equals sleep". These labels will be important in just a moment.
 
-[Screen: Command executes, shows output of Pods being created]
-
-Great! Notice that we can deploy multiple YAML files at once by pointing kubectl at a directory. Kubernetes will process all the YAML files it finds.
-
-Now let's check the status of our Pods and see their IP addresses and labels. I'll run:
-
-```
-kubectl get pods -o wide --show-labels
-```
-
-[Screen: Shows Pod list with IP addresses and labels]
-
-Perfect! Look at the output here. Each Pod has been assigned an IP address, and you can see the labels in the last column. The whoami Pod has the label "app=whoami" and the sleep Pod has "app=sleep". These labels will be important in just a moment.
-
-Now, here's something interesting. Even though both Pods are running and have IP addresses, they can't find each other by name. Let's test this. I'll use the sleep Pod to try looking up the whoami Pod by name:
-
-```
-kubectl exec sleep -- nslookup whoami
-```
-
-[Screen: Shows error message - name resolution fails]
+Now, here's something interesting. Even though both Pods are running and have IP addresses, they can't find each other by name. Let's test this by using the sleep Pod to try looking up the whoami Pod by name with kubectl exec running nslookup.
 
 As expected, it fails. The Pod name alone isn't enough for DNS resolution. This is where Services come into play.
 
@@ -67,35 +38,11 @@ As expected, it fails. The Pod name alone isn't enough for DNS resolution. This 
 
 Now let's deploy our first Service - a ClusterIP Service. ClusterIP is the default Service type and it creates an IP address that's only accessible within the cluster. This is perfect for internal communication between components.
 
-[Screen: Briefly show the whoami-clusterip.yaml file contents]
+Take a look at this Service definition. It has a selector that matches "app equals whoami" - that's the same label we saw on our whoami Pod. The Service will listen on port 80 and forward traffic to port 80 on any matching Pods.
 
-Take a look at this Service definition. It has a selector that matches "app=whoami" - that's the same label we saw on our whoami Pod. The Service will listen on port 80 and forward traffic to port 80 on any matching Pods.
+Let's deploy it using kubectl apply. Now let's get the details of our new Service using kubectl get service whoami. Excellent! The Service has been assigned its own IP address. This IP address is static - it won't change for the lifetime of the Service.
 
-Let's deploy it:
-
-```
-kubectl apply -f labs/kubernetes/services/specs/services/whoami-clusterip.yaml
-```
-
-[Screen: Service creation output]
-
-Now let's get the details of our new Service:
-
-```
-kubectl get service whoami
-```
-
-[Screen: Shows Service with ClusterIP address]
-
-Excellent! The Service has been assigned its own IP address. This IP address is static - it won't change for the lifetime of the Service. You can also use:
-
-```
-kubectl describe svc whoami
-```
-
-[Screen: Shows detailed Service information including endpoints]
-
-In the description, you'll see the Endpoints section - that shows the IP address of the Pod that's receiving traffic. Notice it matches the whoami Pod's IP address we saw earlier.
+You can also use kubectl describe svc whoami to see more details. In the description, you'll see the Endpoints section - that shows the IP address of the Pod that's receiving traffic. Notice it matches the whoami Pod's IP address we saw earlier.
 
 ---
 
@@ -103,23 +50,9 @@ In the description, you'll see the Endpoints section - that shows the IP address
 
 Here's where Kubernetes really shines. Kubernetes runs a DNS server inside every cluster, and every Service automatically gets a DNS entry. Let's test it!
 
-From the sleep Pod, let's try looking up "whoami" again:
+From the sleep Pod, we're trying to look up "whoami" again using nslookup. Look at that! Now it works. The DNS lookup returns the IP address of the Service. The first IP address you see in the response is the Kubernetes DNS server itself, and below that is the whoami Service IP.
 
-```
-kubectl exec sleep -- nslookup whoami
-```
-
-[Screen: Shows successful DNS resolution with Service IP]
-
-Look at that! Now it works. The DNS lookup returns the IP address of the Service. The first IP address you see in the response is the Kubernetes DNS server itself, and below that is the whoami Service IP.
-
-Now our Pods can communicate using friendly DNS names. Let's actually call the whoami application:
-
-```
-kubectl exec sleep -- curl -s http://whoami
-```
-
-[Screen: Shows whoami response with Pod information]
+Now our Pods can communicate using friendly DNS names. Let's actually call the whoami application using kubectl exec to run curl from the sleep pod, targeting http://whoami.
 
 Perfect! The whoami application responds with information about itself. Notice it shows the Pod name and IP address. This traffic went through the Service to reach the Pod.
 
@@ -129,57 +62,13 @@ Perfect! The whoami application responds with information about itself. Notice i
 
 Now let's test something really important. What happens when a Pod is replaced? Let's find out.
 
-First, let's check the current IP address of the whoami Pod:
+First, we're checking the current IP address of the whoami Pod using kubectl get pods -o wide with the label selector. Note that IP address. Now let's delete this Pod using kubectl delete pods with the label selector.
 
-```
-kubectl get pods -o wide -l app=whoami
-```
+Notice we're using a label selector here too. The -l flag lets us select resources by their labels. This is a really powerful feature for managing groups of resources.
 
-[Screen: Shows Pod with current IP]
+Now we're recreating the Pod using kubectl apply, and checking the new Pod's IP address. See that? The new Pod has a completely different IP address. But watch what happens when we test connectivity.
 
-Note that IP address. Now let's delete this Pod:
-
-```
-kubectl delete pods -l app=whoami
-```
-
-[Screen: Pod deletion]
-
-Notice we're using a label selector here too. The "-l" flag lets us select resources by their labels. This is a really powerful feature for managing groups of resources.
-
-Now let's recreate the Pod:
-
-```
-kubectl apply -f labs/kubernetes/services/specs/pods
-```
-
-And check the new Pod's IP address:
-
-```
-kubectl get pods -o wide -l app=whoami
-```
-
-[Screen: Shows new Pod with different IP address]
-
-See that? The new Pod has a completely different IP address. But watch what happens when we test connectivity.
-
-Let's check the Service:
-
-```
-kubectl exec sleep -- nslookup whoami
-```
-
-[Screen: Shows same Service IP as before]
-
-The Service IP hasn't changed. And when we call the application:
-
-```
-kubectl exec sleep -- curl -s http://whoami
-```
-
-[Screen: Shows response from new Pod]
-
-It still works! Even though the Pod IP changed, the Service automatically updated its routing. If you look at the response, you'll see it's coming from the new Pod, but our client code didn't need to change at all. This is the power of Services.
+Let's check the Service using nslookup from the sleep pod. The Service IP hasn't changed. And when we call the application with curl, it still works! Even though the Pod IP changed, the Service automatically updated its routing. If you look at the response, you'll see it's coming from the new Pod, but our client code didn't need to change at all. This is the power of Services.
 
 ---
 
@@ -189,21 +78,7 @@ So far we've been working with internal cluster communication. But what about ex
 
 There are two ways to make applications accessible from outside the cluster. LoadBalancer Services are the easier option and they're fully supported on Azure Kubernetes Service. NodePort Services work on any cluster, but they're typically used more for development.
 
-Let's deploy both and see how they work. I'm running:
-
-```
-kubectl apply -f labs/kubernetes/services/specs/services/whoami-nodeport.yaml -f labs/kubernetes/services/specs/services/whoami-loadbalancer.yaml
-```
-
-[Screen: Both Services being created]
-
-Great! Now we have three Services all routing to the same whoami Pod. Let's see them:
-
-```
-kubectl get svc -l app=whoami
-```
-
-[Screen: Shows all three Services - ClusterIP, NodePort, and LoadBalancer]
+Let's deploy both and see how they work by applying both the whoami-nodeport and whoami-loadbalancer YAML files. Great! Now we have three Services all routing to the same whoami Pod. Let's see them using kubectl get svc with the label selector.
 
 Look at this output. We've got our original ClusterIP Service, plus the new NodePort and LoadBalancer Services.
 
@@ -211,23 +86,9 @@ The NodePort Service shows a port in the 30000 range - that's the port you can u
 
 The LoadBalancer Service has an external IP address. On Azure Kubernetes Service, this would be an actual Azure Load Balancer that was automatically provisioned for you. In Docker Desktop, it just uses localhost.
 
-Now we can access our application from outside the cluster. Let me try both methods:
+Now we can access our application from outside the cluster. We're trying both methods - using curl to hit localhost on port 8080 for the LoadBalancer Service, and localhost on port 30010 for the NodePort Service.
 
-```
-curl http://localhost:8080
-```
-
-[Screen: Shows whoami response]
-
-That's using the LoadBalancer Service. And we can also use:
-
-```
-curl http://localhost:30010
-```
-
-[Screen: Shows whoami response]
-
-That's the NodePort Service. Both are routing traffic to the same Pod, but they're doing it in different ways.
+Both are routing traffic to the same Pod, but they're doing it in different ways.
 
 ---
 
@@ -249,13 +110,7 @@ Take your time with this. Understanding how Services route traffic and what happ
 
 ## Cleanup
 
-When you're done experimenting, cleanup is really easy. Every resource in this lab has been tagged with a specific label. So we can delete everything with one command:
-
-```
-kubectl delete pod,svc -l kubernetes.courselabs.co=services
-```
-
-[Screen: Shows resources being deleted]
+When you're done experimenting, cleanup is really easy. Every resource in this lab has been tagged with a specific label. So we can delete everything with one command using kubectl delete pod,svc with the label selector.
 
 And just like that, we're back to a clean cluster.
 
