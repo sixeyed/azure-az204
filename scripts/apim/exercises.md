@@ -8,23 +8,9 @@ Welcome to the hands-on exercises for Azure API Management. In this session, we'
 
 First, we need to create our API Management resource. As I mentioned earlier, this takes time, so we'll do it through the CLI with the no-wait flag so we can continue working while it provisions.
 
-Let's start by creating a resource group:
+Let's start by creating a resource group in the West US region. We're naming it "labs-apim" and adding our standard courselabs tag for tracking purposes.
 
-```bash
-az group create -n labs-apim --tags courselabs=azure -l westus
-```
-
-Now, let's create the APIM instance. You'll need to provide three things: a unique name for your APIM instance, a publisher name which is typically your company name, and a real email address:
-
-```bash
-az apim create --no-wait --sku-name Developer \
-  -g labs-apim \
-  -n <your-apim-name> \
-  --publisher-name <your-company-name> \
-  --publisher-email <your-email-address>
-```
-
-Notice we're using the Developer tier, which is perfect for labs and development work. The no-wait flag means this command will return immediately, and Azure will provision the instance in the background.
+Now, let's create the APIM instance. You'll need to provide three things: a unique name for your APIM instance, a publisher name which is typically your company name, and a real email address. We're using the Developer tier, which is perfect for labs and development work. The no-wait flag means this command will return immediately, and Azure will provision the instance in the background.
 
 You'll receive an email when your APIM instance is ready to use. This typically takes 30 to 45 minutes, so this is a great time to grab a coffee or work on something else.
 
@@ -32,135 +18,49 @@ You'll receive an email when your APIM instance is ready to use. This typically 
 
 While we're waiting for APIM to provision, let's deploy our backend API. We'll use a random number generator API as our example. This is a simple .NET Core API that we'll deploy as an Azure Web App.
 
-Navigate to the API source code directory:
+We're navigating to the API source code directory at "src/rng/Numbers.Api" and deploying it as a Web App using the webapp up command. We're specifying a Linux operating system with the B1 SKU tier, using the .NET Core 6.0 runtime, deploying to West US, and providing a unique name for the web app.
 
-```bash
-cd src/rng/Numbers.Api
-```
-
-Now deploy it as a Web App:
-
-```bash
-az webapp up -g labs-apim \
-  --os-type Linux \
-  --sku B1 \
-  --runtime dotnetcore:6.0 \
-  -l westus \
-  -n <your-webapp-name>
-```
-
-Make sure you choose a unique name for your Web App. Once this completes, you'll have a running API hosted in Azure.
+Make sure you choose a unique name for your Web App - it needs to be globally unique across all of Azure. Once this completes, you'll have a running API hosted in the cloud.
 
 ## Exploring the Backend API
 
-Let's explore the backend API before we import it into APIM. This API hosts its own documentation using Swagger. Open your browser and navigate to:
+Let's explore the backend API before we import it into APIM. This API hosts its own documentation using Swagger. Opening a browser and navigating to your web app's URL with "/swagger" at the end shows you the Swagger UI displaying all the API operations. Our random number generator API has three endpoints: "/rng" which returns a random number, "/reset" which resets the generator, and "/healthz" which is a health check endpoint.
 
-```
-http://<your-webapp-name>.azurewebsites.net/swagger
-```
-
-You'll see the Swagger UI showing all the API operations. Our random number generator API has three endpoints: /rng which returns a random number, /reset which resets the generator, and /healthz which is a health check endpoint.
-
-Now, here's the really useful part. The API also publishes its documentation in JSON format using the OpenAPI specification. You can view this at:
-
-```
-https://<your-webapp-name>.azurewebsites.net/swagger/v1/swagger.json
-```
-
-This JSON document describes the entire API - all the operations, parameters, response types, everything. And APIM can import this directly, which is what we'll do next.
+Now, here's the really useful part. The API also publishes its documentation in JSON format using the OpenAPI specification. You can view this at your web app's URL followed by "/swagger/v1/swagger.json". This JSON document describes the entire API - all the operations, parameters, response types, everything. And APIM can import this directly, which is what we'll do next.
 
 ## Importing the API into APIM
 
-By now, your APIM instance should be provisioned. Open the Azure Portal and navigate to your APIM resource. If it's still provisioning, you'll see a notification - be patient!
+By now, your APIM instance should be provisioned. Opening the Azure Portal and navigating to your APIM resource, you should see it's ready - if it's still provisioning, you'll see a notification, so be patient!
 
-Once it's ready, let's import our API:
+Once it's ready, let's import our API. In the APIM resource, we're opening the APIs blade from the left navigation and clicking "Add API". We're selecting "OpenAPI" as the import source and entering the URL for your Web App's swagger.json file. We'll give the API a name and display name - let's call it "Random Number Generator" - and leave the API URL suffix as suggested or customize it.
 
-1. In the APIM resource, open the APIs blade from the left navigation
-2. Click "Add API"
-3. Select "OpenAPI" as the import source
-4. Enter the URL for your Web App's swagger.json file
-5. Give your API a name and display name - let's call it "Random Number Generator"
-6. Leave the API URL suffix as suggested or customize it
-
-Click Create, and APIM will import all the operations from your OpenAPI spec. Pretty neat, right? In just a few clicks, you've got a fully defined API in APIM without manually creating each operation.
+Clicking Create, APIM imports all the operations from your OpenAPI spec. Pretty neat, right? In just a few clicks, you've got a fully defined API in APIM without manually creating each operation.
 
 ## Exercise 3: Configure API Policies
 
 Now comes the fun part - configuring policies. This is where APIM really shines. We're going to configure three different policies on our three different endpoints.
 
-Let's start with the /rng endpoint. We want to cache the response for 30 seconds to reduce the load on our backend API. In the API designer:
+Let's start with the "/rng" endpoint. We want to cache the response for 30 seconds to reduce the load on our backend API. In the API designer, we're selecting the "/rng" operation, clicking "Add policy" in the inbound processing section, selecting "Cache responses", and setting the duration to 30 seconds before saving.
 
-1. Select the /rng operation
-2. In the inbound processing section, click "Add policy"
-3. Select "Cache responses"
-4. Set the duration to 30 seconds
-5. Save the policy
+What this means is that when someone calls "/rng", APIM will call the backend once and cache the response. For the next 30 seconds, any subsequent calls will get the cached response without hitting the backend at all.
 
-What this means is that when someone calls /rng, APIM will call the backend once and cache the response. For the next 30 seconds, any subsequent calls will get the cached response without hitting the backend at all.
+Next, let's configure the "/reset" endpoint. This is an administrative operation - we don't want just anyone calling it. We'll restrict it to your IP address only. Selecting the "/reset" operation, we're adding an inbound policy, selecting "Filter IP addresses", setting the action to "allow", and adding your public IP address - you can find this by browsing to ifconfig.me. Saving this policy means now only requests from your IP address can call this endpoint. Anyone else will get a 403 Forbidden response.
 
-Next, let's configure the /reset endpoint. This is an administrative operation - we don't want just anyone calling it. We'll restrict it to your IP address only:
-
-1. Select the /reset operation
-2. Add an inbound policy
-3. Select "Filter IP addresses"
-4. Set action to "allow"
-5. Add your public IP address (you can find this at ifconfig.me)
-6. Save the policy
-
-Now only requests from your IP address can call this endpoint. Anyone else will get a 403 Forbidden response.
-
-Finally, let's handle the /healthz endpoint. This is an internal health check endpoint that shouldn't be exposed publicly at all. We want APIM to return a 404 Not Found without ever calling the backend:
-
-1. Select the /healthz operation
-2. Switch to the policy code editor (there should be a code view option)
-3. In the inbound section, add a return-response policy
-4. Set the status code to 404
-5. Make sure this policy comes before the base tag so the backend is never called
-6. Save the policy
-
-The XML should look something like this:
-
-```xml
-<inbound>
-    <return-response>
-        <set-status code="404" reason="Not Found" />
-    </return-response>
-    <base />
-</inbound>
-```
+Finally, let's handle the "/healthz" endpoint. This is an internal health check endpoint that shouldn't be exposed publicly at all. We want APIM to return a 404 Not Found without ever calling the backend. Selecting the "/healthz" operation, we're switching to the policy code editor and adding a return-response policy in the inbound section. We're setting the status code to 404 and making sure this policy comes before the base tag so the backend is never called.
 
 ## Testing the Policies
 
 Now let's test each endpoint through the designer to validate our policies are working correctly.
 
-Test the /rng endpoint:
-1. Click on the /rng operation
-2. Go to the Test tab
-3. Click Send
-4. Note the random number in the response
-5. Click Send again immediately
-6. You should get the same random number - that's the cache working!
-7. Wait 30 seconds and try again
-8. Now you should get a different number
+Testing the "/rng" endpoint first - we're clicking on the operation, going to the Test tab, and clicking Send. Note the random number in the response. Clicking Send again immediately, you should get the same random number - that's the cache working! Waiting 30 seconds and trying again, now you should get a different number.
 
-Test the /reset endpoint:
-1. Click on the /reset operation
-2. If you're testing from the Azure Portal, this might fail because the Portal's requests come from Azure's IP addresses, not yours
-3. You can modify the policy to add the Azure Portal IP ranges, or test from your local machine with curl
+For the "/reset" endpoint, if you're testing from the Azure Portal, this might fail because the Portal's requests come from Azure's IP addresses, not yours. You can modify the policy to add the Azure Portal IP ranges, or test from your local machine with curl.
 
-Test the /healthz endpoint:
-1. Click on the /healthz operation
-2. Click Send
-3. You should get a 404 response
-4. This confirms that APIM is blocking this endpoint without calling the backend
+Testing the "/healthz" endpoint, clicking Send should give you a 404 response. This confirms that APIM is blocking this endpoint without calling the backend.
 
 ## Exercise 4: Configure API Settings
 
-Before we can publish our API, we need to configure a few settings. In the API Settings tab:
-
-1. Set the Web service URL to your backend Web App URL: `https://<your-webapp-name>.azurewebsites.net`
-2. Add the API to a Product - you can use one of the default products like "Starter" or "Unlimited", or create your own
-3. Save the settings
+Before we can publish our API, we need to configure a few settings. In the API Settings tab, we're setting the Web service URL to your backend Web App URL, adding the API to a Product - you can use one of the default products like "Starter" or "Unlimited", or create your own - and saving the settings.
 
 Products are important - they're how you control access to your APIs. An API must be in at least one product to be accessible through the Developer Portal.
 
@@ -168,95 +68,53 @@ Products are important - they're how you control access to your APIs. An API mus
 
 Now let's set up the Developer Portal. This is the self-service portal where your API consumers will sign up and get access to your APIs.
 
-Click on the Developer Portal link from the overview page. This opens the designer view where you can customize the portal:
+Clicking on the Developer Portal link from the overview page opens the designer view where you can customize the portal. We're updating the company name to your own, customizing the colors and styling if you like, adding or modifying content pages, and previewing your changes.
 
-1. Update the company name to your own
-2. Customize the colors and styling if you like
-3. Add or modify content pages
-4. Preview your changes
-
-When you're happy with the design, go to Portal overview and:
-
-1. Enable CORS so the portal can call your API gateway
-2. Configure authentication options - enable Azure AD if you want
-3. Click Publish to make the portal live
+When you're happy with the design, going to Portal overview, we're enabling CORS so the portal can call your API gateway, configuring authentication options - enabling Azure AD if you want - and clicking Publish to make the portal live.
 
 The portal is now published and accessible to the public at your Developer Portal URL.
 
 ## Exercise 6: Sign Up as a Consumer
 
-Now let's experience APIM from the consumer's perspective. Open a private or incognito browser window and navigate to your Developer Portal URL.
+Now let's experience APIM from the consumer's perspective. Opening a private or incognito browser window and navigating to your Developer Portal URL, we're clicking on Sign Up and creating a new account with a username, a real email address, and a strong password.
 
-Click on Sign Up and create a new account. You'll need to provide:
-- A username
-- A real email address
-- A strong password
-
-You'll receive a verification email with a link to confirm your account. Click the link to verify, then log in to the portal.
-
-Take a moment to explore the Developer Portal. You'll see the products available, and if you navigate to the products, you'll see the APIs included in each.
+You'll receive a verification email with a link to confirm your account. Clicking the link to verify, then logging in to the portal, take a moment to explore the Developer Portal. You'll see the products available, and if you navigate to the products, you'll see the APIs included in each.
 
 ## Subscribing to a Product
 
-Find the Random Number Generator API and try to test it using the portal's test page. It will fail! That's because you need a subscription key.
+Finding the Random Number Generator API and trying to test it using the portal's test page, it will fail! That's because you need a subscription key.
 
-To get a subscription key:
-1. Navigate to Products
-2. Choose a product that includes your API (like Starter or Unlimited)
-3. Click Subscribe
-4. Confirm the subscription
+To get a subscription key, we're navigating to Products, choosing a product that includes your API like Starter or Unlimited, clicking Subscribe, and confirming the subscription.
 
 Now you'll see your subscription keys. There are two keys - a primary and a secondary. This allows you to rotate keys without downtime.
 
 ## Testing the API with curl
 
-Let's test the API from the command line using curl. The Developer Portal shows you example curl commands. The format is:
+Let's test the API from the command line using curl. The Developer Portal shows you example curl commands. We're making a GET request to your APIM gateway URL with the API path "/rng", including the "Ocp-Apim-Subscription-Key" header with your subscription key value.
 
-```bash
-curl "https://<your-apim-name>.azure-api.net/<api-path>/rng" \
-  -H "Ocp-Apim-Subscription-Key: <your-subscription-key>"
-```
-
-Replace the placeholders with your actual values. Make sure to copy your full subscription key from the portal.
-
-Run this command and you should get a random number back. Now run it again immediately - you should get the same number. This confirms that the caching policy is working correctly. Wait 30 seconds and try again - you'll get a different number.
+Running this command, you should get a random number back. Running it again immediately, you should get the same number. This confirms that the caching policy is working correctly. Waiting 30 seconds and trying again, you'll get a different number.
 
 ## Rate Limiting in Action
 
-If you chose the Starter product, there's a rate limit of 5 calls per minute. Let's test this. Run your curl command rapidly six times in a row:
+If you chose the Starter product, there's a rate limit of 5 calls per minute. Let's test this. We're running a loop that makes six rapid curl requests in a row.
 
-```bash
-for i in {1..6}; do curl "https://<your-apim-name>.azure-api.net/<api-path>/rng" \
-  -H "Ocp-Apim-Subscription-Key: <your-subscription-key>"; echo ""; done
-```
-
-On the sixth call, you should get an error response:
-
-```json
-{ "statusCode": 429, "message": "Rate limit is exceeded. Try again in XX seconds." }
-```
+On the sixth call, you should get an error response with status code 429 and a message saying "Rate limit is exceeded. Try again in XX seconds."
 
 This is production-grade rate limiting that you got without writing a single line of code. APIM is enforcing these limits automatically based on the product configuration.
 
 ## Monitoring in the Portal
 
-Back in the Azure Portal, navigate to your APIM resource and check the Analytics blade. You'll see:
-- Request volume over time
-- Response times
-- Success and error rates
-- Top operations
-
-This gives you valuable insights into how your API is being used and how it's performing.
+Back in the Azure Portal, navigating to your APIM resource and checking the Analytics blade, you'll see request volume over time, response times, success and error rates, and top operations. This gives you valuable insights into how your API is being used and how it's performing.
 
 ## Lab Challenge
 
 Now that you've completed the core exercises, here are some questions to think about:
 
-1. Can you customize the text of the emails that get sent to users signing up? Look in the Notifications section of your APIM resource.
+First, can you customize the text of the emails that get sent to users signing up? Look in the Notifications section of your APIM resource.
 
-2. All the clicking and pointing we did in the Portal is error-prone and doesn't scale. How would you automate APIM configuration? Think about Infrastructure as Code - you could use ARM templates, Bicep, or Terraform to define your entire APIM configuration as code.
+Second, all the clicking and pointing we did in the Portal is error-prone and doesn't scale. How would you automate APIM configuration? Think about Infrastructure as Code - you could use ARM templates, Bicep, or Terraform to define your entire APIM configuration as code.
 
-3. The endpoint policies are all applied by APIM, but is your backend Web App still publicly available? Try accessing it directly. How would you secure it so only APIM can reach it? Think about network security groups, VNets, and IP restrictions.
+Third, the endpoint policies are all applied by APIM, but is your backend Web App still publicly available? Try accessing it directly. How would you secure it so only APIM can reach it? Think about network security groups, VNets, and IP restrictions.
 
 ## Important Note
 
@@ -264,14 +122,7 @@ Don't clean up this resource group yet! APIM takes so long to provision that we'
 
 ## Conclusion
 
-Congratulations! You've successfully:
-- Created an API Management instance
-- Deployed a backend API
-- Imported the API using OpenAPI specification
-- Configured caching, IP filtering, and custom response policies
-- Published the Developer Portal
-- Signed up as a consumer and tested the API with subscription keys
-- Experienced rate limiting and monitoring
+Congratulations! You've successfully created an API Management instance, deployed a backend API, imported it using OpenAPI specification, configured caching, IP filtering, and custom response policies, published the Developer Portal, signed up as a consumer and tested the API with subscription keys, and experienced rate limiting and monitoring.
 
 You've seen how APIM gives you production-grade features - caching, rate limiting, security, monitoring, and a self-service developer portal - all without writing code. This is the power of Azure API Management.
 

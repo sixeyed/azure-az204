@@ -2,229 +2,124 @@
 
 ## Exercise 1: Setting Up GitHub Fork
 
-First, we need to ensure you have your own fork of the lab repository. If you haven't done this yet:
+First, we need to ensure you have your own fork of the lab repository. If you haven't done this yet, we're navigating to the GitHub repository and clicking the Fork button. This creates a copy in your own GitHub account that you have write access to - this is essential because Azure needs to connect to a repository where it can set up webhooks and read your code.
 
-Navigate to the GitHub repository and click the Fork button. This creates a copy in your own GitHub account that you have write access to.
-
-Once you have your fork, add it as a remote to your local repository:
-
-```
-git remote add fork https://github.com/your-github-username/azure.git
-```
-
-Replace "your-github-username" with your actual GitHub username.
+Once you have your fork, we're adding it as a remote to your local repository using git remote add with the name "fork" and your fork's URL. Make sure to replace the placeholder with your actual GitHub username.
 
 ## Exercise 2: Create Azure Resources
 
-Now let's create our Azure resources. We'll need a Resource Group and an App Service Plan.
+Now let's create our Azure resources. We'll need a Resource Group and an App Service Plan to host our application.
 
-Create the Resource Group:
+We're creating the Resource Group named "labs-appservice-cicd" with our standard courselabs tag for tracking.
 
-```
-az group create -n labs-appservice-cicd --tags courselabs=azure
-```
+Now we're creating a Linux App Service Plan with 2 workers. Note that we're using the S1 SKU - Standard tier is required to get the deployment slot features we'll be using later in this lab. The Free and Basic tiers don't support slots, which are crucial for proper CI/CD workflows.
 
-Create a Linux App Service Plan with 2 workers. Note that we're using the S1 SKU - Standard tier is required to get the CI/CD features we'll be using:
-
-```
-az appservice plan create -g labs-appservice-cicd -n app-plan-01 --is-linux --sku S1 --number-of-workers 2
-```
-
-The plan is now ready to host our application.
+The plan is now ready to host our application with the redundancy and features we need.
 
 ## Exercise 3: Create Web App and Configure Deployment Path
 
-Create the web app with .NET Core 6.0 runtime:
+We're creating the web app with .NET Core 6.0 runtime, specifying the resource group, the App Service Plan we just created, and a globally unique DNS name. Remember to replace the placeholder with your unique app name.
 
-```
-az webapp create -g labs-appservice-cicd --plan app-plan-01 --runtime dotnetcore:6.0 -n your-unique-app-name
-```
-
-Remember to replace "your-unique-app-name" with a globally unique DNS name.
-
-Now set the project path so Azure knows which application to deploy:
-
-```
-az webapp config appsettings set --settings PROJECT='src/rng/Numbers.Api/Numbers.Api.csproj' -g labs-appservice-cicd -n your-unique-app-name
-```
-
-This tells Azure to deploy the Numbers API project from the repository.
+Now we're setting the project path so Azure knows which application to deploy. This is important because our repository contains multiple projects, and we need to tell Azure specifically which one to build and deploy. We're adding an application setting called "PROJECT" with the path to the Numbers API project file. This setting tells Azure's build system exactly where to find the project to compile.
 
 ## Exercise 4: Manual Deployment from GitHub
 
-If you browse to your App Service URL now, you'll see a waiting page. The app isn't deployed yet.
+If you browse to your App Service URL now, you'll see a waiting page. The app isn't deployed yet - we've created the hosting infrastructure, but we haven't actually put any code on it.
 
-Let's create our first manual deployment. Since your GitHub repository is public, Azure can fetch it without authentication:
+Let's create our first manual deployment. Since your GitHub repository is public, Azure can fetch it without authentication - this makes manual deployments straightforward. We're configuring the deployment source using the deployment source config command, specifying manual integration mode, the main branch as our source, and the repository URL. Make sure to add the .git suffix to your repository URL - this tells Azure it's a Git repository.
 
-```
-az webapp deployment source config -g labs-appservice-cicd --manual-integration --branch main -n your-unique-app-name --repo-url https://github.com/your-github-username/azure.git
-```
+Opening the Azure Portal and navigating to your App Service, clicking on the Deployment Center tab, you'll see the Settings showing your GitHub configuration and the Logs showing the deployment status. This first deployment takes a few minutes as Azure fetches the code, builds the application using Oryx, and deploys it.
 
-Make sure to add the .git suffix to your repository URL.
-
-Open the Azure Portal and navigate to your App Service. Click on the Deployment Center tab. You'll see the Settings showing your GitHub configuration and the Logs showing the deployment status.
-
-This first deployment takes a few minutes as Azure fetches the code, builds the application, and deploys it.
+You can watch the progress in real-time as Azure clones your repository, detects that it's a .NET Core application, runs dotnet restore to fetch dependencies, runs dotnet build to compile the code, and finally deploys the compiled application.
 
 ## Exercise 5: Test the Deployed API
 
-Once deployment completes, test your API:
-
-```
-curl https://your-unique-app-name.azurewebsites.net/rng
-```
-
-You should receive a random number in the response. Call it multiple times and you'll get different numbers each time.
+Once deployment completes, we're testing your API using curl to call the "/rng" endpoint. You should receive a random number in the response. Calling it multiple times, you'll get different numbers each time, confirming the API is working correctly.
 
 ## Exercise 6: Make a Code Change
 
-Now let's make a change to the application. Navigate to the appsettings.json file in your GitHub fork:
+Now let's make a change to the application. We're navigating to the appsettings.json file in your GitHub fork at the path "src/rng/Numbers.Api/appsettings.json".
 
-```
-src/rng/Numbers.Api/appsettings.json
-```
+Editing the file directly on GitHub, we're changing the RngSettings to set minimum to 1000 and maximum to 10000. This will make the random number generator produce much larger numbers. Committing your changes with a descriptive message like "Change RNG range" helps you track what was changed and why.
 
-Edit the file directly on GitHub, changing the RngSettings:
-- Set minimum to 1000
-- Set maximum to 10000
-
-Commit your changes with a descriptive message like "Change RNG range".
-
-Alternatively, you can make these changes locally and push:
-
-```
-git add src/rng/Numbers.Api/appsettings.json
-git commit -m 'Change RNG range'
-git push fork main
-```
+Alternatively, you can make these changes locally. We're opening the file in your editor, making the same changes, using git add to stage the file, git commit to save the change with a message, and git push to send it to your fork. Both approaches work - it's about what fits your workflow better.
 
 ## Exercise 7: Manual Sync
 
-Check the Deployment Center in the Portal. You'll notice there's no new deployment, even though the source repository has changed. This is because we're using manual integration.
+Checking the Deployment Center in the Portal, you'll notice there's no new deployment, even though the source repository has changed. This is because we're using manual integration - Azure doesn't automatically monitor for changes.
 
-Click the Sync button to trigger an update to the latest code.
+Clicking the Sync button triggers an update to pull the latest code from the repository. This is manual CI/CD - you control when deployments happen by clicking Sync.
 
-Wait for the deployment to complete, then test again:
-
-```
-curl https://your-unique-app-name.azurewebsites.net/rng
-```
-
-Now you should see much larger random numbers, between 1000 and 10000.
+Waiting for the deployment to complete, then testing again with curl to call the "/rng" endpoint, now you should see much larger random numbers, between 1000 and 10000. This confirms that your code change was deployed successfully.
 
 ## Exercise 8: Configure Continuous Integration
 
 Manual deployment works, but it's not automated. Let's switch to Continuous Integration so every push to GitHub triggers a deployment automatically.
 
-First, create a GitHub Personal Access Token:
-1. Navigate to https://github.com/settings/tokens/new
-2. You may need to sign in again if using MFA
-3. Enter a note like "Azure App Service CI/CD"
-4. Select the "workflow" and "admin:repo_hook" permissions
-5. Click Generate Token and copy it immediately - you won't see it again
+First, we need to create a GitHub Personal Access Token. We're navigating to the GitHub tokens page at github.com/settings/tokens/new. You may need to sign in again if using multi-factor authentication.
 
-Your token will look something like: ghp_followed-by-random-characters
+We're entering a note like "Azure App Service CI/CD" to remember what this token is for, selecting the "workflow" permission which allows Azure to create GitHub Actions, and selecting "admin:repo_hook" which allows Azure to set up webhooks. Clicking Generate Token, we're copying it immediately - you won't see it again after leaving this page.
 
-Now delete the manual deployment source:
+Your token will look something like "ghp_" followed by random characters.
 
-```
-az webapp deployment source delete -g labs-appservice-cicd -n your-unique-app-name
-```
+Now we're deleting the manual deployment source to clear the configuration.
 
-And replace it with continuous deployment:
+And replacing it with continuous deployment using the same deployment source config command, but this time we're providing your GitHub token with the git-token parameter. This authenticates Azure to set up webhooks and monitor your repository.
 
-```
-az webapp deployment source config -g labs-appservice-cicd --branch main -n your-unique-app-name --repo-url https://github.com/your-github-username/azure.git --git-token your-github-token
-```
+Note: Sometimes this command may appear to hang. If it doesn't return within a few minutes, cancel with Control-C and run the exact same command again - this is a known quirk of the CLI.
 
-Note: Sometimes this command may appear to hang. If it doesn't return within a few minutes, cancel with Control-C and run the exact same command again.
-
-Check the Deployment Center - in the Settings tab you'll now see your GitHub username, confirming the connection is authenticated.
+Checking the Deployment Center in the Settings tab, you'll now see your GitHub username, confirming the connection is authenticated. Azure has set up a webhook in your repository that will notify it of any changes.
 
 ## Exercise 9: Test Continuous Deployment
 
-Make another change to the appsettings.json file, perhaps changing the range again. Commit and push to GitHub.
+Making another change to the appsettings.json file, perhaps changing the range again or adjusting another setting, we're committing and pushing to GitHub.
 
-This time, watch the Deployment Center. Within moments, you should see a new deployment automatically triggered. No manual sync required!
+This time, watching the Deployment Center, within moments you should see a new deployment automatically triggered. No manual sync required! Azure received a notification from GitHub, pulled the latest code, built it, and deployed it automatically.
+
+This is the power of continuous deployment - your changes flow from development to production with minimal manual intervention.
 
 ## Exercise 10: Create Staging Slot
 
-Now let's add a staging deployment slot. This allows us to test changes before they go to production.
+Now let's add a staging deployment slot. This allows us to test changes before they go to production - you deploy to staging, verify everything works, then swap staging and production.
 
-Create the staging slot:
+We're creating the staging slot using the deployment slot create command with the slot parameter set to "staging".
 
-```
-az webapp deployment slot create --slot staging -g labs-appservice-cicd -n your-unique-app-name
-```
-
-Configure the project path for the staging slot:
-
-```
-az webapp config appsettings set --slot staging --settings PROJECT='src/rng/Numbers.Api/Numbers.Api.csproj' -g labs-appservice-cicd -n your-unique-app-name
-```
+Now we're configuring the project path for the staging slot. Deployment slots have their own configuration, so we need to set the PROJECT setting for the staging slot separately using the same setting as production but with the --slot parameter.
 
 ## Exercise 11: Configure Staging Branch
 
-Deployment slots typically match source code branches. Create a staging branch in GitHub:
+Deployment slots typically match source code branches. This gives you a clean workflow - the main branch deploys to production, the staging branch deploys to staging.
 
-1. Navigate to your GitHub fork
-2. Click the branches button
-3. Create a new branch called "staging"
+We're creating a staging branch in GitHub by navigating to your fork, clicking the branches button, and creating a new branch called "staging".
 
-Now configure the staging slot to deploy from the staging branch:
+Now we're configuring the staging slot to deploy from the staging branch using deployment source config with the --slot parameter. This links the staging slot to the staging branch.
 
-```
-az webapp deployment source config -g labs-appservice-cicd --branch staging --slot staging -n your-unique-app-name --repo-url https://github.com/your-github-username/azure.git --git-token your-github-token
-```
-
-Again, this might take a moment. Cancel and retry if it appears stuck.
+Again, this might take a moment. Cancel and retry if it appears stuck - it's processing the webhook setup in the background.
 
 ## Exercise 12: Test Both Slots
 
-In the Portal, navigate to Deployment slots. You can switch between your production and staging slots, each with its own URL.
+In the Portal, navigating to Deployment slots, you can switch between your production and staging slots. Each has its own URL, its own configuration, and its own deployment source.
 
-Test both endpoints:
+We're testing both endpoints using curl. The production slot is at your normal app URL, and the staging slot has "-staging" appended to the hostname.
 
-```
-# Production slot:
-curl https://your-unique-app-name.azurewebsites.net/rng
-
-# Staging slot:
-curl https://your-unique-app-name-staging.azurewebsites.net/rng
-```
-
-Both should return random numbers, and since they're running the same code version, they'll have the same range.
+Both should return random numbers, and since they're running the same code version right now, they'll have the same range. But soon we'll make them different to demonstrate the slot workflow.
 
 ## Exercise 13: Lab Challenge
 
-Now for your challenge:
+Now for your challenge: Update the app settings in the staging slot so the random number range is 50 to 500. Test your changes in the staging environment to verify they work correctly. Once you're satisfied the changes are good, swap the slots so production uses the new range.
 
-Update the app settings in the staging slot so the random number range is 50 to 500. Test your changes in the staging environment. Once you're satisfied the changes work correctly, swap the slots so production uses the new range.
-
-Think about:
-- How do you update configuration in a specific slot?
-- How do you verify the changes are working?
-- What command swaps the slots?
-- What happens to the URLs after swapping?
+Think about the workflow: How do you update configuration in a specific slot? The configuration blade has a slot selector at the top. How do you verify the changes are working? Test the staging URL directly. What command swaps the slots? Look for the swap operation in the Portal or check the CLI documentation. What happens to the URLs after swapping? The slots maintain their URLs, but their content swaps - staging becomes production and production becomes staging.
 
 Take some time to work through this, and check the solution guide if you get stuck.
 
 ## Conclusion
 
-You've now learned how to:
-- Deploy App Service applications from GitHub
-- Configure continuous deployment with automated builds
-- Create and manage deployment slots
-- Test changes in staging before promoting to production
+You've now learned how to deploy App Service applications from GitHub with manual integration, configure continuous deployment with automated builds triggered by Git pushes, create and manage deployment slots for staging and production environments, and test changes in staging before promoting to production.
 
 These skills are essential for modern DevOps practices and are important for the AZ-204 certification exam.
 
 ## Cleanup
 
-When you're finished, delete the Resource Group to avoid ongoing charges:
-
-```
-az group delete -y -n labs-appservice-cicd
-```
+When you're finished, we're deleting the Resource Group to avoid ongoing charges using the group delete command with the -y flag to skip confirmation.
 
 Great work!
