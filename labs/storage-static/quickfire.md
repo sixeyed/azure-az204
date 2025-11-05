@@ -3,44 +3,42 @@
 ## Question 1
 What Azure Storage feature enables static website hosting?
 
-- A) Table Storage
-- B) Blob Storage static website hosting
-- C) Queue Storage
+
+- A) Blob Storage static website hosting
+- B) Queue Storage
+- C) Table Storage
 - D) File Storage
 
-**Answer: B**
+**Answer: A**
 Blob Storage has a static website hosting feature that serves HTML, CSS, JavaScript, and media files.
-
 ---
-
 ## Question 2
 What is the special container used for static website hosting?
 
+
 - A) website
-- B) $web
-- C) static
+- B) static
+- C) $web
 - D) public
 
-**Answer: B**
+**Answer: C**
 Static content must be uploaded to the $web container, which is automatically created when you enable the feature.
-
 ---
-
 ## Question 3
 What HTTP/HTTPS endpoint is provided for static websites?
 
-- A) Custom domain only
-- B) https://<account-name>.z[zone].web.core.windows.net
-- C) No HTTPS
-- D) Same as blob endpoint
 
-**Answer: B**
+- A) No HTTPS
+- B) Same as blob endpoint
+- C) Custom domain only
+- D) https://<account-name>.z[zone].web.core.windows.net
+
+**Answer: D**
 A dedicated web endpoint is provided, separate from the blob endpoint, with automatic HTTPS.
-
 ---
-
 ## Question 4
 Can you use custom domains with static websites?
+
 
 - A) No
 - B) Yes, via CNAME mapping and Azure CDN for HTTPS on custom domain
@@ -49,37 +47,34 @@ Can you use custom domains with static websites?
 
 **Answer: B**
 Custom domains are supported. For HTTPS on custom domains, use Azure CDN or Azure Front Door.
-
 ---
-
 ## Question 5
 What files can you specify for static website hosting?
 
-- A) No configuration
-- B) Index document (e.g., index.html) and optional error document (e.g., 404.html)
+
+- A) Index document (e.g., index.html) and optional error document (e.g., 404.html)
+- B) Only error pages
 - C) Only index.html
-- D) Only error pages
+- D) No configuration
 
-**Answer: B**
+**Answer: A**
 You configure an index document path (default page) and optional error document path for 404 errors.
-
 ---
-
 ## Question 6
 Does static website hosting support server-side code?
 
-- A) Yes, ASP.NET
-- B) No, only static content (HTML, CSS, JS, images)
+
+- A) Yes, Node.js
+- B) Yes, ASP.NET
 - C) Yes, PHP
-- D) Yes, Node.js
+- D) No, only static content (HTML, CSS, JS, images)
 
-**Answer: B**
+**Answer: D**
 Static website hosting serves static files only. For dynamic content, use Azure Functions, App Service, or client-side JavaScript APIs.
-
 ---
-
 ## Question 7
 How can you add a CDN to your static website?
+
 
 - A) Not possible
 - B) Integrate Azure CDN for global distribution, caching, and custom domain HTTPS
@@ -88,24 +83,22 @@ How can you add a CDN to your static website?
 
 **Answer: B**
 Azure CDN can be configured to cache static website content globally, improving performance and enabling custom domain HTTPS.
-
 ---
-
 ## Question 8
 What is the cost model for static website hosting?
 
-- A) Fixed monthly fee
-- B) Based on storage used and data transfer (same as blob storage pricing)
-- C) Per page view
+
+- A) Based on storage used and data transfer (same as blob storage pricing)
+- B) Per page view
+- C) Fixed monthly fee
 - D) Free unlimited
 
-**Answer: B**
+**Answer: A**
 You pay for blob storage capacity and outbound data transfer. No additional hosting fees.
-
 ---
-
 ## Question 9
 Can you use Azure Storage static websites with SPAs (Single Page Applications)?
+
 
 - A) No
 - B) Yes, with fallback routing configured to index.html via CDN rewrite rules
@@ -114,16 +107,15 @@ Can you use Azure Storage static websites with SPAs (Single Page Applications)?
 
 **Answer: B**
 SPAs work well with static hosting. Use CDN rewrite rules to route all paths to index.html for client-side routing.
-
 ---
-
 ## Question 10
 How do you enable static website hosting?
 
+
 - A) It's always enabled
 - B) In Azure Portal under storage account > Static website, or via CLI/PowerShell
-- C) Requires support ticket
-- D) Only through ARM templates
+- C) Only through ARM templates
+- D) Requires support ticket
 
 **Answer: B**
 Enable via Portal (Storage account > Data management > Static website), Azure CLI, PowerShell, or ARM templates.

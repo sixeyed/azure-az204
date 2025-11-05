@@ -3,31 +3,30 @@
 ## Question 1
 What is a Service Bus topic?
 
+
 - A) A conversation subject
-- B) A publish-subscribe messaging entity allowing multiple independent subscriptions
-- C) A queue type
-- D) A database table
+- B) A database table
+- C) A publish-subscribe messaging entity allowing multiple independent subscriptions
+- D) A queue type
 
-**Answer: B**
+**Answer: C**
 Topics enable pub-sub patterns: publishers send to topic, multiple subscribers receive copies via subscriptions.
-
 ---
-
 ## Question 2
 What is a subscription in Service Bus?
 
+
 - A) A billing plan
-- B) An independent receiver endpoint that receives copies of messages from a topic
-- C) A security group
-- D) A network connection
+- B) A network connection
+- C) An independent receiver endpoint that receives copies of messages from a topic
+- D) A security group
 
-**Answer: B**
+**Answer: C**
 Subscriptions are virtual queues that receive messages from topics, enabling multiple consumers with independent consumption.
-
 ---
-
 ## Question 3
 How many subscriptions can a topic have?
+
 
 - A) Only 1
 - B) Up to 2,000 per topic
@@ -36,94 +35,87 @@ How many subscriptions can a topic have?
 
 **Answer: B**
 Topics support up to 2,000 subscriptions, each acting as an independent receiver.
-
 ---
-
 ## Question 4
 What are subscription filters?
 
+
 - A) Spam filters
-- B) Rules determining which messages a subscription receives from a topic
-- C) Security filters
+- B) Security filters
+- C) Rules determining which messages a subscription receives from a topic
 - D) Network filters
 
-**Answer: B**
+**Answer: C**
 Filters (Boolean, SQL, Correlation) allow subscriptions to receive only messages matching specific criteria.
-
 ---
-
 ## Question 5
 What filter types are available?
 
-- A) Only one type
-- B) Boolean (true/false), SQL (expression-based), Correlation (property matching)
+
+- A) Boolean (true/false), SQL (expression-based), Correlation (property matching)
+- B) Only one type
 - C) Regex only
 - D) No filters
 
-**Answer: B**
+**Answer: A**
 Boolean filters (TrueFilter/FalseFilter), SQL filters (WHERE-like expressions), Correlation filters (efficient property matching).
-
 ---
-
 ## Question 6
 What is a TrueFilter?
 
+
 - A) Security validation
 - B) Default filter that accepts all messages from the topic
-- C) Encryption filter
-- D) Authentication filter
+- C) Authentication filter
+- D) Encryption filter
 
 **Answer: B**
 TrueFilter is the default - subscriptions receive all topic messages unless a different filter is applied.
-
 ---
-
 ## Question 7
 What are subscription actions?
 
-- A) Message deletion
-- B) Operations that modify message properties when filter matches
-- C) Sending notifications
-- D) Creating backups
 
-**Answer: B**
+- A) Creating backups
+- B) Message deletion
+- C) Operations that modify message properties when filter matches
+- D) Sending notifications
+
+**Answer: C**
 Actions can add, remove, or update message properties when a filter matches, useful for routing metadata.
-
 ---
-
 ## Question 8
 When should you use topics vs. queues?
 
-- A) Always use queues
+
+- A) Always use topics
 - B) Use topics for pub-sub with multiple independent consumers; queues for point-to-point
-- C) Always use topics
-- D) They're identical
+- C) They're identical
+- D) Always use queues
 
 **Answer: B**
 Topics for broadcasting to multiple subscribers (one-to-many). Queues for single consumer or competing consumers (one-to-one).
-
 ---
-
 ## Question 9
 Do subscriptions have their own dead-letter queues?
 
-- A) No DLQ for subscriptions
-- B) Yes, each subscription has its own DLQ
-- C) Only topics have DLQ
-- D) Shared DLQ for all subscriptions
 
-**Answer: B**
+- A) Shared DLQ for all subscriptions
+- B) Only topics have DLQ
+- C) Yes, each subscription has its own DLQ
+- D) No DLQ for subscriptions
+
+**Answer: C**
 Each subscription maintains its own dead-letter queue for failed messages specific to that subscription.
-
 ---
-
 ## Question 10
 Can the same message go to multiple subscriptions?
 
-- A) No, exclusive delivery
-- B) Yes, each matching subscription receives a copy of the message
-- C) Only with manual routing
-- D) Maximum 2 subscriptions
 
-**Answer: B**
+- A) Maximum 2 subscriptions
+- B) Only with manual routing
+- C) No, exclusive delivery
+- D) Yes, each matching subscription receives a copy of the message
+
+**Answer: D**
 Messages are independently copied to all subscriptions whose filters match, enabling true pub-sub.
