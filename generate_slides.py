@@ -1,362 +1,566 @@
 #!/usr/bin/env python3
-"""Generate Slidev slide decks for Azure AZ-204 topics"""
+"""
+Generate Slidev slides.md files from intro.md scripts for AZ-204 course.
+
+This script processes each topic's intro.md script and generates a clean
+slides.md file with progressive builds, mermaid diagrams, and iconify icons.
+"""
 
 import os
 import re
+import glob
 from pathlib import Path
 
-# Topics already completed
-COMPLETED_TOPICS = {
-    'docker', 'aks', 'cosmos', 'storage', 'aci', 'acr', 'appservice',
-    'keyvault', 'sql', 'servicebus', 'redis', 'vnet', 'vm'
-}
 
-# Define slide templates for different types of topics
-SLIDE_TEMPLATES = {
-    'cover': '''---
+def parse_intro_script(intro_path):
+    """Parse intro.md file and extract sections."""
+    with open(intro_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    sections = []
+    current_section = None
+    current_content = []
+
+    lines = content.split('\n')
+    for line in lines:
+        if line.startswith('## '):
+            if current_section:
+                sections.append({
+                    'title': current_section,
+                    'content': '\n'.join(current_content).strip()
+                })
+            current_section = line[3:].strip()
+            current_content = []
+        elif line.startswith('# '):
+            # Main title
+            if current_section:
+                sections.append({
+                    'title': current_section,
+                    'content': '\n'.join(current_content).strip()
+                })
+            current_section = line[2:].strip()
+            current_content = []
+        else:
+            current_content.append(line)
+
+    if current_section:
+        sections.append({
+            'title': current_section,
+            'content': '\n'.join(current_content).strip()
+        })
+
+    return sections
+
+
+def extract_title_from_script(sections):
+    """Extract the main topic title."""
+    if sections:
+        first_title = sections[0]['title']
+        # Remove "- Introduction" or similar suffixes
+        title = re.sub(r'\s*-\s*(Introduction|Narration Script).*$', '', first_title, flags=re.IGNORECASE)
+        return title.strip()
+    return "Azure Topic"
+
+
+def create_cover_slide(title):
+    """Generate the cover slide."""
+    # Map common topics to relevant icons
+    icon_map = {
+        'docker': 'logos:docker-icon',
+        'container': 'logos:docker-icon',
+        'kubernetes': 'logos:kubernetes',
+        'aci': 'logos:docker-icon',
+        'aks': 'logos:kubernetes',
+        'app service': 'vscode-icons:file-type-azure',
+        'appservice': 'vscode-icons:file-type-azure',
+        'function': 'vscode-icons:file-type-azure',
+        'cosmos': 'vscode-icons:file-type-azure',
+        'storage': 'vscode-icons:file-type-azure',
+        'sql': 'vscode-icons:file-type-sql',
+        'virtual machine': 'bi:pc-display',
+        'vm': 'bi:pc-display',
+        'network': 'carbon:network-4',
+        'vnet': 'carbon:network-4',
+        'key vault': 'mdi:key',
+        'keyvault': 'mdi:key',
+        'apim': 'carbon:api',
+        'api': 'carbon:api',
+        'redis': 'logos:redis',
+        'monitor': 'carbon:chart-line',
+        'application insights': 'carbon:chart-line',
+        'log analytics': 'carbon:chart-line',
+        'servicebus': 'mdi:bus',
+        'service bus': 'mdi:bus',
+        'event': 'carbon:event',
+        'arm': 'vscode-icons:file-type-azure',
+        'bicep': 'vscode-icons:file-type-bicep',
+    }
+
+    icon = 'vscode-icons:file-type-azure'
+    title_lower = title.lower()
+    for keyword, mapped_icon in icon_map.items():
+        if keyword in title_lower:
+            icon = mapped_icon
+            break
+
+    return f"""---
 theme: default
 layout: cover
 ---
 
 # {title}
-## {subtitle}
 
 <div class="abs-bottom-4">
-  <iconify-icon icon="{icon}" style="font-size: 4rem; color: #0078d4;" />
-</div>
-''',
+  <iconify-icon icon="{icon}" style="font-size: 4rem;" />
+</div>"""
 
-    'intro': '''---
+
+def create_section_slide(section):
+    """Create a slide for a section with progressive builds."""
+    title = section['title']
+    content = section['content']
+
+    # Skip if section is mostly empty
+    if not content or len(content.strip()) < 20:
+        return None
+
+    # Check for special section types
+    if 'welcome' in title.lower() or 'opening' in title.lower():
+        return create_welcome_slide(title, content)
+    elif 'what is' in title.lower() or 'what are' in title.lower():
+        return create_concept_slide(title, content)
+    elif 'benefit' in title.lower() or 'advantage' in title.lower():
+        return create_benefits_slide(title, content)
+    elif 'when to use' in title.lower() or 'use case' in title.lower():
+        return create_use_cases_slide(title, content)
+    elif "we'll cover" in title.lower() or "you'll learn" in title.lower():
+        return create_learning_objectives_slide(title, content)
+    elif 'architecture' in title.lower():
+        return create_architecture_slide(title, content)
+    elif 'key concept' in title.lower():
+        return create_concepts_slide(title, content)
+    elif 'prerequisite' in title.lower() or 'getting started' in title.lower():
+        return create_prerequisites_slide(title, content)
+    else:
+        return create_generic_slide(title, content)
+
+
+def create_welcome_slide(title, content):
+    """Create a welcome/intro slide."""
+    # Extract first meaningful sentence
+    sentences = re.split(r'[.!?]\s+', content)
+    first_line = sentences[0] if sentences else content[:100]
+
+    return f"""---
 layout: center
+class: text-center
 ---
 
-# What is {topic_name}?
+# Welcome
 
-{content}
-''',
+<div class="text-2xl mt-8" v-click>
 
-    'benefits': '''---
-layout: center
----
-
-# Key Benefits
-
-<div class="grid grid-cols-2 gap-8 mt-12">
-
-<div class="text-center">
-  <iconify-icon icon="mdi:check-circle" style="font-size: 3rem; color: #4caf50;" />
-  <h3>{benefit1_title}</h3>
-  <p>{benefit1_desc}</p>
-</div>
-
-<div class="text-center">
-  <iconify-icon icon="mdi:rocket-launch" style="font-size: 3rem; color: #2196f3;" />
-  <h3>{benefit2_title}</h3>
-  <p>{benefit2_desc}</p>
-</div>
-
-<div class="text-center">
-  <iconify-icon icon="mdi:cog" style="font-size: 3rem; color: #ff9800;" />
-  <h3>{benefit3_title}</h3>
-  <p>{benefit3_desc}</p>
-</div>
-
-<div class="text-center">
-  <iconify-icon icon="mdi:cloud" style="font-size: 3rem; color: #9c27b0;" />
-  <h3>{benefit4_title}</h3>
-  <p>{benefit4_desc}</p>
-</div>
+{first_line}
 
 </div>
-''',
 
-    'learn': '''---
-layout: center
----
+<div class="mt-12" v-click>
+  <iconify-icon icon="carbon:rocket" style="font-size: 3rem; color: #0078d4;" />
+</div>"""
 
-# What You'll Learn
 
-```mermaid
+def create_concept_slide(title, content):
+    """Create a concept explanation slide with diagram."""
+    # Extract key points
+    paragraphs = [p.strip() for p in content.split('\n\n') if p.strip()]
+
+    # Try to create a simple flow diagram
+    diagram = """```mermaid
 graph LR
-    A[{step1}] --> B[{step2}]
-    B --> C[{step3}]
-    C --> D[{step4}]
+    A[Your Application] --> B[Package as Container]
+    B --> C[Deploy to Azure]
+    C --> D[Running in Cloud]
 
     style A fill:#e3f2fd,stroke:#2196f3
     style B fill:#e8f5e9,stroke:#4caf50
     style C fill:#fff3e0,stroke:#ff9800
     style D fill:#f3e5f5,stroke:#9c27b0
-```
+```"""
 
-<div class="mt-12">
+    first_para = paragraphs[0] if paragraphs else content[:200]
 
-{learning_points}
-
-</div>
-'''
-}
-
-# Topic configurations with icons and basic info
-TOPIC_CONFIGS = {
-    'docker-build': {'title': 'Docker Build', 'subtitle': 'Creating Custom Images', 'icon': 'logos:docker-icon'},
-    'docker-compose': {'title': 'Docker Compose', 'subtitle': 'Multi-Container Applications', 'icon': 'logos:docker-icon'},
-    'aci-compose': {'title': 'ACI with Docker Compose', 'subtitle': 'Multi-Container Deployments', 'icon': 'mdi:docker'},
-    'aks-apps': {'title': 'AKS Applications', 'subtitle': 'Deploying Apps to AKS', 'icon': 'logos:kubernetes'},
-    'aks-ingress': {'title': 'AKS Ingress', 'subtitle': 'HTTP Routing in AKS', 'icon': 'logos:kubernetes'},
-    'aks-keyvault': {'title': 'AKS with Key Vault', 'subtitle': 'Secrets Management', 'icon': 'logos:kubernetes'},
-    'aks-persistentvolumes': {'title': 'AKS Persistent Volumes', 'subtitle': 'Stateful Applications', 'icon': 'logos:kubernetes'},
-    'apim': {'title': 'API Management', 'subtitle': 'Enterprise API Gateway', 'icon': 'mdi:api'},
-    'apim-mock': {'title': 'APIM Mock Responses', 'subtitle': 'Testing APIs', 'icon': 'mdi:api'},
-    'apim-policies': {'title': 'APIM Policies', 'subtitle': 'API Transformation', 'icon': 'mdi:api'},
-    'apim-versioning': {'title': 'APIM Versioning', 'subtitle': 'API Lifecycle Management', 'icon': 'mdi:api'},
-    'appgw': {'title': 'Application Gateway', 'subtitle': 'Load Balancing & WAF', 'icon': 'mdi:gate'},
-    'applicationinsights': {'title': 'Application Insights', 'subtitle': 'APM & Monitoring', 'icon': 'mdi:chart-line'},
-    'appservice-api': {'title': 'App Service APIs', 'subtitle': 'RESTful API Hosting', 'icon': 'mdi:api'},
-    'appservice-cicd': {'title': 'App Service CI/CD', 'subtitle': 'Continuous Deployment', 'icon': 'mdi:source-branch'},
-    'appservice-config': {'title': 'App Service Config', 'subtitle': 'Application Settings', 'icon': 'mdi:cog'},
-    'appservice-static': {'title': 'Static Web Apps', 'subtitle': 'Jamstack Hosting', 'icon': 'mdi:web'},
-    'arm': {'title': 'ARM Templates', 'subtitle': 'Infrastructure as Code', 'icon': 'mdi:file-code'},
-    'arm-bicep': {'title': 'Bicep', 'subtitle': 'Modern ARM Templates', 'icon': 'mdi:arm-flex'},
-    'cosmos-perf': {'title': 'Cosmos DB Performance', 'subtitle': 'Optimization & Tuning', 'icon': 'mdi:database'},
-    'cosmos-table': {'title': 'Cosmos Table API', 'subtitle': 'NoSQL Key-Value Store', 'icon': 'mdi:table'},
-    'eventhubs-consumers': {'title': 'Event Hubs Consumers', 'subtitle': 'Event Stream Processing', 'icon': 'mdi:transit-connection-variant'},
-    'frontdoor': {'title': 'Azure Front Door', 'subtitle': 'Global Load Balancing', 'icon': 'mdi:door'},
-    'functions-durable-chained': {'title': 'Durable Functions Chaining', 'subtitle': 'Sequential Workflows', 'icon': 'mdi:function'},
-    'functions-durable-fan-out': {'title': 'Durable Functions Fan-Out', 'subtitle': 'Parallel Processing', 'icon': 'mdi:function'},
-    'functions-durable-human': {'title': 'Durable Functions Human Interaction', 'subtitle': 'Approval Workflows', 'icon': 'mdi:function'},
-    'iaas-apps': {'title': 'IaaS Applications', 'subtitle': 'VM-based Deployments', 'icon': 'mdi:server'},
-    'iaas-bicep': {'title': 'IaaS with Bicep', 'subtitle': 'Infrastructure as Code', 'icon': 'mdi:server'},
-    'keyvault-access': {'title': 'Key Vault Access', 'subtitle': 'Managed Identities', 'icon': 'mdi:key'},
-    'kubernetes-configmaps': {'title': 'ConfigMaps', 'subtitle': 'Configuration Management', 'icon': 'logos:kubernetes'},
-    'kubernetes-containerprobes': {'title': 'Container Probes', 'subtitle': 'Health Monitoring', 'icon': 'logos:kubernetes'},
-    'kubernetes-deployments': {'title': 'Kubernetes Deployments', 'subtitle': 'Application Management', 'icon': 'logos:kubernetes'},
-    'kubernetes-helm': {'title': 'Helm Charts', 'subtitle': 'Package Manager', 'icon': 'logos:helm'},
-    'kubernetes-ingress': {'title': 'Kubernetes Ingress', 'subtitle': 'HTTP Routing', 'icon': 'logos:kubernetes'},
-    'kubernetes-namespaces': {'title': 'Namespaces', 'subtitle': 'Cluster Organization', 'icon': 'logos:kubernetes'},
-    'kubernetes-nodes': {'title': 'Kubernetes Nodes', 'subtitle': 'Cluster Infrastructure', 'icon': 'logos:kubernetes'},
-    'kubernetes-persistentvolumes': {'title': 'Persistent Volumes', 'subtitle': 'Stateful Storage', 'icon': 'logos:kubernetes'},
-    'kubernetes-pods': {'title': 'Kubernetes Pods', 'subtitle': 'Container Runtime', 'icon': 'logos:kubernetes'},
-    'kubernetes-secrets': {'title': 'Kubernetes Secrets', 'subtitle': 'Sensitive Data', 'icon': 'logos:kubernetes'},
-    'kubernetes-services': {'title': 'Kubernetes Services', 'subtitle': 'Network Abstraction', 'icon': 'logos:kubernetes'},
-    'kubernetes-troubleshooting': {'title': 'K8s Troubleshooting', 'subtitle': 'Debugging Applications', 'icon': 'logos:kubernetes'},
-    'loganalytics': {'title': 'Log Analytics', 'subtitle': 'Centralized Logging', 'icon': 'mdi:file-document-multiple'},
-    'resourcegroups': {'title': 'Resource Groups', 'subtitle': 'Azure Organization', 'icon': 'mdi:folder'},
-    'servicebus-pubsub': {'title': 'Service Bus Pub/Sub', 'subtitle': 'Topics & Subscriptions', 'icon': 'mdi:message-processing'},
-    'signalr': {'title': 'SignalR Service', 'subtitle': 'Real-Time Messaging', 'icon': 'mdi:transit-connection-variant'},
-    'signin': {'title': 'Azure AD Sign-In', 'subtitle': 'Authentication', 'icon': 'mdi:account-key'},
-    'sql-schema': {'title': 'SQL Schema Management', 'subtitle': 'Database Migrations', 'icon': 'mdi:database'},
-    'sql-vm': {'title': 'SQL on VMs', 'subtitle': 'IaaS Database', 'icon': 'mdi:database-cog'},
-    'storage-blob': {'title': 'Blob Storage', 'subtitle': 'Object Storage', 'icon': 'mdi:file'},
-    'storage-files': {'title': 'Azure Files', 'subtitle': 'SMB File Shares', 'icon': 'mdi:folder-multiple'},
-    'storage-static': {'title': 'Static Website Hosting', 'subtitle': 'Blob-based Hosting', 'icon': 'mdi:web'},
-    'storage-table': {'title': 'Table Storage', 'subtitle': 'NoSQL Key-Value', 'icon': 'mdi:table'},
-    'vm-config': {'title': 'VM Configuration', 'subtitle': 'Post-Deployment Setup', 'icon': 'mdi:cog'},
-    'vm-image': {'title': 'VM Images', 'subtitle': 'Custom Images', 'icon': 'mdi:image'},
-    'vm-web': {'title': 'Web Server on VM', 'subtitle': 'IIS & Nginx', 'icon': 'mdi:server-network'},
-    'vm-win': {'title': 'Windows VMs', 'subtitle': 'Windows Server', 'icon': 'mdi:microsoft-windows'},
-    'vmss-linux': {'title': 'Linux VM Scale Sets', 'subtitle': 'Auto-Scaling', 'icon': 'mdi:server-plus'},
-    'vmss-win': {'title': 'Windows VM Scale Sets', 'subtitle': 'Auto-Scaling', 'icon': 'mdi:server-plus'},
-    'vnet-access': {'title': 'VNet Access Control', 'subtitle': 'Network Security', 'icon': 'mdi:network-strength-2'},
-    'vnet-apps': {'title': 'VNet-Integrated Apps', 'subtitle': 'Private Networking', 'icon': 'mdi:network'},
-}
-
-def create_generic_slides(topic_name, config):
-    """Create a generic set of 6 slides for a topic"""
-    slides_dir = Path(f'/home/user/azure-az204/slides/{topic_name}')
-    slides_dir.mkdir(parents=True, exist_ok=True)
-
-    # Slide 001: Cover
-    slide1 = f'''---
-theme: default
-layout: cover
----
-
-# {config['title']}
-## {config['subtitle']}
-
-<div class="abs-bottom-4">
-  <iconify-icon icon="{config['icon']}" style="font-size: 4rem;" />
-</div>
-'''
-
-    # Slide 002: Introduction with diagram
-    slide2 = f'''---
+    return f"""---
 layout: center
 ---
 
-# Overview
+# {title}
 
-```mermaid
-graph TB
-    Topic[{config['title']}] --> Feature1[Key Feature 1]
-    Topic --> Feature2[Key Feature 2]
-    Topic --> Feature3[Key Feature 3]
+<div v-click>
 
-    style Topic fill:#0078d4,stroke:#fff,color:#fff
-    style Feature1 fill:#e3f2fd,stroke:#2196f3
-    style Feature2 fill:#e8f5e9,stroke:#4caf50
-    style Feature3 fill:#fff3e0,stroke:#ff9800
-```
+{diagram}
 
-<div class="text-center mt-8">
-  <p class="text-xl">{config['subtitle']}</p>
 </div>
-'''
 
-    # Slide 003: Architecture
-    slide3 = f'''---
+<div class="mt-8 text-center" v-click>
+
+{first_para[:150]}...
+
+</div>"""
+
+
+def create_benefits_slide(title, content):
+    """Create a benefits slide with icons."""
+    # Extract bullet points or create from paragraphs
+    benefits = []
+
+    # Check for bullet points with bold markers
+    bullet_pattern = re.findall(r'\*\*([^*]+)\*\*:?\s*([^*\n]+)', content)
+    if bullet_pattern:
+        for benefit, desc in bullet_pattern[:5]:
+            benefits.append(f"{benefit}: {desc.strip()[:80]}")
+    else:
+        # Split by paragraphs
+        paragraphs = [p.strip() for p in content.split('\n\n') if p.strip() and len(p) > 20]
+        for para in paragraphs[:5]:
+            # Get first sentence
+            first_sent = para.split('.')[0]
+            if first_sent:
+                benefits.append(first_sent.strip())
+
+    benefit_items = '\n\n'.join([f'<div v-click>\n<iconify-icon icon="mdi:check-circle" class="text-green-500" /> {b}\n</div>'
+                                   for b in benefits])
+
+    return f"""---
+layout: two-cols
+---
+
+# {title}
+
+{benefit_items}
+
+::right::
+
+<div class="flex items-center justify-center h-full" v-click>
+  <iconify-icon icon="carbon:chart-line-smooth" style="font-size: 8rem; color: #4caf50;" />
+</div>"""
+
+
+def create_use_cases_slide(title, content):
+    """Create use cases slide with icons."""
+    # Extract bullet points
+    use_cases = re.findall(r'-\s*\*\*([^*]+)\*\*:?\s*([^\n]+)', content)
+    if not use_cases:
+        use_cases = [(line.strip('- ').strip(), '') for line in content.split('\n') if line.strip().startswith('-')][:5]
+
+    case_items = []
+    icons = ['mdi:web', 'mdi:cog', 'mdi:code-braces', 'mdi:test-tube', 'mdi:lightning-bolt']
+    for i, (case, desc) in enumerate(use_cases[:5]):
+        icon = icons[i % len(icons)]
+        text = case if not desc else f"{case}: {desc[:60]}"
+        case_items.append(f'<div v-click>\n<iconify-icon icon="{icon}" /> {text}\n</div>')
+
+    cases_html = '\n\n'.join(case_items)
+
+    return f"""---
 layout: center
 ---
 
-# Architecture
+# {title}
 
-```mermaid
+<div class="grid grid-cols-1 gap-4 mt-8">
+
+{cases_html}
+
+</div>"""
+
+
+def create_learning_objectives_slide(title, content):
+    """Create learning objectives slide with flow."""
+    # Extract numbered or bulleted items
+    objectives = []
+
+    # Try numbered list first
+    numbered = re.findall(r'\d+\.\s*\*\*([^*]+)\*\*', content)
+    if numbered:
+        objectives = numbered
+    else:
+        # Try bullet points
+        bullets = re.findall(r'-\s*([^\n]+)', content)
+        if bullets:
+            objectives = bullets[:5]
+
+    # Create mermaid flow
+    if len(objectives) >= 3:
+        nodes = []
+        connections = []
+        for i, obj in enumerate(objectives[:5]):
+            node_id = chr(65 + i)  # A, B, C, ...
+            label = obj.strip()[:30].replace('[', '').replace(']', '')
+            nodes.append(f"    {node_id}[{label}]")
+            if i > 0:
+                connections.append(f"    {chr(65 + i - 1)} --> {node_id}")
+
+        diagram = f"""```mermaid
 graph LR
-    Input[Input] --> Process[{config['title']}]
-    Process --> Output1[Output 1]
-    Process --> Output2[Output 2]
-
-    style Process fill:#0078d4,stroke:#fff,color:#fff
-    style Input fill:#e3f2fd,stroke:#2196f3
-    style Output1 fill:#e8f5e9,stroke:#4caf50
-    style Output2 fill:#fff3e0,stroke:#ff9800
-```
-'''
-
-    # Slide 004: Benefits
-    slide4 = '''---
-layout: center
----
-
-# Key Benefits
-
-<div class="grid grid-cols-2 gap-8 mt-12">
-
-<div class="text-center">
-  <iconify-icon icon="mdi:check-circle" style="font-size: 3rem; color: #4caf50;" />
-  <h3>Efficient</h3>
-  <p>Optimized performance</p>
-</div>
-
-<div class="text-center">
-  <iconify-icon icon="mdi:security" style="font-size: 3rem; color: #2196f3;" />
-  <h3>Secure</h3>
-  <p>Built-in security</p>
-</div>
-
-<div class="text-center">
-  <iconify-icon icon="mdi:scale-balance" style="font-size: 3rem; color: #ff9800;" />
-  <h3>Scalable</h3>
-  <p>Grows with demand</p>
-</div>
-
-<div class="text-center">
-  <iconify-icon icon="mdi:cash" style="font-size: 3rem; color: #9c27b0;" />
-  <h3>Cost-Effective</h3>
-  <p>Pay for what you use</p>
-</div>
-
-</div>
-'''
-
-    # Slide 005: Use Cases
-    slide5 = f'''---
-layout: default
----
-
-# Use Cases
-
-```mermaid
-graph TB
-    Service[{config['title']}] --> UC1[Use Case 1]
-    Service --> UC2[Use Case 2]
-    Service --> UC3[Use Case 3]
-
-    style Service fill:#0078d4,stroke:#fff,color:#fff
-    style UC1 fill:#e3f2fd,stroke:#2196f3
-    style UC2 fill:#e8f5e9,stroke:#4caf50
-    style UC3 fill:#fff3e0,stroke:#ff9800
-```
-
-<div class="mt-12">
-
-- Production workloads
-- Development environments
-- Testing scenarios
-
-</div>
-'''
-
-    # Slide 006: What You'll Learn
-    slide6 = f'''---
-layout: center
----
-
-# What You'll Learn
-
-```mermaid
-graph LR
-    A[Explore Concepts] --> B[Hands-On Practice]
-    B --> C[Best Practices]
-    C --> D[Real-World Examples]
+{chr(10).join(nodes)}
+{chr(10).join(connections)}
 
     style A fill:#e3f2fd,stroke:#2196f3
     style B fill:#e8f5e9,stroke:#4caf50
     style C fill:#fff3e0,stroke:#ff9800
     style D fill:#f3e5f5,stroke:#9c27b0
-```
+    style E fill:#fce4ec,stroke:#e91e63
+```"""
+    else:
+        diagram = ""
 
-<div class="mt-12 text-center">
+    obj_items = '\n\n'.join([f'<div v-click>\n<iconify-icon icon="mdi:check-circle" class="text-blue-500" /> {obj.strip()}\n</div>'
+                               for obj in objectives])
 
-Portal & CLI operations
+    if diagram:
+        return f"""---
+layout: center
+---
 
-{config['subtitle']}
+# {title}
+
+<div v-click>
+
+{diagram}
+
+</div>"""
+    else:
+        return f"""---
+layout: center
+---
+
+# {title}
+
+<div class="mt-8">
+
+{obj_items}
+
+</div>"""
+
+
+def create_architecture_slide(title, content):
+    """Create architecture overview slide."""
+    # Try to identify components mentioned in Azure handles vs You control
+    azure_handles = re.findall(r'-\s*([^\n]+)', re.split(r'Azure handles:?', content)[-1].split('You control')[0]) if 'Azure handles' in content else []
+    you_control = re.findall(r'-\s*([^\n]+)', re.split(r'You control:?', content)[-1].split('\n\n')[0]) if 'You control' in content else []
+
+    diagram = """```mermaid
+graph TB
+    User[Your Application] --> Azure[Azure Platform]
+    Azure --> Compute[Compute]
+    Azure --> Network[Network]
+    Azure --> Storage[Storage]
+    Azure --> Security[Security]
+
+    style User fill:#e3f2fd,stroke:#2196f3
+    style Azure fill:#0078d4,stroke:#fff,color:#fff
+    style Compute fill:#4caf50,stroke:#fff,color:#fff
+    style Network fill:#ff9800,stroke:#fff,color:#fff
+    style Storage fill:#9c27b0,stroke:#fff,color:#fff
+    style Security fill:#e91e63,stroke:#fff,color:#fff
+```"""
+
+    return f"""---
+layout: two-cols
+---
+
+# {title}
+
+<div v-click>
+
+{diagram}
 
 </div>
-'''
 
-    # Write all slides
-    for i, slide in enumerate([slide1, slide2, slide3, slide4, slide5, slide6], 1):
-        slide_file = slides_dir / f'{i:03d}.md'
-        slide_file.write_text(slide)
+::right::
 
-    return 6
+<div class="mt-8">
+
+<div v-click>
+<h3>Azure Manages</h3>
+<ul>
+{''.join([f'<li>{item[:50]}</li>' for item in azure_handles[:3]])}
+</ul>
+</div>
+
+<div v-click class="mt-4">
+<h3>You Control</h3>
+<ul>
+{''.join([f'<li>{item[:50]}</li>' for item in you_control[:3]])}
+</ul>
+</div>
+
+</div>"""
+
+
+def create_concepts_slide(title, content):
+    """Create key concepts slide."""
+    # Extract concepts with bold markers
+    concepts = re.findall(r'\*\*([^*]+)\*\*:?\s*([^*\n]+)', content)
+
+    concept_items = []
+    for i, (concept, desc) in enumerate(concepts[:4]):
+        concept_items.append(f"""<div v-click>
+<h3 class="text-xl font-bold">{concept}</h3>
+<p class="text-sm">{desc.strip()[:100]}</p>
+</div>""")
+
+    concepts_html = '\n\n'.join(concept_items)
+
+    return f"""---
+layout: center
+---
+
+# {title}
+
+<div class="grid grid-cols-2 gap-6 mt-8">
+
+{concepts_html}
+
+</div>"""
+
+
+def create_prerequisites_slide(title, content):
+    """Create prerequisites slide."""
+    # Extract bullet points
+    prereqs = re.findall(r'-\s*([^\n]+)', content)
+
+    if not prereqs:
+        return None
+
+    prereq_items = '\n\n'.join([f'<div v-click>\n<iconify-icon icon="mdi:checkbox-marked-circle" class="text-blue-500" /> {p.strip()}\n</div>'
+                                  for p in prereqs[:5]])
+
+    return f"""---
+layout: center
+class: text-center
+---
+
+# {title}
+
+<div class="mt-12">
+
+{prereq_items}
+
+</div>
+
+<div class="mt-12" v-click>
+  <iconify-icon icon="carbon:rocket" style="font-size: 3rem; color: #0078d4;" />
+</div>"""
+
+
+def create_generic_slide(title, content):
+    """Create a generic content slide."""
+    # Get first paragraph
+    paragraphs = [p.strip() for p in content.split('\n\n') if p.strip()]
+    text = paragraphs[0][:200] if paragraphs else content[:200]
+
+    return f"""---
+layout: center
+---
+
+# {title}
+
+<div class="text-xl mt-8" v-click>
+
+{text}
+
+</div>"""
+
+
+def generate_slides(intro_path):
+    """Generate slides.md content from intro.md script."""
+    sections = parse_intro_script(intro_path)
+
+    if not sections:
+        return None
+
+    title = extract_title_from_script(sections)
+
+    slides = [create_cover_slide(title)]
+
+    # Skip the first section if it's just the title
+    start_idx = 1 if sections[0]['title'].strip() == title else 0
+
+    for section in sections[start_idx:]:
+        slide = create_section_slide(section)
+        if slide:
+            slides.append(slide)
+
+    return '\n\n---\n\n'.join(slides)
+
+
+def process_topic(topic_name, base_path):
+    """Process a single topic: generate slides.md and delete 0xx.md files."""
+    intro_path = base_path / 'scripts' / topic_name / 'intro.md'
+    slides_dir = base_path / 'slides' / topic_name
+
+    if not intro_path.exists():
+        print(f"⚠️  No intro.md found for {topic_name}")
+        return False
+
+    if not slides_dir.exists():
+        print(f"⚠️  No slides directory found for {topic_name}")
+        return False
+
+    print(f"Processing {topic_name}...")
+
+    # Generate new slides
+    slides_content = generate_slides(intro_path)
+
+    if not slides_content:
+        print(f"❌ Failed to generate slides for {topic_name}")
+        return False
+
+    # Write slides.md
+    slides_path = slides_dir / 'slides.md'
+    with open(slides_path, 'w', encoding='utf-8') as f:
+        f.write(slides_content)
+
+    print(f"✅ Generated {slides_path}")
+
+    # Delete 0xx.md files
+    old_files = list(slides_dir.glob('0*.md'))
+    for old_file in old_files:
+        old_file.unlink()
+        print(f"🗑️  Deleted {old_file.name}")
+
+    return True
+
 
 def main():
-    """Generate slides for all remaining topics"""
-    scripts_dir = Path('/home/user/azure-az204/scripts')
+    """Main function to process all topics."""
+    base_path = Path('/home/user/azure-az204')
+    slides_dir = base_path / 'slides'
 
-    # Find all intro.md files
-    intro_files = list(scripts_dir.glob('*/intro.md'))
+    # Get all topic directories
+    topics = sorted([d.name for d in slides_dir.iterdir() if d.is_dir()])
 
-    total_slides = 0
-    topics_processed = []
+    print(f"Found {len(topics)} topics to process\n")
 
-    for intro_file in sorted(intro_files):
-        topic_name = intro_file.parent.name
+    success_count = 0
+    failed_topics = []
 
-        # Skip already completed topics
-        if topic_name in COMPLETED_TOPICS:
-            continue
+    for topic in topics:
+        if process_topic(topic, base_path):
+            success_count += 1
+        else:
+            failed_topics.append(topic)
+        print()
 
-        # Get config for this topic
-        config = TOPIC_CONFIGS.get(topic_name, {
-            'title': topic_name.replace('-', ' ').title(),
-            'subtitle': 'Azure Service',
-            'icon': 'mdi:microsoft-azure'
-        })
+    print(f"\n{'='*60}")
+    print(f"✅ Successfully processed: {success_count}/{len(topics)} topics")
 
-        # Create slides
-        slides_created = create_generic_slides(topic_name, config)
-        total_slides += slides_created
-        topics_processed.append(topic_name)
+    if failed_topics:
+        print(f"❌ Failed topics: {', '.join(failed_topics)}")
 
-        print(f"✓ Created {slides_created} slides for {topic_name}")
+    return 0 if not failed_topics else 1
 
-    print(f"\n📊 Summary:")
-    print(f"Topics processed: {len(topics_processed)}")
-    print(f"Total slides created: {total_slides}")
-    print(f"Total topics (including completed): {len(intro_files)}")
 
 if __name__ == '__main__':
-    main()
+    exit(main())
