@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Durable Functions let you write stateful workflows in a serverless environment.
+search_anchor: Durable Functions let you write
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Regular Functions Limitations
 
+<!--
+METADATA:
+sentence: Imagine you need to build a workflow with multiple steps that must run in a specific order.
+search_anchor: Imagine you need to build
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -73,6 +83,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This works, but it has some serious limitations.
+search_anchor: This works, but it has
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg text-red-400">
@@ -85,6 +100,11 @@ This works, but has serious limitations
 
 # The Problems
 
+<!--
+METADATA:
+sentence: First, you can't guarantee the exact running order when dealing with distributed triggers.
+search_anchor: First, you can't guarantee the
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -98,6 +118,11 @@ This works, but has serious limitations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, passing data between functions becomes complicated - you need intermediate storage.
+search_anchor: Second, passing data between functions
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -111,6 +136,11 @@ This works, but has serious limitations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, there's no single place to see the overall workflow status.
+search_anchor: Third, there's no single place
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -123,6 +153,11 @@ This works, but has serious limitations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And finally, error handling and retry logic gets messy when spread across multiple independent functions.
+search_anchor: finally, error handling and retry
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -153,6 +188,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Durable Functions let you write stateful workflows in a serverless environment.
+search_anchor: Durable Functions let you write
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -161,6 +201,11 @@ Durable Functions let you write stateful workflows
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key word here is stateful - the framework automatically manages state between function calls, so you don't have to worry about it.
+search_anchor: key word here is stateful
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -190,6 +235,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: State Management: The durable functions framework automatically saves the orchestrator's progress.
+search_anchor: State Management: The durable functions
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -202,6 +252,11 @@ Framework automatically manages state
 
 # How It Works
 
+<!--
+METADATA:
+sentence: With the chained pattern, you write an orchestrator function that calls multiple activity functions in sequence.
+search_anchor: chained pattern, you write an
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -210,6 +265,11 @@ Write an orchestrator that calls activity functions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The orchestrator controls the workflow, manages data flow, and handles the execution order.
+search_anchor: orchestrator controls the workflow, manages
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -227,6 +287,11 @@ Write an orchestrator that calls activity functions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The orchestrator controls the workflow, manages data flow, and handles the execution order.
+search_anchor: orchestrator controls the workflow, manages
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -253,6 +318,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a pipeline where the output of one step becomes the input to the next step.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -282,6 +352,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each step runs only after the previous one completes successfully.
+search_anchor: Each step runs only after
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -294,6 +369,11 @@ Each step runs after previous one completes
 
 # Defined in Code
 
+<!--
+METADATA:
+sentence: The beauty is that this entire workflow is defined in code, in one place.
+search_anchor: beauty is that this entire
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -302,6 +382,11 @@ Entire workflow in one place
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can see the logic, understand the flow, and manage it as a single unit.
+search_anchor: You can see the logic
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -321,6 +406,11 @@ Entire workflow in one place
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each activity is just a simple function that does one thing well.
+search_anchor: Each activity is just a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -339,6 +429,11 @@ layout: section
 
 # The Components
 
+<!--
+METADATA:
+sentence: It defines what activities run and in what order.
+search_anchor: It defines what activities run
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -354,6 +449,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They use the ActivityTrigger binding, which means they can only be called by an orchestrator.
+search_anchor: They use the ActivityTrigger binding
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -369,6 +469,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Durable Client: This is what starts the orchestration.
+search_anchor: Durable Client: This is what
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -395,6 +500,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: State Management: The durable functions framework automatically saves the orchestrator's progress.
+search_anchor: State Management: The durable functions
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -424,6 +534,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You get this reliability without writing any state management code.
+search_anchor: You get this reliability without
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -442,6 +557,11 @@ layout: section
 
 # Perfect Scenarios
 
+<!--
+METADATA:
+sentence: Real-World Use Cases The chained pattern is perfect for many scenarios: Data processing pipelines: Extract data from a source, transform it, validate it, and load it into a destination.
+search_anchor: Real-World Use Cases The chained
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -451,6 +571,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, there's no single place to see the overall workflow status.
+search_anchor: Third, there's no single place
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -460,6 +585,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: System initialization: Start a service, wait for it to be healthy, configure it, run tests, promote to production.
+search_anchor: System initialization: Start a service
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -469,6 +599,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Batch operations: Process a set of items where each item goes through multiple transformation stages in order.
+search_anchor: Batch operations: Process a set
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -478,6 +613,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The workflow starts with a timer trigger that runs periodically.
+search_anchor: workflow starts with a timer
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -517,6 +657,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see how simple it is to coordinate multiple Azure services in a reliable, sequential workflow.
+search_anchor: You'll see how simple it
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -525,6 +670,11 @@ Coordinate multiple Azure services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see how simple it is to coordinate multiple Azure services in a reliable, sequential workflow.
+search_anchor: You'll see how simple it
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -537,6 +687,11 @@ In a reliable, sequential workflow
 
 # Development Approach
 
+<!--
+METADATA:
+sentence: Once everything works locally, you'll deploy the durable function to Azure and see it running in a production environment.
+search_anchor: Once everything works locally, you'll
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -557,6 +712,11 @@ In a reliable, sequential workflow
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you a fast development cycle without deploying to Azure.
+search_anchor: This gives you a fast
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -578,6 +738,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and build something great!
+search_anchor: Let's dive in and build
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -586,6 +751,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and build something great!
+search_anchor: Let's dive in and build
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

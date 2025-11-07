@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Groups, or RGs, are containers for all other Azure resources.
+search_anchor: Resource Groups, or RGs, are
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -83,6 +93,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of them as organizational folders that hold everything your application needs - virtual machines, SQL databases, Kubernetes clusters, storage accounts - they all live inside a Resource Group.
+search_anchor: Think of them as organizational
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -95,6 +110,11 @@ Everything your application needs lives inside
 
 # Logical Grouping
 
+<!--
+METADATA:
+sentence: You typically create one Resource Group for each application, containing all the components that app requires.
+search_anchor: You typically create one Resource
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -121,6 +141,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This logical grouping makes it much easier to manage your Azure resources as a cohesive unit.
+search_anchor: This logical grouping makes it
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -147,6 +172,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -172,6 +202,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means you can grant a team access to everything they need for their application in one go, without having to set permissions on individual resources.
+search_anchor: This means you can grant
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -180,6 +215,11 @@ Grant access to everything in one go
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means you can grant a team access to everything they need for their application in one go, without having to set permissions on individual resources.
+search_anchor: This means you can grant
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -200,6 +240,11 @@ No need to set permissions on individual resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -223,6 +268,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is perfect for development and testing scenarios where you want to quickly tear down an entire environment.
+search_anchor: This is perfect for development
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -231,6 +281,11 @@ Perfect for dev/test environments
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is perfect for development and testing scenarios where you want to quickly tear down an entire environment.
+search_anchor: This is perfect for development
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -251,6 +306,11 @@ Quickly tear down entire environment
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, they provide a way to organize your resources logically, which becomes increasingly important as your Azure footprint grows.
+search_anchor: Third, they provide a way
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -278,6 +338,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, they provide a way to organize your resources logically, which becomes increasingly important as your Azure footprint grows.
+search_anchor: Third, they provide a way
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -304,6 +369,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -312,6 +382,11 @@ Resource Groups exist in specific Azure regions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This region determines where the metadata about your Resource Group is stored.
+search_anchor: This region determines where the
+-->
 <v-click>
 
 <div class="mt-12 text-lg text-center">
@@ -324,6 +399,11 @@ Determines where metadata is stored
 
 # What is a Region?
 
+<!--
+METADATA:
+sentence: Each region is a collection of nearby data centers.
+search_anchor: Each region is a collection
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -355,6 +435,11 @@ graph TB
 
 # Placement Strategy
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -363,6 +448,11 @@ Typical approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Typically, you'll put all the components for an application into the same region to minimize network latency between services.
+search_anchor: Typically, you'll put all the
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -375,6 +465,11 @@ Typical approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, you might create additional deployments in other regions for high availability or to serve users in different geographic locations.
+search_anchor: However, you might create additional
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -383,6 +478,11 @@ But you might use multiple regions for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, you might create additional deployments in other regions for high availability or to serve users in different geographic locations.
+search_anchor: However, you might create additional
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-8">
@@ -416,6 +516,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Tags Tags are simple key-value pairs that you can attach to Resource Groups and other resources.
+search_anchor: Tags Tags are simple key-value
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -439,6 +544,11 @@ owner: platform-team
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're incredibly useful for organizing and managing resources at scale.
+search_anchor: They're incredibly useful for organizing
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -451,6 +561,11 @@ Incredibly useful for organization at scale
 
 # Tag Use Cases
 
+<!--
+METADATA:
+sentence: For example, you might use an "environment" tag to identify resources in development, testing, or production environments, or a "cost-center" tag for billing purposes.
+search_anchor: example, you might use an
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -463,6 +578,11 @@ Incredibly useful for organization at scale
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, you might use an "environment" tag to identify resources in development, testing, or production environments, or a "cost-center" tag for billing purposes.
+search_anchor: example, you might use an
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -475,6 +595,11 @@ Incredibly useful for organization at scale
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're incredibly useful for organizing and managing resources at scale.
+search_anchor: They're incredibly useful for organizing
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -487,6 +612,11 @@ Incredibly useful for organization at scale
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each region is a collection of nearby data centers.
+search_anchor: Each region is a collection
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -523,6 +653,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -531,6 +666,11 @@ Filter and search by tags
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Groups, or RGs, are containers for all other Azure resources.
+search_anchor: Resource Groups, or RGs, are
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -549,6 +689,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -558,6 +703,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -567,6 +717,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're incredibly useful for organizing and managing resources at scale.
+search_anchor: They're incredibly useful for organizing
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -576,6 +731,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -598,6 +758,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each region is a collection of nearby data centers.
+search_anchor: Each region is a collection
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -606,6 +771,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Resource Groups?
+search_anchor: What are Resource Groups
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

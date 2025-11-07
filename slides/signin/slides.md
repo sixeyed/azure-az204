@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What You'll Learn Azure uses Microsoft accounts for authentication and authorization.
+search_anchor: What You'll Learn Azure uses
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In a corporate environment, your account would be managed by your organization's Azure Active Directory.
+search_anchor: corporate environment, your account would
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -62,6 +72,11 @@ Microsoft account = your identity in Azure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This single account can have access to one or more Azure Subscriptions.
+search_anchor: This single account can have
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -96,6 +111,11 @@ graph TB
 
 # Subscriptions
 
+<!--
+METADATA:
+sentence: Each Subscription is a logical container for your Azure resources and has its own billing and access management.
+search_anchor: Each Subscription is a logical
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -104,6 +124,11 @@ Logical container for Azure resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Learn Multiple Access Methods?
+search_anchor: Why Learn Multiple Access Methods
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -123,6 +148,11 @@ Logical container for Azure resources
 
 # Account Types
 
+<!--
+METADATA:
+sentence: In a corporate environment, your account would be managed by your organization's Azure Active Directory.
+search_anchor: corporate environment, your account would
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -135,6 +165,11 @@ Logical container for Azure resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For learning and personal projects, you can create your own Microsoft account and Azure Subscription.
+search_anchor: learning and personal projects, you
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -157,6 +192,11 @@ layout: section
 
 # Access Methods
 
+<!--
+METADATA:
+sentence: It's great for exploration and visual management, but it's not easily automated.
+search_anchor: It's great for exploration and
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -172,6 +212,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure CLI - A cross-platform command-line tool that provides a scriptable, repeatable way to manage Azure resources.
+search_anchor: Azure CLI - A cross-platform
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -187,6 +232,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure Cloud Shell - A browser-based shell environment that comes with Azure tools pre-installed and configured.
+search_anchor: Azure Cloud Shell - A
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -220,6 +270,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Three Ways to Access Azure There are three primary ways to interact with Azure: The Azure Portal - A web-based graphical interface where you can browse services, create resources, and manage your Azure environment.
+search_anchor: Three Ways to Access Azure
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -228,6 +283,11 @@ Browse services, create resources, manage environment
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's great for exploration and visual management, but it's not easily automated.
+search_anchor: It's great for exploration and
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -243,6 +303,11 @@ Browse services, create resources, manage environment
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's great for exploration and visual management, but it's not easily automated.
+search_anchor: It's great for exploration and
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -269,6 +334,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure CLI - A cross-platform command-line tool that provides a scriptable, repeatable way to manage Azure resources.
+search_anchor: Azure CLI - A cross-platform
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -277,6 +347,11 @@ Cross-platform command-line tool
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure CLI - A cross-platform command-line tool that provides a scriptable, repeatable way to manage Azure resources.
+search_anchor: Azure CLI - A cross-platform
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -296,6 +371,11 @@ Cross-platform command-line tool
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the recommended approach for developers and anyone who needs to automate Azure operations.
+search_anchor: This is the recommended approach
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -322,6 +402,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure Cloud Shell - A browser-based shell environment that comes with Azure tools pre-installed and configured.
+search_anchor: Azure Cloud Shell - A
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -330,6 +415,11 @@ Azure tools pre-installed and configured
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Perfect for when you can't install the CLI locally but need command-line access to Azure.
+search_anchor: Perfect for when you can't
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -339,6 +429,11 @@ Azure tools pre-installed and configured
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Learn Multiple Access Methods?
+search_anchor: Why Learn Multiple Access Methods
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -348,6 +443,11 @@ Azure tools pre-installed and configured
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn Azure uses Microsoft accounts for authentication and authorization.
+search_anchor: What You'll Learn Azure uses
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -367,6 +467,11 @@ layout: section
 
 # Different Strengths
 
+<!--
+METADATA:
+sentence: It's great for exploration and visual management, but it's not easily automated.
+search_anchor: It's great for exploration and
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -379,6 +484,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure CLI - A cross-platform command-line tool that provides a scriptable, repeatable way to manage Azure resources.
+search_anchor: Azure CLI - A cross-platform
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -391,6 +501,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure Cloud Shell - A browser-based shell environment that comes with Azure tools pre-installed and configured.
+search_anchor: Azure Cloud Shell - A
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -403,6 +518,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's begin by exploring the Azure Portal.
+search_anchor: Let's begin by exploring the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -415,6 +535,11 @@ Use all three depending on the task
 
 # Important Skill
 
+<!--
+METADATA:
+sentence: Understanding when to use each approach is an important skill.
+search_anchor: Understanding when to use each
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -423,6 +548,11 @@ Understanding when to use each approach
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure CLI - A cross-platform command-line tool that provides a scriptable, repeatable way to manage Azure resources.
+search_anchor: Azure CLI - A cross-platform
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -452,6 +582,11 @@ layout: section
 
 # Explore the Portal
 
+<!--
+METADATA:
+sentence: Let's begin by exploring the Azure Portal.
+search_anchor: Let's begin by exploring the
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -471,6 +606,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's begin by exploring the Azure Portal.
+search_anchor: Let's begin by exploring the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -492,6 +632,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's begin by exploring the Azure Portal.
+search_anchor: Let's begin by exploring the
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -500,6 +645,11 @@ Let's Begin!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's begin by exploring the Azure Portal.
+search_anchor: Let's begin by exploring the
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

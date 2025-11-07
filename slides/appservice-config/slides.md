@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What You'll Learn App Service gives you enterprise-grade capabilities out of the box.
+search_anchor: What You'll Learn App Service
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # The PaaS Advantage
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Azure App Service provides powerful platform-as-a-service features that would require significant effort to implement in an infrastructure-as-a-service deployment.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -77,6 +87,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And finally, configuring auto-heal capabilities to automatically restart failed instances without manual intervention.
+search_anchor: finally, configuring auto-heal capabilities to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -103,6 +118,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're perfect for managing settings across different environments without changing your code.
+search_anchor: They're perfect for managing settings
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -130,6 +150,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll learn how to configure health endpoints and have Azure automatically monitor your application's health.
+search_anchor: You'll learn how to configure
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -138,6 +163,11 @@ Managed through Azure portal or CLI
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're perfect for managing settings across different environments without changing your code.
+search_anchor: They're perfect for managing settings
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -156,6 +186,11 @@ layout: section
 
 # Deliberate Failure Scenario
 
+<!--
+METADATA:
+sentence: Lab Overview In this lab, we'll work with a REST API - a random number generator service.
+search_anchor: Lab Overview In this lab
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -164,6 +199,11 @@ Random number generator REST API
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We're going to deliberately configure it to fail, and then we'll use App Service features to handle those failures gracefully.
+search_anchor: We're going to deliberately configure
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -194,6 +234,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This simulates real-world scenarios where applications can enter an unhealthy state.
+search_anchor: This simulates real-world scenarios where
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -206,6 +251,11 @@ Simulates real-world failure scenarios
 
 # What We'll Cover
 
+<!--
+METADATA:
+sentence: Second, implementing App Service health checks.
+search_anchor: Second, implementing App Service health
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -218,6 +268,11 @@ Simulates real-world failure scenarios
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, implementing App Service health checks.
+search_anchor: Second, implementing App Service health
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -230,6 +285,11 @@ Simulates real-world failure scenarios
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, scaling your application to multiple instances.
+search_anchor: Third, scaling your application to
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -242,6 +302,11 @@ Simulates real-world failure scenarios
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And finally, configuring auto-heal capabilities to automatically restart failed instances without manual intervention.
+search_anchor: finally, configuring auto-heal capabilities to
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -272,6 +337,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts The main concepts we'll explore are: App Settings - These are environment variables that override your application's default configuration.
+search_anchor: Key Concepts The main concepts
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -280,6 +350,11 @@ Environment variables that override defaults
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're perfect for managing settings across different environments without changing your code.
+search_anchor: They're perfect for managing settings
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -297,6 +372,11 @@ Environment variables that override defaults
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're perfect for managing settings across different environments without changing your code.
+search_anchor: They're perfect for managing settings
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -305,6 +385,11 @@ Perfect for managing environments
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're perfect for managing settings across different environments without changing your code.
+search_anchor: They're perfect for managing settings
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -325,6 +410,11 @@ No code changes needed
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Health Checks - These are endpoints in your application that return the health status.
+search_anchor: Health Checks - These are
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -354,6 +444,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service can poll these endpoints and take action when they return error codes.
+search_anchor: App Service can poll these
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -374,6 +469,11 @@ App Service polls and takes action on errors
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And finally, configuring auto-heal capabilities to automatically restart failed instances without manual intervention.
+search_anchor: finally, configuring auto-heal capabilities to
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -382,6 +482,11 @@ Automatically restart failed instances
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Auto-Healing - This feature automatically restarts application instances based on rules you define, such as HTTP errors, slow responses, or memory thresholds.
+search_anchor: Auto-Healing - This feature automatically
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -390,6 +495,11 @@ Based on rules you define:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Auto-Healing - This feature automatically restarts application instances based on rules you define, such as HTTP errors, slow responses, or memory thresholds.
+search_anchor: Auto-Healing - This feature automatically
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-8">
@@ -409,6 +519,11 @@ Based on rules you define:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And finally, configuring auto-heal capabilities to automatically restart failed instances without manual intervention.
+search_anchor: finally, configuring auto-heal capabilities to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -429,6 +544,11 @@ No manual intervention required
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, scaling your application to multiple instances.
+search_anchor: Third, scaling your application to
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -459,6 +579,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, scaling your application to multiple instances.
+search_anchor: Third, scaling your application to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -480,6 +605,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see these features in action.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -488,6 +618,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see these features in action.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

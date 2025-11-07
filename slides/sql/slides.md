@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore the various SQL Server options available in Azure and learn how to work with them using both the Azure Portal and the Azure CLI.
+search_anchor: this session, we'll explore the
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Multiple SQL Server Services
 
+<!--
+METADATA:
+sentence: This option automatically pauses when not in use and resumes on demand, making it cost-effective for applications with unpredictable or intermittent usage patterns.
+search_anchor: This option automatically pauses when
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-8">
@@ -73,6 +83,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -125,6 +140,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding when to use each option is crucial for the AZ-204 exam: For a new app with occasional SQL usage, you'd choose a serverless SQL Database.
+search_anchor: Understanding when to use each
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -133,6 +153,11 @@ Perfect for new apps with occasional usage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This option automatically pauses when not in use and resumes on demand, making it cost-effective for applications with unpredictable or intermittent usage patterns.
+search_anchor: This option automatically pauses when
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -148,6 +173,11 @@ Perfect for new apps with occasional usage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This option automatically pauses when not in use and resumes on demand, making it cost-effective for applications with unpredictable or intermittent usage patterns.
+search_anchor: This option automatically pauses when
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -168,6 +198,11 @@ Cost-effective for unpredictable workloads
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -176,6 +211,11 @@ When you need:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-10 flex items-center gap-4">
@@ -185,6 +225,11 @@ When you need:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -194,6 +239,11 @@ When you need:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -203,6 +253,11 @@ When you need:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -247,6 +302,11 @@ graph TB
 
 # Important: SQL Server Cost
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -263,6 +323,11 @@ NO COST
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This option automatically pauses when not in use and resumes on demand, making it cost-effective for applications with unpredictable or intermittent usage patterns.
+search_anchor: This option automatically pauses when
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -271,6 +336,11 @@ You only pay for the databases inside it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -289,6 +359,11 @@ layout: section
 
 # What We'll Cover
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -298,6 +373,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -307,6 +387,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -316,6 +401,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -325,6 +415,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -338,6 +433,11 @@ layout: section
 
 # SQL Server Naming
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -358,6 +458,11 @@ myserver.database.windows.net
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -377,6 +482,11 @@ myserver.database.windows.net
 
 # Authentication
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -389,6 +499,11 @@ myserver.database.windows.net
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -414,6 +529,11 @@ myserver.database.windows.net
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -440,6 +560,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure SQL - Introduction Overview Welcome to this module on Azure SQL.
+search_anchor: Azure SQL - Introduction Overview
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -461,6 +586,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is an important distinction from on-premises SQL Server.
+search_anchor: This is an important distinction
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -469,6 +599,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore the various SQL Server options available in Azure and learn how to work with them using both the Azure Portal and the Azure CLI.
+search_anchor: this session, we'll explore the
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

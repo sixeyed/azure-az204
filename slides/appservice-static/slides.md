@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # App Service Capabilities
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -73,6 +83,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this lab, we'll explore two different approaches for hosting static web content in Azure.
+search_anchor: this lab, we'll explore two
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -81,6 +96,11 @@ But there's a simpler option for static content
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Static Web Apps is a service designed specifically for modern web applications that consist of static content - HTML, CSS, JavaScript - and optionally serverless API backends.
+search_anchor: Azure Static Web Apps is
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -107,6 +127,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -115,6 +140,11 @@ Designed for modern web applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Static Web Apps is a service designed specifically for modern web applications that consist of static content - HTML, CSS, JavaScript - and optionally serverless API backends.
+search_anchor: Azure Static Web Apps is
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-8">
@@ -134,6 +164,11 @@ Designed for modern web applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Static Web Apps is a service designed specifically for modern web applications that consist of static content - HTML, CSS, JavaScript - and optionally serverless API backends.
+search_anchor: Azure Static Web Apps is
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -146,6 +181,11 @@ Plus optional serverless API backends
 
 # Deployment Model
 
+<!--
+METADATA:
+sentence: Unlike traditional App Service deployments, Static Web Apps are deployed directly from a Git repository, with automated build and deployment workflows managed through GitHub Actions or Azure DevOps.
+search_anchor: Unlike traditional App Service deployments
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -175,6 +215,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Unlike traditional App Service deployments, Static Web Apps are deployed directly from a Git repository, with automated build and deployment workflows managed through GitHub Actions or Azure DevOps.
+search_anchor: Unlike traditional App Service deployments
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -183,6 +228,11 @@ Automated build and deployment workflows
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Unlike traditional App Service deployments, Static Web Apps are deployed directly from a Git repository, with automated build and deployment workflows managed through GitHub Actions or Azure DevOps.
+search_anchor: Unlike traditional App Service deployments
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -201,6 +251,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -213,6 +268,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Continuous Deployment - You'll make changes to your content and see how GitHub Actions automatically deploy those changes to your live site.
+search_anchor: Continuous Deployment - You'll make
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -225,6 +285,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -237,6 +302,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Mixed Content Scenarios - You'll deploy a Node.js application that serves both static content and dynamic endpoints, exploring how to handle authentication and identity providers.
+search_anchor: Mixed Content Scenarios - You'll
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -259,6 +329,11 @@ layout: section
 
 # What You Need
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -268,6 +343,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -277,6 +357,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this lab, we'll explore two different approaches for hosting static web content in Azure.
+search_anchor: this lab, we'll explore two
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -286,6 +371,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -305,12 +395,22 @@ layout: section
 
 # Static Web Apps vs App Service
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-4 text-lg font-bold text-blue-400">Static Web Apps:</div>
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Unlike traditional App Service deployments, Static Web Apps are deployed directly from a Git repository, with automated build and deployment workflows managed through GitHub Actions or Azure DevOps.
+search_anchor: Unlike traditional App Service deployments
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -322,6 +422,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -333,6 +438,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -344,6 +454,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -355,6 +470,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -370,12 +490,22 @@ layout: section
 
 # App Service with Static Content
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-4 text-lg font-bold text-purple-400">App Service:</div>
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Continuous Deployment - You'll make changes to your content and see how GitHub Actions automatically deploy those changes to your live site.
+search_anchor: Continuous Deployment - You'll make
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -387,6 +517,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -398,6 +533,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -409,6 +549,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -420,6 +565,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Static Web Apps - Introduction Welcome to this lab on Azure Static Web Apps and App Service for static content.
+search_anchor: App Service for Static Web
+-->
 <v-click>
 
 <div class="mt-2 flex items-start gap-3">
@@ -458,6 +608,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Continuous Deployment - You'll make changes to your content and see how GitHub Actions automatically deploy those changes to your live site.
+search_anchor: Continuous Deployment - You'll make
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -479,6 +634,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Web Apps?
+search_anchor: What are Static Web Apps
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -487,6 +647,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this lab, we'll explore two different approaches for hosting static web content in Azure.
+search_anchor: this lab, we'll explore two
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

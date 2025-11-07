@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Building Custom VM Images - Introduction Script Opening Welcome to this lab on building custom VM images in Azure.
+search_anchor: Building Custom VM Images -
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by creating our base VM.
+search_anchor: Let's get started by creating
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Building Custom VM Images - Introduction Script Opening Welcome to this lab on building custom VM images in Azure.
+search_anchor: Building Custom VM Images -
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

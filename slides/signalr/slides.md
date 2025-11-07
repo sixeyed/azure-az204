@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: This is where Azure SignalR Service comes in.
+search_anchor: This is where Azure SignalR
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: SignalR is a technology designed for two-way communication over the internet.
+search_anchor: SignalR is a technology designed
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -62,6 +72,11 @@ Real-time, two-way communication over internet
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It allows web applications to push updates to browsers in real-time, supporting asynchronous delivery to the front end.
+search_anchor: It allows web applications to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -93,6 +108,11 @@ graph LR
 
 # Use Cases
 
+<!--
+METADATA:
+sentence: Think of scenarios like live chat applications, real-time dashboards, collaborative editing tools, or live notification systems - all of these benefit from SignalR's capabilities.
+search_anchor: Think of scenarios like live
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-8">
@@ -112,6 +132,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: SignalR is Microsoft's customization of WebSockets for .NET.
+search_anchor: SignalR is Microsoft's customization of
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-8">
@@ -135,6 +160,11 @@ graph LR
 
 # Microsoft's WebSockets for .NET
 
+<!--
+METADATA:
+sentence: SignalR is Microsoft's customization of WebSockets for .NET.
+search_anchor: SignalR is Microsoft's customization of
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -143,6 +173,11 @@ SignalR is Microsoft's customization of WebSockets
 
 </v-click>
 
+<!--
+METADATA:
+sentence: SignalR is Microsoft's customization of WebSockets for .NET.
+search_anchor: SignalR is Microsoft's customization of
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -161,6 +196,11 @@ layout: section
 
 # Self-Hosted Problem
 
+<!--
+METADATA:
+sentence: When you run SignalR in your own application server, each server instance maintains its own list of connected clients.
+search_anchor: When you run SignalR in
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -188,6 +228,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: User B never sees the message because they're connected to a different server instance.
+search_anchor: User B never sees the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -200,6 +245,11 @@ User A's message doesn't reach User B
 
 # The Disconnect
 
+<!--
+METADATA:
+sentence: User A connects to Server One, and User B connects to Server Two.
+search_anchor: User A connects to Server
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -208,6 +258,11 @@ User A connects to Server One
 
 </v-click>
 
+<!--
+METADATA:
+sentence: User A connects to Server One, and User B connects to Server Two.
+search_anchor: User A connects to Server
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -216,6 +271,11 @@ User B connects to Server Two
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When User A sends a message, Server One broadcasts it - but only to clients connected to Server One.
+search_anchor: When User A sends a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-orange-400">
@@ -224,6 +284,11 @@ User A sends message
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When User A sends a message, Server One broadcasts it - but only to clients connected to Server One.
+search_anchor: When User A sends a
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -232,6 +297,11 @@ Server One broadcasts to its clients only
 
 </v-click>
 
+<!--
+METADATA:
+sentence: User B never sees the message because they're connected to a different server instance.
+search_anchor: User B never sees the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -258,6 +328,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure SignalR Service Azure SignalR Service moves SignalR functionality into its own managed component.
+search_anchor: Azure SignalR Service Azure SignalR
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -293,6 +368,11 @@ graph TB
 
 # How It Works
 
+<!--
+METADATA:
+sentence: The SignalR Service handles all client connections centrally.
+search_anchor: SignalR Service handles all client
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -301,6 +381,11 @@ App doesn't handle client connections directly
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Instead of your web application dealing with client connections directly, it simply sends update notifications to the SignalR Service.
+search_anchor: Instead of your web application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -309,6 +394,11 @@ Simply sends notifications to SignalR Service
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The service then broadcasts that message to all connected clients, whether they're connected through the same server or different instances.
+search_anchor: service then broadcasts that message
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -317,6 +407,11 @@ Service broadcasts to all connected clients
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The service acts as a central hub that broadcasts messages to all connected clients, regardless of which web server they originally connected through.
+search_anchor: service acts as a central
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -329,6 +424,11 @@ Regardless of which web server they connected through
 
 # Three Key Benefits
 
+<!--
+METADATA:
+sentence: This architecture provides several key benefits: First, scalability - you can run as many web server instances as needed without worrying about connection management.
+search_anchor: This architecture provides several key
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -343,6 +443,11 @@ Regardless of which web server they connected through
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, simplified infrastructure - you don't need to maintain additional backend infrastructure for managing client state across servers.
+search_anchor: Second, simplified infrastructure - you
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -356,6 +461,11 @@ Regardless of which web server they connected through
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, Azure-managed reliability - the service is fully managed by Azure, providing high availability and automatic scaling.
+search_anchor: Third, Azure-managed reliability - the
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -379,6 +489,11 @@ layout: section
 
 # Two Approaches
 
+<!--
+METADATA:
+sentence: You can use connection strings with access keys for quick setup and testing.
+search_anchor: You can use connection strings
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -391,6 +506,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For production scenarios, you'll want to use Managed Identities, which eliminate the need to store sensitive credentials in your application configuration.
+search_anchor: production scenarios, you'll want to
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -404,6 +524,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For production scenarios, you'll want to use Managed Identities, which eliminate the need to store sensitive credentials in your application configuration.
+search_anchor: production scenarios, you'll want to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -422,6 +547,11 @@ layout: section
 
 # Broadcasting, Not Persistence
 
+<!--
+METADATA:
+sentence: Important Distinction One critical thing to understand: SignalR Service is for real-time broadcasting, not data persistence.
+search_anchor: Important Distinction One critical thing
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-orange-400">
@@ -430,6 +560,11 @@ SignalR Service is for real-time broadcasting
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Important Distinction One critical thing to understand: SignalR Service is for real-time broadcasting, not data persistence.
+search_anchor: Important Distinction One critical thing
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -438,6 +573,11 @@ NOT data persistence
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When clients disconnect and reconnect, previous messages are not automatically restored.
+search_anchor: When clients disconnect and reconnect
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -446,6 +586,11 @@ Clients disconnect and reconnect
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When clients disconnect and reconnect, previous messages are not automatically restored.
+search_anchor: When clients disconnect and reconnect
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -454,6 +599,11 @@ Previous messages not automatically restored
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If your application needs to maintain state - like preserving chat history - you'll need to implement that separately using a database or other storage solution.
+search_anchor: If your application needs to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -472,6 +622,11 @@ layout: section
 
 # Hands-On Lab
 
+<!--
+METADATA:
+sentence: The Scaling Challenge Here's the problem: imagine you're running a chat application with two web servers.
+search_anchor: Scaling Challenge Here's the problem
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -481,6 +636,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Scaling Challenge Here's the problem: imagine you're running a chat application with two web servers.
+search_anchor: Scaling Challenge Here's the problem
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -490,6 +650,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where Azure SignalR Service comes in.
+search_anchor: This is where Azure SignalR
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -499,6 +664,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll deploy the application to Azure App Service and configure secure authentication using Managed Identities.
+search_anchor: We'll deploy the application to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -508,6 +678,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll deploy the application to Azure App Service and configure secure authentication using Managed Identities.
+search_anchor: We'll deploy the application to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -530,6 +705,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with the practical exercises.
+search_anchor: Let's get started with the
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -538,6 +718,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Azure enables real-time, two-way communication between web applications and clients.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

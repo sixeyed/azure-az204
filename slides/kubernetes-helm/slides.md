@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: At its core, Helm is a package manager for Kubernetes applications.
+search_anchor: its core, Helm is a
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Just like how you use apt or yum for Linux packages, or npm for JavaScript, Helm manages Kubernetes applications.
+search_anchor: Just like how you use
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Like apt, yum, or npm
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Just like how you use apt or yum for Linux packages, or npm for JavaScript, Helm manages Kubernetes applications.
+search_anchor: Just like how you use
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -96,6 +111,11 @@ Like apt, yum, or npm
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But Helm does more than just package management - it adds a powerful templating layer on top of standard Kubernetes YAML.
+search_anchor: But Helm does more than
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -104,6 +124,11 @@ Adds powerful templating layer
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But Helm does more than just package management - it adds a powerful templating layer on top of standard Kubernetes YAML.
+search_anchor: But Helm does more than
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -112,6 +137,11 @@ On top of standard Kubernetes YAML
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means you can use variables, functions, and logic to create flexible, reusable application definitions.
+search_anchor: This means you can use
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -131,6 +161,11 @@ On top of standard Kubernetes YAML
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means you can use variables, functions, and logic to create flexible, reusable application definitions.
+search_anchor: This means you can use
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -143,6 +178,11 @@ Flexible, reusable application definitions
 
 # Client-Side Only
 
+<!--
+METADATA:
+sentence: From version 3 onwards, Helm is purely a client-side tool.
+search_anchor: From version 3 onwards, Helm
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -151,6 +191,11 @@ From Helm v3 onwards
 
 </v-click>
 
+<!--
+METADATA:
+sentence: From version 3 onwards, Helm is purely a client-side tool.
+search_anchor: From version 3 onwards, Helm
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -174,6 +219,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You just install the CLI, and you're ready to go - no server components needed in your cluster.
+search_anchor: You just install the CLI
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -182,6 +232,11 @@ Just install CLI and go
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You just install the CLI, and you're ready to go - no server components needed in your cluster.
+search_anchor: You just install the CLI
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -208,6 +263,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 2: Helm Charts (30 seconds) [SCREEN: Show chart structure diagram] In Helm, application packages are called "charts." A chart is basically a collection of files that describe a set of Kubernetes resources.
+search_anchor: --- Slide 2: Helm Charts
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -216,6 +276,11 @@ Charts: collection of files describing Kubernetes resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Organizations also create private repositories for their own applications.
+search_anchor: Organizations also create private repositories
+-->
 <v-click>
 
 <div class="mt-12 flex items-start gap-4">
@@ -228,6 +293,11 @@ Charts: collection of files describing Kubernetes resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: From version 3 onwards, Helm is purely a client-side tool.
+search_anchor: From version 3 onwards, Helm
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -240,6 +310,11 @@ Charts: collection of files describing Kubernetes resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of Helm as the App Store for Kubernetes - it makes deploying and managing applications much simpler.
+search_anchor: Think of Helm as the
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -256,6 +331,11 @@ Charts: collection of files describing Kubernetes resources
 
 # Small Downloads
 
+<!--
+METADATA:
+sentence: From version 3 onwards, Helm is purely a client-side tool.
+search_anchor: From version 3 onwards, Helm
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -282,6 +362,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The actual container images still get pulled from your regular image registry.
+search_anchor: actual container images still get
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -300,6 +385,11 @@ layout: section
 
 # Installing Charts
 
+<!--
+METADATA:
+sentence: At its core, Helm is a package manager for Kubernetes applications.
+search_anchor: its core, Helm is a
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -327,6 +417,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: At its core, Helm is a package manager for Kubernetes applications.
+search_anchor: its core, Helm is a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -335,6 +430,11 @@ Each release has unique name
 
 </v-click>
 
+<!--
+METADATA:
+sentence: At its core, Helm is a package manager for Kubernetes applications.
+search_anchor: its core, Helm is a
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -347,6 +447,11 @@ Becomes part of Kubernetes object names
 
 # Multiple Installations
 
+<!--
+METADATA:
+sentence: This is powerful because you can install the same application multiple times in the same cluster with different configurations.
+search_anchor: This is powerful because you
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -355,6 +460,11 @@ Install same application multiple times
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is powerful because you can install the same application multiple times in the same cluster with different configurations.
+search_anchor: This is powerful because you
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -363,6 +473,11 @@ In same cluster with different configurations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, you might deploy different versions for testing, staging, and production - all from the same chart.
+search_anchor: example, you might deploy different
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -382,6 +497,11 @@ In same cluster with different configurations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, you might deploy different versions for testing, staging, and production - all from the same chart.
+search_anchor: example, you might deploy different
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -408,6 +528,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 4: Helm Repositories (25 seconds) [SCREEN: Show repository concept diagram] Charts can be stored in repositories - think of these like Docker Hub, but for Helm charts.
+search_anchor: --- Slide 4: Helm Repositories
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -416,6 +541,11 @@ Think Docker Hub, but for Helm charts
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Organizations also create private repositories for their own applications.
+search_anchor: Organizations also create private repositories
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -437,6 +567,11 @@ Think Docker Hub, but for Helm charts
 
 # Popular Charts
 
+<!--
+METADATA:
+sentence: You can use public repositories to access community-maintained charts for popular applications like Nginx, Prometheus, or MongoDB.
+search_anchor: You can use public repositories
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-8">
@@ -456,6 +591,11 @@ Think Docker Hub, but for Helm charts
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Adding a repository is simple - just one command, and you can search and install charts from it.
+search_anchor: Adding a repository is simple
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -476,6 +616,11 @@ helm repo add stable https://charts.helm.sh/stable
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Adding a repository is simple - just one command, and you can search and install charts from it.
+search_anchor: Adding a repository is simple
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -494,6 +639,11 @@ layout: section
 
 # Key Exam Areas
 
+<!--
+METADATA:
+sentence: At its core, Helm is a package manager for Kubernetes applications.
+search_anchor: its core, Helm is a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -503,6 +653,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, you might deploy different versions for testing, staging, and production - all from the same chart.
+search_anchor: example, you might deploy different
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -512,6 +667,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: From version 3 onwards, Helm is purely a client-side tool.
+search_anchor: From version 3 onwards, Helm
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -521,6 +681,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: (30 seconds) [SCREEN: Show Helm logo and basic definition] So what exactly is Helm?
+search_anchor: (30 seconds) [SCREEN: Show Helm
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -534,6 +699,11 @@ layout: section
 
 # DevOps Practices
 
+<!--
+METADATA:
+sentence: Helm demonstrates important DevOps practices like infrastructure as code and deployment automation - concepts that appear throughout the exam.
+search_anchor: Helm demonstrates important DevOps practices
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -549,6 +719,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Helm demonstrates important DevOps practices like infrastructure as code and deployment automation - concepts that appear throughout the exam.
+search_anchor: Helm demonstrates important DevOps practices
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -567,6 +742,11 @@ layout: section
 
 # Hands-On Exercises
 
+<!--
+METADATA:
+sentence: Organizations also create private repositories for their own applications.
+search_anchor: Organizations also create private repositories
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -576,6 +756,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 1: What is Helm?
+search_anchor: --- Slide 1: What is
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -585,6 +770,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: At its core, Helm is a package manager for Kubernetes applications.
+search_anchor: its core, Helm is a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -594,6 +784,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 1: What is Helm?
+search_anchor: --- Slide 1: What is
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -615,6 +810,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 1: What is Helm?
+search_anchor: --- Slide 1: What is
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -623,6 +823,11 @@ Let's Dive In!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: At its core, Helm is a package manager for Kubernetes applications.
+search_anchor: its core, Helm is a
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

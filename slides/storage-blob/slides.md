@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: --- What is Azure Blob Storage?
+search_anchor: --- What is Azure Blob
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a massively scalable cloud-based file storage system - similar to Dropbox, but designed specifically for applications.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -62,6 +72,11 @@ Massively scalable cloud-based file storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a massively scalable cloud-based file storage system - similar to Dropbox, but designed specifically for applications.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -70,6 +85,11 @@ Similar to Dropbox
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a massively scalable cloud-based file storage system - similar to Dropbox, but designed specifically for applications.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -82,6 +102,11 @@ But designed specifically for applications
 
 # Storage Backend for Apps
 
+<!--
+METADATA:
+sentence: While you could use Blob Storage for personal file storage, its real power comes from being a storage backend for your applications.
+search_anchor: While you could use Blob
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -90,6 +115,11 @@ Could use for personal file storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, application data and logs.
+search_anchor: Third, application data and logs
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -98,6 +128,11 @@ Real power: application storage backend
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When your users need to upload files - whether that's images, documents, videos, or any other type of file - Blob Storage is the answer.
+search_anchor: When your users need to
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -127,6 +162,11 @@ layout: section
 
 # Database Limitations
 
+<!--
+METADATA:
+sentence: Append blobs are optimized for append operations, making them perfect for logs.
+search_anchor: Append blobs are optimized for
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-red-400">
@@ -135,6 +175,11 @@ Databases not optimized for large binary files
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Why Not Use a Database?
+search_anchor: --- Why Not Use a
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -144,6 +189,11 @@ Databases not optimized for large binary files
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Storing files in a relational database can quickly bloat your database size, slow down queries, and increase costs significantly.
+search_anchor: Storing files in a relational
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -153,6 +203,11 @@ Databases not optimized for large binary files
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Storing files in a relational database can quickly bloat your database size, slow down queries, and increase costs significantly.
+search_anchor: Storing files in a relational
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -162,6 +217,11 @@ Databases not optimized for large binary files
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- What is Azure Blob Storage?
+search_anchor: --- What is Azure Blob
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -174,6 +234,11 @@ Blob Storage is purpose-built for files
 
 # Optimized for Files
 
+<!--
+METADATA:
+sentence: --- Why Not Use a Database?
+search_anchor: --- Why Not Use a
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -203,6 +268,11 @@ layout: section
 
 # Real-World Applications
 
+<!--
+METADATA:
+sentence: When users upload profile pictures, documents, or videos to your application, those files should go into Blob Storage.
+search_anchor: When users upload profile pictures
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -216,6 +286,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, static website hosting.
+search_anchor: Second, static website hosting
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -229,6 +304,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, application data and logs.
+search_anchor: Third, application data and logs
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -242,6 +322,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Serve video and audio files directly to browsers or media players.
+search_anchor: Serve video and audio files
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -265,6 +350,11 @@ layout: section
 
 # Blob Types
 
+<!--
+METADATA:
+sentence: Block blobs are the most common - these are for text and binary data.
+search_anchor: Block blobs are the most
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -277,6 +367,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Append blobs are optimized for append operations, making them perfect for logs.
+search_anchor: Append blobs are optimized for
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -289,6 +384,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Page blobs are designed for random read and write operations, which is why they're used for virtual hard disk files.
+search_anchor: Page blobs are designed for
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -305,6 +405,11 @@ layout: section
 
 # Access Tiers
 
+<!--
+METADATA:
+sentence: The Hot tier is for frequently accessed data - it's fast but more expensive for storage.
+search_anchor: Hot tier is for frequently
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -318,6 +423,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Cool tier is for data you access infrequently, stored for at least 30 days - it costs less to store but more to access.
+search_anchor: Cool tier is for data
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -331,6 +441,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Archive tier is for data you rarely access, stored for at least 180 days - this is the cheapest option, but accessing archived data can take hours.
+search_anchor: Archive tier is for data
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -348,6 +463,11 @@ layout: section
 
 # Security and Access Control
 
+<!--
+METADATA:
+sentence: You can use Shared Access Signatures, or SAS tokens, to provide time-limited access to specific blobs without sharing your storage account keys.
+search_anchor: You can use Shared Access
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -361,6 +481,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Stored access policies give you even more control by allowing you to revoke access tokens.
+search_anchor: Stored access policies give you
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -373,6 +498,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And Azure AD integration provides enterprise-grade identity-based access control.
+search_anchor: Azure AD integration provides enterprise-grade
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -389,6 +519,11 @@ layout: section
 
 # Lifecycle Management
 
+<!--
+METADATA:
+sentence: Third, application data and logs.
+search_anchor: Third, application data and logs
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -416,6 +551,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is crucial for cost optimization.
+search_anchor: This is crucial for cost
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -434,6 +574,11 @@ layout: section
 
 # Hands-On Experience
 
+<!--
+METADATA:
+sentence: Third, application data and logs.
+search_anchor: Third, application data and logs
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -443,6 +588,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Serve video and audio files directly to browsers or media players.
+search_anchor: Serve video and audio files
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -452,6 +602,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, application data and logs.
+search_anchor: Third, application data and logs
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -461,6 +616,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure offers three access tiers.
+search_anchor: Azure offers three access tiers
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -470,6 +630,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure offers three access tiers.
+search_anchor: Azure offers three access tiers
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -483,6 +648,11 @@ layout: section
 
 # Advanced Topics
 
+<!--
+METADATA:
+sentence: The exam-focused content will dive deeper into metadata management, lifecycle policies, blob versioning, and static website hosting - all topics that frequently appear on the AZ-204 exam.
+search_anchor: exam-focused content will dive deeper
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-8">
@@ -498,6 +668,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, static website hosting.
+search_anchor: Second, static website hosting
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-8">
@@ -523,6 +698,11 @@ layout: section
 
 # Exam Weight
 
+<!--
+METADATA:
+sentence: --- Why Not Use a Database?
+search_anchor: --- Why Not Use a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -531,6 +711,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- What is Azure Blob Storage?
+search_anchor: --- What is Azure Blob
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -539,6 +724,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure offers three access tiers.
+search_anchor: Azure offers three access tiers
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -547,6 +737,11 @@ Frequent exam questions about:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see questions about when to use which blob type, how to implement lifecycle policies, how to secure blob access with SAS tokens, and how to optimize costs with access tiers.
+search_anchor: You'll see questions about when
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -570,6 +765,11 @@ Frequent exam questions about:
 
 # Fundamental Skill
 
+<!--
+METADATA:
+sentence: Almost every cloud application needs to handle file storage at some point, and Blob Storage is Azure's answer to that need.
+search_anchor: Almost every cloud application needs
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -578,6 +778,11 @@ Almost every cloud application needs file storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- What is Azure Blob Storage?
+search_anchor: --- What is Azure Blob
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -586,6 +791,11 @@ Blob Storage is Azure's answer
 
 </v-click>
 
+<!--
+METADATA:
+sentence: More importantly, understanding Blob Storage is fundamental to building real-world Azure solutions.
+search_anchor: More importantly, understanding Blob Storage
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -614,6 +824,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with Azure Blob Storage!
+search_anchor: Let's get started with Azure
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -622,6 +837,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- What is Azure Blob Storage?
+search_anchor: --- What is Azure Blob
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

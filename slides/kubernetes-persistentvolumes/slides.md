@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: A Persistent Volume Claim is your application's request for storage.
+search_anchor: Persistent Volume Claim is your
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By default, when a container writes data to its filesystem, that data lives inside the container.
+search_anchor: By default, when a container
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Container writes data to filesystem
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By default, when a container writes data to its filesystem, that data lives inside the container.
+search_anchor: By default, when a container
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -70,6 +85,11 @@ Data lives inside container
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When the container restarts or gets replaced, all that data disappears.
+search_anchor: When the container restarts or
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -101,6 +121,11 @@ graph LR
 
 # Not Good for Production
 
+<!--
+METADATA:
+sentence: Imagine running a database where all your data vanishes every time a pod restarts.
+search_anchor: Imagine running a database where
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -109,6 +134,11 @@ Imagine a database where all data vanishes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Imagine running a database where all your data vanishes every time a pod restarts.
+search_anchor: Imagine running a database where
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-red-400">
@@ -117,6 +147,11 @@ Every time a pod restarts
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We need storage that persists beyond the lifecycle of individual containers and pods.
+search_anchor: We need storage that persists
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -125,6 +160,11 @@ We need storage that persists
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We need storage that persists beyond the lifecycle of individual containers and pods.
+search_anchor: We need storage that persists
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -151,6 +191,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The application doesn't need to know if that's an Azure Disk, an AWS EBS volume, or local storage.
+search_anchor: application doesn't need to know
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -159,6 +204,11 @@ Application doesn't need to know infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Instead of your application having to know whether it's running on AWS, Azure, or on-premises hardware, Kubernetes provides a clean separation between storage consumers and storage providers.
+search_anchor: Instead of your application having
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -167,6 +217,11 @@ Running on AWS, Azure, or on-premises?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The application doesn't need to know if that's an Azure Disk, an AWS EBS volume, or local storage.
+search_anchor: application doesn't need to know
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl opacity-70">
@@ -199,6 +254,11 @@ graph TB
 
 # Two Key Resources
 
+<!--
+METADATA:
+sentence: Think of it like this: a Persistent Volume is the actual storage resource, like a disk or network file share.
+search_anchor: Think of it like this
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -213,6 +273,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A Persistent Volume Claim is your application's request for storage.
+search_anchor: Persistent Volume Claim is your
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -227,6 +292,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your application says "I need 100 gigabytes of storage with read-write access" and Kubernetes handles the rest.
+search_anchor: Your application says "I need
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -239,6 +309,11 @@ Kubernetes handles the rest
 
 # Portable Applications
 
+<!--
+METADATA:
+sentence: Your application says "I need 100 gigabytes of storage with read-write access" and Kubernetes handles the rest.
+search_anchor: Your application says "I need
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -247,6 +322,11 @@ Application says: "I need storage"
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The application doesn't need to know if that's an Azure Disk, an AWS EBS volume, or local storage.
+search_anchor: application doesn't need to know
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -255,6 +335,11 @@ Not: "Give me an Azure Disk"
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This abstraction is powerful because it keeps your application portable.
+search_anchor: This abstraction is powerful because
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -263,6 +348,11 @@ Abstraction keeps applications portable
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You don't need to pre-create volumes.
+search_anchor: You don't need to pre-create
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -292,6 +382,11 @@ layout: section
 
 # Multiple Storage Options
 
+<!--
+METADATA:
+sentence: Storage Classes define these different types of storage available in your cluster.
+search_anchor: Storage Classes define these different
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -300,6 +395,11 @@ Production clusters have different storage types
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You might have fast SSD storage for databases, slower but cheaper storage for backups, or shared file systems for applications that need concurrent access.
+search_anchor: You might have fast SSD
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -322,6 +422,11 @@ Production clusters have different storage types
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Storage Classes define these different types of storage available in your cluster.
+search_anchor: Storage Classes define these different
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -355,6 +460,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You don't need to pre-create volumes.
+search_anchor: You don't need to pre-create
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -363,6 +473,11 @@ No need to pre-create volumes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You just describe what you need, and the storage provisioner creates it for you.
+search_anchor: You just describe what you
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -371,6 +486,11 @@ Describe what you need, storage provisioner creates it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes scaling and managing applications much simpler.
+search_anchor: This makes scaling and managing
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -389,6 +509,11 @@ layout: section
 
 # How Storage Can Be Accessed
 
+<!--
+METADATA:
+sentence: Read-Write Once means one node can mount it for reading and writing.
+search_anchor: Read-Write Once means one node
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -402,6 +527,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Read-Only Many allows multiple nodes to mount it read-only.
+search_anchor: Read-Only Many allows multiple nodes
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -415,6 +545,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And Read-Write Many lets multiple nodes mount it with write access.
+search_anchor: Read-Write Many lets multiple nodes
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -428,6 +563,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The mode you choose depends on your application's requirements.
+search_anchor: mode you choose depends on
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -446,6 +586,11 @@ layout: section
 
 # Critical Exam Topics
 
+<!--
+METADATA:
+sentence: The real magic happens with dynamic provisioning.
+search_anchor: real magic happens with dynamic
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -455,6 +600,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A Persistent Volume Claim is your application's request for storage.
+search_anchor: Persistent Volume Claim is your
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -464,6 +614,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This abstraction is powerful because it keeps your application portable.
+search_anchor: This abstraction is powerful because
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -473,6 +628,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Read-Write Once means one node can mount it for reading and writing.
+search_anchor: Read-Write Once means one node
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -486,6 +646,11 @@ layout: section
 
 # What You Need to Know
 
+<!--
+METADATA:
+sentence: The exam expects you to know when to use managed disks versus file shares, how to configure persistent volume claims, and how applications consume persistent storage in AKS.
+search_anchor: exam expects you to know
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -495,6 +660,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A Persistent Volume Claim is your application's request for storage.
+search_anchor: Persistent Volume Claim is your
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -504,6 +674,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A Persistent Volume Claim is your application's request for storage.
+search_anchor: Persistent Volume Claim is your
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -513,6 +688,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll encounter scenarios about stateful applications, data persistence strategies, and choosing the right storage solution for different workload types.
+search_anchor: You'll encounter scenarios about stateful
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -531,6 +711,11 @@ layout: section
 
 # Hands-On Examples
 
+<!--
+METADATA:
+sentence: And Read-Write Many lets multiple nodes mount it with write access.
+search_anchor: Read-Write Many lets multiple nodes
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -540,6 +725,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And Read-Write Many lets multiple nodes mount it with write access.
+search_anchor: Read-Write Many lets multiple nodes
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -549,6 +739,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's obviously not going to work for production applications.
+search_anchor: That's obviously not going to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -558,6 +753,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you request storage, you specify how it can be accessed.
+search_anchor: When you request storage, you
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -567,6 +767,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In the next section, we'll walk through practical examples showing different storage options in action.
+search_anchor: next section, we'll walk through
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -588,6 +793,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Closing (10 seconds) Alright, now that we've covered the concepts, let's get hands-on.
+search_anchor: --- Closing (10 seconds) Alright
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -596,6 +806,11 @@ Let's Get Hands-On!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When your application creates a Persistent Volume Claim, Kubernetes can automatically provision the storage on-demand.
+search_anchor: When your application creates a
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

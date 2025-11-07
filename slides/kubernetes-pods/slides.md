@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Understanding Pods is essential for the AZ-204 exam and for working with Azure Kubernetes Service in the real world.
+search_anchor: Understanding Pods is essential for
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's not the container itself, but rather a wrapper around one or more containers.
+search_anchor: It's not the container itself
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Not the container itself
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's not the container itself, but rather a wrapper around one or more containers.
+search_anchor: It's not the container itself
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -91,6 +106,11 @@ graph TB
 
 # Pod's Job
 
+<!--
+METADATA:
+sentence: The Pod's job is pretty straightforward - it ensures your containers keep running.
+search_anchor: Pod's job is pretty straightforward
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -119,6 +139,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the first layer of high availability that Kubernetes provides.
+search_anchor: This is the first layer
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -137,6 +162,11 @@ layout: section
 
 # What's Inside
 
+<!--
+METADATA:
+sentence: Every Pod gets its own unique IP address within the cluster network.
+search_anchor: Every Pod gets its own
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -149,6 +179,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All containers inside that Pod share the same network namespace, which means they can communicate with each other using localhost.
+search_anchor: All containers inside that Pod
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -162,6 +197,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Pods can also share storage volumes between containers.
+search_anchor: Pods can also share storage
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -199,6 +239,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You should also understand how Pods communicate within a cluster.
+search_anchor: You should also understand how
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -211,6 +256,11 @@ Simplest and most common pattern
 
 # Multi-Container Patterns
 
+<!--
+METADATA:
+sentence: Common patterns include sidecar containers for logging or monitoring, adapter containers that standardize output, and ambassador containers that proxy connections.
+search_anchor: Common patterns include sidecar containers
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -223,6 +273,11 @@ Simplest and most common pattern
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Common patterns include sidecar containers for logging or monitoring, adapter containers that standardize output, and ambassador containers that proxy connections.
+search_anchor: Common patterns include sidecar containers
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -235,6 +290,11 @@ Simplest and most common pattern
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Common patterns include sidecar containers for logging or monitoring, adapter containers that standardize output, and ambassador containers that proxy connections.
+search_anchor: Common patterns include sidecar containers
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -247,6 +307,11 @@ Simplest and most common pattern
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key thing to remember is that containers in the same Pod are always scheduled together on the same node.
+search_anchor: key thing to remember is
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -284,6 +349,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They start in a Pending state while Kubernetes schedules them and pulls the container images.
+search_anchor: They start in a Pending
+-->
 <v-click>
 
 <div class="mt-12 flex items-start gap-4">
@@ -296,6 +366,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then they move to Running when at least one container is executing.
+search_anchor: Then they move to Running
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -308,6 +383,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Eventually, they'll reach a terminal state - either Succeeded if all containers completed successfully, or Failed if any container terminated with an error.
+search_anchor: Eventually, they'll reach a terminal
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -324,6 +404,11 @@ graph LR
 
 # Understanding Lifecycle
 
+<!--
+METADATA:
+sentence: Understanding this lifecycle is crucial for troubleshooting.
+search_anchor: Understanding this lifecycle is crucial
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -332,6 +417,11 @@ Crucial for troubleshooting
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding this lifecycle is crucial for troubleshooting.
+search_anchor: Understanding this lifecycle is crucial
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -361,6 +451,11 @@ layout: section
 
 # kubectl Commands
 
+<!--
+METADATA:
+sentence: Common operations include deploying Pods from YAML files, checking their status, viewing logs, and even executing commands inside running containers.
+search_anchor: Common operations include deploying Pods
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -370,6 +465,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of a Pod as the smallest deployable unit in Kubernetes.
+search_anchor: Think of a Pod as
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -388,6 +488,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Pods can also share storage volumes between containers.
+search_anchor: Pods can also share storage
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -401,6 +506,11 @@ layout: section
 
 # Declarative Approach
 
+<!--
+METADATA:
+sentence: You describe the desired state, and Kubernetes works to maintain it.
+search_anchor: You describe the desired state
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -426,6 +536,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The declarative approach using YAML is what makes Kubernetes powerful.
+search_anchor: declarative approach using YAML is
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -444,6 +559,11 @@ layout: section
 
 # What You Need to Know
 
+<!--
+METADATA:
+sentence: Ready to see Pods in action?
+search_anchor: Ready to see Pods in
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -453,6 +573,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding this lifecycle is crucial for troubleshooting.
+search_anchor: Understanding this lifecycle is crucial
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -462,6 +587,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- SLIDE 2: What is a Pod?
+search_anchor: --- SLIDE 2: What is
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -471,6 +601,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- SLIDE 2: What is a Pod?
+search_anchor: --- SLIDE 2: What is
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -480,6 +615,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You should also understand how Pods communicate within a cluster.
+search_anchor: You should also understand how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -493,6 +633,11 @@ layout: section
 
 # Foundation Knowledge
 
+<!--
+METADATA:
+sentence: Ready to see Pods in action?
+search_anchor: Ready to see Pods in
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -501,6 +646,11 @@ Pods form the foundation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This knowledge forms the foundation for more advanced topics like Deployments, Services, and StatefulSets that build on top of Pods.
+search_anchor: This knowledge forms the foundation
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -520,6 +670,11 @@ Pods form the foundation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This knowledge forms the foundation for more advanced topics like Deployments, Services, and StatefulSets that build on top of Pods.
+search_anchor: This knowledge forms the foundation
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -538,6 +693,11 @@ layout: section
 
 # Hands-On Exercises
 
+<!--
+METADATA:
+sentence: Ready to see Pods in action?
+search_anchor: Ready to see Pods in
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -547,6 +707,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- [End of intro video]
+search_anchor: --- [End of intro video]
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -556,6 +721,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You should also understand how Pods communicate within a cluster.
+search_anchor: You should also understand how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -565,6 +735,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Today we're diving into one of the most fundamental concepts in Kubernetes - Pods.
+search_anchor: Today we're diving into one
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -574,6 +749,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Ready to see Pods in action?
+search_anchor: Ready to see Pods in
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -595,6 +775,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Ready to see Pods in action?
+search_anchor: Ready to see Pods in
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -603,6 +788,11 @@ Ready to Go!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Today we're diving into one of the most fundamental concepts in Kubernetes - Pods.
+search_anchor: Today we're diving into one
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

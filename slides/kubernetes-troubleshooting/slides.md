@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: If you're preparing for the AZ-204 exam or working with Azure Kubernetes Service in production, this is where theory meets reality.
+search_anchor: If you're preparing for the
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 1: Why Troubleshooting Matters (30 seconds) Here's the thing about Kubernetes - it's incredibly powerful, but it's also complex.
+search_anchor: --- Slide 1: Why Troubleshooting
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Kubernetes is incredibly powerful
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 1: Why Troubleshooting Matters (30 seconds) Here's the thing about Kubernetes - it's incredibly powerful, but it's also complex.
+search_anchor: --- Slide 1: Why Troubleshooting
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -70,6 +85,11 @@ But also complex
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can have perfectly valid specs that still produce a completely broken application.
+search_anchor: You can have perfectly valid
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-orange-400">
@@ -82,6 +102,11 @@ Valid YAML ≠ Working Application
 
 # Spelling vs Meaning
 
+<!--
+METADATA:
+sentence: When you deploy an application, Kubernetes validates that your YAML syntax is correct, but it doesn't guarantee your app will actually work.
+search_anchor: When you deploy an application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -90,6 +115,11 @@ Kubernetes validates YAML syntax
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Get any of these wrong, and your app becomes unreachable.
+search_anchor: Get any of these wrong
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -115,6 +145,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it like this: Kubernetes checks your spelling and grammar, but not whether your sentences make sense.
+search_anchor: Think of it like this
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -127,6 +162,11 @@ Checks spelling and grammar, not meaning
 
 # Time Investment
 
+<!--
+METADATA:
+sentence: And trust me, you'll spend a significant amount of your time tracking down these issues.
+search_anchor: trust me, you'll spend a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -135,6 +175,11 @@ You'll spend significant time tracking down issues
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your mission: diagnose the problems and fix them until the app runs successfully.
+search_anchor: Your mission: diagnose the problems
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -164,6 +209,11 @@ layout: section
 
 # Where Things Go Wrong
 
+<!--
+METADATA:
+sentence: Do the selectors match?
+search_anchor: Do the selectors match
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -178,6 +228,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Services route traffic based on selectors and port configurations.
+search_anchor: Services route traffic based on
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -192,6 +247,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, container configuration - image names, commands, resource requests, and health probes.
+search_anchor: Third, container configuration - image
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -210,6 +270,11 @@ layout: section
 
 # Loose Coupling Problem
 
+<!--
+METADATA:
+sentence: These components are loosely coupled.
+search_anchor: These components are loosely coupled
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -218,6 +283,11 @@ Components are loosely coupled
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A typo in one place can break everything, but Kubernetes won't tell you directly what's wrong.
+search_anchor: typo in one place can
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -226,6 +296,11 @@ Typo in one place can break everything
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A typo in one place can break everything, but Kubernetes won't tell you directly what's wrong.
+search_anchor: typo in one place can
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -261,6 +336,11 @@ layout: section
 
 # Essential kubectl Commands
 
+<!--
+METADATA:
+sentence: Let me walk you through the essentials: Start with "kubectl get" - this gives you the high-level status of your resources.
+search_anchor: Let me walk you through
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -275,6 +355,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Next, "kubectl describe" - this is your diagnostic deep-dive.
+search_anchor: Next, "kubectl describe" - this
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -289,6 +374,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Don't forget "kubectl logs" - when your container actually starts but behaves incorrectly, the logs tell you what's happening inside.
+search_anchor: Don't forget "kubectl logs" -
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -303,6 +393,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And finally, "kubectl port-forward" - this lets you bypass the Service layer and connect directly to a Pod, helping you isolate whether the problem is in the container or the networking configuration.
+search_anchor: finally, "kubectl port-forward" - this
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -358,6 +453,11 @@ graph TB
 
 # Start from Top
 
+<!--
+METADATA:
+sentence: Check your Deployment first - did it create a ReplicaSet?
+search_anchor: Check your Deployment first -
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -366,6 +466,11 @@ Check Deployment first
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Did that ReplicaSet create Pods?
+search_anchor: Did that ReplicaSet create Pods
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -374,6 +479,11 @@ Did it create a ReplicaSet?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Did that ReplicaSet create Pods?
+search_anchor: Did that ReplicaSet create Pods
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg">
@@ -382,6 +492,11 @@ Did ReplicaSet create Pods?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Are those Pods actually running?
+search_anchor: Are those Pods actually running
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg">
@@ -390,6 +505,11 @@ Are Pods actually running?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then move to networking.
+search_anchor: Then move to networking
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -402,6 +522,11 @@ Then move to networking
 
 # Avoid Jumping to Conclusions
 
+<!--
+METADATA:
+sentence: This systematic approach keeps you from jumping to conclusions and missing the actual root cause.
+search_anchor: This systematic approach keeps you
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -410,6 +535,11 @@ Systematic approach keeps you from missing root cause
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Did that ReplicaSet create Pods?
+search_anchor: Did that ReplicaSet create Pods
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -439,6 +569,11 @@ layout: section
 
 # What Microsoft Expects
 
+<!--
+METADATA:
+sentence: Then move to networking.
+search_anchor: Then move to networking
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -448,6 +583,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Did that ReplicaSet create Pods?
+search_anchor: Did that ReplicaSet create Pods
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -457,6 +597,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 3: Your Troubleshooting Toolkit (45 seconds) So how do we diagnose these problems?
+search_anchor: --- Slide 3: Your Troubleshooting
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -466,6 +611,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You won't just be writing manifests - you'll be debugging them.
+search_anchor: You won't just be writing
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -478,6 +628,11 @@ Not just writing manifests - debugging them
 
 # Practical Skills
 
+<!--
+METADATA:
+sentence: This lab gives you hands-on practice with the exact scenarios the exam tests.
+search_anchor: This lab gives you hands-on
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -486,6 +641,11 @@ This lab gives hands-on practice
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This lab gives you hands-on practice with the exact scenarios the exam tests.
+search_anchor: This lab gives you hands-on
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -494,6 +654,11 @@ With exact scenarios the exam tests
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your mission: diagnose the problems and fix them until the app runs successfully.
+search_anchor: Your mission: diagnose the problems
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -523,6 +688,11 @@ layout: section
 
 # Broken Application
 
+<!--
+METADATA:
+sentence: In this lab, you'll encounter a broken application with multiple issues.
+search_anchor: this lab, you'll encounter a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-orange-400">
@@ -531,6 +701,11 @@ Application with multiple issues
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your mission: diagnose the problems and fix them until the app runs successfully.
+search_anchor: Your mission: diagnose the problems
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -539,6 +714,11 @@ Your mission: diagnose and fix
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your mission: diagnose the problems and fix them until the app runs successfully.
+search_anchor: Your mission: diagnose the problems
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -547,6 +727,11 @@ Until app runs successfully
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Closing (10 seconds) Alright, let's put this into practice.
+search_anchor: --- Closing (10 seconds) Alright
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -579,6 +764,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then move to networking.
+search_anchor: Then move to networking
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -587,6 +777,11 @@ Ready to Troubleshoot!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Next, "kubectl describe" - this is your diagnostic deep-dive.
+search_anchor: Next, "kubectl describe" - this
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

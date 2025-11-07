@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to work with existing database schemas and deploy them to Azure using Microsoft's data tier application packages.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Problem When you're working with Azure SQL Database, you often start with an empty database.
+search_anchor: Problem When you're working with
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Azure SQL Database starts empty
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's fine if your application uses an ORM like Entity Framework that can create its own schema automatically.
+search_anchor: That's fine if your application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -70,6 +85,11 @@ Fine if using ORM like Entity Framework
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's fine if your application uses an ORM like Entity Framework that can create its own schema automatically.
+search_anchor: That's fine if your application
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -78,6 +98,11 @@ Creates its own schema automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But what if you're working with an existing database?
+search_anchor: But what if you're working
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -90,6 +115,11 @@ But what about existing databases?
 
 # Real-World Scenarios
 
+<!--
+METADATA:
+sentence: This makes it ready for your application to use immediately.
+search_anchor: This makes it ready for
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -99,6 +129,11 @@ But what about existing databases?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What if you have a legacy application, or a database that was designed and developed outside of your application code?
+search_anchor: What if you have a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -108,6 +143,11 @@ But what about existing databases?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You might be migrating from an on-premises SQL Server, or you might be deploying a packaged application that comes with its own database structure.
+search_anchor: You might be migrating from
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -117,6 +157,11 @@ But what about existing databases?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But what if you're working with an existing database?
+search_anchor: But what if you're working
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -126,6 +171,11 @@ But what about existing databases?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Many real-world scenarios require you to deploy a pre-existing database schema to Azure.
+search_anchor: Many real-world scenarios require you
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -152,6 +202,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Solution Microsoft provides a packaging format specifically for this purpose.
+search_anchor: Solution Microsoft provides a packaging
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -191,6 +246,11 @@ layout: section
 
 # Two File Formats
 
+<!--
+METADATA:
+sentence: Think of this as a complete backup of your database - structure and content together.
+search_anchor: Think of this as a
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -206,6 +266,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Dacpac files contain only the database schema - the table definitions, stored procedures, views, and other database objects - but no data.
+search_anchor: Dacpac files contain only the
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -225,6 +290,11 @@ layout: section
 
 # Choose the Right Format
 
+<!--
+METADATA:
+sentence: Dacpac files contain only the database schema - the table definitions, stored procedures, views, and other database objects - but no data.
+search_anchor: Dacpac files contain only the
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -254,6 +324,11 @@ layout: section
 
 # Lab Scenario
 
+<!--
+METADATA:
+sentence: What We'll Build In this lab, we'll take an existing Bacpac file and deploy it to Azure SQL Database.
+search_anchor: What We'll Build In this
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -262,6 +337,11 @@ Deploy existing Bacpac file to Azure SQL Database
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The file contains a simple assets management database with tables for locations, asset types, and assets.
+search_anchor: file contains a simple assets
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -270,6 +350,11 @@ Simple assets management database
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The file contains a simple assets management database with tables for locations, asset types, and assets.
+search_anchor: file contains a simple assets
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-8">
@@ -293,6 +378,11 @@ Simple assets management database
 
 # Lab Steps
 
+<!--
+METADATA:
+sentence: The Problem When you're working with Azure SQL Database, you often start with an empty database.
+search_anchor: Problem When you're working with
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -302,6 +392,11 @@ Simple assets management database
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What We'll Build In this lab, we'll take an existing Bacpac file and deploy it to Azure SQL Database.
+search_anchor: What We'll Build In this
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -311,6 +406,11 @@ Simple assets management database
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Many real-world scenarios require you to deploy a pre-existing database schema to Azure.
+search_anchor: Many real-world scenarios require you
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -320,6 +420,11 @@ Simple assets management database
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These are useful when you want to deploy just the structure and let your application populate the data.
+search_anchor: These are useful when you
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -339,6 +444,11 @@ layout: section
 
 # Critical Skill
 
+<!--
+METADATA:
+sentence: Many real-world scenarios require you to deploy a pre-existing database schema to Azure.
+search_anchor: Many real-world scenarios require you
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -347,6 +457,11 @@ Migrating existing databases to Azure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The file contains a simple assets management database with tables for locations, asset types, and assets.
+search_anchor: file contains a simple assets
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -366,6 +481,11 @@ Migrating existing databases to Azure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes it ready for your application to use immediately.
+search_anchor: This makes it ready for
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -387,6 +507,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Problem When you're working with Azure SQL Database, you often start with an empty database.
+search_anchor: Problem When you're working with
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -395,6 +520,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Many real-world scenarios require you to deploy a pre-existing database schema to Azure.
+search_anchor: Many real-world scenarios require you
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

@@ -28,6 +28,11 @@ layout: center
 
 # Welcome to AKS
 
+<!--
+METADATA:
+sentence: In this video, we'll explore one of Azure's most powerful container orchestration services.
+search_anchor: this video, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Kubernetes is an open-source platform for managing containerized applications.
+search_anchor: Kubernetes is an open-source platform
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -92,6 +102,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Kubernetes Service, or AKS, is Microsoft's managed Kubernetes offering.
+search_anchor: Azure Kubernetes Service, or AKS
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -100,6 +115,11 @@ Microsoft's managed Kubernetes offering
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With AKS, you get all the power of Kubernetes without the overhead of managing the infrastructure.
+search_anchor: AKS, you get all the
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -119,6 +139,11 @@ Microsoft's managed Kubernetes offering
 
 # How AKS Works
 
+<!--
+METADATA:
+sentence: You create an AKS cluster and deploy your applications using the standard Kubernetes model.
+search_anchor: You create an AKS cluster
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -146,6 +171,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Behind the scenes, Azure handles the heavy lifting - provisioning virtual machines for your cluster nodes, installing and configuring Kubernetes, and maintaining the entire infrastructure.
+search_anchor: Behind the scenes, Azure handles
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -158,6 +188,11 @@ Azure handles provisioning, configuring, and maintaining infrastructure
 
 # Behind the Scenes
 
+<!--
+METADATA:
+sentence: Behind the scenes, Azure handles the heavy lifting - provisioning virtual machines for your cluster nodes, installing and configuring Kubernetes, and maintaining the entire infrastructure.
+search_anchor: Behind the scenes, Azure handles
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -167,6 +202,11 @@ Azure handles provisioning, configuring, and maintaining infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You create an AKS cluster and deploy your applications using the standard Kubernetes model.
+search_anchor: You create an AKS cluster
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -176,6 +216,11 @@ Azure handles provisioning, configuring, and maintaining infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With AKS, you get all the power of Kubernetes without the overhead of managing the infrastructure.
+search_anchor: AKS, you get all the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -185,6 +230,11 @@ Azure handles provisioning, configuring, and maintaining infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Node pools are groups of nodes that share the same configuration.
+search_anchor: Node pools are groups of
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -203,6 +253,11 @@ layout: section
 
 # Simplifying Complex Tasks
 
+<!--
+METADATA:
+sentence: AKS simplifies many complex tasks that would otherwise require significant expertise and effort: First, scaling your cluster.
+search_anchor: AKS simplifies many complex tasks
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -240,6 +295,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This will give you a solid foundation before tackling more complex scenarios.
+search_anchor: This will give you a
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -265,6 +325,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: AKS makes it easy to add or remove nodes as your workload changes.
+search_anchor: AKS makes it easy to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -285,6 +350,11 @@ Easy to add or remove nodes as workload changes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keeping Kubernetes up to date can be challenging, but AKS streamlines the upgrade process.
+search_anchor: Keeping Kubernetes up to date
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -293,6 +363,11 @@ Keeping Kubernetes up to date
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keeping Kubernetes up to date can be challenging, but AKS streamlines the upgrade process.
+search_anchor: Keeping Kubernetes up to date
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-16">
@@ -344,6 +419,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Container Registry Integration: AKS can be integrated with Azure Container Registry, or ACR.
+search_anchor: Container Registry Integration: AKS can
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -352,6 +432,11 @@ Seamless integration with Azure services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: AKS integrates seamlessly with other Azure services, creating a cohesive cloud ecosystem for your applications.
+search_anchor: AKS integrates seamlessly with other
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -378,6 +463,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Node pools are groups of nodes that share the same configuration.
+search_anchor: Node pools are groups of
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -386,6 +476,11 @@ Specify the number of nodes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Node Pools: This is a powerful feature.
+search_anchor: Node Pools: This is a
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -402,6 +497,11 @@ Specify the number of nodes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: AKS makes it easy to add or remove nodes as your workload changes.
+search_anchor: AKS makes it easy to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -422,6 +522,11 @@ Choose VM size that matches your workload
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Presets: Azure provides preset configurations to help you get started quickly with common scenarios.
+search_anchor: Presets: Azure provides preset configurations
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -430,6 +535,11 @@ Azure provides preset configurations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Presets: Azure provides preset configurations to help you get started quickly with common scenarios.
+search_anchor: Presets: Azure provides preset configurations
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-6">
@@ -449,6 +559,11 @@ Azure provides preset configurations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with hands-on exercises.
+search_anchor: Let's get started with hands-on
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -469,6 +584,11 @@ Get started quickly with common scenarios
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Node pools are groups of nodes that share the same configuration.
+search_anchor: Node pools are groups of
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -497,6 +617,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you tremendous flexibility in how you run different types of workloads.
+search_anchor: This gives you tremendous flexibility
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -509,6 +634,11 @@ Tremendous flexibility for different workload types
 
 # Node Pool Example
 
+<!--
+METADATA:
+sentence: AKS makes it easy to add or remove nodes as your workload changes.
+search_anchor: AKS makes it easy to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -523,6 +653,11 @@ Tremendous flexibility for different workload types
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, you might have ten Linux nodes in one pool, five Linux servers with GPUs in another pool, and two Windows servers in a third pool - all within the same cluster.
+search_anchor: example, you might have ten
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -537,6 +672,11 @@ Tremendous flexibility for different workload types
 
 </v-click>
 
+<!--
+METADATA:
+sentence: AKS makes it easy to add or remove nodes as your workload changes.
+search_anchor: AKS makes it easy to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -551,6 +691,11 @@ Tremendous flexibility for different workload types
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Node pools are groups of nodes that share the same configuration.
+search_anchor: Node pools are groups of
+-->
 <v-click>
 
 <div class="mt-8 text-center text-sm opacity-60">
@@ -571,6 +716,11 @@ All within the same cluster!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Security: AKS clusters can be secured using standard Kubernetes Role-Based Access Control, or RBAC, which integrates directly with Azure Active Directory accounts.
+search_anchor: Security: AKS clusters can be
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -595,6 +745,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Security: AKS clusters can be secured using standard Kubernetes Role-Based Access Control, or RBAC, which integrates directly with Azure Active Directory accounts.
+search_anchor: Security: AKS clusters can be
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -615,6 +770,11 @@ Integrates directly with Azure Active Directory
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Container Registry Integration: AKS can be integrated with Azure Container Registry, or ACR.
+search_anchor: Container Registry Integration: AKS can
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -638,6 +798,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means you can run containers from private ACR images without any extra authentication configuration.
+search_anchor: This means you can run
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -664,6 +829,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Production Considerations Now, it's important to understand that production-grade AKS deployments can get quite complicated.
+search_anchor: Production Considerations Now, it's important
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -672,6 +842,11 @@ Production deployments can get quite complicated
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll need to consider networking, security policies, monitoring, and high availability.
+search_anchor: You'll need to consider networking
+-->
 <v-click>
 
 <div class="mt-10 grid grid-cols-2 gap-6">
@@ -699,6 +874,11 @@ Production deployments can get quite complicated
 
 # Our Approach
 
+<!--
+METADATA:
+sentence: However, for learning purposes, we'll start with a simple deployment using the Azure CLI.
+search_anchor: However, for learning purposes, we'll
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -725,6 +905,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This will give you a solid foundation before tackling more complex scenarios.
+search_anchor: This will give you a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -733,6 +918,11 @@ Start simple, build solid foundation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This will give you a solid foundation before tackling more complex scenarios.
+search_anchor: This will give you a
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -751,6 +941,11 @@ layout: section
 
 # In This Lesson
 
+<!--
+METADATA:
+sentence: You create an AKS cluster and deploy your applications using the standard Kubernetes model.
+search_anchor: You create an AKS cluster
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -760,6 +955,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Node Pools: This is a powerful feature.
+search_anchor: Node Pools: This is a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -769,6 +969,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Kubernetes Service, or AKS, is Microsoft's managed Kubernetes offering.
+search_anchor: Azure Kubernetes Service, or AKS
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -801,6 +1006,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll use the same Kubernetes tools and YAML specifications that work on any Kubernetes cluster, demonstrating the portability and consistency that makes Kubernetes so powerful.
+search_anchor: You'll use the same Kubernetes
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -809,6 +1019,11 @@ Same tools and YAML specifications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll use the same Kubernetes tools and YAML specifications that work on any Kubernetes cluster, demonstrating the portability and consistency that makes Kubernetes so powerful.
+search_anchor: You'll use the same Kubernetes
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -817,6 +1032,11 @@ Work on any Kubernetes cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll use the same Kubernetes tools and YAML specifications that work on any Kubernetes cluster, demonstrating the portability and consistency that makes Kubernetes so powerful.
+search_anchor: You'll use the same Kubernetes
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg text-green-400">
@@ -838,6 +1058,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with hands-on exercises.
+search_anchor: Let's get started with hands-on
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -846,6 +1071,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with hands-on exercises.
+search_anchor: Let's get started with hands-on
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

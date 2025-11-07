@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Securing VNet Access - Introduction Welcome to this lab on securing Virtual Network access in Azure.
+search_anchor: Securing VNet Access - Introduction
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this lab, we'll explore how to lock down network access to resources using Azure's networking security features.
+search_anchor: this lab, we'll explore how
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Securing VNet Access - Introduction Welcome to this lab on securing Virtual Network access in Azure.
+search_anchor: Securing VNet Access - Introduction
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

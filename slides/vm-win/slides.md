@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Virtual Machines - Windows: Introduction Opening Welcome to this lab on Windows Virtual Machines in Azure.
+search_anchor: Virtual Machines - Windows: Introduction
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll work with Premium SSD storage for better performance.
+search_anchor: We'll work with Premium SSD
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Virtual Machines - Windows: Introduction Opening Welcome to this lab on Windows Virtual Machines in Azure.
+search_anchor: Virtual Machines - Windows: Introduction
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

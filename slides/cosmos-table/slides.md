@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: The Cosmos DB Table API is a straight replacement for Azure Table Storage.
+search_anchor: Cosmos DB Table API is
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Cosmos DB Table API is a straight replacement for Azure Table Storage.
+search_anchor: Cosmos DB Table API is
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -77,6 +87,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's designed specifically to offer easy migration paths for older applications that were built with Table Storage.
+search_anchor: It's designed specifically to offer
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -85,6 +100,11 @@ Designed for easy migration
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's designed specifically to offer easy migration paths for older applications that were built with Table Storage.
+search_anchor: It's designed specifically to offer
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -105,6 +125,11 @@ For older applications built with Table Storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use Cosmos DB Table API?
+search_anchor: Why Use Cosmos DB Table
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -132,6 +157,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This matches the original Table Storage architecture, making migration even more straightforward.
+search_anchor: This matches the original Table
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -150,6 +180,11 @@ layout: section
 
 # Upgrade Path for Legacy Apps
 
+<!--
+METADATA:
+sentence: If you have legacy applications using Azure Table Storage, the Table API gives you an upgrade path without rewriting code.
+search_anchor: If you have legacy applications
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -158,6 +193,11 @@ If you have legacy applications using Table Storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If you have legacy applications using Azure Table Storage, the Table API gives you an upgrade path without rewriting code.
+search_anchor: If you have legacy applications
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -166,6 +206,11 @@ Table API gives you an upgrade path
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If you have legacy applications using Azure Table Storage, the Table API gives you an upgrade path without rewriting code.
+search_anchor: If you have legacy applications
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -178,6 +223,11 @@ Without rewriting code
 
 # All the Cosmos Benefits
 
+<!--
+METADATA:
+sentence: You get all the benefits of Cosmos DB - global distribution, guaranteed low latency, multiple consistency models, and enterprise-grade SLA - while keeping your existing table storage code.
+search_anchor: You get all the benefits
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -187,6 +237,11 @@ Without rewriting code
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You get all the benefits of Cosmos DB - global distribution, guaranteed low latency, multiple consistency models, and enterprise-grade SLA - while keeping your existing table storage code.
+search_anchor: You get all the benefits
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -196,6 +251,11 @@ Without rewriting code
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You get all the benefits of Cosmos DB - global distribution, guaranteed low latency, multiple consistency models, and enterprise-grade SLA - while keeping your existing table storage code.
+search_anchor: You get all the benefits
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -205,6 +265,11 @@ Without rewriting code
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This demonstrates the true power of the Table API - seamless migration with zero code changes.
+search_anchor: This demonstrates the true power
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -214,6 +279,11 @@ Without rewriting code
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You get all the benefits of Cosmos DB - global distribution, guaranteed low latency, multiple consistency models, and enterprise-grade SLA - while keeping your existing table storage code.
+search_anchor: You get all the benefits
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -232,6 +302,11 @@ layout: section
 
 # Seamless Migration Demo
 
+<!--
+METADATA:
+sentence: We'll run an application that writes to Table Storage, and then we'll switch it to using Cosmos DB with just a configuration change.
+search_anchor: We'll run an application that
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -259,6 +334,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll run an application that writes to Table Storage, and then we'll switch it to using Cosmos DB with just a configuration change.
+search_anchor: We'll run an application that
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -267,6 +347,11 @@ Just a configuration change
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This demonstrates the true power of the Table API - seamless migration with zero code changes.
+search_anchor: This demonstrates the true power
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -285,6 +370,11 @@ layout: section
 
 # Simpler Structure
 
+<!--
+METADATA:
+sentence: Why Use Cosmos DB Table API?
+search_anchor: Why Use Cosmos DB Table
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -315,6 +405,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Unlike other Cosmos DB APIs that have hierarchies like Account, Database, and Container, the Table API has a simpler structure: Account level Table(s) directly under the account There are no collections or containers in between.
+search_anchor: Unlike other Cosmos DB APIs
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -323,6 +418,11 @@ No collections or containers in between
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This matches the original Table Storage architecture, making migration even more straightforward.
+search_anchor: This matches the original Table
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -335,6 +435,11 @@ Matches original Table Storage architecture
 
 # Two-Level Hierarchy
 
+<!--
+METADATA:
+sentence: What is Cosmos DB Table API?
+search_anchor: What is Cosmos DB Table
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -353,6 +458,11 @@ Matches original Table Storage architecture
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This matches the original Table Storage architecture, making migration even more straightforward.
+search_anchor: This matches the original Table
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -371,6 +481,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: What is Cosmos DB Table API?
+search_anchor: What is Cosmos DB Table
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -380,6 +495,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll run an application that writes to Table Storage, and then we'll switch it to using Cosmos DB with just a configuration change.
+search_anchor: We'll run an application that
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -389,6 +509,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's designed specifically to offer easy migration paths for older applications that were built with Table Storage.
+search_anchor: It's designed specifically to offer
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -398,6 +523,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll run an application that writes to Table Storage, and then we'll switch it to using Cosmos DB with just a configuration change.
+search_anchor: We'll run an application that
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -407,6 +537,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use Cosmos DB Table API?
+search_anchor: Why Use Cosmos DB Table
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -435,6 +570,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Cosmos DB Table API?
+search_anchor: What is Cosmos DB Table
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -443,6 +583,11 @@ That's the power of Table API
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This demonstrates the true power of the Table API - seamless migration with zero code changes.
+search_anchor: This demonstrates the true power
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -464,6 +609,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts Before we dive in, let's understand the structure.
+search_anchor: Key Concepts Before we dive
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -472,6 +622,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Cosmos DB Table API?
+search_anchor: What is Cosmos DB Table
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

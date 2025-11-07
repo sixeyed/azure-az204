@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Securing AKS Apps with Key Vault and Virtual Networks - Introduction Opening Welcome to this lab on securing Azure Kubernetes Service applications with Key Vault and Virtual Networks.
+search_anchor: Securing AKS Apps with Key
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -36,6 +41,11 @@ Securing Azure Kubernetes Service applications<br/>with Key Vault and Virtual Ne
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to implement defense-in-depth security patterns by leveraging Azure's networking capabilities to restrict access to sensitive resources.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-lg mt-6 opacity-70">
@@ -62,6 +72,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Concept Overview When running applications in AKS, security should be a primary concern.
+search_anchor: Concept Overview When running applications
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -91,6 +106,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to implement defense-in-depth security patterns by leveraging Azure's networking capabilities to restrict access to sensitive resources.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-red-400">
@@ -103,6 +123,11 @@ Your responsibility: Secure sensitive resources
 
 # Key Concepts
 
+<!--
+METADATA:
+sentence: Let me explain the key concepts we'll be working with today.
+search_anchor: Let me explain the key
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -111,6 +136,11 @@ We'll work with several key concepts today
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service Endpoints and Network Security Many Azure services support virtual network service endpoints.
+search_anchor: Service Endpoints and Network Security
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-2 gap-8">
@@ -160,6 +190,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All Pods will have IP addresses from our subnet.
+search_anchor: All Pods will have IP
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -180,6 +215,11 @@ Pods get IP addresses from separate address space
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, Azure also supports the Azure CNI - Container Network Interface - which allows AKS clusters to run inside Azure Virtual Networks.
+search_anchor: However, Azure also supports the
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -206,6 +246,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, Azure also supports the Azure CNI - Container Network Interface - which allows AKS clusters to run inside Azure Virtual Networks.
+search_anchor: However, Azure also supports the
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -218,6 +263,11 @@ AKS clusters run inside Azure Virtual Networks
 
 # The Power of Azure CNI
 
+<!--
+METADATA:
+sentence: When you use Azure CNI, each Pod in your cluster gets an IP address directly from the VNet subnet.
+search_anchor: When you use Azure CNI
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -245,6 +295,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is powerful because now your Pods are first-class citizens in your Azure network infrastructure.
+search_anchor: This is powerful because now
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -257,6 +312,11 @@ Pods are first-class citizens in Azure network infrastructure
 
 # Benefits
 
+<!--
+METADATA:
+sentence: They can communicate directly with other Azure resources, and more importantly, those resources can identify and restrict access based on the subnet the Pods are running in.
+search_anchor: They can communicate directly with
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -266,6 +326,11 @@ Pods are first-class citizens in Azure network infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All Pods will have IP addresses from our subnet.
+search_anchor: All Pods will have IP
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -275,6 +340,11 @@ Pods are first-class citizens in Azure network infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They can communicate directly with other Azure resources, and more importantly, those resources can identify and restrict access based on the subnet the Pods are running in.
+search_anchor: They can communicate directly with
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -284,6 +354,11 @@ Pods are first-class citizens in Azure network infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is powerful because now your Pods are first-class citizens in your Azure network infrastructure.
+search_anchor: This is powerful because now
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -310,6 +385,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service Endpoints and Network Security Many Azure services support virtual network service endpoints.
+search_anchor: Service Endpoints and Network Security
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -318,6 +398,11 @@ Many Azure services support service endpoints
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Key Vault and Storage Accounts.
+search_anchor: This includes Key Vault and
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -333,6 +418,11 @@ Many Azure services support service endpoints
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service Endpoints and Network Security Many Azure services support virtual network service endpoints.
+search_anchor: Service Endpoints and Network Security
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -345,6 +435,11 @@ And many more Azure services
 
 # What Service Endpoints Do
 
+<!--
+METADATA:
+sentence: Service endpoints allow you to secure these services to only accept traffic from specific subnets in your virtual network.
+search_anchor: Service endpoints allow you to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -370,6 +465,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service endpoints allow you to secure these services to only accept traffic from specific subnets in your virtual network.
+search_anchor: Service endpoints allow you to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -390,6 +490,11 @@ Before:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Even though the vault is technically accessible via the Internet, the firewall rules will deny all traffic except what comes from our Pods.
+search_anchor: Even though the vault is
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg">
@@ -413,6 +518,11 @@ After:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, we'll configure the Key Vault to only accept connections from the AKS subnet.
+search_anchor: Second, we'll configure the Key
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg text-green-400">
@@ -421,6 +531,11 @@ Key Vault only accepts connections from AKS subnet
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This dramatically reduces your attack surface.
+search_anchor: This dramatically reduces your attack
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -447,6 +562,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Managed Identities for Authentication Authentication is handled through Azure Managed Identities.
+search_anchor: Managed Identities for Authentication Authentication
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -474,6 +594,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We've seen this pattern before in other labs, but it's especially powerful in AKS.
+search_anchor: We've seen this pattern before
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -486,6 +611,11 @@ Especially powerful in AKS
 
 # The Benefits
 
+<!--
+METADATA:
+sentence: This means your application code never needs to handle credentials for accessing Key Vault.
+search_anchor: This means your application code
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -495,6 +625,11 @@ Especially powerful in AKS
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Managed Identities for Authentication Authentication is handled through Azure Managed Identities.
+search_anchor: Managed Identities for Authentication Authentication
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -504,6 +639,11 @@ Especially powerful in AKS
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The identity is managed by Azure, rotated automatically, and can be granted specific permissions through Azure RBAC or Key Vault access policies.
+search_anchor: identity is managed by Azure
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -513,6 +653,11 @@ Especially powerful in AKS
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The identity is managed by Azure, rotated automatically, and can be granted specific permissions through Azure RBAC or Key Vault access policies.
+search_anchor: identity is managed by Azure
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -532,6 +677,11 @@ layout: section
 
 # Asset Manager Application
 
+<!--
+METADATA:
+sentence: The Lab Scenario In today's lab, we'll deploy a sample application called Asset Manager to AKS.
+search_anchor: Lab Scenario In today's lab
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -559,6 +709,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This application uses Azure Blob Storage to persist data.
+search_anchor: This application uses Azure Blob
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -567,6 +722,11 @@ Uses Blob Storage for data persistence
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The connection string for the storage account contains sensitive credentials, so we'll store it in Azure Key Vault.
+search_anchor: connection string for the storage
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -579,6 +739,11 @@ Connection string stored in Key Vault
 
 # Security Architecture - Layer 1
 
+<!--
+METADATA:
+sentence: Here's what makes this scenario interesting from a security perspective: First, the AKS cluster will run inside a dedicated VNet using Azure CNI networking.
+search_anchor: Here's what makes this scenario
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -613,6 +778,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Here's what makes this scenario interesting from a security perspective: First, the AKS cluster will run inside a dedicated VNet using Azure CNI networking.
+search_anchor: Here's what makes this scenario
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -621,6 +791,11 @@ Using Azure CNI networking
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All Pods will have IP addresses from our subnet.
+search_anchor: All Pods will have IP
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -633,6 +808,11 @@ All Pods have IP addresses from subnet
 
 # Security Architecture - Layer 2
 
+<!--
+METADATA:
+sentence: Second, we'll configure the Key Vault to only accept connections from the AKS subnet.
+search_anchor: Second, we'll configure the Key
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -662,6 +842,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Even though the vault is technically accessible via the Internet, the firewall rules will deny all traffic except what comes from our Pods.
+search_anchor: Even though the vault is
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -674,6 +859,11 @@ Firewall rules deny all except AKS subnet
 
 # Security Architecture - Layer 3
 
+<!--
+METADATA:
+sentence: Second, we'll configure the Key Vault to only accept connections from the AKS subnet.
+search_anchor: Second, we'll configure the Key
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -701,6 +891,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, we'll extend this same pattern to the Storage Account itself - locking it down so only the AKS Pods can access the stored data.
+search_anchor: Third, we'll extend this same
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -713,6 +908,11 @@ Only AKS Pods can access stored data
 
 # Security Architecture - Layer 4
 
+<!--
+METADATA:
+sentence: Finally, we'll use the AKS KeyVault Secrets Provider add-on to mount the connection string secret directly into the Pod filesystem, making it seamlessly available to the application.
+search_anchor: Finally, we'll use the AKS
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -742,6 +942,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, we'll use the AKS KeyVault Secrets Provider add-on to mount the connection string secret directly into the Pod filesystem, making it seamlessly available to the application.
+search_anchor: Finally, we'll use the AKS
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -750,6 +955,11 @@ AKS KeyVault Secrets Provider add-on
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Lab Scenario In today's lab, we'll deploy a sample application called Asset Manager to AKS.
+search_anchor: Lab Scenario In today's lab
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -768,6 +978,11 @@ layout: section
 
 # Multiple Layers of Security
 
+<!--
+METADATA:
+sentence: Service endpoints allow you to secure these services to only accept traffic from specific subnets in your virtual network.
+search_anchor: Service endpoints allow you to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -780,6 +995,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means your application code never needs to handle credentials for accessing Key Vault.
+search_anchor: This means your application code
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -792,6 +1012,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Key Vault and Storage Accounts.
+search_anchor: This includes Key Vault and
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -804,6 +1029,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to implement defense-in-depth security patterns by leveraging Azure's networking capabilities to restrict access to sensitive resources.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -826,6 +1056,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: Here's what makes this scenario interesting from a security perspective: First, the AKS cluster will run inside a dedicated VNet using Azure CNI networking.
+search_anchor: Here's what makes this scenario
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -835,6 +1070,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Key Vault and Storage Accounts.
+search_anchor: This includes Key Vault and
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -844,6 +1084,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Key Vault and Storage Accounts.
+search_anchor: This includes Key Vault and
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -853,6 +1098,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The AKS KeyVault add-on creates a managed identity that can authenticate to Key Vault on behalf of your Pods.
+search_anchor: AKS KeyVault add-on creates a
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -862,6 +1112,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Key Vault and Storage Accounts.
+search_anchor: This includes Key Vault and
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -871,6 +1126,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Key Vault and Storage Accounts.
+search_anchor: This includes Key Vault and
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -884,6 +1144,11 @@ layout: section
 
 # Production Pattern
 
+<!--
+METADATA:
+sentence: We've seen this pattern before in other labs, but it's especially powerful in AKS.
+search_anchor: We've seen this pattern before
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -892,6 +1157,11 @@ Critical pattern for production AKS deployments
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Concept Overview When running applications in AKS, security should be a primary concern.
+search_anchor: Concept Overview When running applications
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -907,6 +1177,11 @@ Critical pattern for production AKS deployments
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Key Vault and Storage Accounts.
+search_anchor: This includes Key Vault and
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg text-green-400">
@@ -928,6 +1203,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by setting up our infrastructure.
+search_anchor: Let's get started by setting
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -936,6 +1216,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by setting up our infrastructure.
+search_anchor: Let's get started by setting
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

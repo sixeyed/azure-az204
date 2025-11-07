@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What are Static Websites on Azure Storage?
+search_anchor: What are Static Websites on
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Websites on Azure Storage?
+search_anchor: What are Static Websites on
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Static Websites on Azure Storage?
+search_anchor: What are Static Websites on
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: That's where Deployments come in.
+search_anchor: That's where Deployments come in
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Can't I just create Pods directly?" Well, technically yes, but that would be like building a house with no foundation.
+search_anchor: Can't I just create Pods
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-red-400">
@@ -62,6 +72,11 @@ Creating Pods directly is like building without foundation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can't update them to release new versions of your application.
+search_anchor: You can't update them to
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -71,6 +86,11 @@ Creating Pods directly is like building without foundation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can't easily scale them.
+search_anchor: You can't easily scale them
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -80,6 +100,11 @@ Creating Pods directly is like building without foundation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And if a Pod crashes, it's gone forever.
+search_anchor: if a Pod crashes, it's
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -107,6 +132,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Deployments come in.
+search_anchor: That's where Deployments come in
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -115,6 +145,11 @@ Deployments are controllers
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you create Pods directly, you're stuck.
+search_anchor: When you create Pods directly
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -146,6 +181,11 @@ graph TB
 
 # Declarative Approach
 
+<!--
+METADATA:
+sentence: Let's explore what makes them so powerful.
+search_anchor: Let's explore what makes them
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -171,6 +211,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You describe your desired state in YAML, and Kubernetes figures out how to get there.
+search_anchor: You describe your desired state
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -189,6 +234,11 @@ layout: section
 
 # Four Superpowers
 
+<!--
+METADATA:
+sentence: You describe your desired state in YAML, and Kubernetes figures out how to get there.
+search_anchor: You describe your desired state
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -203,6 +253,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you release a new version, Deployments gradually replace old Pods with new ones, keeping your application available the whole time.
+search_anchor: When you release a new
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -217,6 +272,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If something goes wrong, you can roll back to a previous version with a single command.
+search_anchor: If something goes wrong, you
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -231,6 +291,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Just update a number in your YAML or run a quick scale command.
+search_anchor: Just update a number in
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -255,6 +320,11 @@ layout: section
 
 # Three Main Parts
 
+<!--
+METADATA:
+sentence: The Deployment uses a template to create Pods and a label selector to identify which Pods it owns.
+search_anchor: Deployment uses a template to
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -269,6 +339,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The replica count specifies how many copies of your Pod you want running.
+search_anchor: replica count specifies how many
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -282,6 +357,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And the template is your Pod specification, the blueprint for creating new Pods.
+search_anchor: template is your Pod specification
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -361,6 +441,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your application stays available throughout the entire process.
+search_anchor: Your application stays available throughout
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -373,6 +458,11 @@ Application stays available throughout
 
 # Gradual Process
 
+<!--
+METADATA:
+sentence: When you update your container image or configuration, the Deployment doesn't just kill all your Pods and start over.
+search_anchor: When you update your container
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -381,6 +471,11 @@ Doesn't kill all Pods and start over
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No disruption to users.
+search_anchor: No disruption to users
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -400,6 +495,11 @@ Doesn't kill all Pods and start over
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And if you notice something wrong after the update, you can roll back just as smoothly.
+search_anchor: if you notice something wrong
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -408,6 +508,11 @@ Notice something wrong?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And if you notice something wrong after the update, you can roll back just as smoothly.
+search_anchor: if you notice something wrong
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl text-green-400">
@@ -426,6 +531,11 @@ layout: section
 
 # Key Exam Areas
 
+<!--
+METADATA:
+sentence: You should know how to implement container solutions using Azure Kubernetes Service.
+search_anchor: You should know how to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -435,6 +545,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That means understanding Deployment manifests, scaling strategies, and update patterns.
+search_anchor: That means understanding Deployment manifests
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -444,6 +559,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And fourth, simple scaling.
+search_anchor: fourth, simple scaling
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -453,6 +573,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That means understanding Deployment manifests, scaling strategies, and update patterns.
+search_anchor: That means understanding Deployment manifests
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -466,6 +591,11 @@ layout: section
 
 # Application Lifecycle
 
+<!--
+METADATA:
+sentence: Second, rolling updates.
+search_anchor: Second, rolling updates
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -475,6 +605,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, easy rollbacks.
+search_anchor: Third, easy rollbacks
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -484,6 +619,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your application stays available throughout the entire process.
+search_anchor: Your application stays available throughout
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -497,6 +637,11 @@ layout: section
 
 # Imperative vs Declarative
 
+<!--
+METADATA:
+sentence: And importantly, you should understand the difference between imperative commands, which you might use for quick testing, and declarative YAML files, which are the standard for production environments.
+search_anchor: importantly, you should understand the
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-16">
@@ -514,6 +659,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Notice the template doesn't include a name field.
+search_anchor: Notice the template doesn't include
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -532,6 +682,11 @@ layout: section
 
 # Hands-On Exercises
 
+<!--
+METADATA:
+sentence: That's where Deployments come in.
+search_anchor: That's where Deployments come in
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -541,6 +696,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And fourth, simple scaling.
+search_anchor: fourth, simple scaling
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -550,6 +710,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, rolling updates.
+search_anchor: Second, rolling updates
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -559,6 +724,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, easy rollbacks.
+search_anchor: Third, easy rollbacks
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -568,6 +738,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll also tackle a blue-green deployment challenge that's perfect exam prep.
+search_anchor: You'll also tackle a blue-green
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -590,6 +765,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's explore what makes them so powerful.
+search_anchor: Let's explore what makes them
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -598,6 +778,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Deployments come in.
+search_anchor: That's where Deployments come in
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

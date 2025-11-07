@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What is Azure Front Door?
+search_anchor: What is Azure Front Door
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Front Door is Microsoft's modern cloud CDN that provides fast, reliable, and secure access to your applications.
+search_anchor: Azure Front Door is Microsoft's
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Microsoft's modern cloud CDN
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Front Door is Microsoft's modern cloud CDN that provides fast, reliable, and secure access to your applications.
+search_anchor: Azure Front Door is Microsoft's
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -81,6 +96,11 @@ Microsoft's modern cloud CDN
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as Application Gateway, but with a global CDN built right in.
+search_anchor: Think of it as Application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -111,6 +131,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While Application Gateway operates at the regional level, Front Door works globally across all Azure regions.
+search_anchor: While Application Gateway operates at
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -119,6 +144,11 @@ Application Gateway operates at regional level
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While Application Gateway operates at the regional level, Front Door works globally across all Azure regions.
+search_anchor: While Application Gateway operates at
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -127,6 +157,11 @@ Front Door works globally across all regions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means your users get routed to the nearest available backend, providing optimal performance regardless of where they're located.
+search_anchor: This means your users get
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -145,6 +180,11 @@ layout: section
 
 # What Front Door Provides
 
+<!--
+METADATA:
+sentence: Unlike regional load balancers, Front Door can distribute traffic across multiple regions, ensuring high availability and optimal performance for users worldwide.
+search_anchor: Unlike regional load balancers, Front
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -159,6 +199,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Static resources can be cached at edge locations around the world, reducing latency and improving user experience.
+search_anchor: Static resources can be cached
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -173,6 +218,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can protect your applications from common web vulnerabilities and exploits using the same WAF functionality available in Application Gateway.
+search_anchor: You can protect your applications
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -187,6 +237,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Fourth, it provides DDoS protection, helping shield your applications from distributed denial of service attacks.
+search_anchor: Fourth, it provides DDoS protection
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -204,6 +259,11 @@ layout: section
 
 # Additional Capabilities
 
+<!--
+METADATA:
+sentence: Finally, it offers intelligent routing based on performance, health, and weighted load balancing configurations.
+search_anchor: Finally, it offers intelligent routing
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -213,6 +273,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, it offers intelligent routing based on performance, health, and weighted load balancing configurations.
+search_anchor: Finally, it offers intelligent routing
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -222,6 +287,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore one of Azure's most powerful global load balancing and content delivery solutions.
+search_anchor: this session, we'll explore one
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -231,6 +301,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it includes integrated CDN capabilities.
+search_anchor: Second, it includes integrated CDN
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -240,6 +315,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, it offers intelligent routing based on performance, health, and weighted load balancing configurations.
+search_anchor: Finally, it offers intelligent routing
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -278,6 +358,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It combines the best features of Traffic Manager, Content Delivery Network, and Application Gateway into a single, comprehensive solution.
+search_anchor: It combines the best features
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -286,6 +371,11 @@ Combines best features of multiple services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It combines the best features of Traffic Manager, Content Delivery Network, and Application Gateway into a single, comprehensive solution.
+search_anchor: It combines the best features
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -306,6 +396,11 @@ Single, comprehensive solution
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Front Door?
+search_anchor: What is Azure Front Door
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -314,6 +409,11 @@ Front Door is now the preferred option
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Microsoft now recommends Front Door as the preferred option for the frontend to your HTTP services.
+search_anchor: Microsoft now recommends Front Door
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -322,6 +422,11 @@ For frontend to your HTTP services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes Web Apps, API Management domains, and any other HTTP-based applications you want to expose to users.
+search_anchor: This includes Web Apps, API
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-8">
@@ -351,6 +456,11 @@ layout: section
 
 # When to Use Front Door
 
+<!--
+METADATA:
+sentence: Unlike regional load balancers, Front Door can distribute traffic across multiple regions, ensuring high availability and optimal performance for users worldwide.
+search_anchor: Unlike regional load balancers, Front
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -360,6 +470,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it includes integrated CDN capabilities.
+search_anchor: Second, it includes integrated CDN
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -369,6 +484,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, it supports Web Application Firewall integration.
+search_anchor: Third, it supports Web Application
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -378,6 +498,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore one of Azure's most powerful global load balancing and content delivery solutions.
+search_anchor: this session, we'll explore one
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -387,6 +512,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, it offers intelligent routing based on performance, health, and weighted load balancing configurations.
+search_anchor: Finally, it offers intelligent routing
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -396,6 +526,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it includes integrated CDN capabilities.
+search_anchor: Second, it includes integrated CDN
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -415,6 +550,11 @@ layout: section
 
 # What We'll Build
 
+<!--
+METADATA:
+sentence: What is Azure Front Door?
+search_anchor: What is Azure Front Door
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -442,6 +582,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll deploy backend applications in multiple regions, configure Front Door to route traffic between them, and apply security policies to protect against common threats.
+search_anchor: We'll deploy backend applications in
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -450,6 +595,11 @@ Deploy backends in multiple regions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll deploy backend applications in multiple regions, configure Front Door to route traffic between them, and apply security policies to protect against common threats.
+search_anchor: We'll deploy backend applications in
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -462,6 +612,11 @@ Configure traffic routing and security policies
 
 # Learning Outcomes
 
+<!--
+METADATA:
+sentence: By the end of this lab, you'll understand how to architect and implement a globally distributed application using Azure Front Door.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -481,6 +636,11 @@ Configure traffic routing and security policies
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Front Door?
+search_anchor: What is Azure Front Door
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -502,6 +662,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Front Door?
+search_anchor: What is Azure Front Door
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -510,6 +675,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lab, you'll understand how to architect and implement a globally distributed application using Azure Front Door.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

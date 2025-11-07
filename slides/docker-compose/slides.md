@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Docker Compose helps you define and manage multi-container applications using a simple YAML specification.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Two Things
 
+<!--
+METADATA:
+sentence: Docker Compose is two things: first, it's a specification for describing distributed applications that run in containers.
+search_anchor: Docker Compose is two things
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -61,6 +71,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it's a command-line tool that takes those specifications and runs them in Docker.
+search_anchor: Second, it's a command-line tool
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -80,6 +95,11 @@ layout: section
 
 # Desired-State Approach
 
+<!--
+METADATA:
+sentence: If you've worked with Azure Resource Manager templates or Bicep, you'll recognize this pattern.
+search_anchor: If you've worked with Azure
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -105,6 +125,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Docker Compose?
+search_anchor: What is Docker Compose
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -138,6 +163,11 @@ docker run -d --link db --link cache api-app
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Managing all these with individual docker run commands becomes tedious and error-prone.
+search_anchor: Managing all these with individual
+-->
 <v-click>
 
 <div class="mt-8 text-center text-2xl text-red-400">
@@ -158,6 +188,11 @@ Complex, tedious, error-prone
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Instead of sharing a list of docker run commands with complex parameters, you have a clear YAML file that shows the entire application architecture.
+search_anchor: Instead of sharing a list
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -184,6 +219,11 @@ services:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You might be wondering - why not just use docker run commands?
+search_anchor: You might be wondering -
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg text-green-400">
@@ -196,6 +236,11 @@ vs. sharing complex docker run commands
 
 # Benefit 2: Simplifies Multi-Container
 
+<!--
+METADATA:
+sentence: Second, it simplifies multi-container applications.
+search_anchor: Second, it simplifies multi-container applications
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -223,6 +268,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Managing all these with individual docker run commands becomes tedious and error-prone.
+search_anchor: Managing all these with individual
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -254,6 +304,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Everyone gets the same application configuration.
+search_anchor: Everyone gets the same application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -301,6 +356,11 @@ volumes:
 
 # Key Elements
 
+<!--
+METADATA:
+sentence: First, Compose files act as living documentation for your application.
+search_anchor: First, Compose files act as
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -313,6 +373,11 @@ volumes:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First, Compose files act as living documentation for your application.
+search_anchor: First, Compose files act as
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -325,6 +390,11 @@ volumes:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, it provides consistent deployment.
+search_anchor: Third, it provides consistent deployment
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -337,6 +407,11 @@ volumes:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Everyone gets the same application configuration.
+search_anchor: Everyone gets the same application
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -359,6 +434,11 @@ layout: section
 
 # Two Versions
 
+<!--
+METADATA:
+sentence: The original tool is called docker-compose with a hyphen.
+search_anchor: original tool is called docker-compose
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -371,6 +451,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Docker Compose?
+search_anchor: What is Docker Compose
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -383,6 +468,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The commands are identical between the two versions - just swap the hyphen for a space.
+search_anchor: commands are identical between the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -415,6 +505,11 @@ docker compose ps
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can use whichever version you have available.
+search_anchor: You can use whichever version
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -433,6 +528,11 @@ layout: section
 
 # Perfect For
 
+<!--
+METADATA:
+sentence: The same Compose file works on your development machine, on a colleague's laptop, and in testing environments.
+search_anchor: same Compose file works on
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -442,6 +542,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it simplifies multi-container applications.
+search_anchor: Second, it simplifies multi-container applications
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -451,6 +556,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, it provides consistent deployment.
+search_anchor: Third, it provides consistent deployment
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -460,6 +570,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, it provides consistent deployment.
+search_anchor: Third, it provides consistent deployment
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -473,6 +588,11 @@ layout: section
 
 # Even for Single Containers
 
+<!--
+METADATA:
+sentence: Second, it simplifies multi-container applications.
+search_anchor: Second, it simplifies multi-container applications
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -498,6 +618,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First, Compose files act as living documentation for your application.
+search_anchor: First, Compose files act as
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg text-green-400">
@@ -516,6 +641,11 @@ layout: section
 
 # Lab Exercises
 
+<!--
+METADATA:
+sentence: Looking Ahead In the exercises that follow, we'll start simple with a single Nginx container in Compose, then move on to a multi-container distributed application.
+search_anchor: Looking Ahead In the exercises
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -528,6 +658,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it simplifies multi-container applications.
+search_anchor: Second, it simplifies multi-container applications
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -540,6 +675,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll see how to debug connectivity issues, update running applications, and manage the entire lifecycle of a containerized application.
+search_anchor: We'll see how to debug
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -552,6 +692,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it simplifies multi-container applications.
+search_anchor: Second, it simplifies multi-container applications
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -564,6 +709,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll see how to debug connectivity issues, update running applications, and manage the entire lifecycle of a containerized application.
+search_anchor: We'll see how to debug
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -580,6 +730,11 @@ layout: section
 
 # Fundamental Skill
 
+<!--
+METADATA:
+sentence: What is Docker Compose?
+search_anchor: What is Docker Compose
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -588,6 +743,11 @@ Docker Compose is essential for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Docker Compose is a fundamental skill for working with containers, and it's an important topic for the AZ-204 certification exam.
+search_anchor: Docker Compose is a fundamental
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -616,6 +776,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and see it in action.
+search_anchor: Let's dive in and see
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -624,6 +789,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use Docker Compose?
+search_anchor: Why Use Docker Compose
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

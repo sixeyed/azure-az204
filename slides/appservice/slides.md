@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Azure App Service is one of Azure's most popular PaaS offerings.
+search_anchor: Azure App Service is one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You have complete control over the operating system, runtime environment, and server configuration.
+search_anchor: You have complete control over
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -62,6 +72,11 @@ Complete Control
 
 </v-click>
 
+<!--
+METADATA:
+sentence: IaaS options, like virtual machines, are great when you need access to the host machine to configure and deploy your application.
+search_anchor: IaaS options, like virtual machines
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -71,6 +86,11 @@ Complete Control
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You have complete control over the operating system, runtime environment, and server configuration.
+search_anchor: You have complete control over
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -80,6 +100,11 @@ Complete Control
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, this control comes with significant management overhead - you're responsible for patching, updates, security, scaling, and all the infrastructure concerns.
+search_anchor: However, this control comes with
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-red-400">
@@ -88,6 +113,11 @@ Significant Management Overhead
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, this control comes with significant management overhead - you're responsible for patching, updates, security, scaling, and all the infrastructure concerns.
+search_anchor: However, this control comes with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -109,6 +139,11 @@ Significant Management Overhead
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With PaaS, you can focus on your application code while Azure handles the underlying servers, operating systems, runtime environments, and scaling.
+search_anchor: PaaS, you can focus on
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -135,6 +170,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Platform-as-a-Service takes care of all that infrastructure management for you.
+search_anchor: Platform-as-a-Service takes care of all
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -147,6 +187,11 @@ Azure handles infrastructure management
 
 # The Trade-Off
 
+<!--
+METADATA:
+sentence: You have complete control over the operating system, runtime environment, and server configuration.
+search_anchor: You have complete control over
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-16">
@@ -166,6 +211,11 @@ Azure handles infrastructure management
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The trade-off is that your application needs to be supported within the PaaS environment's constraints.
+search_anchor: trade-off is that your application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -192,6 +242,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure App Service is one of Azure's most popular PaaS offerings.
+search_anchor: Azure App Service is one
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -200,6 +255,11 @@ One of Azure's most popular PaaS offerings
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's a fully managed platform for building, deploying, and scaling web applications.
+search_anchor: It's a fully managed platform
+-->
 <v-click>
 
 <div class="mt-12 text-lg text-center">
@@ -212,6 +272,11 @@ Build, deploy, and scale web applications
 
 # Supported Languages
 
+<!--
+METADATA:
+sentence: App Service supports multiple programming languages and frameworks including .NET, Java, Node.js, Python, and PHP.
+search_anchor: App Service supports multiple programming
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-8">
@@ -247,6 +312,11 @@ Build, deploy, and scale web applications
 
 # Key Features
 
+<!--
+METADATA:
+sentence: It's a fully managed platform for building, deploying, and scaling web applications.
+search_anchor: It's a fully managed platform
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -256,6 +326,11 @@ Build, deploy, and scale web applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see how Azure handles compilation, configuration, and deployment automatically.
+search_anchor: You'll see how Azure handles
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -265,6 +340,11 @@ Build, deploy, and scale web applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -274,6 +354,11 @@ Build, deploy, and scale web applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The trade-off is that your application needs to be supported within the PaaS environment's constraints.
+search_anchor: trade-off is that your application
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -283,6 +368,11 @@ Build, deploy, and scale web applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure will compile and configure the application for you automatically.
+search_anchor: Azure will compile and configure
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -292,6 +382,11 @@ Build, deploy, and scale web applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Platform-as-a-Service takes care of all that infrastructure management for you.
+search_anchor: Platform-as-a-Service takes care of all
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -311,6 +406,11 @@ layout: section
 
 # Lab Overview
 
+<!--
+METADATA:
+sentence: Azure will compile and configure the application for you automatically.
+search_anchor: Azure will compile and configure
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -336,6 +436,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see how Azure handles compilation, configuration, and deployment automatically.
+search_anchor: You'll see how Azure handles
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -348,6 +453,11 @@ Azure handles everything automatically
 
 # What We'll Do
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -360,6 +470,11 @@ Azure handles everything automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -372,6 +487,11 @@ Azure handles everything automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -384,6 +504,11 @@ Azure handles everything automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure will compile and configure the application for you automatically.
+search_anchor: Azure will compile and configure
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -396,6 +521,11 @@ Azure handles everything automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You have complete control over the operating system, runtime environment, and server configuration.
+search_anchor: You have complete control over
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -418,6 +548,11 @@ layout: section
 
 # What You'll Need
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -427,6 +562,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure will compile and configure the application for you automatically.
+search_anchor: Azure will compile and configure
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -436,6 +576,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -445,6 +590,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The trade-off is that your application needs to be supported within the PaaS environment's constraints.
+search_anchor: trade-off is that your application
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -464,6 +614,11 @@ layout: section
 
 # The Deployment Experience
 
+<!--
+METADATA:
+sentence: Azure App Service is one of Azure's most popular PaaS offerings.
+search_anchor: Azure App Service is one
+-->
 <v-click>
 
 <div class="mt-8 text-center text-2xl text-green-400">
@@ -493,6 +648,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see how Azure handles compilation, configuration, and deployment automatically.
+search_anchor: You'll see how Azure handles
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -505,6 +665,11 @@ Azure handles everything automatically
 
 # The Outcome
 
+<!--
+METADATA:
+sentence: By the end, you'll have a live web application running on Azure without managing any virtual machines or infrastructure.
+search_anchor: By the end, you'll have
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -513,6 +678,11 @@ Live web application running on Azure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Platform-as-a-Service takes care of all that infrastructure management for you.
+search_anchor: Platform-as-a-Service takes care of all
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -545,6 +715,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -553,6 +728,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure App Service?
+search_anchor: What is Azure App Service
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

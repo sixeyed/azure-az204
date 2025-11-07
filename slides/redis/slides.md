@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Azure Cache for Redis - Introduction What is Redis?
+search_anchor: Azure Cache for Redis -
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Redis is a popular open-source technology that combines the functionality of a message queue and a data store.
+search_anchor: Redis is a popular open-source
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Combines message queue and data store
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's incredibly lightweight and has a straightforward programming interface, making it a go-to choice for developers worldwide.
+search_anchor: It's incredibly lightweight and has
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -81,6 +96,11 @@ Combines message queue and data store
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's incredibly lightweight and has a straightforward programming interface, making it a go-to choice for developers worldwide.
+search_anchor: It's incredibly lightweight and has
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -99,6 +119,11 @@ layout: section
 
 # Two Key Scenarios
 
+<!--
+METADATA:
+sentence: Think of scenarios where you have data that's expensive to compute or retrieve, but doesn't change frequently.
+search_anchor: Think of scenarios where you
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -114,6 +139,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, for asynchronous communication where reliable messaging isn't required.
+search_anchor: Second, for asynchronous communication where
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -155,6 +185,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Welcome to this lab on Azure Cache for Redis.
+search_anchor: Welcome to this lab on
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -181,6 +216,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's essentially a drop-in replacement for running your own Redis cluster, but without the operational overhead.
+search_anchor: It's essentially a drop-in replacement
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -189,6 +229,11 @@ Drop-in replacement for Redis cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's essentially a drop-in replacement for running your own Redis cluster, but without the operational overhead.
+search_anchor: It's essentially a drop-in replacement
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -220,6 +265,11 @@ graph TB
 
 # What Microsoft Handles
 
+<!--
+METADATA:
+sentence: Let's start by understanding what Redis is and why it's valuable in cloud applications.
+search_anchor: Let's start by understanding what
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -229,6 +279,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's start by understanding what Redis is and why it's valuable in cloud applications.
+search_anchor: Let's start by understanding what
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -238,6 +293,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's start by understanding what Redis is and why it's valuable in cloud applications.
+search_anchor: Let's start by understanding what
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -247,6 +307,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's start by understanding what Redis is and why it's valuable in cloud applications.
+search_anchor: Let's start by understanding what
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -256,6 +321,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A cache can dramatically improve your application's performance by storing these results for quick retrieval.
+search_anchor: cache can dramatically improve your
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -274,6 +344,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: A cache can dramatically improve your application's performance by storing these results for quick retrieval.
+search_anchor: cache can dramatically improve your
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -287,6 +362,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Redis is a popular open-source technology that combines the functionality of a message queue and a data store.
+search_anchor: Redis is a popular open-source
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -300,6 +380,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's start by understanding what Redis is and why it's valuable in cloud applications.
+search_anchor: Let's start by understanding what
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -308,6 +393,11 @@ Work with real application
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Cache for Redis - Introduction What is Redis?
+search_anchor: Azure Cache for Redis -
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -326,6 +416,11 @@ layout: section
 
 # Why Choose Redis?
 
+<!--
+METADATA:
+sentence: A cache can dramatically improve your application's performance by storing these results for quick retrieval.
+search_anchor: cache can dramatically improve your
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -340,6 +435,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's incredibly lightweight and has a straightforward programming interface, making it a go-to choice for developers worldwide.
+search_anchor: It's incredibly lightweight and has
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -354,6 +454,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, for asynchronous communication where reliable messaging isn't required.
+search_anchor: Second, for asynchronous communication where
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -367,6 +472,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Cache for Redis Azure Cache for Redis is a fully managed service that implements the Redis API.
+search_anchor: Azure Cache for Redis Azure
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -380,6 +490,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of scenarios where you have data that's expensive to compute or retrieve, but doesn't change frequently.
+search_anchor: Think of scenarios where you
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -414,6 +529,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Cache for Redis - Introduction What is Redis?
+search_anchor: Azure Cache for Redis -
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -422,6 +542,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Welcome to this lab on Azure Cache for Redis.
+search_anchor: Welcome to this lab on
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -443,6 +568,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Welcome to this lab on Azure Cache for Redis.
+search_anchor: Welcome to this lab on
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -451,6 +581,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Cache for Redis - Introduction What is Redis?
+search_anchor: Azure Cache for Redis -
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

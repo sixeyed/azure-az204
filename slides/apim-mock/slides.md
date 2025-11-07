@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Azure API Management can help you design and publish mock APIs before the actual backend implementation is complete.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # API Design Process
 
+<!--
+METADATA:
+sentence: When designing new APIs, there's often a three-way discussion between the API architect, the data owner, and the API consumer.
+search_anchor: When designing new APIs, there's
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -77,6 +87,11 @@ graph TB
 
 # Design Ensures
 
+<!--
+METADATA:
+sentence: API Management: Mocking New APIs - Introduction Opening Welcome to this lab on API Management and mocking new APIs.
+search_anchor: API Management: Mocking New APIs
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -86,6 +101,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This collaborative approach ensures that: The API adheres to best practices Consumers get the information they need The data required is actually available However, the time between API design and actual delivery can be quite long.
+search_anchor: This collaborative approach ensures that
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -95,6 +115,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -123,6 +148,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This collaborative approach ensures that: The API adheres to best practices Consumers get the information they need The data required is actually available However, the time between API design and actual delivery can be quite long.
+search_anchor: This collaborative approach ensures that
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -149,6 +179,11 @@ layout: section
 
 # Mock API Benefits
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -157,6 +192,11 @@ A mock API is a real API service that:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When designing new APIs, there's often a three-way discussion between the API architect, the data owner, and the API consumer.
+search_anchor: When designing new APIs, there's
+-->
 <v-click>
 
 <div class="mt-10 flex items-center gap-4">
@@ -166,6 +206,11 @@ A mock API is a real API service that:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When designing new APIs, there's often a three-way discussion between the API architect, the data owner, and the API consumer.
+search_anchor: When designing new APIs, there's
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -175,6 +220,11 @@ A mock API is a real API service that:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -184,6 +234,11 @@ A mock API is a real API service that:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -219,6 +274,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -227,6 +287,11 @@ Teams work in parallel!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Azure API Management can help you design and publish mock APIs before the actual backend implementation is complete.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -245,6 +310,11 @@ layout: section
 
 # APIM Capabilities
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -254,6 +324,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: API Management: Mocking New APIs - Introduction Opening Welcome to this lab on API Management and mocking new APIs.
+search_anchor: API Management: Mocking New APIs
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -263,6 +338,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -272,6 +352,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Azure API Management can help you design and publish mock APIs before the actual backend implementation is complete.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -291,6 +376,11 @@ layout: section
 
 # What We'll Build
 
+<!--
+METADATA:
+sentence: When designing new APIs, there's often a three-way discussion between the API architect, the data owner, and the API consumer.
+search_anchor: When designing new APIs, there's
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -303,6 +393,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -315,6 +410,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -327,6 +427,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -339,6 +444,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -378,6 +488,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -408,6 +523,11 @@ Full CRUD operations for student management
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When designing new APIs, there's often a three-way discussion between the API architect, the data owner, and the API consumer.
+search_anchor: When designing new APIs, there's
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-purple-400">
@@ -416,6 +536,11 @@ Dummy data that looks real
 
 </v-click>
 
+<!--
+METADATA:
+sentence: API Management: Mocking New APIs - Introduction Opening Welcome to this lab on API Management and mocking new APIs.
+search_anchor: API Management: Mocking New APIs
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -428,6 +553,11 @@ Allows development teams to program immediately
 
 # The Outcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Azure API Management can help you design and publish mock APIs before the actual backend implementation is complete.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -455,6 +585,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where API mocking becomes invaluable.
+search_anchor: This is where API mocking
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -476,6 +611,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When designing new APIs, there's often a three-way discussion between the API architect, the data owner, and the API consumer.
+search_anchor: When designing new APIs, there's
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -484,6 +624,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Azure API Management can help you design and publish mock APIs before the actual backend implementation is complete.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

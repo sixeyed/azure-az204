@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: We'll explore how secrets appear inside containers.
+search_anchor: We'll explore how secrets appear
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ConfigMaps are fantastic for general settings, but there's a major limitation: they store everything in plain text.
+search_anchor: ConfigMaps are fantastic for general
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ ConfigMaps store everything in plain text
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Anyone with access to your cluster can read those values.
+search_anchor: Anyone with access to your
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -70,6 +85,11 @@ Anyone with cluster access can read values
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So what happens when you need to store passwords, API keys, or connection strings?
+search_anchor: So what happens when you
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -113,6 +133,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: [On screen: Secret object diagram with lock icon] Kubernetes Secrets are designed specifically for sensitive data.
+search_anchor: [On screen: Secret object diagram
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -121,6 +146,11 @@ Specifically for sensitive information
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They use the same familiar API as ConfigMaps, so you can inject them as environment variables or mount them as files.
+search_anchor: They use the same familiar
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -130,6 +160,11 @@ Specifically for sensitive information
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They use the same familiar API as ConfigMaps, so you can inject them as environment variables or mount them as files.
+search_anchor: They use the same familiar
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -139,6 +174,11 @@ Specifically for sensitive information
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But Secrets have additional safeguards built in.
+search_anchor: But Secrets have additional safeguards
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -152,6 +192,11 @@ Specifically for sensitive information
 
 # Built-In Safeguards
 
+<!--
+METADATA:
+sentence: They're base-64 encoded at rest, and depending on your cluster configuration, they can be encrypted in the Kubernetes database.
+search_anchor: They're base-64 encoded at rest
+-->
 <v-click>
 
 <div class="mt-12 flex items-start gap-4">
@@ -164,6 +209,11 @@ Specifically for sensitive information
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're base-64 encoded at rest, and depending on your cluster configuration, they can be encrypted in the Kubernetes database.
+search_anchor: They're base-64 encoded at rest
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -177,6 +227,11 @@ Specifically for sensitive information
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Anyone with access to your cluster can read those values.
+search_anchor: Anyone with access to your
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -199,6 +254,11 @@ layout: section
 
 # Three Ways to Create
 
+<!--
+METADATA:
+sentence: You can encode values in base-64 and define them directly in YAML.
+search_anchor: You can encode values in
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -212,6 +272,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can use plain text in your YAML files when they're properly secured.
+search_anchor: You can use plain text
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -225,6 +290,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So where does real security come from?
+search_anchor: So where does real security
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -238,6 +308,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each approach has its use cases, and we'll explore all of them in the hands-on exercises.
+search_anchor: Each approach has its use
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -256,6 +331,11 @@ layout: section
 
 # Important Truth
 
+<!--
+METADATA:
+sentence: We'll work with base-64 encoding and decoding.
+search_anchor: We'll work with base-64 encoding
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -264,6 +344,11 @@ Base-64 encoding is NOT encryption
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's trivially easy to decode.
+search_anchor: It's trivially easy to decode
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -272,6 +357,11 @@ Trivially easy to decode
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So where does real security come from?
+search_anchor: So where does real security
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -284,6 +374,11 @@ So where does real security come from?
 
 # Real Security Sources
 
+<!--
+METADATA:
+sentence: Anyone with access to your cluster can read those values.
+search_anchor: Anyone with access to your
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -296,6 +391,11 @@ So where does real security come from?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Secrets come in.
+search_anchor: That's where Secrets come in
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -308,6 +408,11 @@ So where does real security come from?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes creating and managing secrets, integrating with Azure Key Vault, and following security best practices.
+search_anchor: This includes creating and managing
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -325,6 +430,11 @@ So where does real security come from?
 
 # Production Best Practice
 
+<!--
+METADATA:
+sentence: It comes from access controls, from encrypting secrets at rest in your cluster, and increasingly, from integrating with dedicated secret management systems like Azure Key Vault.
+search_anchor: It comes from access controls
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -333,6 +443,11 @@ Use dedicated secret management systems
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In production environments, you'll want to use solutions like the Secrets Store CSI driver or external secrets operators to pull secrets from Azure Key Vault at runtime.
+search_anchor: production environments, you'll want to
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -348,6 +463,11 @@ Use dedicated secret management systems
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes creating and managing secrets, integrating with Azure Key Vault, and following security best practices.
+search_anchor: This includes creating and managing
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -366,6 +486,11 @@ layout: section
 
 # Key Exam Topics
 
+<!--
+METADATA:
+sentence: That's where Secrets come in.
+search_anchor: That's where Secrets come in
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -375,6 +500,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Secrets come in.
+search_anchor: That's where Secrets come in
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -384,6 +514,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes creating and managing secrets, integrating with Azure Key Vault, and following security best practices.
+search_anchor: This includes creating and managing
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -393,6 +528,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes creating and managing secrets, integrating with Azure Key Vault, and following security best practices.
+search_anchor: This includes creating and managing
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -406,6 +546,11 @@ layout: section
 
 # Critical Knowledge
 
+<!--
+METADATA:
+sentence: You can encode values in base-64 and define them directly in YAML.
+search_anchor: You can encode values in
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -414,6 +559,11 @@ Understand the difference
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Secrets come in.
+search_anchor: That's where Secrets come in
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -431,6 +581,11 @@ Understand the difference
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll also need to know how secrets differ from ConfigMaps and when to use each.
+search_anchor: You'll also need to know
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -449,6 +604,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: --- Slide 7: What We'll Cover [On screen: Agenda with checkboxes] In the exercises ahead, we'll create secrets using different methods.
+search_anchor: --- Slide 7: What We'll
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -458,6 +618,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll explore how secrets appear inside containers.
+search_anchor: We'll explore how secrets appear
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -467,6 +632,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll work with base-64 encoding and decoding.
+search_anchor: We'll work with base-64 encoding
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -476,6 +646,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And we'll look at how to structure your deployments to separate secret management from application deployment.
+search_anchor: we'll look at how to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -485,6 +660,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The hands-on labs will give you the practical experience you need to confidently answer questions about secret management on the exam.
+search_anchor: hands-on labs will give you
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -506,6 +686,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Get your terminal ready, and let's start securing some configuration data!
+search_anchor: Get your terminal ready, and
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -514,6 +699,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Get your terminal ready, and let's start securing some configuration data!
+search_anchor: Get your terminal ready, and
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

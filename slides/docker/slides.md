@@ -28,6 +28,11 @@ layout: center
 
 # Welcome to Docker
 
+<!--
+METADATA:
+sentence: In this lab, we're going to explore one of the most important technologies for deploying applications in the cloud: Docker containers.
+search_anchor: this lab, we're going to
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # How to Run a .NET App on Azure?
 
+<!--
+METADATA:
+sentence: But this approach has some significant challenges.
+search_anchor: But this approach has some
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -54,6 +64,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No need to provision and configure new VMs from scratch.
+search_anchor: No need to provision and
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -63,6 +78,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Need to handle more traffic?
+search_anchor: Need to handle more traffic
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-4">
@@ -72,6 +92,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First, it's hard to automate all those steps.
+search_anchor: First, it's hard to automate
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-4">
@@ -81,6 +106,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You're managing not just your application, but the entire infrastructure around it.
+search_anchor: You're managing not just your
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-4">
@@ -90,6 +120,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see the Docker whale icon in your taskbar.
+search_anchor: You'll see the Docker whale
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-4">
@@ -99,6 +134,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Just run more containers from the same image.
+search_anchor: Just run more containers from
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-4">
@@ -112,6 +152,11 @@ Traditional approach:
 
 # Significant Challenges
 
+<!--
+METADATA:
+sentence: First, it's hard to automate all those steps.
+search_anchor: First, it's hard to automate
+-->
 <v-click>
 
 <div class="mt-10 flex items-center gap-4">
@@ -124,6 +169,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, it's time-consuming to spin up a new instance.
+search_anchor: Second, it's time-consuming to spin
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -136,6 +186,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And third, it's difficult to keep multiple instances in sync.
+search_anchor: third, it's difficult to keep
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -148,6 +203,11 @@ Traditional approach:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You're managing not just your application, but the entire infrastructure around it.
+search_anchor: You're managing not just your
+-->
 <v-click>
 
 <div class="mt-10 text-center text-xl text-red-400">
@@ -160,6 +220,11 @@ Managing application AND infrastructure
 
 # What About App Service?
 
+<!--
+METADATA:
+sentence: Now, you could use Azure App Service instead, which simplifies things.
+search_anchor: Now, you could use Azure
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -168,6 +233,11 @@ Azure App Service simplifies things...
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get started with our first container.
+search_anchor: Alright, let's get started with
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -183,6 +253,11 @@ Azure App Service simplifies things...
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But there's still a lot to set up, and you end up with a different hosting environment than what you have running locally on your development machine.
+search_anchor: But there's still a lot
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -191,6 +266,11 @@ Different hosting environment than local dev
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This can lead to the classic "it works on my machine" problem.
+search_anchor: This can lead to the
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -217,6 +297,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With Docker, you build all your application components and dependencies into a package called an image.
+search_anchor: Docker, you build all your
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -254,6 +339,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A container is a running instance of that image.
+search_anchor: container is a running instance
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -262,6 +352,11 @@ A blueprint - static package
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of a Docker image as a blueprint - it's a static package that contains everything your application needs to run: your code, the runtime, system tools, libraries, and settings.
+search_anchor: Think of a Docker image
+-->
 <v-click>
 
 <div class="mt-12 text-lg">
@@ -279,6 +374,11 @@ Contains everything your app needs:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Benefits The beauty of Docker is consistency.
+search_anchor: Key Benefits The beauty of
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -288,6 +388,11 @@ Contains everything your app needs:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Need to handle more traffic?
+search_anchor: Need to handle more traffic
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -329,6 +434,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Just run more containers from the same image.
+search_anchor: Just run more containers from
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -337,6 +447,11 @@ Behaves exactly the same way everywhere
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Once you've built an image, you can run it anywhere that has Docker installed, and it will behave exactly the same way.
+search_anchor: Once you've built an image
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -357,6 +472,11 @@ Anywhere that has Docker installed
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A container is a running instance of that image.
+search_anchor: container is a running instance
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -365,6 +485,11 @@ A running instance of an image
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's lightweight, portable, and isolated from other containers and the host system.
+search_anchor: It's lightweight, portable, and isolated
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-8">
@@ -384,6 +509,11 @@ A running instance of an image
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's lightweight, portable, and isolated from other containers and the host system.
+search_anchor: It's lightweight, portable, and isolated
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -410,6 +540,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Just run more containers from the same image.
+search_anchor: Just run more containers from
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -435,6 +570,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This eliminates environment-specific bugs and makes deployments much more reliable.
+search_anchor: This eliminates environment-specific bugs and
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -447,6 +587,11 @@ Eliminates environment-specific bugs
 
 # Scaling Made Easy
 
+<!--
+METADATA:
+sentence: Need to handle more traffic?
+search_anchor: Need to handle more traffic
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -476,6 +621,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Just run more containers from the same image.
+search_anchor: Just run more containers from
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -484,6 +634,11 @@ Just run more containers from the same image
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No need to provision and configure new VMs from scratch.
+search_anchor: No need to provision and
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -502,6 +657,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: Just run more containers from the same image.
+search_anchor: Just run more containers from
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -511,6 +671,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get started with our first container.
+search_anchor: Alright, let's get started with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -520,6 +685,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see the Docker whale icon in your taskbar.
+search_anchor: You'll see the Docker whale
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -529,6 +699,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then you use that image to run instances of your applications called containers.
+search_anchor: Then you use that image
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -542,6 +717,11 @@ layout: section
 
 # Beyond This Lab
 
+<!--
+METADATA:
+sentence: Just run more containers from the same image.
+search_anchor: Just run more containers from
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -550,6 +730,11 @@ These same containers can be deployed to:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Now, you could use Azure App Service instead, which simplifies things.
+search_anchor: Now, you could use Azure
+-->
 <v-click>
 
 <div class="mt-10 grid grid-cols-3 gap-8">
@@ -579,6 +764,11 @@ layout: section
 
 # Prerequisites
 
+<!--
+METADATA:
+sentence: Getting Started Before we dive into the exercises, make sure you have Docker Desktop installed and running.
+search_anchor: Getting Started Before we dive
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -591,6 +781,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A container is a running instance of that image.
+search_anchor: container is a running instance
+-->
 <v-click>
 
 <div class="mt-10 flex items-center gap-4">
@@ -603,6 +798,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Docker also makes scaling easier.
+search_anchor: Docker also makes scaling easier
+-->
 <v-click>
 
 <div class="mt-10 flex items-center gap-4">
@@ -633,6 +833,11 @@ docker build --help
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Need to handle more traffic?
+search_anchor: Need to handle more traffic
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -641,6 +846,11 @@ Similar to Azure CLI
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It has built-in help, supports various subcommands, and gives you complete control over your container environment.
+search_anchor: It has built-in help, supports
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -673,6 +883,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get started with our first container.
+search_anchor: Alright, let's get started with
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -681,6 +896,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get started with our first container.
+search_anchor: Alright, let's get started with
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

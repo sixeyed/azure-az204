@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: IaaS Bicep - Introduction Narration Script Opening Welcome to this lab on automating application deployment with Infrastructure as a Service using Bicep.
+search_anchor: IaaS Bicep - Introduction Narration
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The IaaS Automation Story When we think about Infrastructure as a Service, it's easy to imagine manually logging into virtual machines and deploying applications by hand.
+search_anchor: IaaS Automation Story When we
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-red-400">
@@ -62,6 +72,11 @@ Easy to imagine: logging in and deploying by hand
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But that's not how we work in modern cloud environments.
+search_anchor: But that's not how we
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -92,6 +107,11 @@ graph LR
 
 # Full Control + Automation
 
+<!--
+METADATA:
+sentence: IaaS doesn't mean manual - it means we have full control over our infrastructure, and we can automate every aspect of it.
+search_anchor: IaaS doesn't mean manual -
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -100,6 +120,11 @@ IaaS means full control over infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: IaaS doesn't mean manual - it means we have full control over our infrastructure, and we can automate every aspect of it.
+search_anchor: IaaS doesn't mean manual -
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -108,6 +133,11 @@ And we can automate every aspect of it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: IaaS doesn't mean manual - it means we have full control over our infrastructure, and we can automate every aspect of it.
+search_anchor: IaaS doesn't mean manual -
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -136,6 +166,11 @@ layout: section
 
 # Complete Automated Stack
 
+<!--
+METADATA:
+sentence: What We'll Build The scenario we're working with is a .NET web application that needs a SQL Server backend.
+search_anchor: What We'll Build The scenario
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -144,6 +179,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In a traditional environment, this might take hours or days to set up: provisioning VMs, configuring networks, installing SQL Server, deploying the application, and setting up all the configuration.
+search_anchor: traditional environment, this might take
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -152,6 +192,11 @@ Traditional environment might take hours or days:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In a traditional environment, this might take hours or days to set up: provisioning VMs, configuring networks, installing SQL Server, deploying the application, and setting up all the configuration.
+search_anchor: traditional environment, this might take
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-6">
@@ -165,6 +210,11 @@ Traditional environment might take hours or days:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With Bicep and Azure IaaS, we can automate all of that into a repeatable, reliable deployment that runs in minutes.
+search_anchor: Bicep and Azure IaaS, we
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -191,6 +241,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Bicep Approach What makes this approach powerful is how Bicep lets us split our infrastructure model across multiple files.
+search_anchor: Bicep Approach What makes this
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -218,6 +273,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Automation Story But we're not stopping at infrastructure.
+search_anchor: Automation Story But we're not
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -230,6 +290,11 @@ Clean, modular, maintainable
 
 # Not One Massive Template
 
+<!--
+METADATA:
+sentence: One of the most powerful features we'll demonstrate is the VM custom script extension.
+search_anchor: One of the most powerful
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -249,6 +314,11 @@ Clean, modular, maintainable
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With Bicep and Azure IaaS, we can automate all of that into a repeatable, reliable deployment that runs in minutes.
+search_anchor: Bicep and Azure IaaS, we
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -275,6 +345,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This lets us run PowerShell scripts automatically when the VM is created - scripts that can install dependencies, deploy applications, and configure everything exactly how we need it.
+search_anchor: This lets us run PowerShell
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -283,6 +358,11 @@ Run PowerShell scripts automatically when VM is created
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lab, we'll have a fully automated deployment pipeline.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -292,6 +372,11 @@ Run PowerShell scripts automatically when VM is created
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lab, we'll have a fully automated deployment pipeline.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -301,6 +386,11 @@ Run PowerShell scripts automatically when VM is created
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This lets us run PowerShell scripts automatically when the VM is created - scripts that can install dependencies, deploy applications, and configure everything exactly how we need it.
+search_anchor: This lets us run PowerShell
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -339,6 +429,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Run a few commands, and you'll have a complete application stack running in Azure, with no manual intervention required.
+search_anchor: Run a few commands, and
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -351,6 +446,11 @@ No manual intervention required
 
 # The Power of Automation
 
+<!--
+METADATA:
+sentence: Run a few commands, and you'll have a complete application stack running in Azure, with no manual intervention required.
+search_anchor: Run a few commands, and
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -359,6 +459,11 @@ Run a few commands
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Run a few commands, and you'll have a complete application stack running in Azure, with no manual intervention required.
+search_anchor: Run a few commands, and
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -381,6 +486,11 @@ az deployment group create \
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With Bicep and Azure IaaS, we can automate all of that into a repeatable, reliable deployment that runs in minutes.
+search_anchor: Bicep and Azure IaaS, we
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -389,6 +499,11 @@ Everything deployed and configured
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Run a few commands, and you'll have a complete application stack running in Azure, with no manual intervention required.
+search_anchor: Run a few commands, and
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -401,6 +516,11 @@ Infrastructure + Application + Configuration
 
 # Repeatable and Reliable
 
+<!--
+METADATA:
+sentence: With Bicep and Azure IaaS, we can automate all of that into a repeatable, reliable deployment that runs in minutes.
+search_anchor: Bicep and Azure IaaS, we
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -423,6 +543,11 @@ Infrastructure + Application + Configuration
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this lab, we're going to demonstrate the power of combining IaaS with Infrastructure as Code using Bicep.
+search_anchor: this lab, we're going to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -444,6 +569,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Automation Story But we're not stopping at infrastructure.
+search_anchor: Automation Story But we're not
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -452,6 +582,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lab, we'll have a fully automated deployment pipeline.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

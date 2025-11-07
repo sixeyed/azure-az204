@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this video, we'll explore one of the most powerful features in Docker for creating optimized, production-ready container images.
+search_anchor: this video, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -62,6 +67,11 @@ FROM mcr.microsoft.com/dotnet/runtime:8.0 AS final
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Multi-stage builds use the standard Dockerfile syntax with a key difference: they contain multiple FROM commands, each representing a separate build stage.
+search_anchor: Multi-stage builds use the standard
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -91,6 +101,11 @@ graph LR
 
 # Factory Assembly Line
 
+<!--
+METADATA:
+sentence: Think of it like an assembly line in a factory.
+search_anchor: Think of it like an
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -118,6 +133,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: At the end, you only ship the finished product - not all the manufacturing equipment used to create it.
+search_anchor: end, you only ship the
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -144,6 +164,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You won't see multi-stage builds used everywhere, but they offer significant advantages: Centralized Toolset: Developers and build servers only need Docker and the source code.
+search_anchor: You won't see multi-stage builds
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -152,6 +177,11 @@ Developers and build servers only need:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Docker Multi-Stage Builds - Introduction Opening Welcome to this session on Docker Multi-Stage Builds.
+search_anchor: Docker Multi-Stage Builds - Introduction
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -167,6 +197,11 @@ Developers and build servers only need:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All the build tools - compilers, package managers, testing frameworks - come packaged in Docker images.
+search_anchor: All the build tools -
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -175,6 +210,11 @@ Build tools come packaged in Docker images
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This ensures everyone is using the same versions of everything.
+search_anchor: This ensures everyone is using
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -203,6 +243,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Smaller Images: Your final application image only contains what's necessary to run the app, not the entire SDK or build toolchain.
+search_anchor: Smaller Images: Your final application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -211,6 +256,11 @@ Final image: only what's necessary to run
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This can reduce image sizes from hundreds of megabytes to just a few megabytes.
+search_anchor: This can reduce image sizes
+-->
 <v-click>
 
 <div class="mt-6 text-center text-xl text-green-400">
@@ -231,6 +281,11 @@ Reduce from hundreds of MB to just a few MB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Security: Fewer components in your final image means a smaller attack surface.
+search_anchor: Security: Fewer components in your
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -256,6 +311,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Build tools and SDKs don't make it into production.
+search_anchor: Build tools and SDKs don't
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -268,6 +328,11 @@ Build tools don't make it into production
 
 # Simplified Pipeline
 
+<!--
+METADATA:
+sentence: This ensures everyone is using the same versions of everything.
+search_anchor: This ensures everyone is using
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -295,6 +360,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Simplified Pipeline: One Dockerfile can handle building, testing, and packaging your application, making CI/CD pipelines cleaner and more maintainable.
+search_anchor: Simplified Pipeline: One Dockerfile can
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -313,6 +383,11 @@ layout: section
 
 # Typical Multi-Stage Dockerfile
 
+<!--
+METADATA:
+sentence: This approach allows you to create a repeatable build process with minimal dependencies in your final image.
+search_anchor: This approach allows you to
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -325,6 +400,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Build tools and SDKs don't make it into production.
+search_anchor: Build tools and SDKs don't
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -337,6 +417,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use Multi-Stage Builds?
+search_anchor: Why Use Multi-Stage Builds
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -349,6 +434,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Security: Fewer components in your final image means a smaller attack surface.
+search_anchor: Security: Fewer components in your
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -382,6 +472,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Docker executes all the stages during the build, but your final image only contains what you explicitly copy into that last stage.
+search_anchor: Docker executes all the stages
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -390,6 +485,11 @@ Docker executes all stages during build
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Docker executes all the stages during the build, but your final image only contains what you explicitly copy into that last stage.
+search_anchor: Docker executes all the stages
+-->
 <v-click>
 
 <div class="mt-6 text-center text-xl text-green-400">
@@ -408,6 +508,11 @@ layout: section
 
 # Multi-Stage Works Everywhere
 
+<!--
+METADATA:
+sentence: Language Support Multi-stage builds work with all major programming languages.
+search_anchor: Language Support Multi-stage builds work
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-6">
@@ -445,6 +550,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are Multi-Stage Builds?
+search_anchor: What Are Multi-Stage Builds
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -463,6 +573,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: Why Use Multi-Stage Builds?
+search_anchor: Why Use Multi-Stage Builds
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -475,6 +590,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this video, we'll explore one of the most powerful features in Docker for creating optimized, production-ready container images.
+search_anchor: this video, we'll explore one
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -487,6 +607,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All the build tools - compilers, package managers, testing frameworks - come packaged in Docker images.
+search_anchor: All the build tools -
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -499,6 +624,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Smaller Images: Your final application image only contains what's necessary to run the app, not the entire SDK or build toolchain.
+search_anchor: Smaller Images: Your final application
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -524,6 +654,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use Multi-Stage Builds?
+search_anchor: Why Use Multi-Stage Builds
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -532,6 +667,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this video, we'll explore one of the most powerful features in Docker for creating optimized, production-ready container images.
+search_anchor: this video, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

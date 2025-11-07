@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Virtual Machines - Web Server: Introduction Welcome to this lab on deploying a web server using Azure Virtual Machines.
+search_anchor: Virtual Machines - Web Server
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by exploring what's available in the Azure Portal.
+search_anchor: Let's get started by exploring
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Virtual Machines - Web Server: Introduction Welcome to this lab on deploying a web server using Azure Virtual Machines.
+search_anchor: Virtual Machines - Web Server
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">
