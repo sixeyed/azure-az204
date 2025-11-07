@@ -1,4 +1,8 @@
-# Kubernetes Troubleshooting - Exercises Narration
+# Kubernetes Troubleshooting
+
+## Reference
+
+Troubleshooting Kubernetes applications requires systematic investigation of Pods, Services, configurations, and logs using kubectl commands to identify and resolve issues like CrashLoopBackOff, ImagePullBackOff, and networking problems. Common diagnostic techniques include examining Pod events with kubectl describe, viewing container logs with kubectl logs, testing connectivity with kubectl exec, and verifying resource configurations. Developing strong troubleshooting skills is essential for operating production Kubernetes applications because failures happen and rapid diagnosis minimizes downtime.
 
 ## Introduction to the Exercise
 

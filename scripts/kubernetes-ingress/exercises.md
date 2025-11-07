@@ -1,4 +1,8 @@
-# Kubernetes Ingress - Hands-On Exercises Narration
+# Kubernetes Ingress
+
+## Reference
+
+Ingress provides HTTP and HTTPS routing to Services based on request hostnames and paths, consolidating multiple application endpoints behind a single external IP address. Unlike LoadBalancer Services which require one external IP per service, Ingress uses rules to route traffic to different backend Services, supporting features like SSL termination, path-based routing, and virtual hosting. Ingress requires an Ingress Controller like nginx or Azure Application Gateway to actually implement the routing rules and handle incoming traffic.
 
 ## Introduction to the Exercise
 

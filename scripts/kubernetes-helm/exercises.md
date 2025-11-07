@@ -1,4 +1,8 @@
-# Helm Exercises - Video Narration Script
+# Kubernetes Helm
+
+## Reference
+
+Helm is the package manager for Kubernetes that simplifies application deployment through reusable templates called charts, which bundle all the Kubernetes manifests needed to run an application along with configurable values. Charts enable version control for Kubernetes applications, support templating to customize deployments across environments, and provide a standard way to package and share applications through chart repositories. Helm transforms complex multi-resource Kubernetes deployments into single commands while maintaining upgrade and rollback capabilities.
 
 ## Introduction
 

@@ -1,4 +1,8 @@
-# Kubernetes Deployments - Lab Exercises Narration Script
+# Kubernetes Deployments
+
+## Reference
+
+Deployments are Kubernetes controllers that manage the lifecycle of Pods, providing declarative updates, scaling, and rollback capabilities for stateless applications. They create and manage ReplicaSets which in turn manage Pods, enabling zero-downtime rolling updates where new versions gradually replace old ones. Deployments represent the standard way to run applications in Kubernetes because they automate deployment strategies, health monitoring, and recovery from failures.
 
 ## Opening
 

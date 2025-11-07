@@ -1,4 +1,8 @@
-# Kubernetes Container Probes - Lab Exercises Narration
+# Kubernetes Container Probes
+
+## Reference
+
+Container probes are health check mechanisms that Kubernetes uses to monitor application state and automatically respond to failures, including liveness probes that restart unhealthy containers, readiness probes that control traffic routing, and startup probes that protect slow-starting applications. These probes can perform HTTP requests, TCP socket checks, or execute commands inside containers to determine health status. Properly configured probes are essential for building self-healing applications that automatically recover from failures and maintain high availability.
 
 ## Opening
 

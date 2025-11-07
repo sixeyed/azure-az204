@@ -1,4 +1,8 @@
-# Kubernetes Pods - Hands-On Lab Narration
+# Kubernetes Pods
+
+## Reference
+
+Pods are the smallest deployable units in Kubernetes and represent a single instance of a running process in your cluster. Each Pod can contain one or more containers that share networking and storage resources, and Kubernetes manages their lifecycle automatically. Understanding Pods is fundamental to working with any container orchestration platform because every other Kubernetes resource builds on this core concept.
 
 ## Opening
 
