@@ -1,6 +1,10 @@
-# ARM Templates - Exercises Script
+# Azure Resource Manager JSON templates
 
-## Exercise 1: Deploying a Storage Account
+## Reference
+
+The Azure CLI is a great tool for exploring and automating deployments, but it's an imperative approach. If you use it in scripts, you'll need to add lots of checks to make sure you're not trying to create resources which already exist. The alternative is the declarative approach where you describe what you want the end result to be, and the tooling works out if it needs to create or update resources. Azure Resource Manager templates provide this declarative model, defining desired state rather than deployment steps. Templates can live in source control, be reviewed through standard code review processes, and provide repeatable infrastructure deployment.
+
+## Deploying a Storage Account
 
 Let's start by creating a resource group for our ARM template deployments. We're naming it "labs-arm" with our standard courselabs tag, deploying to East US - though you can use any region that works for you.
 
@@ -12,7 +16,9 @@ Let's deploy the storage account template. We're supplying the storage account n
 
 While this is deploying, switching over to the Azure Portal and navigating to your labs-arm resource group, you'll see the deployment in progress. You can watch it happening in real-time.
 
-## Exercise 2: Checking Deployments
+---
+
+## Checking Deployments
 
 Once the deployment completes, let's list all deployments in this resource group using the deployment group list command with table output for easier reading.
 
@@ -24,7 +30,9 @@ Make sure you use the same storage account name you used before.
 
 Looking at the output, it shows the storage account with "no change". The what-if feature compares your template with the actual deployed resources and tells you what would change, without making any actual changes. This is incredibly useful for testing and validation - you can verify your templates before applying them.
 
-## Exercise 3: Detecting Configuration Drift
+---
+
+## Detecting Configuration Drift
 
 One of the most valuable features of ARM templates is detecting configuration drift. Drift happens when someone manually changes a deployed resource, and those changes aren't reflected in your template. This is a common problem in cloud environments.
 
@@ -38,7 +46,9 @@ Looking at the output now, it shows that the deployment would modify the SKU pro
 
 This is extremely valuable for auditing your deployments and ensuring they haven't been manually changed outside of your infrastructure-as-code workflow. You can run what-if periodically to check for drift.
 
-## Exercise 4: Deploying a Linux VM
+---
+
+## Deploying a Linux VM
 
 Now let's look at a more complex template - one that deploys a Linux virtual machine with all its associated resources: virtual network, subnet, public IP, network security group, network interface, and the VM itself.
 
@@ -50,7 +60,9 @@ Use your own strong password and a unique DNS prefix.
 
 This deployment will take several minutes because it's creating multiple resources - the networking infrastructure, storage, and the virtual machine itself. You can watch the progress in the Portal as each resource is created.
 
-## Exercise 5: Understanding Dynamic vs Static Values
+---
+
+## Understanding Dynamic vs Static Values
 
 Once the VM deployment completes, let's run the same command again with the what-if flag to see if it's truly idempotent.
 
@@ -60,8 +72,14 @@ If you examine the template, you'll find that the network interface has its priv
 
 This makes the template non-idempotent. Dynamic values like this can cause problems when you're trying to maintain infrastructure as code because every what-if shows changes even though nothing is actually wrong.
 
-## Next Steps
+---
+
+## Lab
 
 In the lab exercise, you'll fix this issue by modifying the template to use a static IP address. This will make the deployment truly repeatable and idempotent - you'll be able to run it multiple times and get "no change" in what-if.
 
-After completing the exercises, we'll look at how ARM templates relate to the AZ-204 certification exam and what you need to know for the test.
+---
+
+## Cleanup
+
+You can delete an ARM deployment with the CLI, but that only deletes the deployment metadata, not the actual resources. To clean up for real we need to delete the Resource Groups.
