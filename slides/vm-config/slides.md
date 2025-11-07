@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: VM Configuration Automation - Introduction Welcome to this lab on automating VM configuration in Azure.
+search_anchor: VM Configuration Automation - Introduction
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can configure VMs during deployment, or after they're created.
+search_anchor: You can configure VMs during
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: VM Configuration Automation - Introduction Welcome to this lab on automating VM configuration in Azure.
+search_anchor: VM Configuration Automation - Introduction
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

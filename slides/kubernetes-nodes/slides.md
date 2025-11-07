@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this lesson, we're diving into Kubernetes Nodes - the fundamental building blocks of your cluster infrastructure.
+search_anchor: this lesson, we're diving into
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In Kubernetes, a node is simply a worker machine - it could be a virtual machine or a physical server.
+search_anchor: Kubernetes, a node is simply
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Virtual machine or physical server
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Nodes are where your containerized applications actually run.
+search_anchor: Nodes are where your containerized
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -96,6 +111,11 @@ graph TB
 
 # The Workhorses
 
+<!--
+METADATA:
+sentence: Each node contains the services necessary to run pods, which are managed by the Kubernetes control plane.
+search_anchor: Each node contains the services
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -104,6 +124,11 @@ Nodes contain services necessary to run pods
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each node contains the services necessary to run pods, which are managed by the Kubernetes control plane.
+search_anchor: Each node contains the services
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -141,6 +166,11 @@ layout: section
 
 # Inside a Node
 
+<!--
+METADATA:
+sentence: It ensures containers are running and healthy.
+search_anchor: It ensures containers are running
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -156,6 +186,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Next, you have the container runtime - this is what actually runs your containers.
+search_anchor: Next, you have the container
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -170,6 +205,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, there's kube-proxy - a network proxy that maintains network rules and enables communication to your pods.
+search_anchor: Finally, there's kube-proxy - a
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -203,6 +243,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A node pool is a group of nodes within a cluster that all have the same configuration.
+search_anchor: node pool is a group
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -211,6 +256,11 @@ Node pool: group of nodes with same configuration
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can have multiple node pools in a single AKS cluster, which is useful when you need different VM sizes for different workloads.
+search_anchor: You can have multiple node
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -242,6 +292,11 @@ graph TB
 
 # Different VM Sizes
 
+<!--
+METADATA:
+sentence: For example, you might have one pool with CPU-optimized nodes for compute-intensive tasks, and another pool with memory-optimized nodes for databases.
+search_anchor: example, you might have one
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -264,6 +319,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll learn how to examine nodes, query their properties, and extract specific information using different output formats.
+search_anchor: You'll learn how to examine
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -309,6 +369,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Kubernetes tracks these resources carefully.
+search_anchor: Kubernetes tracks these resources carefully
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -317,6 +382,11 @@ Kubernetes tracks capacity carefully
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you request resources for your pods, Kubernetes uses this information to decide which node has enough capacity to run your workload.
+search_anchor: When you request resources for
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -348,6 +418,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 2: What Are Kubernetes Nodes?
+search_anchor: --- Slide 2: What Are
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -356,6 +431,11 @@ Resource requests: what pod needs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll need to understand concepts like resource requests and limits, which we'll explore in the hands-on exercises.
+search_anchor: You'll need to understand concepts
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -374,6 +454,11 @@ layout: section
 
 # What You Need to Know
 
+<!--
+METADATA:
+sentence: You'll learn how to examine nodes, query their properties, and extract specific information using different output formats.
+search_anchor: You'll learn how to examine
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -383,6 +468,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 5: Node Capacity and Resources Every node has a certain capacity - CPU cores, memory, and storage.
+search_anchor: --- Slide 5: Node Capacity
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -392,6 +482,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It ensures containers are running and healthy.
+search_anchor: It ensures containers are running
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -401,6 +496,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 3: Node Architecture Let's look at what's inside a node.
+search_anchor: --- Slide 3: Node Architecture
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -414,6 +514,11 @@ layout: section
 
 # AKS Handles Configuration
 
+<!--
+METADATA:
+sentence: --- Slide 2: What Are Kubernetes Nodes?
+search_anchor: --- Slide 2: What Are
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -422,6 +527,11 @@ Don't need to install or configure nodes from scratch
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So, what exactly is a node?
+search_anchor: So, what exactly is a
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -430,6 +540,11 @@ That's handled by AKS
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you deploy an application to Kubernetes, the control plane schedules your pods to run on available nodes.
+search_anchor: When you deploy an application
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -438,6 +553,11 @@ But you DO need to know how to work with them
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Kubernetes tracks these resources carefully.
+search_anchor: Kubernetes tracks these resources carefully
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -467,6 +587,11 @@ layout: section
 
 # kubectl Commands
 
+<!--
+METADATA:
+sentence: --- Slide 2: What Are Kubernetes Nodes?
+search_anchor: --- Slide 2: What Are
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -476,6 +601,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A node pool is a group of nodes within a cluster that all have the same configuration.
+search_anchor: node pool is a group
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -484,6 +614,11 @@ List all nodes in cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 2: What Are Kubernetes Nodes?
+search_anchor: --- Slide 2: What Are
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -493,6 +628,11 @@ List all nodes in cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 2: What Are Kubernetes Nodes?
+search_anchor: --- Slide 2: What Are
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -501,6 +641,11 @@ Detailed information about nodes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In Azure Kubernetes Service, this is typically containerd.
+search_anchor: Azure Kubernetes Service, this is
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -510,6 +655,11 @@ Detailed information about nodes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Kubernetes tracks these resources carefully.
+search_anchor: Kubernetes tracks these resources carefully
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -518,6 +668,11 @@ Learn about Kubernetes resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of them as the workhorses of your cluster.
+search_anchor: Think of them as the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -536,6 +691,11 @@ layout: section
 
 # Hands-On Exercises
 
+<!--
+METADATA:
+sentence: Think of them as the workhorses of your cluster.
+search_anchor: Think of them as the
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -545,6 +705,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So, what exactly is a node?
+search_anchor: So, what exactly is a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -554,6 +719,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll learn how to examine nodes, query their properties, and extract specific information using different output formats.
+search_anchor: You'll learn how to examine
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -563,6 +733,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lesson, you'll be comfortable navigating your cluster's node infrastructure - a crucial skill for both the exam and real-world Azure development.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -571,6 +746,11 @@ Comfortable navigating node infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lesson, you'll be comfortable navigating your cluster's node infrastructure - a crucial skill for both the exam and real-world Azure development.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -592,6 +772,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 3: Node Architecture Let's look at what's inside a node.
+search_anchor: --- Slide 3: Node Architecture
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -600,6 +785,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of them as the workhorses of your cluster.
+search_anchor: Think of them as the
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

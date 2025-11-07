@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What are Storage Accounts?
+search_anchor: What are Storage Accounts
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Storage Accounts are a managed storage service that allows you to store data in the cloud.
+search_anchor: Azure Storage Accounts are a
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Store data in the cloud
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You have complete control over who can access your data - you can make it publicly accessible, restrict it to specific users, or limit access to other Azure services.
+search_anchor: You have complete control over
+-->
 <v-click>
 
 <div class="mt-12 text-lg">
@@ -70,6 +85,11 @@ Complete control over access:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You have complete control over who can access your data - you can make it publicly accessible, restrict it to specific users, or limit access to other Azure services.
+search_anchor: You have complete control over
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -79,6 +99,11 @@ Complete control over access:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Storage Accounts - Introduction Opening Welcome to this lab on Azure Storage Accounts.
+search_anchor: Azure Storage Accounts - Introduction
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -88,6 +113,11 @@ Complete control over access:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Storage Accounts - Introduction Opening Welcome to this lab on Azure Storage Accounts.
+search_anchor: Azure Storage Accounts - Introduction
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -101,6 +131,11 @@ Complete control over access:
 
 # Key Benefits
 
+<!--
+METADATA:
+sentence: Your data is automatically replicated across multiple locations to ensure high availability and durability.
+search_anchor: Your data is automatically replicated
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -114,6 +149,11 @@ Complete control over access:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And you're not locked into a single configuration - you can choose different performance levels based on your specific needs and budget.
+search_anchor: you're not locked into a
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -137,6 +177,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: What are Storage Accounts?
+search_anchor: What are Storage Accounts
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -146,6 +191,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: One of the key benefits of Storage Accounts is built-in redundancy.
+search_anchor: One of the key benefits
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -155,6 +205,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Getting Started Let's get started with our hands-on exercises.
+search_anchor: Getting Started Let's get started
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -164,6 +219,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the most cost-effective option and protects against hardware failures.
+search_anchor: This is the most cost-effective
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -173,6 +233,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Storage Accounts?
+search_anchor: What are Storage Accounts
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -192,6 +257,11 @@ layout: section
 
 # Data Replication Levels
 
+<!--
+METADATA:
+sentence: Azure offers several levels of replication: Locally Redundant Storage - or LRS - replicates your data within a single datacenter.
+search_anchor: Azure offers several levels of
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -230,6 +300,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure offers several levels of replication: Locally Redundant Storage - or LRS - replicates your data within a single datacenter.
+search_anchor: Azure offers several levels of
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -258,6 +333,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the most cost-effective option and protects against hardware failures.
+search_anchor: This is the most cost-effective
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -285,6 +365,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Zone Redundant Storage - or ZRS - replicates your data across multiple datacenters within a single region.
+search_anchor: Zone Redundant Storage - or
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -313,6 +398,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This provides better availability than LRS.
+search_anchor: This provides better availability than
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -333,6 +423,11 @@ Better availability than LRS
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Geo-Redundant Storage - or GRS - replicates your data across different regions entirely.
+search_anchor: Geo-Redundant Storage - or GRS
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -356,6 +451,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you the highest level of protection, but comes at a higher cost.
+search_anchor: This gives you the highest
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -392,6 +492,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your data becomes more secure with wider replication, but you'll pay more for that additional protection.
+search_anchor: Your data becomes more secure
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -400,6 +505,11 @@ More secure with wider replication
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your data becomes more secure with wider replication, but you'll pay more for that additional protection.
+search_anchor: Your data becomes more secure
+-->
 <v-click>
 
 <div class="mt-6 text-center text-xl opacity-70">
@@ -412,6 +522,11 @@ But you pay more for additional protection
 
 # Redundancy Comparison
 
+<!--
+METADATA:
+sentence: This is the most cost-effective option and protects against hardware failures.
+search_anchor: This is the most cost-effective
+-->
 <v-click>
 
 <div class="mt-8">
@@ -426,6 +541,11 @@ But you pay more for additional protection
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And you're not locked into a single configuration - you can choose different performance levels based on your specific needs and budget.
+search_anchor: you're not locked into a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -444,6 +564,11 @@ layout: section
 
 # Lab Flow
 
+<!--
+METADATA:
+sentence: What We'll Cover In this lab, we'll explore the basics of Azure Storage Accounts.
+search_anchor: What We'll Cover In this
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -456,6 +581,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Storage Accounts?
+search_anchor: What are Storage Accounts
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -468,6 +598,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll learn how to create storage accounts, understand different redundancy options, and work with blob storage to upload both small and large files.
+search_anchor: You'll learn how to create
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -480,6 +615,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the most cost-effective option and protects against hardware failures.
+search_anchor: This is the most cost-effective
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -505,6 +645,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Getting Started Let's get started with our hands-on exercises.
+search_anchor: Getting Started Let's get started
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -513,6 +658,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What are Storage Accounts?
+search_anchor: What are Storage Accounts
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this lab, we'll explore one of Azure's most important security services for protecting sensitive application data.
+search_anchor: this lab, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Vault is a specialized storage service designed specifically for storing small pieces of sensitive data.
+search_anchor: Key Vault is a specialized
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Designed for storing small, sensitive data
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes user credentials, API keys, certificates, and any other application configuration that should never be visible in plain text.
+search_anchor: This includes user credentials, API
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-8">
@@ -81,6 +96,11 @@ Designed for storing small, sensitive data
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This includes user credentials, API keys, certificates, and any other application configuration that should never be visible in plain text.
+search_anchor: This includes user credentials, API
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg text-red-400">
@@ -99,6 +119,11 @@ layout: section
 
 # The Problem
 
+<!--
+METADATA:
+sentence: Where do you store them?
+search_anchor: Where do you store them
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -107,6 +132,11 @@ Where do you store application secrets?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In environment variables?
+search_anchor: environment variables
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-2 gap-8">
@@ -122,6 +152,11 @@ Where do you store application secrets?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These approaches have significant security risks.
+search_anchor: These approaches have significant security
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -134,6 +169,11 @@ Significant security risks!
 
 # The Solution
 
+<!--
+METADATA:
+sentence: In configuration files?
+search_anchor: configuration files
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -146,6 +186,11 @@ Significant security risks!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can grant permissions like "get secrets", "list secrets", "set secrets", etc.
+search_anchor: You can grant permissions like
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -158,6 +203,11 @@ Significant security risks!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is important for secret rotation - your application code never needs to change.
+search_anchor: This is important for secret
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -170,6 +220,11 @@ Significant security risks!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure RBAC - The modern approach that uses Azure's role-based access control system.
+search_anchor: Azure RBAC - The modern
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -182,6 +237,11 @@ Significant security risks!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keys - Cryptographic keys used for encryption and decryption operations.
+search_anchor: Keys - Cryptographic keys used
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -204,6 +264,11 @@ layout: section
 
 # Three Types of Data
 
+<!--
+METADATA:
+sentence: Maximum size is 25 KB.
+search_anchor: Maximum size is 25 KB
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -220,6 +285,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keys - Cryptographic keys used for encryption and decryption operations.
+search_anchor: Keys - Cryptographic keys used
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -236,6 +306,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Certificates - X.509 certificates that combine keys with identity metadata.
+search_anchor: Certificates - X.509 certificates that
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -262,6 +337,11 @@ layout: section
 
 # Two Tiers
 
+<!--
+METADATA:
+sentence: Keys - Cryptographic keys used for encryption and decryption operations.
+search_anchor: Keys - Cryptographic keys used
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -282,6 +362,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These approaches have significant security risks.
+search_anchor: These approaches have significant security
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -320,6 +405,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is critical for production environments.
+search_anchor: This is critical for production
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -347,6 +437,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you delete a secret, it's retained for a recovery period (default 90 days) before permanent deletion.
+search_anchor: When you delete a secret
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -367,6 +462,11 @@ Default 90-day retention before permanent deletion
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Purge protection - When enabled, prevents anyone from permanently deleting secrets during the retention period.
+search_anchor: Purge protection - When enabled
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -393,6 +493,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is critical for production environments.
+search_anchor: This is critical for production
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-red-400">
@@ -411,6 +516,11 @@ layout: section
 
 # Two Permission Models
 
+<!--
+METADATA:
+sentence: You can grant permissions like "get secrets", "list secrets", "set secrets", etc.
+search_anchor: You can grant permissions like
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -428,6 +538,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure RBAC - The modern approach that uses Azure's role-based access control system.
+search_anchor: Azure RBAC - The modern
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -467,6 +582,11 @@ https://<keyvault-name>.vault.azure.net/secrets/database-password/<version>
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Vault supports three types of data: Secrets - Small pieces of sensitive data like passwords, connection strings, and API keys.
+search_anchor: Key Vault supports three types
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-4 gap-4 text-center">
@@ -510,6 +630,11 @@ https://myvault.vault.azure.net/secrets/db-pwd
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can grant permissions like "get secrets", "list secrets", "set secrets", etc.
+search_anchor: You can grant permissions like
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -518,6 +643,11 @@ Without version = always get latest
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is important for secret rotation - your application code never needs to change.
+search_anchor: This is important for secret
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -536,6 +666,11 @@ layout: section
 
 # Key Best Practices
 
+<!--
+METADATA:
+sentence: In configuration files?
+search_anchor: configuration files
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -548,6 +683,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In environment variables?
+search_anchor: environment variables
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -560,6 +700,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is critical for production environments.
+search_anchor: This is critical for production
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -572,6 +717,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Vault can even manage the entire certificate lifecycle.
+search_anchor: Key Vault can even manage
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -584,6 +734,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is important for secret rotation - your application code never needs to change.
+search_anchor: This is important for secret
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -596,6 +751,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure RBAC - The modern approach that uses Azure's role-based access control system.
+search_anchor: Azure RBAC - The modern
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -618,6 +778,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: Key Vault can even manage the entire certificate lifecycle.
+search_anchor: Key Vault can even manage
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -627,6 +792,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Where do you store them?
+search_anchor: Where do you store them
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -636,6 +806,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is important for secret rotation - your application code never needs to change.
+search_anchor: This is important for secret
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -645,6 +820,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Vault can even manage the entire certificate lifecycle.
+search_anchor: Key Vault can even manage
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -654,6 +834,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure RBAC - The modern approach that uses Azure's role-based access control system.
+search_anchor: Azure RBAC - The modern
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -676,6 +861,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Where do you store them?
+search_anchor: Where do you store them
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -684,6 +874,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is important for secret rotation - your application code never needs to change.
+search_anchor: This is important for secret
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

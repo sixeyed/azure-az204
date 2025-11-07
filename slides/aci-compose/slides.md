@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Let's get started and see how easy it is to run distributed applications on Azure Container Instances.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Overview Azure Container Instances, or ACI, is the simplest container platform available on Azure.
+search_anchor: Overview Azure Container Instances, or
+-->
 <v-click>
 
 <div class="mt-8 text-lg text-center">
@@ -62,6 +72,11 @@ The simplest container platform on Azure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It allows you to run containers without having to manage virtual machines or adopt a higher-level orchestration service.
+search_anchor: It allows you to run
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-8">
@@ -104,6 +119,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Overview Azure Container Instances, or ACI, is the simplest container platform available on Azure.
+search_anchor: Overview Azure Container Instances, or
+-->
 <v-click>
 
 <div class="text-center text-2xl font-bold">
@@ -136,6 +156,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While you can run single containers, ACI also supports running multiple containers in a group to host distributed applications.
+search_anchor: While you can run single
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -154,6 +179,11 @@ layout: section
 
 # Two Approaches
 
+<!--
+METADATA:
+sentence: Second, we'll use the standard Docker Compose specification with the Docker CLI.
+search_anchor: Second, we'll use the standard
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -166,6 +196,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you access to all ACI-specific features and configuration options.
+search_anchor: This gives you access to
+-->
 <v-click>
 
 <div class="ml-12 mt-4 text-sm opacity-70">
@@ -174,6 +209,11 @@ Access to all ACI-specific features and configuration
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, we'll use the standard Docker Compose specification with the Docker CLI.
+search_anchor: Second, we'll use the standard
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -186,6 +226,11 @@ Access to all ACI-specific features and configuration
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is particularly useful when you want to use familiar Docker tooling and don't need ACI-specific configurations.
+search_anchor: This is particularly useful when
+-->
 <v-click>
 
 <div class="ml-12 mt-4 text-sm opacity-70">
@@ -228,6 +273,11 @@ properties:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you access to all ACI-specific features and configuration options.
+search_anchor: This gives you access to
+-->
 <v-click>
 
 <div class="mt-6 text-center text-sm opacity-70">
@@ -266,6 +316,11 @@ services:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is particularly useful when you want to use familiar Docker tooling and don't need ACI-specific configurations.
+search_anchor: This is particularly useful when
+-->
 <v-click>
 
 <div class="mt-6 text-center text-sm opacity-70">
@@ -284,6 +339,11 @@ layout: section
 
 # ACI + Azure Services
 
+<!--
+METADATA:
+sentence: Integration with Azure Services ACI doesn't exist in isolation - it integrates seamlessly with other Azure services.
+search_anchor: Integration with Azure Services ACI
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -311,6 +371,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Integration with Azure Services ACI doesn't exist in isolation - it integrates seamlessly with other Azure services.
+search_anchor: Integration with Azure Services ACI
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -323,6 +388,11 @@ Seamless integration with Azure ecosystem
 
 # What Containers Can Do
 
+<!--
+METADATA:
+sentence: We'll demonstrate this integration by connecting our containerized applications to Azure Storage services, including Blob Storage and Azure Files.
+search_anchor: We'll demonstrate this integration by
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -332,6 +402,11 @@ Seamless integration with Azure ecosystem
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Integration with Azure Services ACI doesn't exist in isolation - it integrates seamlessly with other Azure services.
+search_anchor: Integration with Azure Services ACI
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -341,6 +416,11 @@ Seamless integration with Azure ecosystem
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Integration with Azure Services ACI doesn't exist in isolation - it integrates seamlessly with other Azure services.
+search_anchor: Integration with Azure Services ACI
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -376,6 +456,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Overview Azure Container Instances, or ACI, is the simplest container platform available on Azure.
+search_anchor: Overview Azure Container Instances, or
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -402,6 +487,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While you can run single containers, ACI also supports running multiple containers in a group to host distributed applications.
+search_anchor: While you can run single
+-->
 <v-click>
 
 <div class="mt-8 text-lg text-center">
@@ -429,6 +519,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, we'll use the standard Docker Compose specification with the Docker CLI.
+search_anchor: Second, we'll use the standard
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -449,6 +544,11 @@ Containers communicate over localhost
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Specification: Unlike Docker Desktop, ACI requires you to specify CPU and memory requirements upfront so Azure can provision the appropriate compute resources.
+search_anchor: Resource Specification: Unlike Docker Desktop
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-16">
@@ -467,6 +567,11 @@ Containers communicate over localhost
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Specification: Unlike Docker Desktop, ACI requires you to specify CPU and memory requirements upfront so Azure can provision the appropriate compute resources.
+search_anchor: Resource Specification: Unlike Docker Desktop
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -475,6 +580,11 @@ ACI requires CPU and memory specifications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Specification: Unlike Docker Desktop, ACI requires you to specify CPU and memory requirements upfront so Azure can provision the appropriate compute resources.
+search_anchor: Resource Specification: Unlike Docker Desktop
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-60">
@@ -509,6 +619,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you access to all ACI-specific features and configuration options.
+search_anchor: This gives you access to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -521,6 +636,11 @@ Different formats, same destination
 
 # When to Use Each
 
+<!--
+METADATA:
+sentence: This gives you access to all ACI-specific features and configuration options.
+search_anchor: This gives you access to
+-->
 <v-click>
 
 <div class="mt-8">
@@ -530,6 +650,11 @@ Different formats, same destination
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is particularly useful when you want to use familiar Docker tooling and don't need ACI-specific configurations.
+search_anchor: This is particularly useful when
+-->
 <v-click>
 
 <div class="mt-8">
@@ -539,6 +664,11 @@ Different formats, same destination
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see how easy it is to run distributed applications on Azure Container Instances.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -559,6 +689,11 @@ Both are valid approaches
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Container Updates: We'll explore how ACI handles configuration changes and what happens under the hood when you update a running container.
+search_anchor: Container Updates: We'll explore how
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -586,6 +721,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Container Updates: We'll explore how ACI handles configuration changes and what happens under the hood when you update a running container.
+search_anchor: Container Updates: We'll explore how
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -607,6 +747,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see how easy it is to run distributed applications on Azure Container Instances.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -615,6 +760,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see how easy it is to run distributed applications on Azure Container Instances.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

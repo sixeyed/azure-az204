@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Let's explore how Kubernetes handles networking and service discovery.
+search_anchor: Let's explore how Kubernetes handles
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That IP address only exists for the lifetime of the Pod.
+search_anchor: That IP address only exists
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Every Pod gets its own IP address
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First up is ClusterIP, which is the default type.
+search_anchor: First up is ClusterIP, which
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -70,6 +85,11 @@ Sounds great, right?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That IP address only exists for the lifetime of the Pod.
+search_anchor: That IP address only exists
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -99,6 +119,11 @@ graph LR
 
 # Constantly Changing
 
+<!--
+METADATA:
+sentence: When a Pod crashes and gets replaced, or when you scale your application, those IP addresses change.
+search_anchor: When a Pod crashes and
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -107,6 +132,11 @@ Pod crashes and gets replaced
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When a Pod crashes and gets replaced, or when you scale your application, those IP addresses change.
+search_anchor: When a Pod crashes and
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -115,6 +145,11 @@ Application scales up or down
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When a Pod crashes and gets replaced, or when you scale your application, those IP addresses change.
+search_anchor: When a Pod crashes and
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -123,6 +158,11 @@ IP addresses change
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So how do other parts of your application reliably communicate with these constantly changing Pods?
+search_anchor: So how do other parts
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -149,6 +189,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That IP address only exists for the lifetime of the Pod.
+search_anchor: That IP address only exists
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -157,6 +202,11 @@ Stable IP address and DNS name
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means your Pods can communicate using friendly DNS names instead of IP addresses.
+search_anchor: This means your Pods can
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -188,6 +238,11 @@ graph LR
 
 # Load Balancer with Service Discovery
 
+<!--
+METADATA:
+sentence: Think of it as a load balancer with built-in service discovery.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -203,6 +258,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Services use label selectors to find their target Pods.
+search_anchor: Services use label selectors to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -211,6 +271,11 @@ Uses label selectors to find target Pods
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get building!
+search_anchor: Alright, let's get building
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -219,6 +284,11 @@ Loose coupling
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This loose coupling means you can replace, scale, or update Pods without breaking connectivity.
+search_anchor: This loose coupling means you
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -245,6 +315,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First up is ClusterIP, which is the default type.
+search_anchor: First up is ClusterIP, which
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -253,6 +328,11 @@ ClusterIP: Default service type
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ClusterIP Services get an IP address that's only accessible within the cluster.
+search_anchor: ClusterIP Services get an IP
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -286,6 +366,11 @@ graph LR
 
 # Perfect for Microservices
 
+<!--
+METADATA:
+sentence: For example, your frontend Pods can reliably communicate with your backend API using a ClusterIP Service, regardless of how many backend Pods are running or when they get replaced.
+search_anchor: example, your frontend Pods can
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -294,6 +379,11 @@ Frontend communicates with backend API
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, your frontend Pods can reliably communicate with your backend API using a ClusterIP Service, regardless of how many backend Pods are running or when they get replaced.
+search_anchor: example, your frontend Pods can
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -302,6 +392,11 @@ Regardless of how many backend Pods
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get building!
+search_anchor: Alright, let's get building
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -310,6 +405,11 @@ Or when they get replaced
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get building!
+search_anchor: Alright, let's get building
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -343,6 +443,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This Service type exposes your application on a static port on each node in your cluster, typically in the range 30000 to 32767.
+search_anchor: This Service type exposes your
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -351,6 +456,11 @@ Exposes application on static port on each node
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This Service type exposes your application on a static port on each node in your cluster, typically in the range 30000 to 32767.
+search_anchor: This Service type exposes your
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -385,6 +495,11 @@ graph TB
 
 # Use Cases
 
+<!--
+METADATA:
+sentence: Alright, let's get building!
+search_anchor: Alright, let's get building
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -400,6 +515,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: NodePort is useful for development and testing, or when you need direct access to your cluster without a cloud load balancer.
+search_anchor: NodePort is useful for development
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -408,6 +528,11 @@ Direct access without cloud load balancer
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Any traffic hitting any node's IP address on that specific port gets routed to your Pods.
+search_anchor: Any traffic hitting any node's
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -434,6 +559,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you create a LoadBalancer Service on AKS, Azure automatically provisions an Azure Load Balancer for you.
+search_anchor: When you create a LoadBalancer
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -469,6 +599,11 @@ graph TB
 
 # Azure Integration
 
+<!--
+METADATA:
+sentence: When you create a LoadBalancer Service on AKS, Azure automatically provisions an Azure Load Balancer for you.
+search_anchor: When you create a LoadBalancer
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -477,6 +612,11 @@ Azure automatically provisions Azure Load Balancer
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you a public IP address that distributes traffic across your Pods.
+search_anchor: This gives you a public
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -485,6 +625,11 @@ Public IP address
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you a public IP address that distributes traffic across your Pods.
+search_anchor: This gives you a public
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -493,6 +638,11 @@ Distributes traffic across your Pods
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's the most straightforward way to expose applications to the internet on managed Kubernetes platforms.
+search_anchor: It's the most straightforward way
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -519,6 +669,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Every Service automatically gets a DNS entry in the cluster's internal DNS server.
+search_anchor: Every Service automatically gets a
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -527,6 +682,11 @@ Every Service gets DNS entry automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Every Service automatically gets a DNS entry in the cluster's internal DNS server.
+search_anchor: Every Service automatically gets a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -558,6 +718,11 @@ graph LR
 
 # Friendly Names
 
+<!--
+METADATA:
+sentence: This means your Pods can communicate using friendly DNS names instead of IP addresses.
+search_anchor: This means your Pods can
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -566,6 +731,11 @@ Communicate using DNS names, not IP addresses
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you create a Service named "my-api," any Pod in the same namespace can reach it using that name.
+search_anchor: When you create a Service
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -574,6 +744,11 @@ Service named "my-api"
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you create a Service named "my-api," any Pod in the same namespace can reach it using that name.
+search_anchor: When you create a Service
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -582,6 +757,11 @@ Any Pod in same namespace can reach it using that name
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Kubernetes handles all the DNS resolution and routing behind the scenes.
+search_anchor: Kubernetes handles all the DNS
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -590,6 +770,11 @@ Kubernetes handles all DNS resolution and routing
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get building!
+search_anchor: Alright, let's get building
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -615,6 +800,11 @@ layout: section
 
 # Key Exam Topics
 
+<!--
+METADATA:
+sentence: Let's explore how Kubernetes handles networking and service discovery.
+search_anchor: Let's explore how Kubernetes handles
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -624,6 +814,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is perfect for internal communication between microservices.
+search_anchor: This is perfect for internal
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -633,6 +828,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a load balancer with built-in service discovery.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -642,6 +842,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a load balancer with built-in service discovery.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -651,6 +856,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Services use label selectors to find their target Pods.
+search_anchor: Services use label selectors to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -664,6 +874,11 @@ layout: section
 
 # Exam Scenarios
 
+<!--
+METADATA:
+sentence: Every Service automatically gets a DNS entry in the cluster's internal DNS server.
+search_anchor: Every Service automatically gets a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -672,6 +887,11 @@ Frequently appear in exam questions about
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Today we're diving into one of the most essential concepts in Kubernetes: Services.
+search_anchor: Today we're diving into one
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -701,6 +921,11 @@ layout: section
 
 # Hands-On Lab
 
+<!--
+METADATA:
+sentence: --- SLIDE 3: What is a Kubernetes Service?
+search_anchor: --- SLIDE 3: What is
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -710,6 +935,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Kubernetes handles all the DNS resolution and routing behind the scenes.
+search_anchor: Kubernetes handles all the DNS
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -719,6 +949,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In our lab exercises, we'll create all three types of Services, explore DNS resolution, and see how traffic routing works in real-time.
+search_anchor: our lab exercises, we'll create
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -728,6 +963,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll deploy Pods, create Services with different configurations, and test scenarios like Pod failures and scaling.
+search_anchor: You'll deploy Pods, create Services
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -737,6 +977,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This practical experience will solidify your understanding and prepare you for real-world scenarios.
+search_anchor: This practical experience will solidify
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -749,6 +994,11 @@ Practical experience for real-world scenarios
 
 # Summary
 
+<!--
+METADATA:
+sentence: --- SLIDE 10: Summary [On screen: Key takeaways bullet points] Quick recap: Kubernetes Services provide stable networking endpoints for dynamic Pods.
+search_anchor: --- SLIDE 10: Summary [On
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -757,6 +1007,11 @@ Services provide stable networking endpoints
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ClusterIP for internal communication, NodePort for direct access, and LoadBalancer for production external access.
+search_anchor: ClusterIP for internal communication, NodePort
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -779,6 +1034,11 @@ Services provide stable networking endpoints
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service discovery happens automatically through DNS, making your applications resilient and scalable.
+search_anchor: Service discovery happens automatically through
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -787,6 +1047,11 @@ Automatic service discovery through DNS
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service discovery happens automatically through DNS, making your applications resilient and scalable.
+search_anchor: Service discovery happens automatically through
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -808,6 +1073,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Alright, let's get building!
+search_anchor: Alright, let's get building
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -816,6 +1086,11 @@ Let's Get Building!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's explore how Kubernetes handles networking and service discovery.
+search_anchor: Let's explore how Kubernetes handles
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

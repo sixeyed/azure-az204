@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to deploy and configure multiple applications within a single App Service Plan, demonstrating a cost-effective approach to running distributed systems in Azure.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # What You'll Learn
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to deploy and configure multiple applications within a single App Service Plan, demonstrating a cost-effective approach to running distributed systems in Azure.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -55,6 +65,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Distributed Apps - Introduction Welcome Welcome to this lab on using Azure App Service for distributed applications.
+search_anchor: App Service for Distributed Apps
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -64,6 +79,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Configuration Management App Service provides a centralized way to manage application configuration through environment variables and application settings.
+search_anchor: Configuration Management App Service provides
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -73,6 +93,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts App Service Plans An App Service Plan defines the compute resources for your web apps.
+search_anchor: Key Concepts App Service Plans
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -82,6 +107,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts App Service Plans An App Service Plan defines the compute resources for your web apps.
+search_anchor: Key Concepts App Service Plans
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -101,6 +131,11 @@ layout: section
 
 # Distributed Random Number Generator
 
+<!--
+METADATA:
+sentence: Key Concepts App Service Plans An App Service Plan defines the compute resources for your web apps.
+search_anchor: Key Concepts App Service Plans
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -126,6 +161,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts App Service Plans An App Service Plan defines the compute resources for your web apps.
+search_anchor: Key Concepts App Service Plans
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -152,6 +192,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts App Service Plans An App Service Plan defines the compute resources for your web apps.
+search_anchor: Key Concepts App Service Plans
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -179,6 +224,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: One plan can host multiple App Services, allowing you to optimize costs by sharing infrastructure across multiple application components.
+search_anchor: One plan can host multiple
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -187,6 +237,11 @@ One plan can host multiple services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: One plan can host multiple App Services, allowing you to optimize costs by sharing infrastructure across multiple application components.
+search_anchor: One plan can host multiple
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -207,6 +262,11 @@ Optimize costs by sharing infrastructure
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Configuration Management App Service provides a centralized way to manage application configuration through environment variables and application settings.
+search_anchor: Configuration Management App Service provides
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -215,6 +275,11 @@ Centralized configuration through environment variables
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These settings are injected into your application at runtime, making it easy to deploy the same code across different environments with different configurations.
+search_anchor: These settings are injected into
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -233,6 +298,11 @@ Centralized configuration through environment variables
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These settings are injected into your application at runtime, making it easy to deploy the same code across different environments with different configurations.
+search_anchor: These settings are injected into
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -241,6 +311,11 @@ Settings injected at runtime
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Configuration Management App Service provides a centralized way to manage application configuration through environment variables and application settings.
+search_anchor: Configuration Management App Service provides
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -253,6 +328,11 @@ Deploy once, configure per environment
 
 # Deployment with az webapp up
 
+<!--
+METADATA:
+sentence: One plan can host multiple App Services, allowing you to optimize costs by sharing infrastructure across multiple application components.
+search_anchor: One plan can host multiple
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -280,6 +360,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to deploy and configure multiple applications within a single App Service Plan, demonstrating a cost-effective approach to running distributed systems in Azure.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -298,6 +383,11 @@ layout: section
 
 # What You Need
 
+<!--
+METADATA:
+sentence: Configuration Management App Service provides a centralized way to manage application configuration through environment variables and application settings.
+search_anchor: Configuration Management App Service provides
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -307,6 +397,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Distributed Apps - Introduction Welcome Welcome to this lab on using Azure App Service for distributed applications.
+search_anchor: App Service for Distributed Apps
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -316,6 +411,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts App Service Plans An App Service Plan defines the compute resources for your web apps.
+search_anchor: Key Concepts App Service Plans
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -325,6 +425,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These settings are injected into your application at runtime, making it easy to deploy the same code across different environments with different configurations.
+search_anchor: These settings are injected into
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -344,6 +449,11 @@ layout: section
 
 # The Outcome
 
+<!--
+METADATA:
+sentence: App Service for Distributed Apps - Introduction Welcome Welcome to this lab on using Azure App Service for distributed applications.
+search_anchor: App Service for Distributed Apps
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -353,6 +463,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These settings are injected into your application at runtime, making it easy to deploy the same code across different environments with different configurations.
+search_anchor: These settings are injected into
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -362,6 +477,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: One plan can host multiple App Services, allowing you to optimize costs by sharing infrastructure across multiple application components.
+search_anchor: One plan can host multiple
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -371,6 +491,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Distributed Apps - Introduction Welcome Welcome to this lab on using Azure App Service for distributed applications.
+search_anchor: App Service for Distributed Apps
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -380,6 +505,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Distributed Apps - Introduction Welcome Welcome to this lab on using Azure App Service for distributed applications.
+search_anchor: App Service for Distributed Apps
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -402,6 +532,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts App Service Plans An App Service Plan defines the compute resources for your web apps.
+search_anchor: Key Concepts App Service Plans
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -410,6 +545,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: App Service for Distributed Apps - Introduction Welcome Welcome to this lab on using Azure App Service for distributed applications.
+search_anchor: App Service for Distributed Apps
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

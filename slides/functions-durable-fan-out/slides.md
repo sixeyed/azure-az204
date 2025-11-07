@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: This pattern is essential for building scalable, efficient cloud applications, and it's a key topic for the AZ-204 Azure Developer certification exam.
+search_anchor: This pattern is essential for
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -68,6 +73,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's the power of parallel processing, and that's exactly what the fan-out/fan-in pattern gives us.
+search_anchor: That's the power of parallel
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -80,6 +90,11 @@ That's the power of parallel processing
 
 # The Problem Statement
 
+<!--
+METADATA:
+sentence: Validating information against multiple services simultaneously.
+search_anchor: Validating information against multiple services
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -88,6 +103,11 @@ Multiple external service calls
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Maybe you're checking inventory across different warehouses, or getting price quotes from multiple suppliers.
+search_anchor: Maybe you're checking inventory across
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -107,6 +127,11 @@ Multiple external service calls
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- [END OF INTRODUCTION]
+search_anchor: --- [END OF INTRODUCTION]
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -115,6 +140,11 @@ Sequential = Sum of all calls
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Now your total time would only be as long as the slowest call.
+search_anchor: Now your total time would
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl text-green-400">
@@ -162,6 +192,11 @@ graph TB
 
 # How It Works
 
+<!--
+METADATA:
+sentence: First, an orchestrator function fans out by starting multiple activity functions in parallel.
+search_anchor: First, an orchestrator function fans
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -175,6 +210,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then, the orchestrator waits for all of them to complete.
+search_anchor: Then, the orchestrator waits for
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -188,6 +228,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, it fans in by collecting all the results and processing them together.
+search_anchor: Finally, it fans in by
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -201,6 +246,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it like delegating tasks to a team.
+search_anchor: Think of it like delegating
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -219,6 +269,11 @@ layout: section
 
 # The Components
 
+<!--
+METADATA:
+sentence: The orchestrator function is your coordinator.
+search_anchor: orchestrator function is your coordinator
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -228,6 +283,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Activity functions are the workers that perform the actual tasks.
+search_anchor: Activity functions are the workers
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -237,6 +297,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And the Durable Task Framework handles all the complexity of state management and coordination in the background.
+search_anchor: Durable Task Framework handles all
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -258,6 +323,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Here's what makes durable functions special: their state is persisted in Azure Storage.
+search_anchor: Here's what makes durable functions
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -266,6 +336,11 @@ State persisted in Azure Storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means your orchestrator can wait for activities to complete, even if they take minutes or hours.
+search_anchor: This means your orchestrator can
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -275,6 +350,11 @@ State persisted in Azure Storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It can retry failed activities automatically, and it's perfect for long-running transactions that involve multiple systems.
+search_anchor: It can retry failed activities
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -284,6 +364,11 @@ State persisted in Azure Storage
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is perfect for building responsive user interfaces.
+search_anchor: This is perfect for building
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -303,6 +388,11 @@ layout: section
 
 # When to Use This Pattern
 
+<!--
+METADATA:
+sentence: Here are some common scenarios: Getting quotes from multiple suppliers and selecting the best price.
+search_anchor: Here are some common scenarios
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -312,6 +402,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Processing data by splitting it into chunks, working on each chunk in parallel, then combining the results.
+search_anchor: Processing data by splitting it
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -321,6 +416,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Validating information against multiple services simultaneously.
+search_anchor: Validating information against multiple services
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -330,6 +430,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Or aggregating data from multiple sources before performing analysis.
+search_anchor: aggregating data from multiple sources
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -339,6 +444,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Any time you need to make multiple independent calls and work with the complete set of results, fan-out/fan-in is your pattern.
+search_anchor: Any time you need to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -379,6 +489,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is perfect for building responsive user interfaces.
+search_anchor: This is perfect for building
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -387,6 +502,11 @@ Perfect for responsive UIs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your frontend can start the process, then poll for updates and show progress to the user, all without keeping a connection open.
+search_anchor: Your frontend can start the
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -399,6 +519,11 @@ No need to keep connection open
 
 # Status URLs
 
+<!--
+METADATA:
+sentence: The HTTP trigger starts your orchestration and immediately returns a set of URLs.
+search_anchor: HTTP trigger starts your orchestration
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -407,6 +532,11 @@ HTTP trigger returns URLs for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These URLs let you check the status of your long-running function, see when it completes, and retrieve the final results.
+search_anchor: These URLs let you check
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -462,6 +592,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This application will call three different suppliers in parallel to get price quotes, wait for all responses to come back, and then select the cheapest option.
+search_anchor: This application will call three
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -470,6 +605,11 @@ Call three suppliers in parallel
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then, the orchestrator waits for all of them to complete.
+search_anchor: Then, the orchestrator waits for
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -478,6 +618,11 @@ Wait for all responses
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This application will call three different suppliers in parallel to get price quotes, wait for all responses to come back, and then select the cheapest option.
+search_anchor: This application will call three
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl text-green-400">
@@ -512,6 +657,11 @@ var cheapest = tasks.Select(t => t.Result).OrderBy(q => q.Price).First();
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's powerful, efficient, and surprisingly straightforward to implement.
+search_anchor: It's powerful, efficient, and surprisingly
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -533,6 +683,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive into the hands-on exercises and build this pattern ourselves.
+search_anchor: Let's dive into the hands-on
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -541,6 +696,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive into the hands-on exercises and build this pattern ourselves.
+search_anchor: Let's dive into the hands-on
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

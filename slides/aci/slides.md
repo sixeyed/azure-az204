@@ -28,6 +28,11 @@ layout: center
 
 # Welcome to Azure Container Instances
 
+<!--
+METADATA:
+sentence: In this session, we'll explore one of Azure's simplest and most efficient ways to run containerized applications in the cloud.
+search_anchor: this session, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -50,6 +55,11 @@ layout: two-cols
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-6 text-lg">
@@ -58,6 +68,11 @@ Managed container service
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-2 text-lg">
@@ -83,6 +98,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No idle virtual machines consuming your budget.
+search_anchor: No idle virtual machines consuming
+-->
 <v-click>
 
 <div class="mt-8 text-center text-sm opacity-70">
@@ -129,6 +149,11 @@ layout: center
 
 </div>
 
+<!--
+METADATA:
+sentence: With ACI, you can take that exact same container and run it in Azure with just a single command.
+search_anchor: ACI, you can take that
+-->
 <v-click>
 
 <div class="text-center mt-12 text-xl">
@@ -137,6 +162,11 @@ From local Docker to Azure with a single command
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No servers to provision, no clusters to configure - just your application running in the cloud.
+search_anchor: No servers to provision, no
+-->
 <v-click>
 
 <div class="text-center mt-6 text-lg opacity-70">
@@ -178,6 +208,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If it works in Docker Desktop, it works in ACI.
+search_anchor: If it works in Docker
+-->
 <v-click>
 
 <div class="text-center mt-12 text-xl">
@@ -186,6 +221,11 @@ If it works in Docker Desktop, it works in ACI
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the fundamental promise of containerization.
+search_anchor: This is the fundamental promise
+-->
 <v-click>
 
 <div class="text-center mt-4 text-lg opacity-70">
@@ -206,6 +246,11 @@ The fundamental promise of containerization
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Simplicity: Unlike Azure Kubernetes Service or Azure App Service, ACI has minimal configuration.
+search_anchor: Simplicity: Unlike Azure Kubernetes Service
+-->
 <v-click>
 
 <div class="mt-8 text-lg">
@@ -214,6 +259,11 @@ Minimal configuration required:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -223,6 +273,11 @@ Minimal configuration required:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You specify an image, some compute resources, and you're running.
+search_anchor: You specify an image, some
+-->
 <v-click>
 
 <div class="mt-2 flex items-center gap-4">
@@ -232,6 +287,11 @@ Minimal configuration required:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's the fastest and simplest way to run a container in Azure.
+search_anchor: It's the fastest and simplest
+-->
 <v-click>
 
 <div class="mt-2 flex items-center gap-4">
@@ -241,6 +301,11 @@ Minimal configuration required:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Simplicity: Unlike Azure Kubernetes Service or Azure App Service, ACI has minimal configuration.
+search_anchor: Simplicity: Unlike Azure Kubernetes Service
+-->
 <v-click>
 
 <div class="mt-8 text-center text-sm opacity-60">
@@ -261,6 +326,11 @@ Unlike AKS or App Service - no complex setup
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-8 text-2xl text-center">
@@ -269,6 +339,11 @@ Containers start in <span class="text-purple-400 font-bold">seconds</span>
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cost-effectiveness: You pay per second for exactly what you use.
+search_anchor: Cost-effectiveness: You pay per second
+-->
 <v-click>
 
 <div class="mt-12 text-lg">
@@ -277,6 +352,11 @@ Perfect for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes it perfect for burst workloads, task automation, or development and testing scenarios.
+search_anchor: This makes it perfect for
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -286,6 +366,11 @@ Perfect for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes it perfect for burst workloads, task automation, or development and testing scenarios.
+search_anchor: This makes it perfect for
+-->
 <v-click>
 
 <div class="mt-2 flex items-center gap-4">
@@ -295,6 +380,11 @@ Perfect for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes it perfect for burst workloads, task automation, or development and testing scenarios.
+search_anchor: This makes it perfect for
+-->
 <v-click>
 
 <div class="mt-2 flex items-center gap-4">
@@ -316,6 +406,11 @@ Perfect for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cost-effectiveness: You pay per second for exactly what you use.
+search_anchor: Cost-effectiveness: You pay per second
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -340,6 +435,11 @@ graph TD
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No idle virtual machines consuming your budget.
+search_anchor: No idle virtual machines consuming
+-->
 <v-click>
 
 <div class="text-center mt-8 text-lg opacity-70">
@@ -358,6 +458,11 @@ layout: section
 
 # ACI Use Cases
 
+<!--
+METADATA:
+sentence: DNS Name Label: ACI provides automatic DNS naming.
+search_anchor: DNS Name Label: ACI provides
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -367,6 +472,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: DNS Name Label: ACI provides automatic DNS naming.
+search_anchor: DNS Name Label: ACI provides
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -376,6 +486,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -385,6 +500,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes it perfect for burst workloads, task automation, or development and testing scenarios.
+search_anchor: This makes it perfect for
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -394,6 +514,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -403,6 +528,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-8 text-center text-sm opacity-60">
@@ -421,6 +551,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -433,6 +568,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -445,6 +585,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -457,6 +602,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If it works in Docker Desktop, it works in ACI.
+search_anchor: If it works in Docker
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -469,6 +619,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -499,6 +654,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -508,6 +668,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: DNS Name Label: ACI provides automatic DNS naming.
+search_anchor: DNS Name Label: ACI provides
+-->
 <v-click>
 
 <div class="mt-3 flex items-center gap-4">
@@ -517,6 +682,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-3 flex items-center gap-4">
@@ -526,6 +696,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's the fastest and simplest way to run a container in Azure.
+search_anchor: It's the fastest and simplest
+-->
 <v-click>
 
 <div class="mt-3 flex items-center gap-4">
@@ -547,6 +722,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -556,6 +736,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Allocation: You specify exactly how much CPU and memory your container needs, with granular control from fractional CPUs to multiple cores.
+search_anchor: Resource Allocation: You specify exactly
+-->
 <v-click>
 
 <div class="mt-3 flex items-center gap-4">
@@ -565,6 +750,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Networking: Containers can expose ports to the internet or remain private.
+search_anchor: Networking: Containers can expose ports
+-->
 <v-click>
 
 <div class="mt-3 flex items-center gap-4">
@@ -574,6 +764,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You specify an image, some compute resources, and you're running.
+search_anchor: You specify an image, some
+-->
 <v-click>
 
 <div class="mt-3 flex items-center gap-4">
@@ -583,6 +778,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You specify an image, some compute resources, and you're running.
+search_anchor: You specify an image, some
+-->
 <v-click>
 
 <div class="mt-3 flex items-center gap-4">
@@ -653,6 +853,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-8 text-lg">
@@ -691,6 +896,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: DNS Name Label: ACI provides automatic DNS naming.
+search_anchor: DNS Name Label: ACI provides
+-->
 <v-click>
 
 <div class="mt-8 text-lg text-center">
@@ -714,6 +924,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can assign a friendly DNS prefix and ACI creates a full domain name for accessing your container.
+search_anchor: You can assign a friendly
+-->
 <v-click>
 
 <div class="mt-8 text-center text-sm opacity-70">
@@ -734,6 +949,11 @@ Assign a friendly DNS prefix → ACI creates full domain name
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Allocation: You specify exactly how much CPU and memory your container needs, with granular control from fractional CPUs to multiple cores.
+search_anchor: Resource Allocation: You specify exactly
+-->
 <v-click>
 
 <div class="mt-8 text-lg text-center">
@@ -742,6 +962,11 @@ Specify exactly how much CPU and memory you need
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -758,6 +983,11 @@ Specify exactly how much CPU and memory you need
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Resource Allocation: You specify exactly how much CPU and memory your container needs, with granular control from fractional CPUs to multiple cores.
+search_anchor: Resource Allocation: You specify exactly
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -795,6 +1025,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Networking: Containers can expose ports to the internet or remain private.
+search_anchor: Networking: Containers can expose ports
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -803,6 +1038,11 @@ Expose ports to internet or keep private
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACI handles all the underlying networking complexity.
+search_anchor: ACI handles all the underlying
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -821,6 +1061,11 @@ layout: section
 
 # Before You Start
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -830,6 +1075,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If it works in Docker Desktop, it works in ACI.
+search_anchor: If it works in Docker
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -839,6 +1089,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Azure Container Instances?
+search_anchor: What is Azure Container Instances
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -848,6 +1103,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Benefits Portability: Your Docker containers run the same way everywhere.
+search_anchor: Key Benefits Portability: Your Docker
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -870,6 +1130,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Speed: ACI containers start in seconds.
+search_anchor: Speed: ACI containers start in
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -878,6 +1143,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's the fastest and simplest way to run a container in Azure.
+search_anchor: It's the fastest and simplest
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

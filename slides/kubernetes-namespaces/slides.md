@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Today we're diving into Kubernetes Namespaces, one of the most powerful features for organizing and isolating workloads in your cluster.
+search_anchor: Today we're diving into Kubernetes
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of them as virtual clusters within your physical cluster.
+search_anchor: Think of them as virtual
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -62,6 +72,11 @@ Virtual clusters within your physical cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They're containers for other Kubernetes resources, giving you a way to divide your cluster into separate, isolated environments.
+search_anchor: They're containers for other Kubernetes
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -96,6 +111,11 @@ graph TB
 
 # Why Namespaces?
 
+<!--
+METADATA:
+sentence: One of the coolest things about Kubernetes is that you can run any type of application.
+search_anchor: One of the coolest things
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -104,6 +124,11 @@ Run any type of application
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Many organizations want to migrate their entire application landscape onto Kubernetes.
+search_anchor: Many organizations want to migrate
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -112,6 +137,11 @@ Migrate entire application landscape onto Kubernetes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But without a way to segregate the cluster, operations could get really messy, really fast.
+search_anchor: But without a way to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -120,6 +150,11 @@ Without segregation: chaos
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where namespaces come in.
+search_anchor: That's where namespaces come in
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -138,6 +173,11 @@ layout: section
 
 # Real-World Examples
 
+<!--
+METADATA:
+sentence: On your production cluster, you might create a different namespace for each application.
+search_anchor: your production cluster, you might
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -153,6 +193,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: On your non-production cluster, you might organize by environment.
+search_anchor: your non-production cluster, you might
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -168,6 +213,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This way, your dev team can experiment freely without worrying about breaking the test environment.
+search_anchor: This way, your dev team
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -186,6 +236,11 @@ layout: section
 
 # Three Major Benefits
 
+<!--
+METADATA:
+sentence: You can apply resource quotas per namespace, preventing one application from consuming all your cluster resources.
+search_anchor: You can apply resource quotas
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -200,6 +255,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your junior developers might have access to the dev namespace but not production.
+search_anchor: Your junior developers might have
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -214,6 +274,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Instead of using complex label selectors everywhere, you can organize resources naturally by namespace.
+search_anchor: Instead of using complex label
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -238,6 +303,11 @@ layout: section
 
 # Enterprise Scenarios
 
+<!--
+METADATA:
+sentence: Namespaces let you safely run multiple teams, projects, or even customers on the same Kubernetes cluster.
+search_anchor: Namespaces let you safely run
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -268,6 +338,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each tenant gets their own namespace with strict isolation, resource limits, and access controls.
+search_anchor: Each tenant gets their own
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -276,6 +351,11 @@ Strict isolation, resource limits, and access controls
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is huge for cost optimization.
+search_anchor: This is huge for cost
+-->
 <v-click>
 
 <div class="mt-8 text-center text-2xl text-green-400">
@@ -284,6 +364,11 @@ Cost optimization
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Instead of spinning up separate clusters for every team or project, you can consolidate workloads while maintaining the security and isolation you need.
+search_anchor: Instead of spinning up separate
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -302,6 +387,11 @@ layout: section
 
 # Key Exam Topics
 
+<!--
+METADATA:
+sentence: Microsoft expects you to understand how to implement Azure solutions, and that includes container-based deployments.
+search_anchor: Microsoft expects you to understand
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -311,6 +401,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, how to deploy applications into specific namespaces.
+search_anchor: Second, how to deploy applications
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -320,6 +415,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, security boundaries.
+search_anchor: Second, security boundaries
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -329,6 +429,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You need to know how to organize applications, implement proper security boundaries, and manage resources efficiently.
+search_anchor: You need to know how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -342,6 +447,11 @@ layout: section
 
 # Essential Knowledge Areas
 
+<!--
+METADATA:
+sentence: Keep your organization strategy simple and clear.
+search_anchor: Keep your organization strategy simple
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -351,6 +461,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, simplified management.
+search_anchor: Third, simplified management
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -360,6 +475,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll need to demonstrate knowledge of resource organization, RBAC implementation, and environment separation strategies.
+search_anchor: You'll need to demonstrate knowledge
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -369,6 +489,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In Azure Kubernetes Service, namespaces work exactly the same way as standard Kubernetes, so everything we cover today applies directly to your AKS deployments.
+search_anchor: Azure Kubernetes Service, namespaces work
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -387,6 +512,11 @@ layout: section
 
 # Lab Overview
 
+<!--
+METADATA:
+sentence: Also, remember: namespaces can't be nested.
+search_anchor: Also, remember: namespaces can't be
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -396,6 +526,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, how to deploy applications into specific namespaces.
+search_anchor: Second, how to deploy applications
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -405,6 +540,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, how namespaces affect service discovery and DNS resolution.
+search_anchor: Third, how namespaces affect service
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -414,6 +554,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And finally, we'll look at some practical tools that make working with namespaces much easier.
+search_anchor: finally, we'll look at some
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -433,6 +578,11 @@ layout: section
 
 # Key Points to Remember
 
+<!--
+METADATA:
+sentence: That's where namespaces come in.
+search_anchor: That's where namespaces come in
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -441,6 +591,11 @@ Namespaces introduce some complexity
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You need to be more explicit about where things live.
+search_anchor: You need to be more
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -449,6 +604,11 @@ Need to be more explicit about where things live
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But the safeguards they provide are absolutely worth it.
+search_anchor: But the safeguards they provide
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -457,6 +617,11 @@ But the safeguards are absolutely worth it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With namespaces, you can confidently run multiple workloads on a single cluster without compromising scale or security.
+search_anchor: namespaces, you can confidently run
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -502,6 +667,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Also, remember: namespaces can't be nested.
+search_anchor: Also, remember: namespaces can't be
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -510,6 +680,11 @@ Namespaces can't be nested
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's a single-level hierarchy.
+search_anchor: It's a single-level hierarchy
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -518,6 +693,11 @@ Single-level hierarchy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keep your organization strategy simple and clear.
+search_anchor: Keep your organization strategy simple
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -539,6 +719,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So let's get started!
+search_anchor: So let's get started
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -547,6 +732,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keep your organization strategy simple and clear.
+search_anchor: Keep your organization strategy simple
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: --- Slide 3: What Are Container Probes?
+search_anchor: --- Slide 3: What Are
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where container probes come to the rescue.
+search_anchor: This is where container probes
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Container shows as running
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Imagine this scenario: your web app is up, the container shows as running, but internally the application is returning five-oh-three errors.
+search_anchor: Imagine this scenario: your web
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -93,6 +108,11 @@ graph TB
 
 # Container Probes to the Rescue
 
+<!--
+METADATA:
+sentence: Based on the results, Kubernetes takes action automatically.
+search_anchor: Based on the results, Kubernetes
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -101,6 +121,11 @@ Health checks Kubernetes runs automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of them as a doctor doing regular check-ups on your applications.
+search_anchor: Think of them as a
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -126,6 +151,11 @@ layout: section
 
 # The Probe Types
 
+<!--
+METADATA:
+sentence: This is where container probes come to the rescue.
+search_anchor: This is where container probes
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -139,6 +169,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, Liveness Probes - these determine if your container is still running properly, or if it needs to be restarted.
+search_anchor: Second, Liveness Probes - these
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -153,6 +188,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And third, Startup Probes - these give slow-starting applications extra time to initialize before the other probes kick in.
+search_anchor: third, Startup Probes - these
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -205,6 +245,11 @@ graph TB
 
 # Configuration Options
 
+<!--
+METADATA:
+sentence: You configure how often to run the check, how many failures to tolerate, and what timeouts to use.
+search_anchor: You configure how often to
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -214,6 +259,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You configure how often to run the check, how many failures to tolerate, and what timeouts to use.
+search_anchor: You configure how often to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -223,6 +273,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 3: What Are Container Probes?
+search_anchor: --- Slide 3: What Are
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -232,6 +287,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Based on the results, Kubernetes takes action automatically.
+search_anchor: Based on the results, Kubernetes
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -240,6 +300,11 @@ Kubernetes takes action automatically
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is self-healing infrastructure in action!
+search_anchor: This is self-healing infrastructure in
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -258,6 +323,11 @@ layout: section
 
 # Three Ways to Check Health
 
+<!--
+METADATA:
+sentence: HTTP probes are perfect for REST APIs and web applications - Kubernetes makes an HTTP request and expects a success status code.
+search_anchor: HTTP probes are perfect for
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -273,6 +343,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: TCP probes simply check if a port is open - great for databases and non-HTTP services.
+search_anchor: TCP probes simply check if
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -287,6 +362,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And exec probes run a command inside your container - the most flexible option when you need custom health logic.
+search_anchor: exec probes run a command
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -324,6 +404,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A failing readiness probe removes the pod from service endpoints.
+search_anchor: failing readiness probe removes the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -332,6 +417,11 @@ Application provides health endpoint
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Based on the results, Kubernetes takes action automatically.
+search_anchor: Based on the results, Kubernetes
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -369,6 +459,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A failing readiness probe removes the pod from service endpoints.
+search_anchor: failing readiness probe removes the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -402,6 +497,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A failing liveness probe restarts the container.
+search_anchor: failing liveness probe restarts the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -420,6 +520,11 @@ layout: section
 
 # Key Exam Topics
 
+<!--
+METADATA:
+sentence: This is self-healing infrastructure in action!
+search_anchor: This is self-healing infrastructure in
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -429,6 +534,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Know when to use each probe type, how they affect container lifecycle management, and how they integrate with Azure's container monitoring solutions.
+search_anchor: Know when to use each
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -438,6 +548,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where container probes come to the rescue.
+search_anchor: This is where container probes
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -447,6 +562,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Know when to use each probe type, how they affect container lifecycle management, and how they integrate with Azure's container monitoring solutions.
+search_anchor: Know when to use each
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -456,6 +576,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a key part of developing cloud-native applications that are production-ready and resilient.
+search_anchor: This is a key part
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -474,6 +599,11 @@ layout: section
 
 # Hands-On Lab
 
+<!--
+METADATA:
+sentence: In the next section, we'll deploy real applications with different types of probes, see how Kubernetes responds to failures, and configure health checks that keep your apps running smoothly.
+search_anchor: next section, we'll deploy real
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -483,6 +613,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Based on the results, Kubernetes takes action automatically.
+search_anchor: Based on the results, Kubernetes
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -492,6 +627,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of them as a doctor doing regular check-ups on your applications.
+search_anchor: Think of them as a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -501,6 +641,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In the next section, we'll deploy real applications with different types of probes, see how Kubernetes responds to failures, and configure health checks that keep your apps running smoothly.
+search_anchor: next section, we'll deploy real
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -522,6 +667,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is self-healing infrastructure in action!
+search_anchor: This is self-healing infrastructure in
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -530,6 +680,11 @@ Let's Dive In!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this video, we're going to explore one of the most important production-ready features in Kubernetes: container probes.
+search_anchor: this video, we're going to
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

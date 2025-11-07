@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Bicep simplifies infrastructure as code for Azure deployments.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Important Concepts
 
+<!--
+METADATA:
+sentence: ARM templates represent an important evolution in cloud infrastructure management.
+search_anchor: ARM templates represent an important
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -54,6 +64,11 @@ ARM templates represent an important evolution
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The concepts behind them - infrastructure as code, parameterized deployments, and desired-state delivery - are fundamental to modern cloud architecture.
+search_anchor: concepts behind them - infrastructure
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-8">
@@ -73,6 +88,11 @@ ARM templates represent an important evolution
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The concepts behind them - infrastructure as code, parameterized deployments, and desired-state delivery - are fundamental to modern cloud architecture.
+search_anchor: concepts behind them - infrastructure
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -93,6 +113,11 @@ Fundamental to modern cloud architecture
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The JSON format that ARM templates traditionally use can be difficult to work with, especially when you're dealing with larger applications that involve multiple resources.
+search_anchor: JSON format that ARM templates
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -101,6 +126,11 @@ JSON format can be difficult to work with
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The syntax can become verbose and hard to maintain.
+search_anchor: syntax can become verbose and
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -110,6 +140,11 @@ JSON format can be difficult to work with
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The syntax can become verbose and hard to maintain.
+search_anchor: syntax can become verbose and
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -119,6 +154,11 @@ JSON format can be difficult to work with
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, parameters and variables have simple, readable names like "location" and "storageSku" - no complex bracket notation required.
+search_anchor: Second, parameters and variables have
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -128,6 +168,11 @@ JSON format can be difficult to work with
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, there's a challenge.
+search_anchor: However, there's a challenge
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -154,6 +199,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are ARM Templates?
+search_anchor: What Are ARM Templates
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -162,6 +212,11 @@ Bicep is the evolution of ARM templates
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Bicep is the evolution of ARM templates - a new tool that uses a custom domain-specific language to define Azure resources in a simpler and more manageable way.
+search_anchor: Bicep is the evolution of
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -170,6 +225,11 @@ Custom domain-specific language
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The syntax can become verbose and hard to maintain.
+search_anchor: syntax can become verbose and
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg">
@@ -219,6 +279,11 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Enter Bicep This is where Bicep comes in.
+search_anchor: Enter Bicep This is where
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -237,6 +302,11 @@ layout: section
 
 # Why Bicep is Better
 
+<!--
+METADATA:
+sentence: Field names and values don't need to be quoted, and there's less indentation noise.
+search_anchor: Field names and values don't
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -251,6 +321,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, parameters and variables have simple, readable names like "location" and "storageSku" - no complex bracket notation required.
+search_anchor: Second, parameters and variables have
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -265,6 +340,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes your infrastructure code self-documenting and easier for teams to maintain.
+search_anchor: This makes your infrastructure code
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -297,6 +377,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure CLI and PowerShell modules understand Bicep natively.
+search_anchor: Azure CLI and PowerShell modules
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -325,6 +410,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you flexibility in your deployment pipeline.
+search_anchor: This gives you flexibility in
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -333,6 +423,11 @@ Flexibility in deployment pipeline
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are ARM Templates?
+search_anchor: What Are ARM Templates
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -351,6 +446,11 @@ layout: section
 
 # Powerful Tooling
 
+<!--
+METADATA:
+sentence: What Are ARM Templates?
+search_anchor: What Are ARM Templates
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -360,6 +460,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Enter Bicep This is where Bicep comes in.
+search_anchor: Enter Bicep This is where
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -369,6 +474,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are ARM Templates?
+search_anchor: What Are ARM Templates
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -378,6 +488,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can deploy Bicep files directly to Azure, or if you need to, you can generate ARM JSON files from your Bicep templates.
+search_anchor: You can deploy Bicep files
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -386,6 +501,11 @@ Installed directly from Azure CLI
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The tools integrate seamlessly with your existing Azure workflows.
+search_anchor: tools integrate seamlessly with your
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -418,6 +538,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Bicep simplifies infrastructure as code for Azure deployments.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -444,6 +569,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why This Matters Bicep is now the preferred way of using ARM.
+search_anchor: Why This Matters Bicep is
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -452,6 +582,11 @@ Bicep is now the preferred way of using ARM
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are ARM Templates?
+search_anchor: What Are ARM Templates
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -460,6 +595,11 @@ JSON templates still supported
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While JSON templates are still supported and many existing projects use them, Microsoft is investing heavily in Bicep as the future of Azure infrastructure as code.
+search_anchor: While JSON templates are still
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg">
@@ -468,6 +608,11 @@ Many existing projects use JSON
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While JSON templates are still supported and many existing projects use them, Microsoft is investing heavily in Bicep as the future of Azure infrastructure as code.
+search_anchor: While JSON templates are still
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-purple-400">
@@ -476,6 +621,11 @@ Microsoft investing heavily in Bicep
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how Bicep simplifies infrastructure as code for Azure deployments.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -488,6 +638,11 @@ The future of Azure infrastructure as code
 
 # Essential for Azure Work
 
+<!--
+METADATA:
+sentence: ARM templates represent an important evolution in cloud infrastructure management.
+search_anchor: ARM templates represent an important
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -507,6 +662,11 @@ The future of Azure infrastructure as code
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Enter Bicep This is where Bicep comes in.
+search_anchor: Enter Bicep This is where
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -528,6 +688,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let me show you an example.
+search_anchor: Let me show you an
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -536,6 +701,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In the exercises that follow, we'll get hands-on experience with Bicep - deploying resources, converting JSON to Bicep, and evolving infrastructure specifications.
+search_anchor: exercises that follow, we'll get
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

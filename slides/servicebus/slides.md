@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: This is a high-throughput, reliable message queue service that enables you to build distributed applications with decoupled components.
+search_anchor: This is a high-throughput, reliable
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a high-throughput, reliable message queue service that enables you to build distributed applications with decoupled components.
+search_anchor: This is a high-throughput, reliable
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -62,6 +72,11 @@ High-throughput, reliable message queue
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No messages were lost.
+search_anchor: No messages were lost
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -71,6 +86,11 @@ High-throughput, reliable message queue
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No messages were lost.
+search_anchor: No messages were lost
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -80,6 +100,11 @@ High-throughput, reliable message queue
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Demonstrating Reliability Service Bus's reliability features are what make it enterprise-grade.
+search_anchor: Demonstrating Reliability Service Bus's reliability
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -89,6 +114,11 @@ High-throughput, reliable message queue
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What about multiple publishers?
+search_anchor: What about multiple publishers
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -102,6 +132,11 @@ High-throughput, reliable message queue
 
 # Key Capabilities
 
+<!--
+METADATA:
+sentence: Messages are stored until they're processed, and there are advanced features like dead-letter queues for messages that couldn't be delivered or failed processing.
+search_anchor: Messages are stored until they're
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -114,6 +149,11 @@ High-throughput, reliable message queue
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Does message ordering change?
+search_anchor: Does message ordering change
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -126,6 +166,11 @@ High-throughput, reliable message queue
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Does message ordering change?
+search_anchor: Does message ordering change
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -165,6 +210,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The publisher continues sending messages.
+search_anchor: publisher continues sending messages
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -173,6 +223,11 @@ Publisher sends without expecting return
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Today, we'll implement a fire-and-forget messaging pattern, where a publisher sends messages without expecting a return or even knowing which component will process them.
+search_anchor: Today, we'll implement a fire-and-forget
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -181,6 +236,11 @@ Doesn't know which component processes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This pattern is fundamental to building scalable, loosely-coupled systems.
+search_anchor: This pattern is fundamental to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -218,6 +278,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Does message ordering change?
+search_anchor: Does message ordering change
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -226,6 +291,11 @@ Namespace: grouping construct
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First, understand that Service Bus uses a concept called a "namespace" - this is a grouping construct that can contain multiple queues, topics, and subscriptions.
+search_anchor: First, understand that Service Bus
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -238,6 +308,11 @@ Contains multiple queues, topics, and subscriptions
 
 # Pricing Tiers
 
+<!--
+METADATA:
+sentence: Creating a Queue With the Basic SKU, queues are your only messaging option.
+search_anchor: Creating a Queue With the
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -251,6 +326,11 @@ Contains multiple queues, topics, and subscriptions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First, understand that Service Bus uses a concept called a "namespace" - this is a grouping construct that can contain multiple queues, topics, and subscriptions.
+search_anchor: First, understand that Service Bus
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -264,6 +344,11 @@ Contains multiple queues, topics, and subscriptions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The publisher continues sending messages.
+search_anchor: publisher continues sending messages
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -289,6 +374,11 @@ Contains multiple queues, topics, and subscriptions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There's also a Shared access policies tab at the queue level, enabling fine-grained permissions.
+search_anchor: There's also a Shared access
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -297,6 +387,11 @@ Shared access policies and tokens
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each policy defines specific permissions like Send, Listen, or Manage.
+search_anchor: Each policy defines specific permissions
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -316,6 +411,11 @@ Shared access policies and tokens
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each policy defines specific permissions like Send, Listen, or Manage.
+search_anchor: Each policy defines specific permissions
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -334,6 +434,11 @@ layout: section
 
 # How Subscribers Work
 
+<!--
+METADATA:
+sentence: Subscribers listen on a queue in an infinite loop, processing messages as they arrive.
+search_anchor: Subscribers listen on a queue
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -362,6 +467,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Challenge 2: Reliability Without Acknowledgement Reliability depends on message acknowledgement.
+search_anchor: Challenge 2: Reliability Without Acknowledgement
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -370,6 +480,11 @@ Acknowledgement is crucial
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Does message ordering change?
+search_anchor: Does message ordering change
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -382,6 +497,11 @@ Tells Service Bus message was handled
 
 # Distributed Application
 
+<!--
+METADATA:
+sentence: Start multiple instances of the publisher How do the subscribers handle messages from different publishers?
+search_anchor: Start multiple instances of the
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -391,6 +511,11 @@ Tells Service Bus message was handled
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What about multiple publishers?
+search_anchor: What about multiple publishers
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -400,6 +525,11 @@ Tells Service Bus message was handled
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is much more efficient and provides better throughput.
+search_anchor: This is much more efficient
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -409,6 +539,11 @@ Tells Service Bus message was handled
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means Service Bus can be a drop-in replacement for other queue technologies like RabbitMQ.
+search_anchor: This means Service Bus can
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -446,6 +581,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No messages were lost.
+search_anchor: No messages were lost
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -454,6 +594,11 @@ No messages lost
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No messages were lost.
+search_anchor: No messages were lost
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -466,6 +611,11 @@ Messages persist until acknowledged
 
 # Key Insight
 
+<!--
+METADATA:
+sentence: This is the key insight: Service Bus queues store messages until they receive a completion acknowledgement.
+search_anchor: This is the key insight
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -474,6 +624,11 @@ Service Bus stores messages until completion
 
 </v-click>
 
+<!--
+METADATA:
+sentence: New subscribers don't get messages that were already completed, but they do get all uncompleted messages.
+search_anchor: New subscribers don't get messages
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -489,6 +644,11 @@ Service Bus stores messages until completion
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This ensures requests aren't lost or processed twice if a subscriber fails.
+search_anchor: This ensures requests aren't lost
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -526,6 +686,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They take turns receiving messages - Service Bus distributes the work between them.
+search_anchor: They take turns receiving messages
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -534,6 +699,11 @@ Subscribers take turns receiving messages
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No messages were lost.
+search_anchor: No messages were lost
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -542,6 +712,11 @@ No message duplication
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There's no message duplication; each message is processed by exactly one subscriber.
+search_anchor: There's no message duplication; each
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -554,6 +729,11 @@ Each message processed by exactly one subscriber
 
 # Horizontal Scaling
 
+<!--
+METADATA:
+sentence: This is much more efficient and provides better throughput.
+search_anchor: This is much more efficient
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -573,6 +753,11 @@ Each message processed by exactly one subscriber
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service Bus automatically distributes messages across all available subscribers.
+search_anchor: Service Bus automatically distributes messages
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -591,6 +776,11 @@ layout: section
 
 # What We Learned
 
+<!--
+METADATA:
+sentence: Creating a Queue With the Basic SKU, queues are your only messaging option.
+search_anchor: Creating a Queue With the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -600,6 +790,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Creating a Queue With the Basic SKU, queues are your only messaging option.
+search_anchor: Creating a Queue With the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -609,6 +804,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Demonstrating Scalability Service Bus also supports horizontal scaling.
+search_anchor: Demonstrating Scalability Service Bus also
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -618,6 +818,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Challenge 2: Reliability Without Acknowledgement Reliability depends on message acknowledgement.
+search_anchor: Challenge 2: Reliability Without Acknowledgement
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -627,6 +832,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This ensures requests aren't lost or processed twice if a subscriber fails.
+search_anchor: This ensures requests aren't lost
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -649,6 +859,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's see how multiple subscribers share the workload.
+search_anchor: Let's see how multiple subscribers
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -657,6 +872,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service Bus is a powerful tool for building distributed systems, and you now have hands-on experience with its core features.
+search_anchor: Service Bus is a powerful
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

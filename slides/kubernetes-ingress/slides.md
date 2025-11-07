@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: By the end of this session, you'll understand how Ingress works and why it's an essential topic for the AZ-204 certification exam.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as the front door to your Kubernetes applications.
+search_anchor: Think of it as the
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -87,6 +97,11 @@ graph LR
 
 # Two Main Parts
 
+<!--
+METADATA:
+sentence: Popular options include Nginx, Traefik, and Contour.
+search_anchor: Popular options include Nginx, Traefik
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -101,6 +116,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, you have Ingress objects - these are Kubernetes resources that define the routing rules.
+search_anchor: Second, you have Ingress objects
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -145,6 +165,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Here's the thing - without Ingress, you'd need a separate LoadBalancer for every application you expose.
+search_anchor: Here's the thing - without
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -153,6 +178,11 @@ Separate LoadBalancer for every application
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That gets expensive and messy really fast.
+search_anchor: That gets expensive and messy
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg text-red-400">
@@ -186,6 +216,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With Ingress, you get a single entry point that can intelligently route to multiple backend services.
+search_anchor: Ingress, you get a single
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -194,6 +229,11 @@ Single entry point
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With Ingress, you get a single entry point that can intelligently route to multiple backend services.
+search_anchor: Ingress, you get a single
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -202,6 +242,11 @@ Intelligently routes to multiple backends
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's like having one receptionist who knows where to direct every visitor, instead of having a different door for each office.
+search_anchor: It's like having one receptionist
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -220,6 +265,11 @@ layout: section
 
 # Not a Single Object
 
+<!--
+METADATA:
+sentence: It's not a single Kubernetes object - it's actually a collection of resources working together.
+search_anchor: It's not a single Kubernetes
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -228,6 +278,11 @@ Collection of resources working together
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll typically deploy it in its own namespace, with RBAC rules so it can query the Kubernetes API.
+search_anchor: You'll typically deploy it in
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -237,6 +292,11 @@ Collection of resources working together
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll typically deploy it in its own namespace, with RBAC rules so it can query the Kubernetes API.
+search_anchor: You'll typically deploy it in
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -246,6 +306,11 @@ Collection of resources working together
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There's a ConfigMap for configuration settings, a Pod controller like a DaemonSet or Deployment running the actual proxy software, and Services for external access.
+search_anchor: There's a ConfigMap for configuration
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -255,6 +320,11 @@ Collection of resources working together
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There's a ConfigMap for configuration settings, a Pod controller like a DaemonSet or Deployment running the actual proxy software, and Services for external access.
+search_anchor: There's a ConfigMap for configuration
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -264,6 +334,11 @@ Collection of resources working together
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And you need to grasp how Ingress provides external access patterns for container orchestration.
+search_anchor: you need to grasp how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -277,6 +352,11 @@ Collection of resources working together
 
 # Distributed System
 
+<!--
+METADATA:
+sentence: Understanding this architecture is important because you're not just installing a plug-and-play solution - you're deploying a distributed system.
+search_anchor: Understanding this architecture is important
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -285,6 +365,11 @@ Not plug-and-play
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding this architecture is important because you're not just installing a plug-and-play solution - you're deploying a distributed system.
+search_anchor: Understanding this architecture is important
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -293,6 +378,11 @@ Deploying a distributed system
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- [End of presentation section - transition to exercises]
+search_anchor: --- [End of presentation section
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -318,6 +408,11 @@ layout: section
 
 # Two Main Routing Types
 
+<!--
+METADATA:
+sentence: Host-based routing lets you direct traffic based on the domain name.
+search_anchor: Host-based routing lets you direct
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -333,6 +428,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Path-based routing uses the URL path.
+search_anchor: Path-based routing uses the URL
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -348,6 +448,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can even combine these for sophisticated routing patterns.
+search_anchor: You can even combine these
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -397,6 +502,11 @@ layout: section
 
 # Enterprise Capabilities
 
+<!--
+METADATA:
+sentence: SSL and TLS termination means your Ingress handles encryption, so your backend services don't have to.
+search_anchor: SSL and TLS termination means
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -410,6 +520,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You get automatic load balancing across multiple pod replicas, distributing traffic evenly.
+search_anchor: You get automatic load balancing
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -423,6 +538,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Many controllers support response caching through annotations, which can dramatically improve performance for static content.
+search_anchor: Many controllers support response caching
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -436,6 +556,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And features like rate limiting and authentication can be configured at the Ingress layer, keeping your application code clean.
+search_anchor: features like rate limiting and
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -459,6 +584,11 @@ layout: section
 
 # Key Exam Topics
 
+<!--
+METADATA:
+sentence: Microsoft expects you to understand how to implement containerized solutions, and that includes managing external access to your applications.
+search_anchor: Microsoft expects you to understand
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -468,6 +598,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You should know how to configure HTTP routing to direct traffic to different services.
+search_anchor: You should know how to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -477,6 +612,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding SSL and TLS termination is crucial for securing your applications.
+search_anchor: Understanding SSL and TLS termination
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -486,6 +626,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And you need to grasp how Ingress provides external access patterns for container orchestration.
+search_anchor: you need to grasp how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -499,6 +644,11 @@ layout: section
 
 # AKS Integration
 
+<!--
+METADATA:
+sentence: --- SLIDE 2: What is Kubernetes Ingress?
+search_anchor: --- SLIDE 2: What is
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -507,6 +657,11 @@ Azure Kubernetes Service has own ingress options
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While Azure Kubernetes Service might have its own ingress options, the core concepts are the same, and they appear throughout the exam objectives.
+search_anchor: While Azure Kubernetes Service might
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -515,6 +670,11 @@ Core concepts are the same
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- SLIDE 3: Why Use Ingress?
+search_anchor: --- SLIDE 3: Why Use
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -530,6 +690,11 @@ Core concepts are the same
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While Azure Kubernetes Service might have its own ingress options, the core concepts are the same, and they appear throughout the exam objectives.
+search_anchor: While Azure Kubernetes Service might
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -548,6 +713,11 @@ layout: section
 
 # Hands-On Lab
 
+<!--
+METADATA:
+sentence: --- SLIDE 3: Why Use Ingress?
+search_anchor: --- SLIDE 3: Why Use
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -557,6 +727,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Path-based routing uses the URL path.
+search_anchor: Path-based routing uses the URL
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -566,6 +741,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That gets expensive and messy really fast.
+search_anchor: That gets expensive and messy
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -575,6 +755,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's jump into the exercises and see Ingress in action!
+search_anchor: Let's jump into the exercises
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -596,6 +781,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's jump into the exercises and see Ingress in action!
+search_anchor: Let's jump into the exercises
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -604,6 +794,11 @@ Let's Jump In!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- SLIDE 3: Why Use Ingress?
+search_anchor: --- SLIDE 3: Why Use
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

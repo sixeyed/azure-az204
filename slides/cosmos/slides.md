@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Why Choose Cosmos DB?
+search_anchor: Why Choose Cosmos DB
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -36,6 +41,11 @@ Explore Azure Cosmos DB<br/>Globally distributed, multi-model database
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cosmos DB is billed as a planet-scale database, and for good reason.
+search_anchor: Cosmos DB is billed as
+-->
 <v-click>
 
 <div class="text-lg mt-6 opacity-70">
@@ -77,6 +87,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can start small with a localized instance and then expand it for global replication with the capacity to handle virtually any load you can throw at it.
+search_anchor: You can start small with
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -89,6 +104,11 @@ Start small, expand globally
 
 # Multi-Model Support
 
+<!--
+METADATA:
+sentence: What makes Cosmos DB unique is that it's a single product that supports different storage drivers - NoSQL, MongoDB, Cassandra, Gremlin for graph databases, and Table storage.
+search_anchor: What makes Cosmos DB unique
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -97,6 +117,11 @@ Single product, different storage drivers
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What makes Cosmos DB unique is that it's a single product that supports different storage drivers - NoSQL, MongoDB, Cassandra, Gremlin for graph databases, and Table storage.
+search_anchor: What makes Cosmos DB unique
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-6">
@@ -124,6 +149,11 @@ Single product, different storage drivers
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each database is fixed to use a single driver, but you can use different storage approaches for different applications while maintaining consistent management across all of them.
+search_anchor: Each database is fixed to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -150,6 +180,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Choose Cosmos DB?
+search_anchor: Why Choose Cosmos DB
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -158,6 +193,11 @@ NoSQL is the native driver for Cosmos DB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding the NoSQL Driver Here's something that might confuse you at first: NoSQL is the native driver for CosmosDB, but it was previously called the SQL driver.
+search_anchor: Understanding the NoSQL Driver Here's
+-->
 <v-click>
 
 <div class="mt-12 text-lg text-center text-red-400">
@@ -166,6 +206,11 @@ Previously called the "SQL" driver
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll see it referred to as "NoSQL" in the Azure Portal, but the CLI and documentation still call it the "SQL" driver.
+search_anchor: You'll see it referred to
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -181,6 +226,11 @@ Previously called the "SQL" driver
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keep this in mind to avoid confusion.
+search_anchor: Keep this in mind to
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -207,6 +257,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It spreads data across multiple storage locations, and all those locations can be read from and written to simultaneously.
+search_anchor: It spreads data across multiple
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -237,6 +292,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It spreads data across multiple storage locations, and all those locations can be read from and written to simultaneously.
+search_anchor: It spreads data across multiple
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -249,6 +309,11 @@ All locations can be read from and written to simultaneously
 
 # Automatic Scaling
 
+<!--
+METADATA:
+sentence: When you need more capacity, CosmosDB simply adds more partitions.
+search_anchor: When you need more capacity
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -272,6 +337,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you need more capacity, CosmosDB simply adds more partitions.
+search_anchor: When you need more capacity
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -280,6 +350,11 @@ Cosmos DB simply adds more partitions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cosmos DB is billed as a planet-scale database, and for good reason.
+search_anchor: Cosmos DB is billed as
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -325,6 +400,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It spreads data across multiple storage locations, and all those locations can be read from and written to simultaneously.
+search_anchor: It spreads data across multiple
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -333,6 +413,11 @@ Replicate across multiple Azure regions worldwide
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Choose Cosmos DB?
+search_anchor: Why Choose Cosmos DB
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -345,6 +430,11 @@ Data closer to users = reduced latency
 
 # Flexible Consistency Levels
 
+<!--
+METADATA:
+sentence: It spreads data across multiple storage locations, and all those locations can be read from and written to simultaneously.
+search_anchor: It spreads data across multiple
+-->
 <v-click>
 
 <div class="mt-6 grid grid-cols-2 gap-6">
@@ -377,6 +467,11 @@ Data closer to users = reduced latency
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Choose Cosmos DB?
+search_anchor: Why Choose Cosmos DB
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -389,6 +484,11 @@ Five consistency levels - choose based on needs
 
 # Guaranteed Performance
 
+<!--
+METADATA:
+sentence: Guaranteed Performance: With Service Level Agreements for throughput, latency, availability, and consistency, you get predictable performance at any scale.
+search_anchor: Guaranteed Performance: With Service Level
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -397,6 +497,11 @@ Service Level Agreements for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Guaranteed Performance: With Service Level Agreements for throughput, latency, availability, and consistency, you get predictable performance at any scale.
+search_anchor: Guaranteed Performance: With Service Level
+-->
 <v-click>
 
 <div class="mt-10 grid grid-cols-2 gap-8">
@@ -420,6 +525,11 @@ Service Level Agreements for:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Guaranteed Performance: With Service Level Agreements for throughput, latency, availability, and consistency, you get predictable performance at any scale.
+search_anchor: Guaranteed Performance: With Service Level
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -446,6 +556,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The pricing model is based on Request Units, or RUs, which represent the computational resources needed for database operations.
+search_anchor: pricing model is based on
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -454,6 +569,11 @@ Pricing based on Request Units (RUs)
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The pricing model is based on Request Units, or RUs, which represent the computational resources needed for database operations.
+search_anchor: pricing model is based on
+-->
 <v-click>
 
 <div class="mt-12 text-lg text-center">
@@ -466,6 +586,11 @@ Computational resources needed for operations
 
 # Pricing Options
 
+<!--
+METADATA:
+sentence: Guaranteed Performance: With Service Level Agreements for throughput, latency, availability, and consistency, you get predictable performance at any scale.
+search_anchor: Guaranteed Performance: With Service Level
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -478,6 +603,11 @@ Computational resources needed for operations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cosmos DB is billed as a planet-scale database, and for good reason.
+search_anchor: Cosmos DB is billed as
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -490,6 +620,11 @@ Computational resources needed for operations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You have options: Provisioned throughput with a free tier and the ability to set price caps Serverless for development and smaller workloads Autoscale that adjusts automatically based on demand Make sure you understand the pricing model before deploying production workloads.
+search_anchor: You have options: Provisioned throughput
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -502,6 +637,11 @@ Computational resources needed for operations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Whether you're preparing for the AZ-204 certification or building production applications, these skills will be essential.
+search_anchor: Whether you're preparing for the
+-->
 <v-click>
 
 <div class="mt-10 text-center text-lg text-orange-400">
@@ -520,6 +660,11 @@ layout: section
 
 # Perfect For
 
+<!--
+METADATA:
+sentence: It spreads data across multiple storage locations, and all those locations can be read from and written to simultaneously.
+search_anchor: It spreads data across multiple
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -532,6 +677,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cosmos DB is billed as a planet-scale database, and for good reason.
+search_anchor: Cosmos DB is billed as
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -544,6 +694,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Guaranteed Performance: With Service Level Agreements for throughput, latency, availability, and consistency, you get predictable performance at any scale.
+search_anchor: Guaranteed Performance: With Service Level
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -556,6 +711,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It spreads data across multiple storage locations, and all those locations can be read from and written to simultaneously.
+search_anchor: It spreads data across multiple
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -568,6 +728,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Guaranteed Performance: With Service Level Agreements for throughput, latency, availability, and consistency, you get predictable performance at any scale.
+search_anchor: Guaranteed Performance: With Service Level
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -590,6 +755,11 @@ layout: section
 
 # Terminology
 
+<!--
+METADATA:
+sentence: The pricing model is based on Request Units, or RUs, which represent the computational resources needed for database operations.
+search_anchor: pricing model is based on
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -602,6 +772,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cosmos DB excels at scaling because of its intelligent data partitioning.
+search_anchor: Cosmos DB excels at scaling
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -614,6 +789,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keep this in mind to avoid confusion.
+search_anchor: Keep this in mind to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -626,6 +806,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Keep this in mind to avoid confusion.
+search_anchor: Keep this in mind to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -638,6 +823,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This partitioning process is completely managed for you, but it does mean that data in the CosmosDB NoSQL driver has a different format compared to a standard SQL database.
+search_anchor: This partitioning process is completely
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -687,6 +877,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: Why Choose Cosmos DB?
+search_anchor: Why Choose Cosmos DB
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -696,6 +891,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with the hands-on exercises.
+search_anchor: Let's get started with the
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -705,6 +905,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with the hands-on exercises.
+search_anchor: Let's get started with the
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -714,6 +919,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll also explore the Data Explorer in the Azure Portal, where you can view and query your data, and learn how to retrieve connection strings both through the Portal and the Azure CLI.
+search_anchor: We'll also explore the Data
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -723,6 +933,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll also explore the Data Explorer in the Azure Portal, where you can view and query your data, and learn how to retrieve connection strings both through the Portal and the Azure CLI.
+search_anchor: We'll also explore the Data
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -745,6 +960,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with the hands-on exercises.
+search_anchor: Let's get started with the
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -753,6 +973,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Choose Cosmos DB?
+search_anchor: Why Choose Cosmos DB
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

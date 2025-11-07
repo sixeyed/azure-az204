@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: AKS with KeyVault Secret Storage - Introduction Opening Welcome to this lab on integrating Azure Kubernetes Service with Azure Key Vault for secure secret storage.
+search_anchor: AKS with KeyVault Secret Storage
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is the Container Storage Interface?
+search_anchor: What is the Container Storage
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Container Storage Interface
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Kubernetes has a powerful, pluggable storage architecture called the Container Storage Interface, or CSI.
+search_anchor: Kubernetes has a powerful, pluggable
+-->
 <v-click>
 
 <div class="mt-12 text-lg text-center">
@@ -90,6 +105,11 @@ graph LR
 
 # CSI Flexibility
 
+<!--
+METADATA:
+sentence: This architecture allows different types of storage systems to be connected to a Kubernetes cluster and made available as volumes inside your Pod containers.
+search_anchor: This architecture allows different types
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -118,6 +138,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This architecture allows different types of storage systems to be connected to a Kubernetes cluster and made available as volumes inside your Pod containers.
+search_anchor: This architecture allows different types
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -144,6 +169,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: KeyVault as a Storage Provider Azure Kubernetes Service includes an add-on that enables Azure Key Vault as a storage provider through the Secrets Store CSI Driver.
+search_anchor: KeyVault as a Storage Provider
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -169,6 +199,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The beauty of CSI is its flexibility.
+search_anchor: beauty of CSI is its
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -181,6 +216,11 @@ Through the Secrets Store CSI Driver
 
 # What You Can Do
 
+<!--
+METADATA:
+sentence: This is a game-changer for security and configuration management.
+search_anchor: This is a game-changer for
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -190,6 +230,11 @@ Through the Secrets Store CSI Driver
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is the Container Storage Interface?
+search_anchor: What is the Container Storage
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -199,6 +244,11 @@ Through the Secrets Store CSI Driver
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The beauty of CSI is its flexibility.
+search_anchor: beauty of CSI is its
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -208,6 +258,11 @@ Through the Secrets Store CSI Driver
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a game-changer for security and configuration management.
+search_anchor: This is a game-changer for
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -244,6 +299,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While these are base64 encoded, they're still stored in the cluster's etcd database.
+search_anchor: While these are base64 encoded
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -252,6 +312,11 @@ Secrets are base64 encoded
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While these are base64 encoded, they're still stored in the cluster's etcd database.
+search_anchor: While these are base64 encoded
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg text-red-400">
@@ -280,6 +345,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to leverage the Container Storage Interface to mount Key Vault secrets directly into your Kubernetes pods.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -288,6 +358,11 @@ Secrets remain in Azure Key Vault
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to leverage the Container Storage Interface to mount Key Vault secrets directly into your Kubernetes pods.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -300,6 +375,11 @@ Never exist as Kubernetes objects in your cluster
 
 # Key Vault Security Features
 
+<!--
+METADATA:
+sentence: This is a game-changer for security and configuration management.
+search_anchor: This is a game-changer for
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -309,6 +389,11 @@ Never exist as Kubernetes objects in your cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The beauty of CSI is its flexibility.
+search_anchor: beauty of CSI is its
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -318,6 +403,11 @@ Never exist as Kubernetes objects in your cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is the Container Storage Interface?
+search_anchor: What is the Container Storage
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -327,6 +417,11 @@ Never exist as Kubernetes objects in your cluster
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a game-changer for security and configuration management.
+search_anchor: This is a game-changer for
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -357,6 +452,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While these are base64 encoded, they're still stored in the cluster's etcd database.
+search_anchor: While these are base64 encoded
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -365,6 +465,11 @@ Secrets materialized in memory only
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's not limited to traditional block storage or file systems.
+search_anchor: It's not limited to traditional
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -383,6 +488,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: KeyVault as a Storage Provider Azure Kubernetes Service includes an add-on that enables Azure Key Vault as a storage provider through the Secrets Store CSI Driver.
+search_anchor: KeyVault as a Storage Provider
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -395,6 +505,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is the Container Storage Interface?
+search_anchor: What is the Container Storage
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -407,6 +522,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a game-changer for security and configuration management.
+search_anchor: This is a game-changer for
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -419,6 +539,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a game-changer for security and configuration management.
+search_anchor: This is a game-changer for
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -431,6 +556,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: KeyVault as a Storage Provider Azure Kubernetes Service includes an add-on that enables Azure Key Vault as a storage provider through the Secrets Store CSI Driver.
+search_anchor: KeyVault as a Storage Provider
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -453,6 +583,11 @@ layout: section
 
 # When to Use This Pattern
 
+<!--
+METADATA:
+sentence: While these are base64 encoded, they're still stored in the cluster's etcd database.
+search_anchor: While these are base64 encoded
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -462,6 +597,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is the Container Storage Interface?
+search_anchor: What is the Container Storage
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -469,6 +609,11 @@ layout: section
   <span class="text-lg">Comply with centralized secret storage requirements</span>
 </v-click>
 
+<!--
+METADATA:
+sentence: While these are base64 encoded, they're still stored in the cluster's etcd database.
+search_anchor: While these are base64 encoded
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -478,6 +623,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a game-changer for security and configuration management.
+search_anchor: This is a game-changer for
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -506,6 +656,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's not limited to traditional block storage or file systems.
+search_anchor: It's not limited to traditional
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -514,6 +669,11 @@ Secrets flow from Key Vault to Pod filesystem
 
 </v-click>
 
+<!--
+METADATA:
+sentence: KeyVault as a Storage Provider Azure Kubernetes Service includes an add-on that enables Azure Key Vault as a storage provider through the Secrets Store CSI Driver.
+search_anchor: KeyVault as a Storage Provider
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -535,6 +695,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is the Container Storage Interface?
+search_anchor: What is the Container Storage
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -543,6 +708,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: KeyVault as a Storage Provider Azure Kubernetes Service includes an add-on that enables Azure Key Vault as a storage provider through the Secrets Store CSI Driver.
+search_anchor: KeyVault as a Storage Provider
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to properly lock down access to your Key Vaults to ensure only authorized resources can access your sensitive data.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Because of this, securing access to Key Vault is absolutely critical.
+search_anchor: Because of this, securing access
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Key Vaults store critical secrets
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Key Vault Security Matters Key Vaults store your most sensitive data - passwords, connection strings, API keys, and certificates.
+search_anchor: Why Key Vault Security Matters
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-2 gap-8">
@@ -85,6 +100,11 @@ Key Vaults store critical secrets
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A misconfigured Key Vault could expose your secrets to unauthorized users or services, potentially compromising your entire application infrastructure.
+search_anchor: misconfigured Key Vault could expose
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -126,6 +146,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What We'll Cover In this lab, we'll work through both layers of security.
+search_anchor: What We'll Cover In this
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -146,6 +171,11 @@ Both layers work together
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This controls whether a request can even reach the Key Vault service.
+search_anchor: This controls whether a request
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -154,6 +184,11 @@ Controls whether request can reach Key Vault
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By default, Key Vaults are accessible from any network, but you can restrict access to specific virtual networks.
+search_anchor: By default, Key Vaults are
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -172,6 +207,11 @@ Controls whether request can reach Key Vault
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll start by creating a Key Vault and storing a secret.
+search_anchor: We'll start by creating a
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -192,6 +232,11 @@ First line of defense
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Even if a request can reach the Key Vault over the network, the caller still needs to authenticate as an authorized principal.
+search_anchor: Even if a request can
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -200,6 +245,11 @@ Caller must authenticate as authorized principal
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure uses the term "principal" to refer to any identity - whether that's a user account, a group of users, a service principal, or a managed identity.
+search_anchor: Azure uses the term "principal"
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -208,6 +258,11 @@ Azure uses "principal" for any identity
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Principals is Azure's general term for any authenticated identity - users, groups, service principals, or managed identities.
+search_anchor: Principals is Azure's general term
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-8">
@@ -241,6 +296,11 @@ layout: section
 
 # Lab Flow
 
+<!--
+METADATA:
+sentence: We'll start by creating a Key Vault and storing a secret.
+search_anchor: We'll start by creating a
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -253,6 +313,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then we'll lock down network access so only resources in a specific virtual network can reach the vault.
+search_anchor: Then we'll lock down network
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -265,6 +330,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Next, we'll create a virtual machine in that network and configure it with a managed identity.
+search_anchor: Next, we'll create a virtual
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -277,6 +347,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Next, we'll create a virtual machine in that network and configure it with a managed identity.
+search_anchor: Next, we'll create a virtual
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -289,6 +364,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You configure these in the Key Vault itself.
+search_anchor: You configure these in the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -315,6 +395,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts Let's quickly review some key concepts you'll encounter: Access Policies define what a principal is allowed to do with secrets, keys, or certificates.
+search_anchor: Key Concepts Let's quickly review
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -323,6 +408,11 @@ Define what principals can do
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Key Vault Security Matters Key Vaults store your most sensitive data - passwords, connection strings, API keys, and certificates.
+search_anchor: Why Key Vault Security Matters
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-8">
@@ -342,6 +432,11 @@ Define what principals can do
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You configure these in the Key Vault itself.
+search_anchor: You configure these in the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -362,6 +457,11 @@ Configured in Key Vault itself
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service Endpoints allow Azure services like Key Vault to communicate with resources inside a virtual network subnet.
+search_anchor: Service Endpoints allow Azure services
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -387,6 +487,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This will demonstrate how managed identities provide a secure way for Azure resources to authenticate with Key Vault without requiring any credentials in your code.
+search_anchor: This will demonstrate how managed
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -407,6 +512,11 @@ Secure connectivity without public internet
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Managed Identities are Azure-managed identities that Azure services can use to authenticate with other Azure services.
+search_anchor: Managed Identities are Azure-managed identities
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -415,6 +525,11 @@ Azure-managed identities for Azure services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There's no password or credential you need to manage - Azure handles everything automatically.
+search_anchor: There's no password or credential
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -424,6 +539,11 @@ Azure-managed identities for Azure services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You configure these in the Key Vault itself.
+search_anchor: You configure these in the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -433,6 +553,11 @@ Azure-managed identities for Azure services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There's no password or credential you need to manage - Azure handles everything automatically.
+search_anchor: There's no password or credential
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -442,6 +567,11 @@ Azure-managed identities for Azure services
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There's no password or credential you need to manage - Azure handles everything automatically.
+search_anchor: There's no password or credential
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -476,6 +606,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What We'll Cover In this lab, we'll work through both layers of security.
+search_anchor: What We'll Cover In this
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -497,6 +632,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by creating our Key Vault and setting up the initial configuration.
+search_anchor: Let's get started by creating
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -505,6 +645,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You configure these in the Key Vault itself.
+search_anchor: You configure these in the
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

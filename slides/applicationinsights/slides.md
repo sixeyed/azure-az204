@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore one of Azure's most powerful monitoring tools for understanding application health and performance.
+search_anchor: this session, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Insights is a comprehensive monitoring solution that combines the ingestion of log and metric data with a rich user interface for searching and exploring that data.
+search_anchor: Application Insights is a comprehensive
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Log and metric ingestion + rich UI
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Application Insights?
+search_anchor: What is Application Insights
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -104,6 +119,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as your application's flight recorder - it captures everything happening in your app so you can troubleshoot issues and optimize performance.
+search_anchor: Think of it as your
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -116,6 +136,11 @@ Captures everything happening in your app
 
 # Client Library
 
+<!--
+METADATA:
+sentence: You can add Application Insights support to any application by using the client library.
+search_anchor: You can add Application Insights
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -136,6 +161,11 @@ services.AddApplicationInsightsTelemetry();
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can add Application Insights support to any application by using the client library.
+search_anchor: You can add Application Insights
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -156,6 +186,11 @@ Using the client library
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But what makes it even more powerful is that Platform as a Service offerings like Web Apps and Function Apps support automatic instrumentation.
+search_anchor: But what makes it even
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -164,6 +199,11 @@ PaaS offerings support auto-instrumentation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Application Insights?
+search_anchor: What is Application Insights
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -179,6 +219,11 @@ PaaS offerings support auto-instrumentation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure automatically injects the monitoring code and starts collecting telemetry.
+search_anchor: Azure automatically injects the monitoring
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -215,6 +260,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Architecture Overview Let's talk about how Application Insights fits into the Azure monitoring ecosystem.
+search_anchor: Architecture Overview Let's talk about
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -227,6 +277,11 @@ Flexible architecture for different viewing needs
 
 # Data Flow
 
+<!--
+METADATA:
+sentence: Applications send their data to Application Insights as the central collector.
+search_anchor: Applications send their data to
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -239,6 +294,11 @@ Flexible architecture for different viewing needs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Applications send their data to Application Insights as the central collector.
+search_anchor: Applications send their data to
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -251,6 +311,11 @@ Flexible architecture for different viewing needs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each Application Insights instance is linked to a Log Analytics service, which is where the data is actually stored.
+search_anchor: Each Application Insights instance is
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -263,6 +328,11 @@ Flexible architecture for different viewing needs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn In this lab, we'll explore both integration approaches.
+search_anchor: What You'll Learn In this
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -279,6 +349,11 @@ Flexible architecture for different viewing needs
 
 # Same Data, Multiple Views
 
+<!--
+METADATA:
+sentence: What is Application Insights?
+search_anchor: What is Application Insights
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -288,6 +363,11 @@ Flexible architecture for different viewing needs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn In this lab, we'll explore both integration approaches.
+search_anchor: What You'll Learn In this
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -297,6 +377,11 @@ Flexible architecture for different viewing needs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn In this lab, we'll explore both integration approaches.
+search_anchor: What You'll Learn In this
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -306,6 +391,11 @@ Flexible architecture for different viewing needs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure automatically injects the monitoring code and starts collecting telemetry.
+search_anchor: Azure automatically injects the monitoring
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -332,6 +422,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Features Application Insights provides several powerful features: Live Metrics - Get real-time visibility into your application's performance as requests flow through your system.
+search_anchor: Key Features Application Insights provides
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -357,6 +452,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Features Application Insights provides several powerful features: Live Metrics - Get real-time visibility into your application's performance as requests flow through your system.
+search_anchor: Key Features Application Insights provides
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -377,6 +477,11 @@ See requests flow through your system
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Map - Visualize the dependencies between your application components and see where bottlenecks or failures are occurring.
+search_anchor: Application Map - Visualize the
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -404,6 +509,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Map - Visualize the dependencies between your application components and see where bottlenecks or failures are occurring.
+search_anchor: Application Map - Visualize the
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -424,6 +534,11 @@ See where bottlenecks or failures occur
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Failures Analysis - Dive deep into exceptions and failed requests with detailed diagnostic information.
+search_anchor: Failures Analysis - Dive deep
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -432,6 +547,11 @@ Deep dive into exceptions and failures
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Failures Analysis - Dive deep into exceptions and failed requests with detailed diagnostic information.
+search_anchor: Failures Analysis - Dive deep
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -451,6 +571,11 @@ Deep dive into exceptions and failures
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Failures Analysis - Dive deep into exceptions and failed requests with detailed diagnostic information.
+search_anchor: Failures Analysis - Dive deep
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -479,6 +604,11 @@ Track:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Performance Monitoring - Track response times, dependency calls, and identify performance bottlenecks.
+search_anchor: Performance Monitoring - Track response
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -488,6 +618,11 @@ Track:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Performance Monitoring - Track response times, dependency calls, and identify performance bottlenecks.
+search_anchor: Performance Monitoring - Track response
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -497,6 +632,11 @@ Track:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Performance Monitoring - Track response times, dependency calls, and identify performance bottlenecks.
+search_anchor: Performance Monitoring - Track response
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -518,6 +658,11 @@ Track:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: User Flows - Understand how users navigate through your application and where they encounter issues.
+search_anchor: User Flows - Understand how
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -547,6 +692,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: User Flows - Understand how users navigate through your application and where they encounter issues.
+search_anchor: User Flows - Understand how
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -565,6 +715,11 @@ layout: section
 
 # Two Main Approaches
 
+<!--
+METADATA:
+sentence: Integration Options There are two main ways to integrate Application Insights with your applications: SDK Integration - For maximum control, you can use the Application Insights SDK to explicitly track custom events, operations, and dependencies.
+search_anchor: Integration Options There are two
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -581,6 +736,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure automatically injects the monitoring code and starts collecting telemetry.
+search_anchor: Azure automatically injects the monitoring
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -618,6 +778,11 @@ telemetryClient.TrackDependency("PaymentGateway", ...);
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you fine-grained control over what telemetry is collected.
+search_anchor: This gives you fine-grained control
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -630,6 +795,11 @@ Maximum control over telemetry
 
 # Auto-instrumentation
 
+<!--
+METADATA:
+sentence: Auto-instrumentation - For standard web applications running in Azure App Service, you can enable Application Insights without any code changes.
+search_anchor: Auto-instrumentation - For standard web
+-->
 <v-click>
 
 <div class="mt-8 text-center text-2xl">
@@ -657,6 +827,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure automatically injects the monitoring code and starts collecting telemetry.
+search_anchor: Azure automatically injects the monitoring
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -675,6 +850,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: What is Application Insights?
+search_anchor: What is Application Insights
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -684,6 +864,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Auto-instrumentation - For standard web applications running in Azure App Service, you can enable Application Insights without any code changes.
+search_anchor: Auto-instrumentation - For standard web
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -693,6 +878,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure automatically injects the monitoring code and starts collecting telemetry.
+search_anchor: Azure automatically injects the monitoring
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -702,6 +892,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Application Insights?
+search_anchor: What is Application Insights
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -724,6 +919,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure automatically injects the monitoring code and starts collecting telemetry.
+search_anchor: Azure automatically injects the monitoring
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -732,6 +932,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn In this lab, we'll explore both integration approaches.
+search_anchor: What You'll Learn In this
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

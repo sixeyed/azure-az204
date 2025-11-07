@@ -28,6 +28,11 @@ layout: center
 
 # Welcome to APIM
 
+<!--
+METADATA:
+sentence: In this session, we'll explore one of Azure's most powerful services for managing and publishing HTTP APIs.
+search_anchor: this session, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a full-service solution for delivering HTTP APIs to your consumers - whether that's a public API available to everyone, or an external API for your business partners.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Full-service solution for delivering HTTP APIs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It provides a self-service experience for your API consumers.
+search_anchor: It provides a self-service experience
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -81,6 +96,11 @@ Full-service solution for delivering HTTP APIs
 
 # Four Core Features
 
+<!--
+METADATA:
+sentence: APIM gives you four core features that make it incredibly valuable: First, there's an API designer where you can describe and version your API's operations.
+search_anchor: APIM gives you four core
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -93,6 +113,11 @@ Full-service solution for delivering HTTP APIs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, you have a gateway that routes incoming traffic to your backend API hosts.
+search_anchor: Second, you have a gateway
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -105,6 +130,11 @@ Full-service solution for delivering HTTP APIs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Developer Portal The Developer Portal is another standout feature.
+search_anchor: Developer Portal The Developer Portal
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -117,6 +147,11 @@ Full-service solution for delivering HTTP APIs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So, what exactly is API Management?
+search_anchor: So, what exactly is API
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -141,6 +176,11 @@ Full-service solution for delivering HTTP APIs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you a centralized place to manage all your API definitions.
+search_anchor: This gives you a centralized
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -168,6 +208,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Subscription key management with automatic generation and rotation?
+search_anchor: Subscription key management with automatic
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -188,6 +233,11 @@ Describe operations and manage versions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, you have a gateway that routes incoming traffic to your backend API hosts.
+search_anchor: Second, you have a gateway
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -214,6 +264,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can transform request and response payloads.
+search_anchor: You can transform request and
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -222,6 +277,11 @@ Can modify requests and responses
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The gateway can also modify both requests and responses, giving you incredible flexibility in how you handle API traffic.
+search_anchor: gateway can also modify both
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -242,6 +302,11 @@ Incredible flexibility in handling API traffic
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It provides a self-service experience for your API consumers.
+search_anchor: It provides a self-service experience
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -269,6 +334,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This self-service approach dramatically reduces the administrative overhead of managing API consumers.
+search_anchor: This self-service approach dramatically reduces
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -289,6 +359,11 @@ Dramatically reduces administrative overhead
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And fourth, you get integrated security features to restrict API access, ensuring that only authorized users can call your APIs.
+search_anchor: fourth, you get integrated security
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -315,6 +390,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And fourth, you get integrated security features to restrict API access, ensuring that only authorized users can call your APIs.
+search_anchor: fourth, you get integrated security
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -335,6 +415,11 @@ Restrict access to authorized users only
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But before we dive deep, there's something important you need to know: creating an instance of the API Management service can take 60 minutes or more.
+search_anchor: But before we dive deep
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -343,6 +428,11 @@ Creating an APIM instance can take<br/>60 minutes or more
 
 </v-click>
 
+<!--
+METADATA:
+sentence: So you might want to kick off that creation process in advance if you're planning to work through these labs.
+search_anchor: So you might want to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -361,6 +451,11 @@ layout: section
 
 # Key URLs
 
+<!--
+METADATA:
+sentence: When you create an APIM instance, you get several key URLs: The gateway URL is the endpoint that your API consumers will call.
+search_anchor: When you create an APIM
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -373,6 +468,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The management URL is for programmatic configuration of your APIM instance using the REST API.
+search_anchor: management URL is for programmatic
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -385,6 +485,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And the developer portal URL is where your API consumers go to discover your APIs, sign up for access, and get their subscription keys.
+search_anchor: developer portal URL is where
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -421,6 +526,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where all the magic happens - rate limiting, authentication, policy enforcement, and routing to backends.
+search_anchor: This is where all the
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -439,6 +549,11 @@ layout: section
 
 # Three Core Concepts
 
+<!--
+METADATA:
+sentence: Each API represents a collection of operations that work together.
+search_anchor: Each API represents a collection
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -454,6 +569,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of products as your pricing tiers or access levels.
+search_anchor: Think of products as your
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -469,6 +589,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, Subscriptions - these show you the users who have signed up for your products.
+search_anchor: Third, Subscriptions - these show
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -509,6 +634,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Core Concepts There are three core concepts you need to understand in APIM: First, APIs - you can host multiple APIs in one APIM resource.
+search_anchor: Core Concepts There are three
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -541,6 +671,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of products as your pricing tiers or access levels.
+search_anchor: Think of products as your
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -575,6 +710,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each subscription gets a unique key that identifies the consumer and controls their access.
+search_anchor: Each subscription gets a unique
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -583,6 +723,11 @@ Each subscription gets unique key
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each subscription gets a unique key that identifies the consumer and controls their access.
+search_anchor: Each subscription gets a unique
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -609,6 +754,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, there's no SLA, so you absolutely cannot use it for production environments.
+search_anchor: However, there's no SLA, so
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-16">
@@ -624,6 +774,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's cheap to run - currently about seven cents per hour - and is fine for exploration and development.
+search_anchor: It's cheap to run -
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -632,6 +787,11 @@ Perfect for exploration and development
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For production, you have several options.
+search_anchor: production, you have several options
+-->
 <v-click>
 
 <div class="mt-6 text-center text-xl text-red-400">
@@ -644,6 +804,11 @@ Never use for production!
 
 # Production Tiers
 
+<!--
+METADATA:
+sentence: The Consumption tier is serverless and you pay per call, with auto-scaling built in.
+search_anchor: Consumption tier is serverless and
+-->
 <v-click>
 
 <div class="mt-6 grid grid-cols-2 gap-8">
@@ -665,6 +830,11 @@ Never use for production!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And the Premium tier is for enterprise scenarios with multi-region deployment, VNet integration, and high capacity.
+search_anchor: Premium tier is for enterprise
+-->
 <v-click>
 
 <div class="mt-8">
@@ -696,6 +866,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is why API Management is such a powerful service.
+search_anchor: This is why API Management
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -704,6 +879,11 @@ APIM is NOT a hosting service
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You still need to deploy your actual API logic to another service inside or outside of Azure.
+search_anchor: You still need to deploy
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -733,6 +913,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: APIM works as a facade or proxy in front of your backend APIs.
+search_anchor: APIM works as a facade
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -741,6 +926,11 @@ APIM works as a facade or proxy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You add your backend as a backend service in APIM, so the gateway knows where to route incoming calls.
+search_anchor: You add your backend as
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -753,6 +943,11 @@ Add backend as backend service in APIM
 
 # Backend Options
 
+<!--
+METADATA:
+sentence: What is API Management?
+search_anchor: What is API Management
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -762,6 +957,11 @@ Add backend as backend service in APIM
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For production, you have several options.
+search_anchor: production, you have several options
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -780,6 +980,11 @@ Add backend as backend service in APIM
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your backend could be an Azure Web App, a Function App, a Logic App, or even a custom URL pointing to infrastructure running anywhere - in Azure, on-premises, or in another cloud.
+search_anchor: Your backend could be an
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -789,6 +994,11 @@ Add backend as backend service in APIM
 
 </v-click>
 
+<!--
+METADATA:
+sentence: APIM works as a facade or proxy in front of your backend APIs.
+search_anchor: APIM works as a facade
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -815,6 +1025,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Policies allow you to add inbound and outbound processing to wrap the actual logic of your API.
+search_anchor: Policies allow you to add
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -842,6 +1057,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Policies allow you to add inbound and outbound processing to wrap the actual logic of your API.
+search_anchor: Policies allow you to add
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -854,6 +1074,11 @@ Wrap actual API logic with processing
 
 # Policy Examples
 
+<!--
+METADATA:
+sentence: For example, you can cache responses to reduce load on your backend.
+search_anchor: example, you can cache responses
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -863,6 +1088,11 @@ Wrap actual API logic with processing
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can filter requests based on IP address to implement geographical restrictions or admin-only endpoints.
+search_anchor: You can filter requests based
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -872,6 +1102,11 @@ Wrap actual API logic with processing
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can transform request and response payloads.
+search_anchor: You can transform request and
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -881,6 +1116,11 @@ Wrap actual API logic with processing
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can add headers, validate tokens, enforce rate limits - the list goes on.
+search_anchor: You can add headers, validate
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -890,6 +1130,11 @@ Wrap actual API logic with processing
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can add headers, validate tokens, enforce rate limits - the list goes on.
+search_anchor: You can add headers, validate
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -903,6 +1148,11 @@ Wrap actual API logic with processing
 
 # The Best Part
 
+<!--
+METADATA:
+sentence: For production, you have several options.
+search_anchor: production, you have several options
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -911,6 +1161,11 @@ Production-grade features
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And here's the best part: you get all of these production-grade features without having to write any code in your backend API.
+search_anchor: here's the best part: you
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -947,6 +1202,11 @@ layout: section
 
 # Self-Service Experience
 
+<!--
+METADATA:
+sentence: A product gives them access to one or more APIs.
+search_anchor: product gives them access to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -956,6 +1216,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They can browse your APIs, read documentation, sign up for access, get subscription keys, and even test APIs directly in the browser.
+search_anchor: They can browse your APIs
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -965,6 +1230,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of products as your pricing tiers or access levels.
+search_anchor: Think of products as your
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -974,6 +1244,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Subscription key management with automatic generation and rotation?
+search_anchor: Subscription key management with automatic
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -983,6 +1258,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They can browse your APIs, read documentation, sign up for access, get subscription keys, and even test APIs directly in the browser.
+search_anchor: They can browse your APIs
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -996,6 +1276,11 @@ layout: section
 
 # Fully Customizable
 
+<!--
+METADATA:
+sentence: The portal is fully customizable - you can add your company branding, customize the look and feel, and configure authentication options.
+search_anchor: portal is fully customizable -
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -1005,6 +1290,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The portal is fully customizable - you can add your company branding, customize the look and feel, and configure authentication options.
+search_anchor: portal is fully customizable -
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -1014,6 +1304,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The portal is fully customizable - you can add your company branding, customize the look and feel, and configure authentication options.
+search_anchor: portal is fully customizable -
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -1023,6 +1318,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And all of this is hosted and managed by the APIM service itself, so there's no additional infrastructure for you to maintain.
+search_anchor: all of this is hosted
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -1031,6 +1331,11 @@ Hosted and managed by APIM service
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And all of this is hosted and managed by the APIM service itself, so there's no additional infrastructure for you to maintain.
+search_anchor: all of this is hosted
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -1057,6 +1362,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: OpenAPI Integration APIM has excellent support for the OpenAPI specification, formerly known as Swagger.
+search_anchor: OpenAPI Integration APIM has excellent
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -1065,6 +1375,11 @@ Excellent support for OpenAPI specification
 
 </v-click>
 
+<!--
+METADATA:
+sentence: OpenAPI Integration APIM has excellent support for the OpenAPI specification, formerly known as Swagger.
+search_anchor: OpenAPI Integration APIM has excellent
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -1095,6 +1410,11 @@ graph LR
 
 # Import Benefits
 
+<!--
+METADATA:
+sentence: If your backend API already publishes an OpenAPI spec, you can import it directly into APIM.
+search_anchor: If your backend API already
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -1103,6 +1423,11 @@ If backend publishes OpenAPI spec...
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If your backend API already publishes an OpenAPI spec, you can import it directly into APIM.
+search_anchor: If your backend API already
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -1112,6 +1437,11 @@ If backend publishes OpenAPI spec...
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This automatically creates all the operations, parameters, and documentation in APIM, saving you a ton of manual work.
+search_anchor: This automatically creates all the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -1121,6 +1451,11 @@ If backend publishes OpenAPI spec...
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This automatically creates all the operations, parameters, and documentation in APIM, saving you a ton of manual work.
+search_anchor: This automatically creates all the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -1130,6 +1465,11 @@ If backend publishes OpenAPI spec...
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each API represents a collection of operations that work together.
+search_anchor: Each API represents a collection
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -1148,6 +1488,11 @@ layout: section
 
 # Out of the Box
 
+<!--
+METADATA:
+sentence: Rate limiting and quotas to protect your backends from overload?
+search_anchor: Rate limiting and quotas to
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-3">
@@ -1160,6 +1505,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Response caching to improve performance and reduce backend load?
+search_anchor: Response caching to improve performance
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1172,6 +1522,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Subscription key management with automatic generation and rotation?
+search_anchor: Subscription key management with automatic
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1184,6 +1539,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: IP filtering, CORS support, request transformation?
+search_anchor: IP filtering, CORS support, request
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1196,6 +1556,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: IP filtering, CORS support, request transformation?
+search_anchor: IP filtering, CORS support, request
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1212,6 +1577,11 @@ layout: section
 
 # The Power
 
+<!--
+METADATA:
+sentence: Production-Grade Features Out of the Box Let me emphasize something important: APIM gives you production-grade features that would take weeks or months to build yourself.
+search_anchor: Production-Grade Features Out of the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -1220,6 +1590,11 @@ Features that would take<br/>weeks or months to build yourself
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives you a centralized place to manage all your API definitions.
+search_anchor: This gives you a centralized
+-->
 <v-click>
 
 <div class="mt-12 text-center text-3xl text-green-400">
@@ -1243,6 +1618,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can take a simple backend API and transform it into a production-ready, secure, scalable API service with just configuration - no code required.
+search_anchor: You can take a simple
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -1261,6 +1641,11 @@ layout: section
 
 # Lab Exercises
 
+<!--
+METADATA:
+sentence: The management URL is for programmatic configuration of your APIM instance using the REST API.
+search_anchor: management URL is for programmatic
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1270,6 +1655,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: APIM works as a facade or proxy in front of your backend APIs.
+search_anchor: APIM works as a facade
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1279,6 +1669,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is API Management?
+search_anchor: What is API Management
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1288,6 +1683,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: IP filtering, CORS support, request transformation?
+search_anchor: IP filtering, CORS support, request
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1297,6 +1697,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Developer Portal The Developer Portal is another standout feature.
+search_anchor: Developer Portal The Developer Portal
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1306,6 +1711,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is API Management?
+search_anchor: What is API Management
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -1328,6 +1738,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Remember to start that APIM creation process early - grab a coffee while you wait for it to provision, and then we'll dive into the hands-on work.
+search_anchor: Remember to start that APIM
+-->
 <v-click>
 
 <div class="text-3xl mt-8">
@@ -1336,6 +1751,11 @@ Remember: Start APIM creation early!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Remember to start that APIM creation process early - grab a coffee while you wait for it to provision, and then we'll dive into the hands-on work.
+search_anchor: Remember to start that APIM
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">
@@ -1352,6 +1772,11 @@ Grab a coffee while it provisions (60+ minutes)
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Remember to start that APIM creation process early - grab a coffee while you wait for it to provision, and then we'll dive into the hands-on work.
+search_anchor: Remember to start that APIM
+-->
 <v-click>
 
 <div class="text-2xl mt-4 font-bold">

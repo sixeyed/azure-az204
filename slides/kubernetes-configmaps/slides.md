@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Think of it as a configuration store that lives outside your container images.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A ConfigMap is a Kubernetes object that stores configuration data as key-value pairs.
+search_anchor: ConfigMap is a Kubernetes object
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Kubernetes object storing configuration data
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A ConfigMap is a Kubernetes object that stores configuration data as key-value pairs.
+search_anchor: ConfigMap is a Kubernetes object
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -87,6 +102,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means you can keep your application code completely separate from your configuration settings.
+search_anchor: This means you can keep
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -99,6 +119,11 @@ Code completely separate from configuration
 
 # Two Main Formats
 
+<!--
+METADATA:
+sentence: First, you can inject them as environment variables.
+search_anchor: First, you can inject them
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -112,6 +137,11 @@ Code completely separate from configuration
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ConfigMaps can store data in two main formats: simple key-value pairs, which your application reads as environment variables, or full text files, like JSON or YAML configuration files, which get mounted into your container's filesystem.
+search_anchor: ConfigMaps can store data in
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -155,6 +185,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's slow, error-prone, and goes against the principles of immutable infrastructure.
+search_anchor: That's slow, error-prone, and goes
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -186,6 +221,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With ConfigMaps, you build your container image once, and then apply different configurations for different environments.
+search_anchor: ConfigMaps, you build your container
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -194,6 +234,11 @@ Same image, different configurations
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the Twelve-Factor App methodology in action!
+search_anchor: This is the Twelve-Factor App
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -206,6 +251,11 @@ Twelve-Factor App methodology in action
 
 # Separation of Concerns
 
+<!--
+METADATA:
+sentence: Your developers can focus on code, while your operations team manages configuration.
+search_anchor: Your developers can focus on
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -223,6 +273,11 @@ Twelve-Factor App methodology in action
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No more hardcoded connection strings or environment-specific values baked into your images.
+search_anchor: No more hardcoded connection strings
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -241,6 +296,11 @@ layout: section
 
 # Azure Integration
 
+<!--
+METADATA:
+sentence: You can integrate them with Azure Key Vault for sensitive data, use them alongside Azure App Configuration, and manage them through Azure DevOps pipelines for automated deployments.
+search_anchor: You can integrate them with
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -250,6 +310,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 2: What Are ConfigMaps?
+search_anchor: --- Slide 2: What Are
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -259,6 +324,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can integrate them with Azure Key Vault for sensitive data, use them alongside Azure App Configuration, and manage them through Azure DevOps pipelines for automated deployments.
+search_anchor: You can integrate them with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -268,6 +338,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ConfigMaps work seamlessly with AKS managed identities, and they're essential for implementing proper configuration management in your AKS workloads.
+search_anchor: ConfigMaps work seamlessly with AKS
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -295,6 +370,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First, you can inject them as environment variables.
+search_anchor: First, you can inject them
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -303,6 +383,11 @@ Inject as environment variables
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is perfect for simple settings like feature flags, API endpoints, or version numbers.
+search_anchor: This is perfect for simple
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -311,6 +396,11 @@ Perfect for simple settings:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is perfect for simple settings like feature flags, API endpoints, or version numbers.
+search_anchor: This is perfect for simple
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-8">
@@ -330,6 +420,11 @@ Perfect for simple settings:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your application reads these just like any other environment variable.
+search_anchor: Your application reads these just
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -350,6 +445,11 @@ Application reads like any environment variable
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, you can mount them as files in your container's filesystem.
+search_anchor: Second, you can mount them
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -375,6 +475,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This approach is better for complex configuration files, like a complete JSON settings file or an XML configuration.
+search_anchor: This approach is better for
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -383,6 +488,11 @@ Better for complex configuration files
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This approach is better for complex configuration files, like a complete JSON settings file or an XML configuration.
+search_anchor: This approach is better for
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -401,6 +511,11 @@ layout: section
 
 # Key Exam Topics
 
+<!--
+METADATA:
+sentence: You need to know how to implement containerized solutions, configure application settings, and manage configuration data across different environments.
+search_anchor: You need to know how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -410,6 +525,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your application reads these just like any other environment variable.
+search_anchor: Your application reads these just
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -419,6 +539,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You need to know how to implement containerized solutions, configure application settings, and manage configuration data across different environments.
+search_anchor: You need to know how
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -428,6 +553,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's think about the traditional approach.
+search_anchor: Let's think about the traditional
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -440,6 +570,11 @@ Essential knowledge areas
 
 # What You'll Be Tested On
 
+<!--
+METADATA:
+sentence: ConfigMaps also support separation of concerns.
+search_anchor: ConfigMaps also support separation of
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -449,6 +584,11 @@ Essential knowledge areas
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of it as a configuration store that lives outside your container images.
+search_anchor: Think of it as a
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -458,6 +598,11 @@ Essential knowledge areas
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is the Twelve-Factor App methodology in action!
+search_anchor: This is the Twelve-Factor App
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -467,6 +612,11 @@ Essential knowledge areas
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ConfigMaps also support separation of concerns.
+search_anchor: ConfigMaps also support separation of
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -486,6 +636,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: --- Slide 2: What Are ConfigMaps?
+search_anchor: --- Slide 2: What Are
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -495,6 +650,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: First, you can inject them as environment variables.
+search_anchor: First, you can inject them
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -504,6 +664,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, you can mount them as files in your container's filesystem.
+search_anchor: Second, you can mount them
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -513,6 +678,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll also need to understand the relationship between ConfigMaps and environment variables, and how configuration hierarchy works.
+search_anchor: You'll also need to understand
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -522,6 +692,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lab, you'll be comfortable creating and managing ConfigMaps, and you'll understand the best practices for externalizing configuration in Kubernetes.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -543,6 +718,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's think about the traditional approach.
+search_anchor: Let's think about the traditional
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -551,6 +731,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A ConfigMap is a Kubernetes object that stores configuration data as key-value pairs.
+search_anchor: ConfigMap is a Kubernetes object
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

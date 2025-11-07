@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: This pattern is particularly powerful for building extensible architectures.
+search_anchor: This pattern is particularly powerful
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When a customer places an order, you publish an "order-created" message to a topic.
+search_anchor: When a customer places an
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Publisher sends messages
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The publish-subscribe pattern is a messaging pattern where the component sending messages is called the publisher, and there can be zero or many components that subscribe to receive those messages.
+search_anchor: publish-subscribe pattern is a messaging
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -91,6 +106,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key characteristic is that every subscriber gets a copy of each message.
+search_anchor: key characteristic is that every
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -103,6 +123,11 @@ Every subscriber gets a copy
 
 # Key Characteristic
 
+<!--
+METADATA:
+sentence: You can add new subscribers with new functionality at any time, without making any changes to existing components.
+search_anchor: You can add new subscribers
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -111,6 +136,11 @@ Add new subscribers anytime
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can add new subscribers with new functionality at any time, without making any changes to existing components.
+search_anchor: You can add new subscribers
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -119,6 +149,11 @@ Without changing existing components
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This decoupling is one of the fundamental principles of cloud-native application design.
+search_anchor: This decoupling is one of
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -178,6 +213,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You might remember from a previous lab that we used Service Bus queues for point-to-point messaging.
+search_anchor: You might remember from a
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -186,6 +226,11 @@ Queues: point-to-point
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Topics are different - they're designed for one-to-many communication.
+search_anchor: Topics are different - they're
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl text-green-400">
@@ -206,6 +251,11 @@ Topics: one-to-many
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each subscription acts as an independent message queue, receiving a copy of every message published to the topic.
+search_anchor: Each subscription acts as an
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -214,6 +264,11 @@ Message published to topic
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you publish a message to a topic, it gets forwarded to all active subscriptions on that topic.
+search_anchor: When you publish a message
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -222,6 +277,11 @@ Forwarded to all active subscriptions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each subscription acts as an independent message queue, receiving a copy of every message published to the topic.
+search_anchor: Each subscription acts as an
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -230,6 +290,11 @@ Each subscription acts as independent queue
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key characteristic is that every subscriber gets a copy of each message.
+search_anchor: key characteristic is that every
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -248,6 +313,11 @@ layout: section
 
 # E-Commerce Order Processing
 
+<!--
+METADATA:
+sentence: When a customer places an order, you publish an "order-created" message to a topic.
+search_anchor: When a customer places an
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -277,6 +347,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each subscription acts as an independent message queue, receiving a copy of every message published to the topic.
+search_anchor: Each subscription acts as an
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -289,6 +364,11 @@ Each component operates independently
 
 # Independent Processing
 
+<!--
+METADATA:
+sentence: What is Publish-Subscribe?
+search_anchor: What is Publish-Subscribe
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -298,6 +378,11 @@ Each component operates independently
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can add new subscribers with new functionality at any time, without making any changes to existing components.
+search_anchor: You can add new subscribers
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -307,6 +392,11 @@ Each component operates independently
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can add new subscribers with new functionality at any time, without making any changes to existing components.
+search_anchor: You can add new subscribers
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -316,6 +406,11 @@ Each component operates independently
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This decoupling is one of the fundamental principles of cloud-native application design.
+search_anchor: This decoupling is one of
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -334,6 +429,11 @@ layout: section
 
 # What We'll Do
 
+<!--
+METADATA:
+sentence: Service Bus Topics In Azure Service Bus, we implement the pub-sub pattern using topics.
+search_anchor: Service Bus Topics In Azure
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -346,6 +446,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you publish a message to a topic, it gets forwarded to all active subscriptions on that topic.
+search_anchor: When you publish a message
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -358,6 +463,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Publish-Subscribe?
+search_anchor: What is Publish-Subscribe
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -370,6 +480,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Imagine you're building an e-commerce application.
+search_anchor: Imagine you're building an e-commerce
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -382,6 +497,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Topics are different - they're designed for one-to-many communication.
+search_anchor: Topics are different - they're
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -406,6 +526,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Topics are different - they're designed for one-to-many communication.
+search_anchor: Topics are different - they're
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -414,6 +539,11 @@ Topics require Standard or Premium tier
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Service Bus Topics In Azure Service Bus, we implement the pub-sub pattern using topics.
+search_anchor: Service Bus Topics In Azure
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-16">
@@ -469,6 +599,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Imagine you're building an e-commerce application.
+search_anchor: Imagine you're building an e-commerce
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -477,6 +612,11 @@ One message becomes many
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Each subscription acts as an independent message queue, receiving a copy of every message published to the topic.
+search_anchor: Each subscription acts as an
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -489,6 +629,11 @@ Each subscription gets independent copy
 
 # Scalable Architecture
 
+<!--
+METADATA:
+sentence: Real-World Example Let me give you a practical example.
+search_anchor: Real-World Example Let me give
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -508,6 +653,11 @@ Each subscription gets independent copy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you publish a message to a topic, it gets forwarded to all active subscriptions on that topic.
+search_anchor: When you publish a message
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -529,6 +679,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Real-World Example Let me give you a practical example.
+search_anchor: Real-World Example Let me give
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -537,6 +692,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This pattern is particularly powerful for building extensible architectures.
+search_anchor: This pattern is particularly powerful
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

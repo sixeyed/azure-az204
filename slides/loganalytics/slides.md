@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore one of the most powerful monitoring and analytics tools in Azure, learning how to query and visualize application data using Kusto Query Language.
+search_anchor: this session, we'll explore one
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It serves as the backbone for Azure's monitoring infrastructure.
+search_anchor: It serves as the backbone
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -81,6 +91,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Log Analytics is the centralized data store for all sorts of log collection in Azure.
+search_anchor: Log Analytics is the centralized
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -101,6 +116,11 @@ Centralized store for all log collection
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure Portal provides a rich UI for querying data using Kusto Query Language, or KQL for short.
+search_anchor: Azure Portal provides a rich
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -109,6 +129,11 @@ Rich UI for querying data
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure Portal provides a rich UI for querying data using Kusto Query Language, or KQL for short.
+search_anchor: Azure Portal provides a rich
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -117,6 +142,11 @@ Using Kusto Query Language (KQL)
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Log Analytics?
+search_anchor: What is Log Analytics
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -146,6 +176,11 @@ layout: section
 
 # Beyond Interactive Queries
 
+<!--
+METADATA:
+sentence: It serves as the backbone for Azure's monitoring infrastructure.
+search_anchor: It serves as the backbone
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -154,6 +189,11 @@ KQL powers your entire monitoring strategy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why KQL Matters KQL is not just for interactive queries.
+search_anchor: Why KQL Matters KQL is
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -163,6 +203,11 @@ KQL powers your entire monitoring strategy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Otherwise, we'll create everything from scratch.
+search_anchor: Otherwise, we'll create everything from
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -172,6 +217,11 @@ KQL powers your entire monitoring strategy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -181,6 +231,11 @@ KQL powers your entire monitoring strategy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Log Analytics is the centralized data store for all sorts of log collection in Azure.
+search_anchor: Log Analytics is the centralized
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -190,6 +245,11 @@ KQL powers your entire monitoring strategy
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It serves as the backbone for Azure's monitoring infrastructure.
+search_anchor: It serves as the backbone
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -208,6 +268,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: What is Log Analytics?
+search_anchor: What is Log Analytics
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -217,6 +282,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why KQL Matters KQL is not just for interactive queries.
+search_anchor: Why KQL Matters KQL is
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -226,6 +296,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Otherwise, we'll create everything from scratch.
+search_anchor: Otherwise, we'll create everything from
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -235,6 +310,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why KQL Matters KQL is not just for interactive queries.
+search_anchor: Why KQL Matters KQL is
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -244,6 +324,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It serves as the backbone for Azure's monitoring infrastructure.
+search_anchor: It serves as the backbone
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -263,6 +348,11 @@ layout: section
 
 # Fulfilment Processor
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -290,6 +380,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This application generates logs and metrics that flow through Application Insights into Log Analytics.
+search_anchor: This application generates logs and
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -298,6 +393,11 @@ Generates logs and metrics
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The beauty of this setup is that it represents a real-world scenario - multiple instances of an application generating telemetry data that you need to monitor and analyze.
+search_anchor: beauty of this setup is
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -310,6 +410,11 @@ Real-world scenario with multiple instances
 
 # Data Flow
 
+<!--
+METADATA:
+sentence: What is Log Analytics?
+search_anchor: What is Log Analytics
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -335,6 +440,11 @@ Real-world scenario with multiple instances
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Log Analytics?
+search_anchor: What is Log Analytics
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -368,6 +478,11 @@ requests
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="mt-12 flex items-start gap-4">
@@ -380,6 +495,11 @@ requests
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Log Analytics?
+search_anchor: What is Log Analytics
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -392,6 +512,11 @@ requests
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Insights sends its telemetry data to Log Analytics.
+search_anchor: Application Insights sends its telemetry
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -404,6 +529,11 @@ requests
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Log Analytics?
+search_anchor: What is Log Analytics
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -420,6 +550,11 @@ requests
 
 # Common Operations
 
+<!--
+METADATA:
+sentence: What We'll Cover In this lab, we'll focus on how Log Analytics gives you access to data collected by Application Insights.
+search_anchor: What We'll Cover In this
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-8">
@@ -467,6 +602,11 @@ layout: section
 
 # What You Need
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -476,6 +616,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -485,6 +630,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -494,6 +644,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Log Analytics - Introduction Opening Welcome to this lab on Azure Log Analytics.
+search_anchor: Log Analytics - Introduction Opening
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -503,6 +658,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Insights sends its telemetry data to Log Analytics.
+search_anchor: Application Insights sends its telemetry
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg opacity-70">
@@ -515,6 +675,11 @@ Can reuse Application Insights lab resources
 
 # What You'll Learn
 
+<!--
+METADATA:
+sentence: Let's Get Started By the end of this lab, you'll be comfortable writing KQL queries to extract insights from your application data.
+search_anchor: Let's Get Started By the
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -534,6 +699,11 @@ Can reuse Application Insights lab resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Log Analytics?
+search_anchor: What is Log Analytics
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -555,6 +725,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -563,6 +738,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's dive in and start exploring the power of Azure Log Analytics.
+search_anchor: Let's dive in and start
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

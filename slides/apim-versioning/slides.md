@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: API Management: API Changes & Versioning - Introduction Welcome to this lab on API Management versioning and revisions.
+search_anchor: API Management: API Changes &
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why API Versioning Matters APIs are meant to be explicitly defined contracts between your service and its consumers.
+search_anchor: Why API Versioning Matters APIs
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -81,6 +91,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you publish an API, clients build their applications against that contract.
+search_anchor: When you publish an API
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -93,6 +108,11 @@ Clients build applications against that contract
 
 # The Challenge
 
+<!--
+METADATA:
+sentence: But what happens when you need to make changes?
+search_anchor: But what happens when you
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -109,6 +129,11 @@ What happens when you need to make changes?
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Versions are for breaking changes.
+search_anchor: Versions are for breaking changes
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-red-400">
@@ -142,6 +167,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Versions are for breaking changes.
+search_anchor: Versions are for breaking changes
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -150,6 +180,11 @@ Support multiple versions simultaneously
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This gives your clients time to migrate at their own pace.
+search_anchor: This gives your clients time
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -168,6 +203,11 @@ layout: section
 
 # Two Types of Changes
 
+<!--
+METADATA:
+sentence: Versions are for breaking changes.
+search_anchor: Versions are for breaking changes
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -183,6 +223,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Versions are for breaking changes.
+search_anchor: Versions are for breaking changes
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -210,6 +255,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of adding optional parameters to an existing operation.
+search_anchor: Think of adding optional parameters
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -234,6 +284,11 @@ GET /api/random?min=1&max=100
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Consumers don't need to update their code because the changes are backward compatible.
+search_anchor: Consumers don't need to update
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -242,6 +297,11 @@ Consumers don't need to update their code
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They use defaults if the new parameters aren't provided.
+search_anchor: They use defaults if the
+-->
 <v-click>
 
 <div class="mt-4 text-center text-sm opacity-70">
@@ -262,6 +322,11 @@ Defaults used if new parameters aren't provided
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These require a new API version because existing clients would break if you changed the original.
+search_anchor: These require a new API
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-red-400">
@@ -270,6 +335,11 @@ Require a new API version
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Versions are for breaking changes.
+search_anchor: Versions are for breaking changes
+-->
 <v-click>
 
 <div class="mt-12 text-lg">
@@ -278,6 +348,11 @@ Breaking changes include:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, making optional parameters mandatory, or changing response structures.
+search_anchor: example, making optional parameters mandatory
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -287,6 +362,11 @@ Breaking changes include:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, making optional parameters mandatory, or changing response structures.
+search_anchor: example, making optional parameters mandatory
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -296,6 +376,11 @@ Breaking changes include:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, making optional parameters mandatory, or changing response structures.
+search_anchor: example, making optional parameters mandatory
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -343,6 +428,11 @@ GET /api/random?min=10&max=50
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Consumers don't need to update their code because the changes are backward compatible.
+search_anchor: Consumers don't need to update
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg text-green-400">
@@ -388,6 +478,11 @@ GET /api/v2/random?min=required&max=required
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Consumers don't need to update their code because the changes are backward compatible.
+search_anchor: Consumers don't need to update
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg text-red-400">
@@ -414,6 +509,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is where versioning becomes critical.
+search_anchor: This is where versioning becomes
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -441,6 +541,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can run multiple versions of your application code simultaneously, and APIM routes requests to the correct backend based on your versioning scheme.
+search_anchor: You can run multiple versions
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -472,6 +577,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can run multiple versions of your application code simultaneously, and APIM routes requests to the correct backend based on your versioning scheme.
+search_anchor: You can run multiple versions
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -484,6 +594,11 @@ APIM routes to correct backend based on version
 
 # Tremendous Flexibility
 
+<!--
+METADATA:
+sentence: You can test new versions in isolation, perform blue-green deployments, and gradually migrate traffic between versions.
+search_anchor: You can test new versions
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -493,6 +608,11 @@ APIM routes to correct backend based on version
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can test new versions in isolation, perform blue-green deployments, and gradually migrate traffic between versions.
+search_anchor: You can test new versions
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -502,6 +622,11 @@ APIM routes to correct backend based on version
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can test new versions in isolation, perform blue-green deployments, and gradually migrate traffic between versions.
+search_anchor: You can test new versions
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -511,6 +636,11 @@ APIM routes to correct backend based on version
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They use defaults if the new parameters aren't provided.
+search_anchor: They use defaults if the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -530,6 +660,11 @@ layout: section
 
 # Random Number Generator API
 
+<!--
+METADATA:
+sentence: What We'll Build We're going to work with a Random Number Generator API.
+search_anchor: What We'll Build We're going
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -559,6 +694,11 @@ graph TB
 
 # Lab Steps
 
+<!--
+METADATA:
+sentence: What We'll Build We're going to work with a Random Number Generator API.
+search_anchor: What We'll Build We're going
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -571,6 +711,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of adding optional parameters to an existing operation.
+search_anchor: Think of adding optional parameters
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -583,6 +728,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Versions are for breaking changes.
+search_anchor: Versions are for breaking changes
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -595,6 +745,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Versions are for breaking changes.
+search_anchor: Versions are for breaking changes
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -611,6 +766,11 @@ graph TB
 
 # The Outcome
 
+<!--
+METADATA:
+sentence: Why API Versioning Matters APIs are meant to be explicitly defined contracts between your service and its consumers.
+search_anchor: Why API Versioning Matters APIs
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -636,6 +796,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding Revisions vs Versions Azure API Management supports two types of changes: Revisions are for non-breaking changes.
+search_anchor: Understanding Revisions vs Versions Azure
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -657,6 +822,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They use defaults if the new parameters aren't provided.
+search_anchor: They use defaults if the
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -665,6 +835,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What We'll Build We're going to work with a Random Number Generator API.
+search_anchor: What We'll Build We're going
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

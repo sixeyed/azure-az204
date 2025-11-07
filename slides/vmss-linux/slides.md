@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to use cloud-init for automated deployment and configuration of applications on Linux-based VM Scale Sets.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The first approach is to use a custom image that contains your application pre-installed.
+search_anchor: first approach is to use
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Virtual Machine Scale Sets - Linux: Introduction Opening Welcome to this lab on Virtual Machine Scale Sets with Linux.
+search_anchor: Virtual Machine Scale Sets -
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

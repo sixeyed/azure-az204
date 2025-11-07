@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this lab, we'll explore the declarative approach to infrastructure deployment in Azure.
+search_anchor: this lab, we'll explore the
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is what we call an imperative approach - you tell Azure exactly what to do, step by step.
+search_anchor: This is what we call
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -83,6 +93,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Think of them as inputs to your template.
+search_anchor: Think of them as inputs
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-red-400">
@@ -91,6 +106,11 @@ Lots of checks needed
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But there's a challenge with this approach: you need to add lots of checks to make sure you're not trying to create resources that already exist.
+search_anchor: But there's a challenge with
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -111,6 +131,11 @@ Can't create resources that already exist
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Instead of telling Azure HOW to do something, you describe WHAT you want the end result to be, and the tooling figures out whether it needs to create or update resources.
+search_anchor: Instead of telling Azure HOW
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -140,6 +165,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The alternative is the declarative approach.
+search_anchor: alternative is the declarative approach
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -166,6 +196,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ARM templates are JSON files that model the desired state of your Azure resources.
+search_anchor: ARM templates are JSON files
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -174,6 +209,11 @@ JSON files modeling desired Azure state
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They can live in source control alongside your application code, giving you version control and repeatability for your infrastructure.
+search_anchor: They can live in source
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -193,6 +233,11 @@ JSON files modeling desired Azure state
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with the hands-on exercises.
+search_anchor: Let's get started with the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -211,6 +256,11 @@ layout: section
 
 # Key Components
 
+<!--
+METADATA:
+sentence: Think of them as inputs to your template.
+search_anchor: Think of them as inputs
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -224,6 +274,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They help keep your template clean and maintainable.
+search_anchor: They help keep your template
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -237,6 +292,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, we have resources - this is where you declare the actual Azure resources to create, using the variables and parameters you've defined.
+search_anchor: Finally, we have resources -
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -271,6 +331,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The name and location are read from parameters - this makes the template reusable.
+search_anchor: name and location are read
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -279,6 +344,11 @@ Parameters feed into variables
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Storage Account Resource Let's examine the storage account resource definition.
+search_anchor: Storage Account Resource Let's examine
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -297,6 +367,11 @@ layout: section
 
 # Resource Definition Elements
 
+<!--
+METADATA:
+sentence: In this case, it's Microsoft.Storage/storageAccounts with a specific API version.
+search_anchor: this case, it's Microsoft.Storage/storageAccounts with
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -310,6 +385,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The name and location are read from parameters - this makes the template reusable.
+search_anchor: name and location are read
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -323,6 +403,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The SKU is read from a variable - we've set it to Standard_LRS.
+search_anchor: SKU is read from a
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -336,6 +421,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Notice we're setting supportsHttpsTrafficOnly to true, ensuring secure access.
+search_anchor: Notice we're setting supportsHttpsTrafficOnly to
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -353,6 +443,11 @@ layout: section
 
 # Consistency Benefits
 
+<!--
+METADATA:
+sentence: You can deploy the same template to different regions or with different names.
+search_anchor: You can deploy the same
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -361,6 +456,11 @@ Everyone who deploys gets the same result
 
 </v-click>
 
+<!--
+METADATA:
+sentence: When you share this template, anyone who deploys it will get exactly the same type of storage account: version 2, with Standard LRS redundancy, and HTTPS-only access.
+search_anchor: When you share this template
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-2 gap-8">
@@ -384,6 +484,11 @@ Everyone who deploys gets the same result
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The alternative is the declarative approach.
+search_anchor: alternative is the declarative approach
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -402,6 +507,11 @@ layout: section
 
 # How ARM Templates Work
 
+<!--
+METADATA:
+sentence: You can deploy the same template to different regions or with different names.
+search_anchor: You can deploy the same
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -433,6 +543,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It then makes only the changes necessary to reach that desired state.
+search_anchor: It then makes only the
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -453,6 +568,11 @@ Makes only necessary changes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means ARM templates are idempotent - you can run the same deployment multiple times and get the same result, regardless of the current state.
+search_anchor: This means ARM templates are
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -483,6 +603,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means ARM templates are idempotent - you can run the same deployment multiple times and get the same result, regardless of the current state.
+search_anchor: This means ARM templates are
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -501,6 +626,11 @@ layout: section
 
 # In the Exercises
 
+<!--
+METADATA:
+sentence: What Are ARM Templates?
+search_anchor: What Are ARM Templates
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -510,6 +640,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What's Next In the exercises, we'll deploy ARM templates using the Azure CLI, explore the what-if feature to preview changes, and see how ARM templates help you identify and fix configuration drift.
+search_anchor: What's Next In the exercises
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -519,6 +654,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What's Next In the exercises, we'll deploy ARM templates using the Azure CLI, explore the what-if feature to preview changes, and see how ARM templates help you identify and fix configuration drift.
+search_anchor: What's Next In the exercises
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -528,6 +668,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this lab, we'll explore the declarative approach to infrastructure deployment in Azure.
+search_anchor: this lab, we'll explore the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -549,6 +694,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with the hands-on exercises.
+search_anchor: Let's get started with the
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -557,6 +707,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are ARM Templates?
+search_anchor: What Are ARM Templates
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

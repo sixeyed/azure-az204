@@ -40,6 +40,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -65,6 +70,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -83,6 +93,11 @@ layout: section
 
 # Public vs Private
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="mt-4 flex justify-center gap-16">
@@ -100,6 +115,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While open source applications are commonly published to public registries like Docker Hub, organizations need secure, private registries for their own applications.
+search_anchor: While open source applications are
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -108,6 +128,11 @@ Docker Hub: Excellent for open source
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-6 text-center text-xl">
@@ -120,6 +145,11 @@ ACR: Essential for production applications
 
 # What You Need for Production
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -132,6 +162,11 @@ ACR: Essential for production applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -144,6 +179,11 @@ ACR: Essential for production applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -156,6 +196,11 @@ ACR: Essential for production applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -194,6 +239,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -202,6 +252,11 @@ Multiple SKU tiers with different features
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -225,6 +280,11 @@ Multiple SKU tiers with different features
 
 # Premium Features
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -234,6 +294,11 @@ Multiple SKU tiers with different features
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -243,6 +308,11 @@ Multiple SKU tiers with different features
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -252,6 +322,11 @@ Multiple SKU tiers with different features
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="mt-8 text-center text-sm opacity-60">
@@ -264,6 +339,11 @@ Premium SKU only
 
 # Core Features
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -273,6 +353,11 @@ Premium SKU only
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -282,6 +367,11 @@ Premium SKU only
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -291,6 +381,11 @@ Premium SKU only
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-8 text-center text-sm opacity-70">
@@ -322,6 +417,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -330,6 +430,11 @@ Replicate across multiple Azure regions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -365,6 +470,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-12 text-center">
@@ -373,6 +483,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="mt-4 text-center">
@@ -393,6 +508,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -401,6 +521,11 @@ Registry name must be:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-12">
@@ -438,6 +563,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Understanding Container Registry Concepts Before diving into the exercises, it's important to understand a few key concepts: Container Registries are services that host container images.
+search_anchor: Understanding Container Registry Concepts Before
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -446,6 +576,11 @@ Services that host container images
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-2 gap-6">
@@ -473,6 +608,11 @@ Services that host container images
 
 # Docker Image Names
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-8 text-center">
@@ -497,6 +637,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-8 grid grid-cols-3 gap-6 text-center">
@@ -520,6 +665,11 @@ graph LR
 
 # Image Name Examples
 
+<!--
+METADATA:
+sentence: While open source applications are commonly published to public registries like Docker Hub, organizations need secure, private registries for their own applications.
+search_anchor: While open source applications are
+-->
 <v-click>
 
 <div class="mt-6">
@@ -529,6 +679,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-6">
@@ -538,6 +693,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-6">
@@ -551,6 +711,11 @@ graph LR
 
 # Authentication Methods
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -563,6 +728,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -575,6 +745,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While open source applications are commonly published to public registries like Docker Hub, organizations need secure, private registries for their own applications.
+search_anchor: While open source applications are
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -587,6 +762,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: ACR provides this capability with full Azure integration.
+search_anchor: ACR provides this capability with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -621,6 +801,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry, or ACR, is Azure's private container registry service.
+search_anchor: Azure Container Registry, or ACR
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -639,6 +824,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -651,6 +841,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -663,6 +858,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While open source applications are commonly published to public registries like Docker Hub, organizations need secure, private registries for their own applications.
+search_anchor: While open source applications are
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -675,6 +875,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While open source applications are commonly published to public registries like Docker Hub, organizations need secure, private registries for their own applications.
+search_anchor: While open source applications are
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -687,6 +892,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -712,6 +922,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why Use a Private Registry?
+search_anchor: Why Use a Private Registry
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -720,6 +935,11 @@ Ready to Build Your Private Registry!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Container Registry - Introduction What is Azure Container Registry?
+search_anchor: Azure Container Registry - Introduction
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Cosmos DB charges you for two main things: storage and compute.
+search_anchor: Cosmos DB charges you for
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Two Main Charges
 
+<!--
+METADATA:
+sentence: Storage is straightforward - it's a flat rate based on the amount of data you store, and this rate is the same regardless of your performance level.
+search_anchor: Storage is straightforward - it's
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -59,6 +69,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cosmos DB measures compute in terms of Request Units, or RUs.
+search_anchor: Cosmos DB measures compute in
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -72,6 +87,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Compute, however, is where things get interesting.
+search_anchor: Compute, however, is where things
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -92,6 +112,11 @@ This is where things get interesting
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You pay for all access operations - reads, writes, deletes, updates, and queries.
+search_anchor: You pay for all access
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -100,6 +125,11 @@ All operations consume RUs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You pay for all access operations - reads, writes, deletes, updates, and queries.
+search_anchor: You pay for all access
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-2 gap-8">
@@ -123,6 +153,11 @@ All operations consume RUs
 
 </v-click>
 
+<!--
+METADATA:
+sentence: With serverless, you pay only for the RUs you actually consume.
+search_anchor: serverless, you pay only for
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -141,6 +176,11 @@ layout: section
 
 # Two Payment Options
 
+<!--
+METADATA:
+sentence: With serverless, you pay only for the RUs you actually consume.
+search_anchor: serverless, you pay only for
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -155,6 +195,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This can be more cost-effective for consistent, high-volume workloads.
+search_anchor: This can be more cost-effective
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -196,6 +241,11 @@ layout: section
 
 # Cost Optimization
 
+<!--
+METADATA:
+sentence: Why This Matters Cost is often cited as a concern when considering Cosmos DB.
+search_anchor: Why This Matters Cost is
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -204,6 +254,11 @@ Cost is often cited as a concern
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, there's the provisioned model.
+search_anchor: Second, there's the provisioned model
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -212,6 +267,11 @@ But here's the truth
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key is knowing how to test and measure your RU consumption.
+search_anchor: key is knowing how to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -220,6 +280,11 @@ With proper planning and understanding
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This can be more cost-effective for consistent, high-volume workloads.
+search_anchor: This can be more cost-effective
+-->
 <v-click>
 
 <div class="mt-4 text-center text-xl">
@@ -228,6 +293,11 @@ Cosmos DB can be very cost-effective
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key is knowing how to test and measure your RU consumption.
+search_anchor: key is knowing how to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-purple-400">
@@ -246,6 +316,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: This is great for development, testing, or applications with unpredictable workloads.
+search_anchor: This is great for development
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -255,6 +330,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But here's the truth - if you plan appropriately and understand how RUs work, Cosmos DB can actually be very cost-effective.
+search_anchor: But here's the truth -
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -264,6 +344,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key is knowing how to test and measure your RU consumption.
+search_anchor: key is knowing how to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -273,6 +358,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key is knowing how to test and measure your RU consumption.
+search_anchor: key is knowing how to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -282,6 +372,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The key is knowing how to test and measure your RU consumption.
+search_anchor: key is knowing how to
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -291,6 +386,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is great for development, testing, or applications with unpredictable workloads.
+search_anchor: This is great for development
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -310,6 +410,11 @@ layout: section
 
 # Shop Database
 
+<!--
+METADATA:
+sentence: This is great for development, testing, or applications with unpredictable workloads.
+search_anchor: This is great for development
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -339,6 +444,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll create containers with different configurations, load data in different formats, and run queries to see exactly how many Request Units each operation consumes.
+search_anchor: You'll create containers with different
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -351,6 +461,11 @@ See exactly how many RUs each operation consumes
 
 # Practical Experience
 
+<!--
+METADATA:
+sentence: By the end of this lab, you'll have practical experience measuring RU consumption and making informed decisions about how to structure your Cosmos DB solutions for optimal cost and performance.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -370,6 +485,11 @@ See exactly how many RUs each operation consumes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end of this lab, you'll have practical experience measuring RU consumption and making informed decisions about how to structure your Cosmos DB solutions for optimal cost and performance.
+search_anchor: By the end of this
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -391,6 +511,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Compute, however, is where things get interesting.
+search_anchor: Compute, however, is where things
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -399,6 +524,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Cosmos DB measures compute in terms of Request Units, or RUs.
+search_anchor: Cosmos DB measures compute in
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

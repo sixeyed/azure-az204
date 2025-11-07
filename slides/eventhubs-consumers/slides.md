@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Event Hubs Partitioned Consumers - Introduction Welcome to this lab on Event Hubs Partitioned Consumers.
+search_anchor: Event Hubs Partitioned Consumers -
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn Event Hubs is Azure's big data streaming platform and event ingestion service.
+search_anchor: What You'll Learn Event Hubs
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Azure's event ingestion service
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn Event Hubs is Azure's big data streaming platform and event ingestion service.
+search_anchor: What You'll Learn Event Hubs
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -77,6 +92,11 @@ Azure's event ingestion service
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But consuming events at scale requires careful handling - especially when dealing with partitioned data streams.
+search_anchor: But consuming events at scale
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -95,6 +115,11 @@ layout: section
 
 # Problems to Solve
 
+<!--
+METADATA:
+sentence: This allows them to resume from where they left off after a restart.
+search_anchor: This allows them to resume
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -109,6 +134,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You need multiple consumers working together, but they shouldn't duplicate work or miss events.
+search_anchor: You need multiple consumers working
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -123,6 +153,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If one consumer fails, the others should pick up its work automatically.
+search_anchor: If one consumer fails, the
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -155,6 +190,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Solution Microsoft has built this logic into the Event Hubs client libraries.
+search_anchor: Solution Microsoft has built this
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -163,6 +203,11 @@ Microsoft has built this logic for you
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Checkpoints: Consumers periodically record their position in the event stream by storing the offset in blob storage.
+search_anchor: Checkpoints: Consumers periodically record their
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -172,6 +217,11 @@ Microsoft has built this logic for you
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This allows them to resume from where they left off after a restart.
+search_anchor: This allows them to resume
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -181,6 +231,11 @@ Microsoft has built this logic for you
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, you need to scale.
+search_anchor: Second, you need to scale
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -190,6 +245,11 @@ Microsoft has built this logic for you
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If one consumer fails, the others should pick up its work automatically.
+search_anchor: If one consumer fails, the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -224,6 +284,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see these concepts in action.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -242,6 +307,11 @@ layout: section
 
 # Device Logging Scenario
 
+<!--
+METADATA:
+sentence: The partition count is set when you create the Event Hub and cannot be changed later.
+search_anchor: partition count is set when
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -251,6 +321,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts Before we start, let's clarify some terminology: Partitions: Event Hubs splits the event stream into multiple partitions.
+search_anchor: Key Concepts Before we start
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -260,6 +335,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Different consumer groups can process the same events at different speeds.
+search_anchor: Different consumer groups can process
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -269,6 +349,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, you need to scale.
+search_anchor: Second, you need to scale
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -278,6 +363,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You need multiple consumers working together, but they shouldn't duplicate work or miss events.
+search_anchor: You need multiple consumers working
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -287,6 +377,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Solution Microsoft has built this logic into the Event Hubs client libraries.
+search_anchor: Solution Microsoft has built this
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -324,6 +419,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You need multiple consumers working together, but they shouldn't duplicate work or miss events.
+search_anchor: You need multiple consumers working
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -332,6 +432,11 @@ Multiple consumers reading from same stream
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The partition count is set when you create the Event Hub and cannot be changed later.
+search_anchor: partition count is set when
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -358,6 +463,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts Before we start, let's clarify some terminology: Partitions: Event Hubs splits the event stream into multiple partitions.
+search_anchor: Key Concepts Before we start
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -388,6 +498,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This allows parallel processing and increases throughput.
+search_anchor: This allows parallel processing and
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -396,6 +511,11 @@ Allows parallel processing and increases throughput
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The partition count is set when you create the Event Hub and cannot be changed later.
+search_anchor: partition count is set when
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg text-red-400">
@@ -416,6 +536,11 @@ Partition count set at creation - cannot be changed
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Consumer Groups: These are logical views of the event stream.
+search_anchor: Consumer Groups: These are logical
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -441,6 +566,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Different consumer groups can process the same events at different speeds.
+search_anchor: Different consumer groups can process
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -461,6 +591,11 @@ Different groups process same events at different speeds
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Checkpoints: Consumers periodically record their position in the event stream by storing the offset in blob storage.
+search_anchor: Checkpoints: Consumers periodically record their
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -490,6 +625,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This allows them to resume from where they left off after a restart.
+search_anchor: This allows them to resume
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -502,6 +642,11 @@ Resume from where they left off after restart
 
 # At-Least-Once Delivery
 
+<!--
+METADATA:
+sentence: At-Least-Once Delivery: The Event Hubs consumer pattern guarantees that every event will be processed at least once.
+search_anchor: At-Least-Once Delivery: The Event Hubs
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -510,6 +655,11 @@ Delivery guarantee
 
 </v-click>
 
+<!--
+METADATA:
+sentence: At-Least-Once Delivery: The Event Hubs consumer pattern guarantees that every event will be processed at least once.
+search_anchor: At-Least-Once Delivery: The Event Hubs
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -518,6 +668,11 @@ Every event processed at least once
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, events might be processed more than once if a consumer crashes between processing and checkpointing.
+search_anchor: However, events might be processed
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-orange-400">
@@ -526,6 +681,11 @@ Events might be processed more than once
 
 </v-click>
 
+<!--
+METADATA:
+sentence: However, events might be processed more than once if a consumer crashes between processing and checkpointing.
+search_anchor: However, events might be processed
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -534,6 +694,11 @@ If consumer crashes between processing and checkpointing
 
 </v-click>
 
+<!--
+METADATA:
+sentence: For example, you might have one group for real-time processing and another for auditing.
+search_anchor: example, you might have one
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -555,6 +720,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see these concepts in action.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -563,6 +733,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started and see these concepts in action.
+search_anchor: Let's get started and see
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

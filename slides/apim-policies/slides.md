@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: API Management: Request and Response Policies - Introduction Welcome to this lab on API Management policies for requests and responses.
+search_anchor: API Management: Request and Response
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Policies are the plug-in features in API Management that let you change the behavior of API operations without modifying the backend code.
+search_anchor: Policies are the plug-in features
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Plug-in features in API Management
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Policies are the plug-in features in API Management that let you change the behavior of API operations without modifying the backend code.
+search_anchor: Policies are the plug-in features
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -93,6 +108,11 @@ graph LR
 
 # Two Main Types
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -109,6 +129,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can read about it at swapi.dev.
+search_anchor: You can read about it
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -147,6 +172,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: API Management: Request and Response Policies - Introduction Welcome to this lab on API Management policies for requests and responses.
+search_anchor: API Management: Request and Response
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -155,6 +185,11 @@ Intercept and modify requests
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by exploring the backend API to see what security issues we need to address.
+search_anchor: Let's get started by exploring
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -184,6 +219,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: An interesting aspect of this lab is that we're fronting a third-party API.
+search_anchor: interesting aspect of this lab
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -202,6 +242,11 @@ layout: section
 
 # Previous Policy Usage
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -211,6 +256,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: API Management: Request and Response Policies - Introduction Welcome to this lab on API Management policies for requests and responses.
+search_anchor: API Management: Request and Response
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -220,6 +270,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -238,6 +293,11 @@ layout: section
 
 # Security-Focused Policies
 
+<!--
+METADATA:
+sentence: Today's Lab In this lab, we'll present a public API through APIM, using policies to enhance security.
+search_anchor: Today's Lab In this lab
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -267,6 +327,11 @@ graph LR
 
 # What We'll Do
 
+<!--
+METADATA:
+sentence: Let's get started by exploring the backend API to see what security issues we need to address.
+search_anchor: Let's get started by exploring
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -276,6 +341,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Policies are the plug-in features in API Management that let you change the behavior of API operations without modifying the backend code.
+search_anchor: Policies are the plug-in features
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -285,6 +355,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -294,6 +369,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -303,6 +383,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: API Management: Request and Response Policies - Introduction Welcome to this lab on API Management policies for requests and responses.
+search_anchor: API Management: Request and Response
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -330,6 +415,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Yes, you can do this with APIM, as long as the third-party's usage policy allows it.
+search_anchor: Yes, you can do this
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -346,6 +436,11 @@ SWAPI - The Star Wars API
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a public REST API popular with developers that returns information about characters, places, and other data types from the Star Wars films.
+search_anchor: This is a public REST
+-->
 <v-click>
 
 <div class="mt-12 text-lg">
@@ -354,6 +449,11 @@ Public REST API that returns:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can read about it at swapi.dev.
+search_anchor: You can read about it
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -363,6 +463,11 @@ Public REST API that returns:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -372,6 +477,11 @@ Public REST API that returns:
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a public REST API popular with developers that returns information about characters, places, and other data types from the Star Wars films.
+search_anchor: This is a public REST
+-->
 <v-click>
 
 <div class="mt-4 flex items-center gap-4">
@@ -402,6 +512,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Yes, you can do this with APIM, as long as the third-party's usage policy allows it.
+search_anchor: Yes, you can do this
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -410,6 +525,11 @@ Yes, you can do this with APIM!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Yes, you can do this with APIM, as long as the third-party's usage policy allows it.
+search_anchor: Yes, you can do this
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -422,6 +542,11 @@ As long as the third-party's usage policy allows it
 
 # Why Front Third-Party APIs?
 
+<!--
+METADATA:
+sentence: Let's get started by exploring the backend API to see what security issues we need to address.
+search_anchor: Let's get started by exploring
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -431,6 +556,11 @@ As long as the third-party's usage policy allows it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Today's Lab In this lab, we'll present a public API through APIM, using policies to enhance security.
+search_anchor: Today's Lab In this lab
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -440,6 +570,11 @@ As long as the third-party's usage policy allows it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But there are other policies you should always look to add because they increase the security of your APIs.
+search_anchor: But there are other policies
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -449,6 +584,11 @@ As long as the third-party's usage policy allows it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -458,6 +598,11 @@ As long as the third-party's usage policy allows it
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by exploring the backend API to see what security issues we need to address.
+search_anchor: Let's get started by exploring
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -471,6 +616,11 @@ As long as the third-party's usage policy allows it
 
 # Policy Examples
 
+<!--
+METADATA:
+sentence: You can read about it at swapi.dev.
+search_anchor: You can read about it
+-->
 <v-click>
 
 <div class="mt-8 text-center text-2xl">
@@ -494,6 +644,11 @@ Header Manipulation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: But there are other policies you should always look to add because they increase the security of your APIs.
+search_anchor: But there are other policies
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -506,6 +661,11 @@ Remove sensitive headers, add custom ones
 
 # Policy Examples
 
+<!--
+METADATA:
+sentence: You can read about it at swapi.dev.
+search_anchor: You can read about it
+-->
 <v-click>
 
 <div class="mt-8 text-center text-2xl">
@@ -526,6 +686,11 @@ Response Body Transformation
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are APIM Policies?
+search_anchor: What Are APIM Policies
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -547,6 +712,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by exploring the backend API to see what security issues we need to address.
+search_anchor: Let's get started by exploring
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -555,6 +725,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by exploring the backend API to see what security issues we need to address.
+search_anchor: Let's get started by exploring
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Application Gateway with Web Application Firewall - Introduction Opening Welcome to this lab on Azure Application Gateway with Web Application Firewall.
+search_anchor: Application Gateway with Web Application
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -36,6 +41,11 @@ Explore Azure Application Gateway<br/>with Web Application Firewall
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore one of Azure's most powerful traffic management and security tools.
+search_anchor: this session, we'll explore one
+-->
 <v-click>
 
 <div class="text-lg mt-6 opacity-70">
@@ -62,6 +72,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Gateway is Azure's layer 7 load balancer.
+search_anchor: Application Gateway is Azure's layer
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -86,6 +101,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Application Gateway?
+search_anchor: What is Application Gateway
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -98,6 +118,11 @@ Operates at application layer, not network layer
 
 # Intelligent Routing
 
+<!--
+METADATA:
+sentence: Unlike traditional load balancers that work at the network layer, Application Gateway operates at the application layer, routing traffic based on HTTP request attributes.
+search_anchor: Unlike traditional load balancers that
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -126,6 +151,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This means it can make intelligent routing decisions based on the domain name and URL path in incoming requests.
+search_anchor: This means it can make
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -157,6 +187,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Gateway continuously monitors backend services to ensure they're healthy, distributing traffic only to healthy instances.
+search_anchor: Application Gateway continuously monitors backend
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -165,6 +200,11 @@ Continuously monitors backend health
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Application Gateway continuously monitors backend services to ensure they're healthy, distributing traffic only to healthy instances.
+search_anchor: Application Gateway continuously monitors backend
+-->
 <v-click>
 
 <div class="mt-6 text-center text-lg opacity-70">
@@ -173,6 +213,11 @@ Traffic only goes to healthy instances
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This provides both high availability and optimal performance for your web applications.
+search_anchor: This provides both high availability
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg text-green-400">
@@ -199,6 +244,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Web Application Firewall Overview Web Application Firewall, or WAF, is an optional but powerful security feature of Application Gateway.
+search_anchor: Web Application Firewall Overview Web
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -225,6 +275,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: WAF inspects both the headers and body of HTTP requests, looking for malicious payloads that could indicate an attack.
+search_anchor: WAF inspects both the headers
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg">
@@ -237,6 +292,11 @@ Inspects headers and body for malicious payloads
 
 # The Key Benefit
 
+<!--
+METADATA:
+sentence: The key benefit here is that attacks can be prevented at the WAF layer, so they never reach your backend services.
+search_anchor: key benefit here is that
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -264,6 +324,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This provides a critical security boundary for your applications.
+search_anchor: This provides a critical security
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -282,6 +347,11 @@ layout: section
 
 # What We'll Build
 
+<!--
+METADATA:
+sentence: The Application Gateway includes the WAF component for security inspection.
+search_anchor: Application Gateway includes the WAF
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -294,6 +364,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, we'll configure Application Gateway to front multiple web applications running in Azure Container Instances, demonstrating multi-site routing capabilities.
+search_anchor: Second, we'll configure Application Gateway
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -306,6 +381,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Third, we'll test the WAF functionality by simulating common attack patterns like SQL injection, and observe how WAF blocks these malicious requests.
+search_anchor: Third, we'll test the WAF
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -328,6 +408,11 @@ layout: section
 
 # Layer 7 Load Balancing
 
+<!--
+METADATA:
+sentence: This means it can make intelligent routing decisions based on the domain name and URL path in incoming requests.
+search_anchor: This means it can make
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -336,6 +421,11 @@ Routing decisions based on application-level data
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts Before we begin, let's clarify some important concepts: Layer 7 load balancing means routing decisions are made based on application-level data like HTTP headers, cookies, and URL paths.
+search_anchor: Key Concepts Before we begin
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-6">
@@ -355,6 +445,11 @@ Routing decisions based on application-level data
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is much more flexible than traditional network-level load balancing.
+search_anchor: This is much more flexible
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -375,6 +470,11 @@ Much more flexible than network-level load balancing
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Application Gateway?
+search_anchor: What is Application Gateway
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -383,6 +483,11 @@ Open Web Application Security Project
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The OWASP ruleset we'll be using comes from the Open Web Application Security Project, the organization behind the famous OWASP Top 10 security risks.
+search_anchor: OWASP ruleset we'll be using
+-->
 <v-click>
 
 <div class="mt-12 text-lg text-center">
@@ -416,6 +521,11 @@ graph TB
 
 # WAF Modes
 
+<!--
+METADATA:
+sentence: WAF operates in two modes: Detection mode logs suspicious requests but allows them through, while Prevention mode actively blocks attacks.
+search_anchor: WAF operates in two modes
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -429,6 +539,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll use Prevention mode to stop threats before they reach our applications.
+search_anchor: We'll use Prevention mode to
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -442,6 +557,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll use Prevention mode to stop threats before they reach our applications.
+search_anchor: We'll use Prevention mode to
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -485,6 +605,11 @@ graph TB
 
 # Traffic Flow
 
+<!--
+METADATA:
+sentence: Architecture Overview Let's visualize what we're building: At the front, we'll have a public IP address with a DNS name that clients will connect to.
+search_anchor: Architecture Overview Let's visualize what
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -497,6 +622,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is Application Gateway?
+search_anchor: What is Application Gateway
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -509,6 +639,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All traffic flows through the WAF first, providing a security checkpoint before reaching any backend service.
+search_anchor: All traffic flows through the
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -521,6 +656,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Application Gateway will route requests to the appropriate container based on the domain name in the request.
+search_anchor: Application Gateway will route requests
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -554,6 +694,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: All traffic flows through the WAF first, providing a security checkpoint before reaching any backend service.
+search_anchor: All traffic flows through the
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -572,6 +717,11 @@ layout: section
 
 # What You'll Need
 
+<!--
+METADATA:
+sentence: Prerequisites For this lab, you'll need: An active Azure subscription with permissions to create resources.
+search_anchor: Prerequisites For this lab, you'll
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -581,6 +731,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Azure CLI installed and authenticated to your subscription.
+search_anchor: Azure CLI installed and authenticated
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -590,6 +745,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Basic familiarity with networking concepts like IP addresses and DNS.
+search_anchor: Basic familiarity with networking concepts
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -599,6 +759,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Docker Desktop if you want to run the optional GoTestWAF security testing tool.
+search_anchor: Docker Desktop if you want
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -618,6 +783,11 @@ layout: section
 
 # Learning Outcomes
 
+<!--
+METADATA:
+sentence: What is Application Gateway?
+search_anchor: What is Application Gateway
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -627,6 +797,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn By the end of this lab, you'll understand how to create and configure Azure Application Gateway with WAF, how to set up multi-site routing to different backend pools, how to test and validate WAF security rules, and how to troubleshoot common issues like 502 Bad Gateway errors.
+search_anchor: What You'll Learn By the
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -636,6 +811,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The Application Gateway includes the WAF component for security inspection.
+search_anchor: Application Gateway includes the WAF
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -645,6 +825,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These rules protect against common web vulnerabilities.
+search_anchor: These rules protect against common
+-->
 <v-click>
 
 <div class="mt-4 flex items-start gap-3">
@@ -667,6 +852,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with creating our Application Gateway infrastructure.
+search_anchor: Let's get started with creating
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -675,6 +865,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started with creating our Application Gateway infrastructure.
+search_anchor: Let's get started with creating
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

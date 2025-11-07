@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Securing Apps with Key Vault and Virtual Networks - Introduction Welcome to this lab on securing Azure applications using Key Vault and Virtual Networks.
+search_anchor: Securing Apps with Key Vault
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No credentials to store or rotate.
+search_anchor: No credentials to store or
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can restrict which services can communicate with each other.
+search_anchor: You can restrict which services
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

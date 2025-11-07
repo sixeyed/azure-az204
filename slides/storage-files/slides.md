@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: Azure Files is a fully managed file share service in the cloud.
+search_anchor: Azure Files is a fully
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Files is a fully managed file share service in the cloud.
+search_anchor: Azure Files is a fully
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -62,6 +72,11 @@ Fully managed file share service in the cloud
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It provides shared storage that can be mounted into your filesystem, making it easy to share files between multiple applications, virtual machines, or on-premises systems.
+search_anchor: It provides shared storage that
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -70,6 +85,11 @@ Shared storage that can be mounted into filesystem
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Files is a fully managed file share service in the cloud.
+search_anchor: Azure Files is a fully
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -82,6 +102,11 @@ Like corporate network file share, but in Azure
 
 # Key Benefits
 
+<!--
+METADATA:
+sentence: Second, Azure Files is highly available and durable.
+search_anchor: Second, Azure Files is highly
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -111,6 +136,11 @@ layout: section
 
 # Four Main Features
 
+<!--
+METADATA:
+sentence: Key Features Let's look at the main features of Azure Files: First, it uses the standard SMB protocol - Server Message Block - which is the same protocol used by Windows file shares.
+search_anchor: Key Features Let's look at
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -125,6 +155,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Your data is replicated within Azure to protect against hardware failures.
+search_anchor: Your data is replicated within
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -138,6 +173,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You don't need to worry about maintaining file servers, applying patches, or managing hardware.
+search_anchor: You don't need to worry
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -151,6 +191,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And fourth, it integrates seamlessly with both cloud and on-premises environments.
+search_anchor: fourth, it integrates seamlessly with
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -175,6 +220,11 @@ layout: section
 
 # Real-World Scenarios
 
+<!--
+METADATA:
+sentence: Common Use Cases Azure Files is ideal for several scenarios: Lift and shift migrations - when you're moving legacy applications that expect file shares to the cloud.
+search_anchor: Common Use Cases Azure Files
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -184,6 +234,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Shared storage for applications - when multiple VMs or containers need access to the same files.
+search_anchor: Shared storage for applications -
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -193,6 +248,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Storing configuration files - that need to be accessible across multiple instances.
+search_anchor: Storing configuration files - that
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -202,6 +262,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And for development and debugging - when you need shared access to logs, metrics, or diagnostic data.
+search_anchor: development and debugging - when
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -242,6 +307,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: How it Works Azure Files is a feature of Azure Storage Accounts.
+search_anchor: How it Works Azure Files
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -254,6 +324,11 @@ Feature of Azure Storage Accounts
 
 # Access and Authentication
 
+<!--
+METADATA:
+sentence: To access a file share, clients use the storage account name and key for authentication.
+search_anchor: access a file share, clients
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -262,6 +337,11 @@ Clients use storage account name and key
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can mount the share using standard operating system commands, and once mounted, it appears as a regular drive or directory on your system.
+search_anchor: You can mount the share
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -270,6 +350,11 @@ Mount using standard OS commands
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can mount the share using standard operating system commands, and once mounted, it appears as a regular drive or directory on your system.
+search_anchor: You can mount the share
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -278,6 +363,11 @@ Appears as regular drive or directory
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can mount Azure file shares from Windows, Linux, and macOS machines.
+search_anchor: You can mount Azure file
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -307,6 +397,11 @@ layout: section
 
 # Lab Overview
 
+<!--
+METADATA:
+sentence: We'll start by creating a storage account and file share.
+search_anchor: We'll start by creating a
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -316,6 +411,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then we'll upload files and explore different ways to access them.
+search_anchor: Then we'll upload files and
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -325,6 +425,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll mount the share on our local machine and see how changes sync in real-time.
+search_anchor: We'll mount the share on
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -334,6 +439,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll mount the share on our local machine and see how changes sync in real-time.
+search_anchor: We'll mount the share on
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -343,6 +453,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll also look at security considerations, including how to rotate storage account keys.
+search_anchor: We'll also look at security
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -356,6 +471,11 @@ layout: section
 
 # Advanced Lab Steps
 
+<!--
+METADATA:
+sentence: Finally, we'll mount the same share in an Azure Virtual Machine using cloud-init, demonstrating how you can automate file share mounting during VM provisioning.
+search_anchor: Finally, we'll mount the same
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -365,6 +485,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, we'll mount the same share in an Azure Virtual Machine using cloud-init, demonstrating how you can automate file share mounting during VM provisioning.
+search_anchor: Finally, we'll mount the same
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -386,6 +511,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Azure Files is a fully managed file share service in the cloud.
+search_anchor: Azure Files is a fully
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -394,6 +524,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You can mount Azure file shares from Windows, Linux, and macOS machines.
+search_anchor: You can mount Azure file
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

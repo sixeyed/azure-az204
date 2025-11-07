@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What You'll Learn In this hands-on lab, you'll learn how to deploy traditional applications to Azure using IaaS resources.
+search_anchor: What You'll Learn In this
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -54,6 +59,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn In this hands-on lab, you'll learn how to deploy traditional applications to Azure using IaaS resources.
+search_anchor: What You'll Learn In this
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center">
@@ -62,6 +72,11 @@ Deploy traditional applications using IaaS resources
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While Platform-as-a-Service solutions are often the end goal for cloud-native applications, IaaS provides a straightforward migration path for existing workloads.
+search_anchor: While Platform-as-a-Service solutions are often
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -70,6 +85,11 @@ While PaaS is often the end goal
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While Platform-as-a-Service solutions are often the end goal for cloud-native applications, IaaS provides a straightforward migration path for existing workloads.
+search_anchor: While Platform-as-a-Service solutions are often
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -78,6 +98,11 @@ IaaS provides straightforward migration path
 
 </v-click>
 
+<!--
+METADATA:
+sentence: While Platform-as-a-Service solutions are often the end goal for cloud-native applications, IaaS provides a straightforward migration path for existing workloads.
+search_anchor: While Platform-as-a-Service solutions are often
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -96,6 +121,11 @@ layout: section
 
 # Legacy .NET Framework Application
 
+<!--
+METADATA:
+sentence: Lab Scenario Today, we'll be working with a legacy .NET Framework application - the kind of application many organizations still run in production.
+search_anchor: Lab Scenario Today, we'll be
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -104,6 +134,11 @@ The kind many organizations still run
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This application uses Windows Server and SQL Server, both of which are fully supported in Azure.
+search_anchor: This application uses Windows Server
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-2 gap-8">
@@ -119,6 +154,11 @@ The kind many organizations still run
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This application uses Windows Server and SQL Server, both of which are fully supported in Azure.
+search_anchor: This application uses Windows Server
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -145,6 +185,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts Infrastructure-as-a-Service gives you complete control over your virtual machines.
+search_anchor: Key Concepts Infrastructure-as-a-Service gives you
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -153,6 +198,11 @@ Complete control over virtual machines
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -162,6 +212,11 @@ Complete control over virtual machines
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -171,6 +226,11 @@ Complete control over virtual machines
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -184,6 +244,11 @@ Complete control over virtual machines
 
 # When to Use IaaS
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -196,6 +261,11 @@ Complete control over virtual machines
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -208,6 +278,11 @@ Complete control over virtual machines
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Key Concepts Infrastructure-as-a-Service gives you complete control over your virtual machines.
+search_anchor: Key Concepts Infrastructure-as-a-Service gives you
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -230,6 +305,11 @@ layout: section
 
 # Complete Application Environment
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -239,6 +319,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This application uses Windows Server and SQL Server, both of which are fully supported in Azure.
+search_anchor: This application uses Windows Server
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -248,6 +333,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The VM runs IIS as the web server, hosting our .NET Framework 4.8 application.
+search_anchor: VM runs IIS as the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -257,6 +347,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -289,6 +384,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by creating our Azure resources.
+search_anchor: Let's get started by creating
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -297,6 +397,11 @@ Straightforward architecture
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What You'll Learn In this hands-on lab, you'll learn how to deploy traditional applications to Azure using IaaS resources.
+search_anchor: What You'll Learn In this
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -315,6 +420,11 @@ layout: section
 
 # What You Need
 
+<!--
+METADATA:
+sentence: Let's get started by creating our Azure resources.
+search_anchor: Let's get started by creating
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -324,6 +434,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -333,6 +448,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The VM runs IIS as the web server, hosting our .NET Framework 4.8 application.
+search_anchor: VM runs IIS as the
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -342,6 +462,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by creating our Azure resources.
+search_anchor: Let's get started by creating
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -355,6 +480,11 @@ layout: section
 
 # Time to Complete
 
+<!--
+METADATA:
+sentence: Time to Complete This lab typically takes about 45 minutes to complete, including resource provisioning time.
+search_anchor: Time to Complete This lab
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl">
@@ -363,6 +493,11 @@ Approximately 45 minutes
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Time to Complete This lab typically takes about 45 minutes to complete, including resource provisioning time.
+search_anchor: Time to Complete This lab
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -401,6 +536,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's get started by creating our Azure resources.
+search_anchor: Let's get started by creating
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -409,6 +549,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You manage the operating system, runtime, and application configuration.
+search_anchor: You manage the operating system
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

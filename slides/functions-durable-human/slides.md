@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: This is where the Human Interaction pattern in Durable Functions really shines.
+search_anchor: This is where the Human
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Workflows That Wait
 
+<!--
+METADATA:
+sentence: --- Slide 2: The Challenge - Workflows That Wait Think about common business scenarios.
+search_anchor: --- Slide 2: The Challenge
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -54,6 +64,11 @@ Common business scenarios
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A password reset that requires verification.
+search_anchor: password reset that requires verification
+-->
 <v-click>
 
 <div class="mt-12 grid grid-cols-3 gap-8">
@@ -73,6 +88,11 @@ Common business scenarios
 
 </v-click>
 
+<!--
+METADATA:
+sentence: These workflows all share something in common - they need to pause and wait for a person to take action.
+search_anchor: These workflows all share something
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -85,6 +105,11 @@ All need to pause and wait for a person
 
 # Traditional Approach Problems
 
+<!--
+METADATA:
+sentence: You could store sensitive data in a database while waiting, but that creates security risks.
+search_anchor: You could store sensitive data
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -97,6 +122,11 @@ All need to pause and wait for a person
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You could keep a service running continuously, but that's expensive and inefficient.
+search_anchor: You could keep a service
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -109,6 +139,11 @@ All need to pause and wait for a person
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 3: How Durable Functions Solve This Durable Functions give us an elegant solution.
+search_anchor: --- Slide 3: How Durable
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -135,6 +170,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They can pause for extended periods - minutes, hours, even days - waiting for human input.
+search_anchor: They can pause for extended
+-->
 <v-click>
 
 <div class="mt-8 text-xl text-center text-green-400">
@@ -143,6 +183,11 @@ Functions pause for extended periods
 
 </v-click>
 
+<!--
+METADATA:
+sentence: They can pause for extended periods - minutes, hours, even days - waiting for human input.
+search_anchor: They can pause for extended
+-->
 <v-click>
 
 <div class="mt-12 text-center text-lg">
@@ -176,6 +221,11 @@ graph LR
 
 # Key Advantages
 
+<!--
+METADATA:
+sentence: No compute resources being consumed.
+search_anchor: No compute resources being consumed
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -185,6 +235,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: No sensitive data sitting in external storage.
+search_anchor: No sensitive data sitting in
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -194,6 +249,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The function simply suspends, and resumes exactly where it left off when the human responds.
+search_anchor: function simply suspends, and resumes
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -203,6 +263,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This makes it perfect for scenarios like two-factor authentication, approval workflows, or any process that requires human verification before continuing.
+search_anchor: This makes it perfect for
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -221,6 +286,11 @@ layout: section
 
 # Two Core Concepts
 
+<!--
+METADATA:
+sentence: First, external events - these let you send information into a running orchestration.
+search_anchor: First, external events - these
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -235,6 +305,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, durable timers - because humans don't always respond promptly.
+search_anchor: Second, durable timers - because
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -278,6 +353,11 @@ layout: section
 
 # Two-Factor Authentication
 
+<!--
+METADATA:
+sentence: Here's how it works: your function receives a phone number, sends an SMS with a verification code, then waits.
+search_anchor: Here's how it works: your
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -311,6 +391,11 @@ graph TB
 
 # The Flow
 
+<!--
+METADATA:
+sentence: Here's how it works: your function receives a phone number, sends an SMS with a verification code, then waits.
+search_anchor: Here's how it works: your
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -323,6 +408,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Here's how it works: your function receives a phone number, sends an SMS with a verification code, then waits.
+search_anchor: Here's how it works: your
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -335,6 +425,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The user has a limited time to respond with the correct code.
+search_anchor: user has a limited time
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -347,6 +442,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: If they respond correctly and within the time limit, they're authenticated.
+search_anchor: If they respond correctly and
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -359,6 +459,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 7: What You'll Learn Today In this lab session, you'll set up a Twilio account for sending SMS messages.
+search_anchor: --- Slide 7: What You'll
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -377,6 +482,11 @@ layout: section
 
 # Exam Focus Areas
 
+<!--
+METADATA:
+sentence: You need to know when to use external events versus other trigger types.
+search_anchor: You need to know when
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -386,6 +496,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You should understand how durable timers work and how to implement timeout logic.
+search_anchor: You should understand how durable
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -395,6 +510,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And importantly, you need to recognize scenarios where this pattern is the right architectural choice.
+search_anchor: importantly, you need to recognize
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -404,6 +524,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's not just theoretical - it's a practical solution you'll use in production Azure applications.
+search_anchor: It's not just theoretical -
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -412,6 +537,11 @@ Practical solution for production applications
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This pattern appears in exam questions about workflow orchestration, state management, and serverless design patterns.
+search_anchor: This pattern appears in exam
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -430,6 +560,11 @@ layout: section
 
 # Lab Objectives
 
+<!--
+METADATA:
+sentence: --- Slide 7: What You'll Learn Today In this lab session, you'll set up a Twilio account for sending SMS messages.
+search_anchor: --- Slide 7: What You'll
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -439,6 +574,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll build a durable function orchestration that sends verification codes and waits for user responses.
+search_anchor: You'll build a durable function
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -448,6 +588,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll test it locally with the Azure Storage emulator, then deploy it to Azure.
+search_anchor: You'll test it locally with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -457,6 +602,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: You'll test it locally with the Azure Storage emulator, then deploy it to Azure.
+search_anchor: You'll test it locally with
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -466,6 +616,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: And you'll work with the HTTP endpoints that let you send events and check orchestration status.
+search_anchor: you'll work with the HTTP
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -479,6 +634,11 @@ layout: section
 
 # Hands-On Experience
 
+<!--
+METADATA:
+sentence: You'll test it locally with the Azure Storage emulator, then deploy it to Azure.
+search_anchor: You'll test it locally with
+-->
 <v-click>
 
 <div class="mt-12 flex justify-center gap-12">
@@ -498,6 +658,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: By the end, you'll have hands-on experience with one of the most powerful patterns in the Azure Functions toolkit.
+search_anchor: By the end, you'll have
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -519,6 +684,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: A support ticket that needs human review.
+search_anchor: support ticket that needs human
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -527,6 +697,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: --- Slide 2: The Challenge - Workflows That Wait Think about common business scenarios.
+search_anchor: --- Slide 2: The Challenge
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

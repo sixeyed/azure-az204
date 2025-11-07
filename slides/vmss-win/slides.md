@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: What Are Virtual Machine Scale Sets?
+search_anchor: What Are Virtual Machine Scale
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -49,6 +54,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Portal Exploration Let's start by looking at VMSS in the Azure Portal.
+search_anchor: Portal Exploration Let's start by
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -57,6 +67,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What Are Virtual Machine Scale Sets?
+search_anchor: What Are Virtual Machine Scale
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

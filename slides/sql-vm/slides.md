@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Feature Gaps
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -54,6 +64,11 @@ Managed SQL options should be preferred
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-8 text-center text-lg opacity-70">
@@ -62,6 +77,11 @@ Azure SQL Database and SQL Managed Instance
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-orange-400">
@@ -91,6 +111,11 @@ graph LR
 
 # When You Need Features
 
+<!--
+METADATA:
+sentence: There will be occasions where you need a feature that isn't available in the managed options.
+search_anchor: There will be occasions where
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -99,6 +124,11 @@ Occasions where you need a feature
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There will be occasions where you need a feature that isn't available in the managed options.
+search_anchor: There will be occasions where
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-red-400">
@@ -107,6 +137,11 @@ Not available in managed options
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-green-400">
@@ -125,6 +160,11 @@ layout: section
 
 # Set Up Your Way
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-green-400">
@@ -133,6 +173,11 @@ SQL VM service provides complete control
 
 </v-click>
 
+<!--
+METADATA:
+sentence: The SQL VM service lets you set up the underlying operating system and SQL Server deployment exactly how you need to, giving you complete control and access to all SQL Server features.
+search_anchor: SQL VM service lets you
+-->
 <v-click>
 
 <div class="mt-12 flex items-center gap-4">
@@ -142,6 +187,11 @@ SQL VM service provides complete control
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -151,6 +201,11 @@ SQL VM service provides complete control
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -170,6 +225,11 @@ layout: section
 
 # Lab Topics
 
+<!--
+METADATA:
+sentence: What We'll Cover In this lab, we'll work through several key topics: First, we'll explore Azure SQL options in the Portal to understand the different choices available, including SQL Virtual Machines with Linux and Windows variants, different SQL Server versions, and various SKUs.
+search_anchor: What We'll Cover In this
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -184,6 +244,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: We'll start by finding the right VM image - SQL Server 2019 Standard on Windows Server 2022 - and create our virtual machine.
+search_anchor: We'll start by finding the
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -198,6 +263,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then, we'll register the VM with the SQL Server IaaS extension.
+search_anchor: Then, we'll register the VM
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -216,6 +286,11 @@ layout: section
 
 # More Lab Topics
 
+<!--
+METADATA:
+sentence: We'll configure public access to the database and set up SQL authentication with a username and password.
+search_anchor: We'll configure public access to
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -230,6 +305,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Finally, we'll demonstrate a real-world use case: creating a custom User-Defined Function that calls .NET code.
+search_anchor: Finally, we'll demonstrate a real-world
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -254,6 +334,11 @@ layout: section
 
 # Enhanced Management
 
+<!--
+METADATA:
+sentence: Then, we'll register the VM with the SQL Server IaaS extension.
+search_anchor: Then, we'll register the VM
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -279,6 +364,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This effectively transforms your standard VM into something more like a managed database service, giving you enhanced management capabilities.
+search_anchor: This effectively transforms your standard
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -297,6 +387,11 @@ layout: section
 
 # User-Defined Functions
 
+<!--
+METADATA:
+sentence: Finally, we'll demonstrate a real-world use case: creating a custom User-Defined Function that calls .NET code.
+search_anchor: Finally, we'll demonstrate a real-world
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -305,6 +400,11 @@ Create UDF that calls .NET code
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This is a feature that isn't available with managed database options because you need direct access to the file system and elevated SQL Server permissions.
+search_anchor: This is a feature that
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-orange-400">
@@ -313,6 +413,11 @@ Requires direct file system access
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl text-orange-400">
@@ -321,6 +426,11 @@ Requires elevated SQL Server permissions
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There will be occasions where you need a feature that isn't available in the managed options.
+search_anchor: There will be occasions where
+-->
 <v-click>
 
 <div class="mt-12 text-center text-2xl text-red-400">
@@ -329,6 +439,11 @@ Not available with managed database options
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore when and why you might choose SQL Server VMs over managed database options.
+search_anchor: this session, we'll explore when
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -347,6 +462,11 @@ layout: section
 
 # Managed vs VMs
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="mt-8 flex justify-center gap-16">
@@ -368,6 +488,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: In this session, we'll explore when and why you might choose SQL Server VMs over managed database options.
+search_anchor: this session, we'll explore when
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -376,6 +501,11 @@ Choose managed when possible
 
 </v-click>
 
+<!--
+METADATA:
+sentence: There will be occasions where you need a feature that isn't available in the managed options.
+search_anchor: There will be occasions where
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -397,6 +527,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -405,6 +540,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: That's where Azure SQL Server VMs come in.
+search_anchor: That's where Azure SQL Server
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">

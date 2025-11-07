@@ -28,6 +28,11 @@ layout: center
 
 # Welcome
 
+<!--
+METADATA:
+sentence: In this session, we'll explore how to automate deployments to Azure App Service using GitHub integration and deployment slots.
+search_anchor: this session, we'll explore how
+-->
 <v-click>
 
 <div class="text-xl mt-8">
@@ -46,6 +51,11 @@ layout: section
 
 # Two Powerful Features
 
+<!--
+METADATA:
+sentence: This eliminates manual deployment steps and ensures your application is always up to date with your latest code.
+search_anchor: This eliminates manual deployment steps
+-->
 <v-click>
 
 <div class="mt-8 flex items-start gap-4">
@@ -59,6 +69,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, deployment slots - these allow you to deploy your application to a staging environment where you can test it thoroughly before promoting it to production.
+search_anchor: Second, deployment slots - these
+-->
 <v-click>
 
 <div class="mt-10 flex items-start gap-4">
@@ -72,6 +87,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This eliminates manual deployment steps and ensures your application is always up to date with your latest code.
+search_anchor: This eliminates manual deployment steps
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -80,6 +100,11 @@ Ensures application always up to date
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This reduces risk and ensures quality in your production environment.
+search_anchor: This reduces risk and ensures
+-->
 <v-click>
 
 <div class="mt-4 text-center text-lg opacity-70">
@@ -98,6 +123,11 @@ layout: section
 
 # Working with Random Number API
 
+<!--
+METADATA:
+sentence: It's simple, but perfect for demonstrating CI/CD concepts.
+search_anchor: It's simple, but perfect for
+-->
 <v-click>
 
 <div class="mt-8 text-center text-xl">
@@ -130,6 +160,11 @@ graph TB
 
 # What We'll Do
 
+<!--
+METADATA:
+sentence: This reduces risk and ensures quality in your production environment.
+search_anchor: This reduces risk and ensures
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -142,6 +177,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's Get Started We'll begin by setting up our Azure resources and configuring the initial deployment from GitHub.
+search_anchor: Let's Get Started We'll begin
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -154,6 +194,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why This Matters Continuous Integration and Deployment are essential practices in modern software development.
+search_anchor: Why This Matters Continuous Integration
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -166,6 +211,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's simple, but perfect for demonstrating CI/CD concepts.
+search_anchor: It's simple, but perfect for
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -178,6 +228,11 @@ graph TB
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Second, deployment slots - these allow you to deploy your application to a staging environment where you can test it thoroughly before promoting it to production.
+search_anchor: Second, deployment slots - these
+-->
 <v-click>
 
 <div class="mt-6 flex items-start gap-4">
@@ -200,6 +255,11 @@ layout: section
 
 # What You Need
 
+<!--
+METADATA:
+sentence: App Service CI/CD - Introduction Script Opening Welcome to this lab on Azure App Service Continuous Integration and Continuous Deployment.
+search_anchor: App Service CI/CD - Introduction
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -209,6 +269,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Lab Overview In this lab, we'll be working with a random number API.
+search_anchor: Lab Overview In this lab
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -218,6 +283,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's Get Started We'll begin by setting up our Azure resources and configuring the initial deployment from GitHub.
+search_anchor: Let's Get Started We'll begin
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -227,6 +297,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's Get Started We'll begin by setting up our Azure resources and configuring the initial deployment from GitHub.
+search_anchor: Let's Get Started We'll begin
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -246,6 +321,11 @@ layout: section
 
 # Essential Modern Practices
 
+<!--
+METADATA:
+sentence: This reduces risk and ensures quality in your production environment.
+search_anchor: This reduces risk and ensures
+-->
 <v-click>
 
 <div class="mt-8 flex items-center gap-4">
@@ -255,6 +335,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why This Matters Continuous Integration and Deployment are essential practices in modern software development.
+search_anchor: Why This Matters Continuous Integration
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -264,6 +349,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Why This Matters Continuous Integration and Deployment are essential practices in modern software development.
+search_anchor: Why This Matters Continuous Integration
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -273,6 +363,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: This reduces risk and ensures quality in your production environment.
+search_anchor: This reduces risk and ensures
+-->
 <v-click>
 
 <div class="mt-6 flex items-center gap-4">
@@ -282,6 +377,11 @@ layout: section
 
 </v-click>
 
+<!--
+METADATA:
+sentence: It's simple, but perfect for demonstrating CI/CD concepts.
+search_anchor: It's simple, but perfect for
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl text-green-400">
@@ -319,6 +419,11 @@ graph LR
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Then we'll progressively enhance our deployment pipeline with automation and staging environments.
+search_anchor: Then we'll progressively enhance our
+-->
 <v-click>
 
 <div class="mt-12 text-center text-xl">
@@ -340,6 +445,11 @@ class: text-center
 
 </v-click>
 
+<!--
+METADATA:
+sentence: Let's Get Started We'll begin by setting up our Azure resources and configuring the initial deployment from GitHub.
+search_anchor: Let's Get Started We'll begin
+-->
 <v-click>
 
 <div class="text-4xl mt-8 font-bold">
@@ -348,6 +458,11 @@ Let's Get Started!
 
 </v-click>
 
+<!--
+METADATA:
+sentence: What is App Service CI/CD?
+search_anchor: What is App Service CI/CD
+-->
 <v-click>
 
 <div class="text-xl mt-6 opacity-70">
