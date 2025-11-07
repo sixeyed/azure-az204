@@ -1,6 +1,10 @@
-# Distributed Apps on Azure Container Instances - Exercise Narration
+# Distributed Apps on Azure Container Instances
 
-## Exercise 1: Deploy a Distributed App with ACI YAML
+## Reference
+
+ACI is the simplest container platform on Azure where you can run single containers or multiple containers in a group to host distributed applications. There are different options for modelling applications including Azure's YAML specification with the Azure CLI and the Docker Compose specification with the Docker CLI. The ACI container groups documentation covers the architectural patterns and integration capabilities. The command line interface gives you multiple deployment paths through both the az container commands and the docker compose commands, which we'll explore in these exercises.
+
+## Deploy a distributed app with ACI YAML
 
 Let's start by creating a Resource Group for this lab. We're calling it "labs-aci-compose" and deploying it to the East US region. The command includes a tag parameter set to "courselabs=azure" which helps us identify and track resources created for this course.
 
@@ -24,7 +28,7 @@ Let's deploy this updated specification using the same az container create comma
 
 We're checking the Events table for the containers in the Portal. You'll see multiple "Started" events and "Killing" events for the old containers. This illustrates an important principle: you cannot change properties of the compute environment for a running container. If you need to update environment variables, resource requests, or ports, the only way is to remove the old container and create a replacement. This behavior is actually true for all container runtimes - Docker, ACI, and Kubernetes all work this way. It's the container paradigm at work.
 
-## Exercise 2: Deploy a Compose App to ACI
+## Deploy a Compose App to ACI
 
 The ACI YAML specification gives you access to all ACI features, but if you don't need ACI-specific configuration, you can use a standard Docker Compose file instead and deploy with the Docker CLI.
 
@@ -48,7 +52,7 @@ We're browsing to the new deployment's IP address to verify the app is working. 
 
 Now let's open the container list in the Portal. You'll notice there are three containers even though we only defined two in the Compose model. The additional container is a sidecar that the Docker ACI integration adds automatically - it helps with networking and communication between containers in the group.
 
-## Exercise 3: ACI Containers and Storage Accounts
+## ACI containers and Storage Accounts
 
 Now let's explore how ACI containers can integrate with Azure Storage services. We'll use both Blob Storage and Azure Files to demonstrate different storage integration patterns.
 
@@ -80,7 +84,9 @@ Once it's running, we're browsing to the app's IP address. The app is reading an
 
 This demonstrates the power of ACI's storage integration - you can persist data beyond the container lifecycle without changing your application code. The application doesn't know it's writing to cloud storage; it just writes to a path that happens to be a mounted Azure Files share.
 
-## Lab Challenge
+---
+
+## Lab
 
 ACI is designed to be a quick and easy solution for running containers in the cloud. It provides reliability through automatic container restarts if they fail, but it doesn't have built-in horizontal scaling features like load balancing across multiple instances.
 
@@ -89,6 +95,8 @@ Here's your challenge: Run another copy of the Asset Manager app in ACI. Do both
 Think about: How to deploy a second instance with a different name but the same configuration. Whether multiple containers can mount the same Azure Files share simultaneously and if they interfere with each other. What Azure service you might use for load balancing traffic between multiple ACI instances. The limitations of ACI for production workloads requiring scale, and when you might need to move to a more sophisticated orchestration platform like AKS.
 
 Take some time to work through this challenge. If you get stuck, check the hints file or look at the solution to see one possible approach.
+
+---
 
 ## Cleanup
 

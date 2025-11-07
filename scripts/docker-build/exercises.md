@@ -1,6 +1,10 @@
-# Docker Multi-Stage Builds - Exercises Walkthrough
+# Multi-Stage Builds
 
-## Exercise 1: Simple Multi-Stage Build
+## Reference
+
+Multi-stage builds use the standard Dockerfile syntax with multiple stages separated by FROM commands. They give you a repeatable build process with minimal dependencies, letting you use an SDK image for building and a runtime image for production. The multi-stage build documentation covers the pattern across different languages and frameworks. The docker build command works the same way for multi-stage builds, but BuildKit provides better performance by running stages in parallel and skipping stages that aren't needed.
+
+## Multi-Stage Dockerfiles
 
 ### Setting Up
 
@@ -28,7 +32,9 @@ Watch the output carefully. You'll see all four stages execute in sequence - bas
 
 Let's run a container to see what made it into the final image. When you run the container, notice the output. You'll see content from the base and build stages, but the additional content from the test stage isn't included. This is because we didn't copy anything from the test stage into the final stage. The test stage ran during the build, but its output was discarded.
 
-## Exercise 2: BuildKit and Build Targets
+---
+
+## BuildKit and build targets
 
 ### Enabling BuildKit
 
@@ -60,7 +66,9 @@ Let's try running it. Nothing happens! That's because the test stage doesn't def
 
 But we can execute a command manually. We're running cat to display a file that was created in the build and test stages. Now you can see output from both stages, confirming that the test stage artifacts are present in this image.
 
-## Exercise 3: Real Go Application
+---
+
+## Simple Go application
 
 ### Understanding the whoami Dockerfile
 
@@ -96,7 +104,9 @@ The -P flag is useful, but we need to find out which port was assigned. The dock
 
 Now we can test the application using curl. Replace the port placeholder with the actual port number from the previous command. The server responds with details about the environment and the incoming request - hostname, IP addresses, headers, and more.
 
-## Lab Challenge
+---
+
+## Lab
 
 Here's your challenge to test your understanding. The whoami application needs special Linux capabilities to listen on standard HTTP ports like 80, even inside a container. These low-numbered ports are privileged.
 
@@ -106,20 +116,10 @@ Try using the -P flag for automatic port publishing - does it work with your cus
 
 Give it a try, and check the hints file if you need guidance!
 
+---
+
 ## Cleanup
 
 When you're finished experimenting, clean up all containers. We're using a command that lists all container IDs (both running and stopped) and pipes them to docker rm -f to forcibly remove them all at once.
 
 This is a quick way to clean up your Docker environment when you're done with a lab.
-
-## Summary
-
-In this session, you've learned how multi-stage builds work using multiple FROM instructions, each creating a separate stage. The difference between the classic builder and BuildKit is significant - BuildKit offers parallel execution and intelligent stage skipping.
-
-You learned how to target specific build stages using the --target flag, which is essential for scenarios like running tests or creating different image variants from the same Dockerfile.
-
-The dramatic size reduction possible with multi-stage builds is one of the most compelling benefits - we saw a 30x difference between an SDK image and a production application image. This isn't just about storage space - it affects deployment speed, network bandwidth, and security posture.
-
-You also learned how to build real applications with compiled languages like Go, where the build environment is completely different from the runtime environment. Multi-stage builds make this pattern clean and maintainable.
-
-These techniques are essential for creating production-ready container images that are small, secure, and efficient. They're widely used in real-world containerized applications and represent best practices in the industry.
