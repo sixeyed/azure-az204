@@ -1,19 +1,11 @@
-# Resource Groups - Exercises Introduction
-
 We've covered Resource Groups as fundamental containers for organizing Azure resources with management, permission, and cleanup benefits. Now let's work with Resource Groups hands-on.
 
-## What You'll Do
+We'll start by creating a new resource group in the portal, which is the visual way to see all the configuration options available. You'll search for Resource Groups in the create a resource section, then give it a name and select a region near you. The region is where the metadata about the resource group is stored, but resources inside that group can actually be in different regions. You'll add a tag with a key-value pair to help organize your resources, which is really important when you have lots of resources across different projects and environments. After creating it you can browse to the resource group and explore the user interface to see how it's organized.
 
-You'll start by **creating Resource Groups via Azure Portal** to see the visual interface. You'll select a region (where metadata is stored, not where resources must be deployed) and add tags (key-value pairs like environment=dev, project=webapp) for organization at scale.
+Next you'll create a resource group with the Azure CLI, which is the automation approach you'll use in real deployments. The CLI uses consistent verbs across all resources, so you'll use commands like create, list, show, and delete. You'll start by printing the help text for the group commands to see what's available, then specifically look at the create command to see what parameters you need. The required ones are just the group name and location. Before you create the group, you'll need to find the list of available regions using the account list-locations command, because each region is a collection of nearby data centers and you typically want to put all components for an app into the same region for minimal network latency. You'll create a second resource group in a different region with the same tag you used before.
 
-Then you'll **create Resource Groups via Azure CLI** using `az group create` with name, location, and tags parameters. This is the automation approach - essential for infrastructure as code and repeatable deployments. You'll see how CLI enables scripting that Portal doesn't.
+After creating groups, you'll move on to managing resource groups using the CLI. You'll list all your resource groups using the list command with table output, which makes it easy to see everything at a glance. Then you'll learn about querying with JMESPath, which is a JSON query language that lets you filter results. You'll write a query to show only resource groups that have a matching tag, which demonstrates how you can find specific resources across all regions when you have a large environment.
 
-Before creating resources, you'll **list available Azure regions** with `az account list-locations`. Not all regions support all services, and choosing the right region affects latency, compliance, and cost. Understanding available regions is important for deployment planning.
+Finally you'll delete resource groups, and this is where you need to be careful. The group delete command removes the resource group and any resources inside it. You could have an RG with five Hadoop clusters and hundreds of containers, and deleting the group removes everything. Because deletion is dangerous, the CLI doesn't let you delete multiple groups based on a query. You'll try it and see the error, then delete a specific group by name. You'll be asked for confirmation and the command will wait until the group is fully deleted.
 
-You'll practice **managing Resource Groups by listing them** with `az group list`. Then you'll use **JMESPath queries** to filter results - showing only groups in specific regions or with specific tags. This demonstrates how to find resources programmatically in large environments.
-
-An important lesson: **deletion requires explicit Resource Group names** - there's no bulk delete command for safety. You must specify exactly which group to delete. But when you do delete a group, **all contained resources are deleted** automatically. This cascading deletion is both powerful (easy cleanup) and dangerous (no undo).
-
-You'll see **confirmation prompts** that require you to type "y" before deletion proceeds. This safeguard prevents accidental deletion of entire environments.
-
-Let's master Resource Group management!
+For the lab challenge, you'll figure out how to delete all resource groups that match a query with a single command, which combines what you've learned about JMESPath queries and command line scripting.

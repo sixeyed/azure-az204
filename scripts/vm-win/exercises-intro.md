@@ -1,13 +1,15 @@
-# Virtual Machines - Windows: Exercises Introduction
-
 We've covered the fundamentals of Windows Virtual Machines in Azure and why they're useful as cloud-based development workstations. Now let's put that knowledge into practice by creating and configuring a Windows 11 VM with development tools.
 
-## What You'll Do
+When you explore Windows VMs in the Portal, you'll see how authentication and networking differ from Linux VMs. The authentication model switches to username and password instead of SSH keys, and the default incoming ports allow 3389 for Remote Desktop access instead of 22 for SSH. In the Disks section, you can create new virtual disks to attach to the VM for additional storage.
 
-You'll explore Windows VM options in the Azure Portal to understand how authentication and networking differ from Linux VMs. Then you'll use the Azure CLI to find the right VM size and Windows 11 image for a development workstation.
+Creating a Windows VM with the CLI starts with finding a larger VM size because Windows is more demanding than Linux. You query for machines with 4 cores and 16 GB of RAM using az vm list-sizes with appropriate filters. The D series are general-purpose machines, and you should find options like Standard_D4s_v5. Then you need to understand OS images and their URN structure consisting of publisher, offer, SKU, and version. You use commands like az vm image list-offers, az vm image list-skus, and az vm image list to find the Windows 11 Pro image you want.
 
-Next, you'll create a Windows VM with appropriate resources - 4 cores and 16 GB of RAM to handle Windows smoothly. You'll add a 2TB Premium SSD data disk that persists independently from the VM itself, giving you secure storage for important development files.
+You create the Windows VM with az vm create, specifying the image URN, VM size, admin username, admin password which needs to be strong, and a public IP address DNS name for easy access. Creating a Windows Desktop VM takes a little longer than a Linux Server VM. While it's running, you check the Portal to see the resources created alongside the VM, including the OS disk which becomes the C drive in Windows.
 
-Finally, you'll connect via Remote Desktop Protocol and install development tools using PowerShell and Chocolatey. The lab challenge asks you to initialize and format the data disk using Windows Disk Management so it's ready for use.
+Adding a data disk to the VM gives you storage that persists independently from the VM itself. You use az vm disk attach with parameters for the disk name, sku specifying Premium_LRS for fast solid-state performance, size in GB like 2048 for a 2TB disk, and the new flag to create it. Premium storage uses fast solid-state disks in the data center, so performance is much better than standard disks. Disks are charged separately from VMs, so a deallocated VM with a premium disk attached doesn't incur compute costs but still has storage costs.
 
-The key learning: Windows VMs require more resources than Linux, use RDP instead of SSH for access, and support data disks that persist independently - perfect for development workstations you can access from anywhere while only paying for compute time when the VM is actually running.
+Connecting and installing dev tools uses Remote Desktop Protocol with applications like Remote Desktop Connection on Windows, Microsoft Remote Desktop on Mac, or Remmina on Linux. You use your DNS name and admin credentials to connect and launch into a Windows session. You copy a PowerShell setup script to the VM and run it in an Administrator PowerShell session to install Git and VS Code using Chocolatey package manager.
+
+The lab challenge asks you to initialize and format the data disk using Windows Disk Management because the disk is attached to the VM but not yet visible in Windows Explorer until you configure the OS to initialize it.
+
+Windows VMs require more resources than Linux, use RDP instead of SSH for access, and support data disks that persist independently, perfect for development workstations you can access from anywhere while only paying for compute time when the VM is actually running.

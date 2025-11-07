@@ -1,23 +1,17 @@
-# IaaS Apps - AZ-204 Exam Introduction
-
 Great work with IaaS deployment! While PaaS is preferred, understanding IaaS is important for legacy migration scenarios on the AZ-204.
 
-## What We'll Cover
+VM provisioning with proper image selection uses publisher:offer:SKU:version format like MicrosoftWindowsServer:WindowsServer:2022-datacenter-core:latest that you used in the lab. Knowing how to find available images with az vm image list and understanding the naming convention is important. The exam tests selecting appropriate images for different scenarios like choosing between Windows Server Core for lightweight deployments versus full Windows Server with GUI for traditional management.
 
-**VM provisioning with proper image selection** uses publisher:offer:SKU:version format. Example: MicrosoftWindowsServer:WindowsServer:2022-datacenter-core:latest. Knowing how to find available images with `az vm image list` and understanding the naming convention is important. The exam tests selecting appropriate images for different scenarios.
+VM sizing for different workloads must match requirements. D-series for general purpose with balanced CPU and memory like you used for the web application, F-series for compute-intensive workloads, E-series for memory-intensive applications, N-series for GPU workloads. The exam tests choosing appropriate sizes based on application needs and understanding cost implications of oversizing or undersizing VMs.
 
-**VM sizing for different workloads** must match requirements. D-series for general purpose (balanced CPU/memory), F-series for compute-intensive, E-series for memory-intensive, N-series for GPU workloads. The exam tests choosing appropriate sizes based on application needs and understanding cost implications.
+NSG rules with priorities control network access where lower numbers have higher priority and get processed first. Rules specify source and destination using IP ranges or service tags, port ranges, and action to allow or deny. The exam tests designing NSG rules for scenarios like allowing HTTP but blocking RDP from internet like you configured in the lab challenge, or restricting database access to specific subnets for security.
 
-**NSG rules with priorities** control network access. Lower numbers have higher priority (processed first). Rules specify source/destination (IP ranges or service tags), port ranges, and action (allow/deny). The exam tests designing NSG rules for scenarios like allowing HTTP but blocking RDP from internet, or restricting database access to specific subnets.
+Service endpoints for secure Azure service connectivity provide private paths between VNets and Azure services like SQL Database, Storage Account, and Key Vault. You enable service endpoint on the subnet then configure the Azure service firewall to allow that subnet, eliminating public internet exposure for sensitive connections like your VM to SQL Database. The exam tests when to use service endpoints versus private endpoints which provide dedicated private IPs in your VNet but cost more.
 
-**Service endpoints for secure Azure service connectivity** provide private paths between VNets and Azure services (SQL Database, Storage Account, Key Vault). Enable service endpoint on subnet, configure Azure service firewall to allow that subnet. No public internet exposure. The exam tests when to use service endpoints versus private endpoints (dedicated private IPs in your VNet).
+VNet rules for SQL Database access restrict connections to specific VNets and subnets like you configured for your VM's subnet. More secure than IP-based firewall rules because IPs can change when VMs restart, but subnet association remains stable. The exam tests configuring VNet rules and troubleshooting connectivity issues when applications can't reach the database.
 
-**VNet rules for SQL Database access** restrict connections to specific VNets/subnets. More secure than IP-based firewall rules because IPs can change, but subnet association is stable. The exam tests configuring VNet rules and troubleshooting connectivity issues.
+Connection string formats for SQL Database use server name, database name, and authentication method like SQL authentication or Azure AD. The exam tests constructing correct connection strings and troubleshooting authentication failures, building on your experience updating the connection string configuration file in the application.
 
-**Connection string formats** for SQL Database use server name, database name, authentication method (SQL auth or Azure AD). Exam tests constructing correct connection strings and troubleshooting authentication failures.
+When to choose IaaS versus App Service is critical exam knowledge. Choose IaaS for legacy apps requiring specific OS versions like .NET Framework 4.8 that you deployed, when you need full control over the server, or when migrating existing virtualization infrastructure. Choose App Service for modern apps, managed platform benefits, automatic scaling, and built-in CI/CD. The exam frequently tests this decision with scenario questions about application requirements.
 
-**When to choose IaaS versus App Service** is critical. IaaS for: legacy apps requiring specific OS versions, full control needed, existing virtualization infrastructure being migrated. App Service for: modern apps, managed platform benefits, automatic scaling, built-in CI/CD. The exam frequently tests this decision.
-
-We'll cover **security best practices** (Key Vault for connection strings, least privilege access), **managed disks**, **availability sets and zones**, **backup and disaster recovery**, and **troubleshooting** connectivity, performance, and deployment issues.
-
-Master IaaS deployments for the AZ-204!
+The exam also covers security best practices like using Key Vault for connection strings instead of config files, least privilege access with managed identities, managed disks for reliable storage, availability sets and zones for high availability, backup and disaster recovery strategies for business continuity, and troubleshooting connectivity issues like you solved with service endpoints, performance problems, and deployment failures. Master IaaS deployments for the AZ-204!

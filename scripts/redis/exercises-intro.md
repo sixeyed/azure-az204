@@ -1,17 +1,11 @@
-# Azure Cache for Redis - Exercises Introduction
-
 We've covered Redis as an in-memory data store for caching and pub-sub messaging with sub-millisecond response times. Now let's implement caching and messaging patterns.
 
-## What You'll Do
+We'll start by creating a Redis cache in Azure using the CLI. You'll explore the different options available when you create a Redis instance, including the cache types that define capacity and reliability, the choice between using Virtual Networks for higher tiers, and configuration like TLS settings and Redis version. You'll create a basic SKU version 6 instance with size C0 and requiring TLS 1.2, which is perfect for development and testing. The basic tier gives you a single node without replication or persistence, but that's actually fine for a cache where the data isn't critical.
 
-You'll start by **creating a Redis cache instance** using Azure CLI with Basic SKU (single node for dev/test), C0 size (smallest, 250MB), TLS 1.2 encryption, and Redis version 6. Then you'll **retrieve access keys** for connecting securely to the cache.
+Once your Redis instance is created, you'll run the Pi app, which is a simple application that calculates Pi to a given number of decimal places. This is a compute-intensive operation that takes a few seconds, and it's a perfect scenario for caching because the computed values never change. The first time you run it without cache enabled, you'll see how long the calculation takes. Then you'll enable the cache by providing your Redis connection string, and the app will store the computed result in Redis after calculating it. This is the cache-aside pattern where you check the cache first, and if the data isn't there, you compute it and store it.
 
-Next, you'll **use Redis as a cache with a Pi calculator application**. The app calculates Pi to many decimal places (computationally expensive). First request is slow (calculation happens). But subsequent requests? Lightning fast! The result is cached in Redis, so the app retrieves it from memory instead of recalculating. This is the **cache-aside pattern** - check cache first, calculate and store if missing.
+After running the app with caching enabled, you'll check the data in Redis using the Redis Console that's embedded in the portal. You can use Redis CLI commands directly to see what's stored. You'll use GET to retrieve the cached value and DEL to delete it, watching how the app behavior changes when the cache is empty versus populated. Running the same calculation again with the cache populated should be much faster since it just reads from memory instead of recalculating.
 
-You'll **verify cached data using Redis Console** in the Portal with `GET` commands, seeing the exact data stored. Then you'll **test cache deletion with `DEL`** and observe the performance difference when cache is empty (slow) versus populated (fast).
+Next you'll explore Redis as a message queue by subscribing for events. Redis supports pub-sub messaging in the same instance you use for data storage. It's not reliable messaging like Service Bus, but it's fast and easy to use. The Pi application can publish events when it computes a value, and you'll subscribe to those events in the Redis console. When you run the app with the publish events flag enabled, you'll see the messages appear in real time in your subscriber. This demonstrates how different instances of different services can use Redis to share data and publish events.
 
-Next comes **pub-sub messaging**. You'll `SUBSCRIBE` to a channel, then `PUBLISH` messages to it. Subscribers receive messages instantly. This enables real-world patterns like cache invalidation notifications - when data changes, publish an event so all subscribers can refresh their caches.
-
-The key learning: Redis serves two distinct roles. As a cache, it improves performance by storing frequently-accessed data in memory. As a message queue with pub-sub, it enables asynchronous communication between services. Both use the same simple Redis API.
-
-Let's implement caching and messaging with Redis!
+For the lab challenge, you'll investigate what happens when there are multiple subscribers or no subscribers, exploring how Redis pub-sub differs from reliable messaging systems. You'll also look at cache eviction policies and learn how to use the Redis API to manage the cached data, including commands to clear all entries and reset the cache. When you're done, you'll clean up by deleting the resource group.

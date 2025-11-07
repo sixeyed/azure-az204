@@ -1,21 +1,9 @@
-# Kubernetes Persistent Volumes: Exercises Introduction
+We've covered how Persistent Volumes provide durable storage that survives pod restarts and how they decouple storage provisioning from consumption. Now let's work with different storage options in Kubernetes to understand their lifecycle and use cases.
 
-We've covered how Persistent Volumes provide durable storage that survives pod restarts and how they decouple storage provisioning from consumption. Now let's work with PVs, PVCs, and storage classes.
+We'll start by exploring the API specs to understand how PersistentVolumeClaims are structured. Then we'll examine data in the container's writeable layer, deploying a Pi-calculating website fronted by an Nginx proxy that caches responses to improve performance. You'll see that when you stop the container process and force a Pod restart, the cache in the tmp folder is empty because data in the container writeable layer has the same lifecycle as the container. When the container is replaced, the data is lost.
 
-## What You'll Do
+Next, we'll explore Pod storage in EmptyDir volumes. This is a simple volume type that creates an empty directory at the Pod level which Pod containers can mount. It's perfect for keeping a local cache of data that you'd like to survive a container restart but doesn't need to persist beyond the Pod's lifecycle. You'll update the Nginx deployment to use an EmptyDir volume mounted to the tmp directory, then stop the container process to see that the data survives because it's stored at the Pod level. However, if you delete the Pod, the Deployment creates a replacement with a new EmptyDir volume which will be empty, showing that data in EmptyDir volumes has the same lifecycle as the Pod.
 
-You'll explore storage concepts understanding the difference between ephemeral container storage that disappears with pods and persistent volumes that retain data across pod lifecycle.
+Then we'll move to external storage with PersistentVolumeClaims. This is about using volumes which have a separate lifecycle from the app, so the data persists when containers and Pods get replaced. You'll see Storage Classes that define different types of storage available in your cluster, then create a PersistentVolumeClaim that requests storage with specific size and access mode requirements. When you update the Nginx deployment to use the PVC, you'll see that the data survives both container restarts and Pod replacements, demonstrating that data in PersistentVolumes has its own lifecycle.
 
-Then you'll create Persistent Volumes manually defining storage resources with capacity, access modes, and reclaim policies. You'll see how PVs exist independently from pods as cluster-level resources.
-
-You'll create Persistent Volume Claims that request storage with specific size and access mode requirements. PVCs bind to available PVs meeting their criteria, acting as storage requests from applications.
-
-Next, you'll mount PVCs in pods treating them as volumes in container specs. Multiple pods can share the same PVC depending on access mode, enabling data sharing between replicas.
-
-You'll work with Storage Classes for dynamic provisioning where PVCs automatically trigger PV creation. Azure Disk and Azure Files storage classes in AKS provide different performance characteristics and access patterns.
-
-You'll explore access modes including ReadWriteOnce for single-node access, ReadOnlyMany for multi-node reads, and ReadWriteMany for multi-node read-write requiring special storage types like Azure Files.
-
-The lab challenge asks you to configure stateful applications using StatefulSets with persistent volume claim templates, ensuring each pod gets its own dedicated storage.
-
-The key learning: Persistent storage is essential for databases, file shares, and any stateful workload. Understanding PVs, PVCs, and storage classes enables proper storage architecture in Kubernetes.
+The lab challenge asks you to explore a different type of volume that gives you access to the root drive on the host node where the Pod runs, using it to find the cache files from the Nginx Pod. Finally, we'll do cleanup. The key learning is understanding the three storage lifecycles: container writeable layer that disappears with containers, EmptyDir volumes that survive container restarts but not Pod replacements, and PersistentVolumes that retain data independently of container and Pod lifecycle, making them essential for databases, file shares, and any stateful workload.

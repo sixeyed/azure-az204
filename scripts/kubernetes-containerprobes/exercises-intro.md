@@ -1,17 +1,7 @@
-# Kubernetes Container Probes: Exercises Introduction
-
 We've covered the three types of container probes and why they're essential for production-ready applications. Now let's deploy real applications with different probe configurations and see how Kubernetes responds to failures.
 
-## What You'll Do
+We'll start by looking at the API specs to understand how container probes are structured in the Kubernetes API. Then we'll dive into self-healing apps with readiness probes, where you'll deploy the whoami application and intentionally trigger it to return errors. Without readiness probes, Kubernetes keeps sending traffic to the failed pod, causing user errors, but once you add readiness probe configuration that checks the health endpoint every few seconds, Kubernetes automatically removes failing pods from service endpoints, isolating the problem while keeping the container running.
 
-You'll start with self-healing apps using readiness probes. You'll deploy the whoami application and intentionally trigger it to return 503 errors. Without readiness probes, Kubernetes keeps sending traffic to the failed pod, causing user errors.
+Next, we'll work with self-repairing apps with liveness probes. These don't just isolate unhealthy pods, they actually restart them. You'll watch as a failed pod first becomes not ready, then after multiple liveness probe failures, the pod restarts and rejoins the service automatically. You'll also explore other probe types beyond HTTP probes, including TCP socket checks that work perfectly for databases and non-HTTP services, simply verifying the port is accepting connections, and exec probes that run commands inside containers for custom health check logic.
 
-Then you'll add readiness probe configuration that checks the /health endpoint every five seconds. When a pod fails its readiness check, Kubernetes automatically removes it from service endpoints, isolating the problem while keeping the container running.
-
-Next, you'll implement self-repairing apps with liveness probes. These don't just isolate unhealthy pods - they actually restart them. You'll watch as a failed pod first becomes not ready, then after multiple liveness probe failures, the pod restarts and rejoins the service automatically.
-
-You'll explore other probe types beyond HTTP probes. TCP socket checks work perfectly for databases and non-HTTP services, simply verifying the port is accepting connections. Exec probes run commands inside containers for custom health check logic that can't be expressed as HTTP or TCP checks.
-
-The lab challenge presents a Random Number Generator API with reliability problems. You'll need to configure both readiness probes to stop traffic to failed pods and liveness probes to restart them, running five replicas with health checks on the /healthz endpoint.
-
-The key learning: Container probes enable self-healing infrastructure - detect problems with readiness probes, isolate failed pods from traffic, and automatically recover with liveness probes, all without manual intervention.
+The lab challenge presents a Random Number Generator API with reliability problems. You'll need to configure both readiness probes to stop traffic to failed pods and liveness probes to restart them, running multiple replicas with health checks on the healthz endpoint. Finally, we'll do cleanup to remove all the resources we've created. The key learning here is that container probes enable self-healing infrastructure, detecting problems with readiness probes, isolating failed pods from traffic, and automatically recovering with liveness probes, all without manual intervention.

@@ -1,21 +1,9 @@
-# Kubernetes Pods: Exercises Introduction
+We've covered how pods are the smallest deployable units in Kubernetes that can contain one or more containers sharing network and storage. Now let's create and manage pods directly to understand how they work.
 
-We've covered how pods are the smallest deployable units in Kubernetes that can contain one or more containers sharing network and storage. Now let's create and manage pods directly.
+We'll start by exploring the API specs to understand the minimal YAML structure for pods, including the four required fields that every Kubernetes resource needs: apiVersion, kind, metadata, and spec. Then we'll run a simple Pod, using kubectl apply to deploy a web app from a YAML file. You'll see that Kubernetes works on desired state deployment, and you can use familiar commands like kubectl get to print information about your pods including their IP addresses.
 
-## What You'll Do
+Next, we'll focus on working with Pods. In a production cluster the Pod could be running on any node, but you manage it using Kubectl so you don't need access to the server directly. You'll print container logs using kubectl logs, and try to connect to containers using kubectl exec. Some container images don't have shells installed, so you'll deploy another app that does and explore both the container environment and the Kubernetes network from inside. You'll see that the Kubernetes API server is available for Pod containers to use.
 
-You'll create your first pod using kubectl run for quick imperative creation and kubectl apply with YAML manifests for declarative management. You'll understand that while you can create pods directly, Deployments are preferred for production.
+Then we'll work on connecting from one Pod to another. You'll print the IP address of one Pod and make HTTP requests to it from another Pod. That internal IP address is accessible to any other Pod in the cluster, demonstrating the flat network model in Kubernetes. Pods communicate with each other using these IP addresses.
 
-Then you'll explore pod networking where all containers in a pod share the same IP address and can communicate via localhost. You'll see how pods get unique IPs from the cluster network enabling pod-to-pod communication.
-
-You'll work with multi-container pods including sidecar patterns for logging and monitoring, ambassador patterns for proxy functionality, and adapter patterns for standardizing interfaces. Containers in pods share volumes and network namespace.
-
-Next, you'll examine pod lifecycle understanding pending status during scheduling, running status when containers are active, succeeded status for completed jobs, failed status when containers exit with errors, and unknown status for communication failures.
-
-You'll configure resource requests and limits where requests guarantee minimum resources for scheduling and limits cap maximum usage preventing resource exhaustion. Kubernetes uses these for bin-packing pods onto nodes efficiently.
-
-You'll explore pod security contexts including running as non-root users, setting file system groups, defining capabilities, and using security policies. Azure Policy for Kubernetes enforces pod security standards.
-
-The lab challenge asks you to debug pod issues using kubectl describe, kubectl logs, and kubectl exec commands essential for troubleshooting failed containers and investigating runtime behavior.
-
-The key learning: While pods are rarely created directly in production, understanding pod concepts is fundamental as Deployments, StatefulSets, and DaemonSets all manage pods following these same principles.
+The lab challenge explores how Pods provide the first layer of high availability by monitoring containers and restarting them if they exit. You'll deploy a badly-configured app where the container keeps exiting and watch what Kubernetes does to keep trying to make it work. Finally, we'll do cleanup to delete all the Pods we created. The key learning is that while pods are rarely created directly in production, understanding pod concepts is fundamental as Deployments, StatefulSets, and DaemonSets all manage pods following these same principles.

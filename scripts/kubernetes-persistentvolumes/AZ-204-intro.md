@@ -1,19 +1,9 @@
-# Kubernetes Persistent Volumes: AZ-204 Exam Focus
+Great work! This persistent storage lab is crucial for the Implement containerized solutions objective in the AZ-204 exam. Understanding stateful workloads is essential for Azure Kubernetes Service.
 
-Great work! This persistent storage lab is crucial for the "Implement containerized solutions" objective in the AZ-204 exam. Understanding stateful workloads is essential for Azure Kubernetes Service.
+We'll start by exploring the API specs to understand the storage architecture with three components the exam tests: Persistent Volumes as cluster-level storage resources, Persistent Volume Claims as namespace-scoped storage requests, and Storage Classes enabling dynamic provisioning with different performance tiers. As we examine data in the container's writeable layer, you'll understand the first storage lifecycle where data disappears when containers are replaced. The exam tests whether you know when this is appropriate versus when you need more durable storage.
 
-## What We'll Cover
+When we explore Pod storage in EmptyDir volumes, you'll see the second storage lifecycle where data survives container restarts but not Pod replacements. This is useful for temporary caches and scratch space. The exam may present scenarios asking you to choose between EmptyDir and PersistentVolumes based on data durability requirements.
 
-We'll examine the storage architecture with three components the exam tests: Persistent Volumes as cluster-level storage resources, Persistent Volume Claims as namespace-scoped storage requests, and Storage Classes enabling dynamic provisioning with different performance tiers.
+In the section on external storage with PersistentVolumeClaims, you'll master the third storage lifecycle where data persists independently of containers and Pods. You'll work with Storage Classes that define provisioner, parameters, and reclaim policy. PVCs reference storage classes automatically triggering PV creation. Understand default storage classes and how to specify alternatives. The exam tests dynamic provisioning extensively. You'll explore Azure storage integration where Azure Disk provides block storage with ReadWriteOnce access suitable for databases, Azure Files provides file shares with ReadWriteMany access enabling multiple pod access, and Azure Blob through CSI drivers for object storage scenarios. You'll master access modes that determine sharing capabilities including ReadWriteOnce for single-node mounting typical for databases, ReadOnlyMany for multi-node read access for shared configuration, and ReadWriteMany for multi-node read-write requiring Azure Files or similar.
 
-We'll explore Azure storage integration where Azure Disk provides block storage with ReadWriteOnce access suitable for databases, Azure Files provides file shares with ReadWriteMany access enabling multiple pod access, and Azure Blob through CSI drivers for object storage scenarios.
-
-You'll master access modes that determine sharing capabilities. ReadWriteOnce allows single-node mounting typical for databases, ReadOnlyMany allows multi-node read access for shared configuration, and ReadWriteMany allows multi-node read-write requiring Azure Files or similar.
-
-The exam tests dynamic provisioning with Storage Classes defining provisioner, parameters, and reclaim policy. PVCs reference storage classes automatically triggering PV creation. Understand default storage classes and how to specify alternatives.
-
-We'll cover StatefulSets for stateful applications providing stable pod identities, ordered deployment and scaling, and persistent volume claim templates ensuring each pod gets dedicated storage. This is essential for databases, message queues, and similar workloads.
-
-You'll understand backup and disaster recovery with Azure Backup for AKS, volume snapshots using CSI drivers, and replication strategies across regions. The exam tests recovery point objectives and recovery time objectives for stateful applications.
-
-Master persistent storage patterns, Azure storage integration, and stateful application deployment for the AZ-204!
+In the lab challenge, you'll explore host path volumes which give direct access to the node filesystem. Finally, we'll do cleanup. We'll cover StatefulSets for stateful applications providing stable pod identities, ordered deployment and scaling, and persistent volume claim templates ensuring each pod gets dedicated storage, essential for databases and message queues. You'll understand backup and disaster recovery with Azure Backup for AKS, volume snapshots using CSI drivers, and replication strategies across regions. The exam tests recovery point objectives and recovery time objectives for stateful applications. Master persistent storage patterns and Azure storage integration for the AZ-204!

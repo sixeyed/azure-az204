@@ -1,23 +1,13 @@
-# Azure Cache for Redis - AZ-204 Exam Introduction
-
 Excellent work with Redis! Caching is a critical performance optimization topic on the AZ-204.
 
-## What We'll Cover
+When you were creating the Redis cache, you saw the different service tiers available. The exam really focuses on knowing which features are available at each tier. Basic is single node with no SLA and is only for dev and test. Standard gives you replication with a master and replica plus a 99.9% SLA for production workloads. Premium adds VNet support, data persistence with RDB or AOF, geo-replication, and clustering, with up to 99.95% SLA. The enterprise tier has the highest performance with Redis modules and active geo-replication. You need to memorize which tier supports which features because the exam will give you requirements and ask which tier to choose.
 
-**When to use Redis versus alternatives** is frequently tested. Redis for: frequently-accessed data needing sub-millisecond response, session storage for stateless web apps, pub-sub messaging, leaderboards/counters. Table Storage for: simple key-value with longer durability. SQL/Cosmos for: complex queries and relationships. Service Bus for: enterprise messaging with guarantees. The exam tests choosing appropriate storage based on requirements.
+Running the Pi app demonstrated the cache-aside pattern, which is probably the most common caching pattern you'll see on the exam. The app checks the cache first, and if the data isn't there, it computes the value and populates the cache. Other patterns include write-through where you write to cache and database simultaneously, and write-behind where you write to cache immediately and then asynchronously to the database. The exam tests your understanding of when to use each pattern based on the scenario.
 
-**Service tiers** must be memorized. Basic: single node, no SLA, dev/test only. Standard: replication (master + replica), 99.9% SLA, production workloads. Premium: everything in Standard plus VNet support, persistence (RDB/AOF), geo-replication, clustering, up to 99.95% SLA. Enterprise: highest performance, Redis modules, active geo-replication. The exam tests which tier supports which features.
+When you were checking the data in Redis using the console, you used basic Redis commands like GET and DEL. The exam won't make you write Redis code, but you should know the common commands. SET stores a value, GET retrieves it, DEL deletes it, FLUSHDB clears all keys. For pub-sub you have PUBLISH to send messages and SUBSCRIBE to receive them. Understanding these commands helps you know what the Redis API can do.
 
-**Connection string format** includes host, port 6380 for TLS, SSL=True, password from access keys. Example: `{cachename}.redis.cache.windows.net:6380,ssl=True,password={accesskey}`. The exam may test constructing connection strings or troubleshooting connection failures.
+The section on subscribing for events showed you Redis pub-sub messaging, but it's important to understand the difference between Redis and reliable messaging systems. Redis pub-sub doesn't guarantee delivery, doesn't persist messages, and if there are no subscribers when you publish, the message is just lost. The exam often asks you to choose between Redis and alternatives. Use Redis for frequently-accessed data needing sub-millisecond response, session storage, or simple pub-sub. Use Table Storage for simple key-value with longer durability. Use SQL or Cosmos for complex queries and relationships. Use Service Bus for enterprise messaging with guarantees.
 
-**Common Redis commands** for the exam: `SET key value` (store), `GET key` (retrieve), `DEL key` (delete), `PUBLISH channel message` (publish), `SUBSCRIBE channel` (subscribe), `FLUSHDB` (clear all keys). Know basic operations even if you won't write Redis commands on the exam.
+In the lab where you explored cache eviction and clearing data, that ties into understanding data eviction policies. When Redis gets full, it needs to evict old items. Policies like allkeys-lru evict least recently used keys from all keys, while volatile-lru only evicts from keys with an expiration set. The exam tests choosing appropriate eviction policies based on requirements.
 
-**Caching patterns** include cache-aside (check cache, load from DB if missing, populate cache), write-through (write to cache and DB simultaneously), write-behind (write to cache immediately, async to DB). The exam tests understanding of when to use each pattern.
-
-**Data eviction policies** control what happens when cache is full. `allkeys-*` (evict from all keys) vs `volatile-*` (evict only keys with expiration). Common policies: LRU (least recently used), LFU (least frequently used), random. The exam tests choosing appropriate policies.
-
-**High availability features** require specific tiers. Replication (Standard+), clustering for horizontal scale (Premium+), geo-replication for disaster recovery (Premium+). The exam tests understanding of availability features and their tier requirements.
-
-We'll cover **monitoring metrics** (cache hits/misses ratio, memory usage, evicted keys), **security best practices** (TLS encryption, VNet integration, firewall rules), **cost optimization**, and **common scenarios** about implementing caching strategies, troubleshooting performance, and choosing appropriate tiers.
-
-Master Redis caching for the AZ-204!
+Throughout this, remember the connection string format because the exam may test constructing them or troubleshooting connection failures. The format includes your cache name with the suffix redis.cache.windows.net, port 6380 for TLS connections, ssl equals true, and the password from your access keys. When you cleaned up at the end, that was straightforward with the basic tier, but remember that higher tiers offer data persistence with RDB snapshots or AOF logs, so you could recover data after deletion if you had that configured.

@@ -1,21 +1,11 @@
-# Kubernetes Services: Exercises Introduction
-
 We've covered how Services provide stable networking endpoints for pods enabling service discovery and load balancing. Now let's create different service types and understand their use cases.
 
-## What You'll Do
+We'll start by exploring the API specs to understand how Service definitions work, including the network ports and label selector. Services and Pods are loosely coupled, with Services finding target Pods using label selectors. Then we'll run sample Pods from definitions which contain labels, working with multiple objects and deploying multiple YAML manifests with Kubectl. You'll check the status for all Pods printing IP addresses and labels, and see that Pod names have no effect on networking as Pods can't find each other by name alone.
 
-You'll create ClusterIP services providing internal cluster networking with stable IP addresses and DNS names. Pods access services via DNS regardless of which backend pods are currently running.
+Next, we'll deploy an internal Service. Kubernetes provides different types of Service for internal and external access to Pods. ClusterIP is the default and it means the Service gets an IP address which is only accessible within the cluster, for components to communicate internally. You'll deploy a ClusterIP service which routes traffic to the whoami Pod and print its details. The Service has its own IP address which is static for the life of the Service.
 
-Then you'll explore NodePort services exposing applications on static ports across all nodes. This provides external access for development and testing but isn't ideal for production due to port management challenges.
+From there, we'll use DNS to find the Service. Kubernetes runs a DNS server inside the cluster and every Service gets an entry, linking the IP address to the Service name. You'll see how Pods can communicate using DNS names instead of IP addresses. When you recreate the whoami Pod and the replacement gets a new IP address, service resolution with DNS still works because the Service IP address doesn't change. The Service routes traffic to the new Pod automatically.
 
-You'll work with LoadBalancer services in Azure Kubernetes Service that automatically provision Azure Load Balancers with public IP addresses. This is the standard way to expose production HTTP and TCP services externally.
+Then we'll deploy an external Service. There are two types of Service which can be accessed outside of the cluster: LoadBalancer and NodePort. LoadBalancers are easier to work with and are supported in Docker Desktop and managed Kubernetes clusters like AKS. NodePort works for clusters which don't support LoadBalancer Services. You'll deploy both types and see how you can call the whoami app from your local machine.
 
-Next, you'll understand service selectors using labels to identify backend pods. Services automatically maintain endpoint lists as pods are created, updated, or deleted, ensuring traffic only reaches healthy pods.
-
-You'll explore session affinity and load balancing algorithms including round-robin for default distribution and client IP affinity for sticky sessions when applications require consistent routing to the same pod.
-
-You'll work with headless services where ClusterIP is set to None providing direct DNS records for individual pods. This enables custom load balancing for stateful applications like databases.
-
-The lab challenge asks you to configure an Ingress Controller with a LoadBalancer service, then create multiple applications accessed through a single external IP using Ingress path-based routing.
-
-The key learning: Services abstract pod networking providing stable endpoints, automatic load balancing, and service discovery via DNS - essential for building reliable microservices architectures in Kubernetes.
+The lab challenge explores how Services are a networking abstraction, like routers which listen for incoming traffic and direct it to Pods. Target Pods are identified with a label selector, and there could be zero or more matches. You'll test scenarios with zero Pods matching and multiple Pods matching to understand what happens. Finally, we'll do cleanup. The key learning is that Services abstract pod networking providing stable endpoints, automatic load balancing, and service discovery via DNS, making them essential for building reliable microservices architectures in Kubernetes.

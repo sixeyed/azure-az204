@@ -1,19 +1,13 @@
-# Key Vault Access Security - Exercises Introduction
+We've covered securing Key Vault with two distinct security layers: network-level and identity-based security. Now let's implement defense-in-depth protection that requires both network access and proper authentication.
 
-We've covered securing Key Vault with two distinct security layers: network-level and identity-based security. Now let's implement defense-in-depth protection.
+You'll start by creating an RG, KeyVault and secret to establish your baseline environment. You'll create a Key Vault and store a test secret, then verify you can read it from your local machine since you created the Key Vault and automatically have access policies. This demonstrates that by default Key Vault is accessible from anywhere on the internet if you have proper credentials, which might not meet security requirements for production systems.
 
-## What You'll Do
+When you restrict access to VNet, you'll create a virtual network and subnet that will house your VM. Then you'll need to add a service endpoint for Microsoft.KeyVault on the subnet before you can create network rules, since other Azure services need explicit permission to route traffic into your subnet. Once the service endpoint is configured, you'll add a network rule to allow access from that specific subnet and then change the default action to Deny. This enforces that only requests from allowed networks can even reach the vault. When you try to print the secret from your local machine, you'll get an access denied error demonstrating network-level security in action.
 
-You'll start by **creating a Key Vault and storing secrets**. Then you'll implement **network-level security by configuring virtual network service endpoints**. Service endpoints provide a secure, private path between your VNet and Azure services without going over the public internet.
+Creating a VM with access to the KeyVault means deploying an Ubuntu VM into the allowed subnet. You'll use a custom data script to install Python and the Azure SDK libraries needed to interact with Key Vault. Once the VM is running, you'll SSH into it and try to run a Python script to read the secret. Even though the VM is in the allowed subnet and has network access, you'll still get an authentication error. This demonstrates the two-layer security model where network access alone isn't enough.
 
-Next, you'll **add network rules to restrict Key Vault access** to specific subnets only. Then you'll **change the default action to Deny**, enforcing that only requests from allowed networks can even reach the vault. Try accessing Key Vault from your local machine - it's blocked! This is network-level security in action.
+The solution involves assigning a system-assigned managed identity to the VM which creates an identity in Azure AD that's tied to the VM's lifecycle. The VM can authenticate using the Azure Instance Metadata Service without any passwords or certificates in your code. Then you'll grant Key Vault access policies to this managed identity giving it permission to Get and List secrets. When you run the Python script again, it uses the managed identity to authenticate automatically, passes network security since the VM is in the allowed subnet, and retrieves secrets successfully. This is production-ready passwordless authentication with defense-in-depth security.
 
-Now you'll **create a VM within the allowed subnet**. From this VM, network access works. But you still can't access secrets without authentication! This demonstrates the two-layer security model.
-
-You'll **assign a system-assigned managed identity** to the VM. This identity authenticates to Azure AD automatically using the Azure Instance Metadata Service - no passwords or certificates needed. Then you'll **grant Key Vault access policies** to this managed identity, giving it permission to Get and List secrets.
-
-Finally, you'll **verify passwordless secret retrieval** from the VM. The application uses the managed identity to authenticate (automatically, no credentials in code), passes network security (VM is in allowed subnet), and retrieves secrets successfully. This is production-ready security!
-
-The **lab challenge** explores soft delete behavior when recreating deleted secrets with the same name - understanding recovery workflows.
+The lab challenge explores soft delete behavior when you delete a secret and try to recreate it with the same name. You'll discover the secret is in soft-delete state and needs to be recovered or purged before you can recreate it, demonstrating Key Vault's protection against accidental deletion.
 
 Let's implement defense-in-depth Key Vault security!

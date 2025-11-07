@@ -1,19 +1,15 @@
-# Securing VNet Access: AZ-204 Exam Focus
+Great work creating a VM and an NSG, connecting with Bastion, and creating second VNet and peer! This VNet security lab directly addresses the Implement Azure Security and Implement networking for Azure solutions objectives in the AZ-204 exam. These network security concepts appear frequently in exam scenarios.
 
-Great work! This VNet security lab directly addresses the "Implement Azure Security" and "Implement networking for Azure solutions" objectives in the AZ-204 exam. These network security concepts appear frequently in exam scenarios.
+Network Security Groups act as virtual firewalls at the subnet or NIC level. Rule priority uses lower numbers evaluated first, ranging from 100 to 4096 for custom rules. Default rules cannot be deleted and start at priority 65000, so custom rules always take precedence. NSG behavior is stateful, meaning return traffic for allowed connections is automatically permitted. Creating custom rules requires specifying source address prefixes like Internet or specific IP ranges, destination port ranges like 80 or 443, protocol, and allow or deny action.
 
-## What We'll Cover
+Azure Bastion provides Microsoft's managed solution for secure VM access. Bastion provides RDP and SSH through the Portal without public IPs on VMs, eliminating the need to open ports 22 or 3389 publicly. Deployment happens at VNet level serving multiple VMs, and it requires a dedicated AzureBastionSubnet with specific size requirements. This approach significantly improves security posture by eliminating exposed management ports.
 
-We'll examine Network Security Groups as virtual firewalls at the subnet or NIC level. You'll master rule priority (lower numbers evaluated first), default rules that cannot be deleted, stateful rule behavior, and how to create custom rules with specific source address prefixes and port ranges.
+VNet peering connects isolated networks with important characteristics the exam tests. Bidirectional configuration is required for security, meaning you must peer both directions. Non-overlapping address spaces are a prerequisite you must plan for. Cross-region and cross-subscription capabilities allow flexible networking. Traffic uses Microsoft backbone not public internet for better performance and security. Non-transitive routing behavior means peered VNets don't automatically access each other's peered networks.
 
-We'll explore Azure Bastion as Microsoft's managed solution for secure VM access. You'll understand that Bastion provides RDP/SSH through the Portal without public IPs on VMs, no need to open ports 22 or 3389, deployment at VNet level serving multiple VMs, and the dedicated AzureBastionSubnet requirement.
+Virtual network integration concepts include VMs deployed into specific subnets receiving private IPs from subnet ranges. NSG application happens at subnet level affecting all resources or at NIC level for individual control, with inheritance from subnet to NIC. Public IPs are optional separate resources that map to private IPs externally.
 
-The exam tests your knowledge of VNet peering for connecting isolated networks - bidirectional configuration required for security, non-overlapping address spaces as a prerequisite, cross-region and cross-subscription capabilities, traffic using Microsoft backbone not public internet, and non-transitive routing behavior.
+Planning address spaces requires avoiding conflicts when peering VNets or connecting to on-premises networks. NSG rule priority ranges from 100 to 4096 for custom rules, with default rules at 65000 and higher. Security best practices include never exposing management ports to internet and using Bastion instead, implementing least privilege with explicit allow rules, and monitoring access patterns.
 
-You'll understand virtual network integration for VMs deployed into specific subnets, NSG application at subnet or NIC level with inheritance, private IP assignment from subnet ranges, and optional public IPs as separate resources.
-
-We'll cover planning address spaces to avoid conflicts when peering VNets or connecting to on-premises networks, NSG rule priority ranges from 100 to 4096, and security best practices including never exposing management ports to internet and using Bastion instead.
-
-The exam includes troubleshooting scenarios - VM connectivity issues, NSG rule conflicts, VNet peering status problems, and cost considerations including Bastion hourly costs and VNet peering data transfer charges.
+The exam includes troubleshooting scenarios. VM connectivity issues often involve NSG rules blocking required ports. NSG rule conflicts happen when multiple rules affect the same traffic with different priorities. VNet peering status problems occur when address spaces overlap or regions don't support peering. Cost considerations include Bastion hourly costs for the service and VNet peering data transfer charges based on volume.
 
 Master NSG configuration, Bastion deployment, and VNet peering for the AZ-204!

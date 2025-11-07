@@ -1,21 +1,11 @@
-# Docker - AZ-204 Exam Introduction
+Great work with Docker fundamentals! While the exam won't test Docker CLI commands directly, understanding containers is essential for AZ-204's domain on implementing containerized solutions. Let's think about what the exam expects you to know from these exercises.
 
-Great work with Docker fundamentals! While the exam won't test Docker CLI commands directly, understanding containers is essential for AZ-204's "Implement containerized solutions" domain.
+Container fundamentals translate directly to Azure services. The concepts you learned with Docker Desktop including images, containers, environment variables, and port mappings work identically in Azure Container Instances, App Service containers, and Azure Kubernetes Service. The exam tests your understanding of how these concepts apply in Azure environments rather than just local Docker Desktop scenarios.
 
-## What We'll Cover
+Understanding images versus containers is fundamental for the exam. Images are immutable blueprints like classes in object-oriented programming. Containers are running instances like objects. You can't change an image, you build a new version. Containers are disposable so you delete and recreate them rather than trying to fix them. The exam tests understanding of this immutability pattern and why it matters for reliable deployments where you want consistent behavior.
 
-**Container fundamentals** translate directly to Azure services. The concepts you learned with Docker Desktop (images, containers, environment variables, port mappings) work identically in Azure Container Instances, App Service containers, and Azure Kubernetes Service. The exam tests your understanding of how these concepts apply in Azure.
+Environment variables for configuration in Docker become App Settings in Azure services. The same pattern of separating configuration from images enables deploying one image across dev, test, and prod environments with different settings. The exam heavily tests configuration management patterns using environment variables and understanding when to use them versus other configuration sources like Key Vault or App Configuration.
 
-**Images vs containers** is fundamental. Images are immutable blueprints (like classes in OOP), containers are running instances (like objects). You can't change an image - you build a new version. Containers are disposable - delete and recreate them rather than trying to fix them. The exam tests understanding of this immutability pattern and why it matters for reliable deployments.
+Port mappings in Docker translate to exposed ports in Azure Container Instances. Understanding how containers expose services on specific ports and how to map them to external ports is critical for networking questions. The exam tests scenarios where you need to configure ingress and understand port conflicts or connectivity issues.
 
-**Environment variables for configuration** in Docker become App Settings in Azure. The same pattern of separating configuration from images enables deploying one image across dev/test/prod environments with different settings. The exam heavily tests configuration management patterns using environment variables.
-
-**Port mappings** in Docker (8080:80) translate to exposed ports in Azure Container Instances. Understanding how containers expose services on specific ports and how to map them to external ports is critical for networking questions.
-
-**Multi-stage builds** keep images small and secure by separating build-time dependencies from runtime dependencies. This pattern appears in Azure Container Registry scenarios where smaller images mean faster deployments and lower costs.
-
-We'll cover **integration with Azure Container Registry** (pushing images to ACR), **Azure Container Instances** (running Docker containers in Azure), **App Service containers** (custom container deployment), **Azure Kubernetes Service** (orchestrating containers at scale), **Azure Monitor integration** for container logs, **Key Vault integration** for secrets, and **Virtual Network integration** for secure networking.
-
-The exam expects you to know when to use containers versus other compute options, how to configure containerized applications in Azure, and how to troubleshoot common container issues.
-
-Master container fundamentals for AZ-204!
+Multi-stage builds keep images small and secure by separating build-time dependencies from runtime dependencies. This pattern appears in Azure Container Registry scenarios where smaller images mean faster deployments and lower storage costs. The exam tests understanding of Dockerfile best practices and optimization techniques. You should also understand integration with Azure Container Registry for pushing images to ACR, Azure Container Instances for running Docker containers in Azure, App Service containers for custom container deployment, Azure Kubernetes Service for orchestrating containers at scale, Azure Monitor integration for container logs and metrics, Key Vault integration for secrets management, and Virtual Network integration for secure networking. The exam expects you to know when to use containers versus other compute options, how to configure containerized applications in Azure, and how to troubleshoot common container issues. Master container fundamentals for AZ-204!
