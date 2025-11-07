@@ -1,6 +1,10 @@
-# Virtual Machines - Web Server: Exercise Walkthrough
+# Virtual Machines - Web Server
 
-## Exploring the Portal
+## Reference
+
+Virtual Machines can host web servers just like physical machines, but with the flexibility and scalability of the cloud. Understanding how to configure public access, DNS names, and network security for web-facing VMs is essential for deploying internet-accessible applications. This lab covers creating a VM with a public DNS name, installing web server software, configuring network security rules to allow HTTP traffic, and managing VM state for cost optimization.
+
+## Explore VM in the Portal
 
 Let's start by opening the Azure Portal and searching for Virtual Machine resources. This will help us understand what we're about to create using the CLI and see all the options available.
 
@@ -14,7 +18,7 @@ You'll also see Network Security Group configuration options. The NSG is like a 
 
 This exploration helps you understand the various resources involved in a complete VM deployment. Now let's create these resources using the Azure CLI for better repeatability.
 
-## Creating the Resource Group
+## Create a Linux VM with a Public DNS Name
 
 First, we need a Resource Group to contain all our VM-related resources. Resource groups are organizational containers that help you manage related resources as a unit.
 
@@ -22,7 +26,7 @@ We're using az group create with a resource group name - you can choose your own
 
 The command executes quickly, and we can see our resource group has been created successfully with confirmation output showing the location, properties, and tags.
 
-## Creating the Linux VM with DNS
+---
 
 Now for the main event - creating our Ubuntu Server VM. The key here is that we want to specify a public DNS name, which will make it easy to access our web server without memorizing IP addresses.
 
@@ -38,7 +42,7 @@ Azure is now creating our VM along with all the associated resources - the virtu
 
 This will take a minute or two to complete. You'll see progress indicators as Azure provisions each component.
 
-## Examining the Public IP
+---
 
 Great, our VM is created. Now let's look at the Public IP address resource that was automatically created alongside the VM.
 
@@ -50,7 +54,7 @@ In the JSON output, look for the "fqdn" field near the dns settings - it's in th
 
 This FQDN will remain constant even if the actual IP address changes, making it perfect for accessing our web server. If you deallocate and restart the VM, you might get a different IP address, but the DNS name stays the same and Azure automatically updates the DNS record.
 
-## Installing Nginx
+## Install a Web Server on the VM
 
 Now let's connect to our VM and install the web server. We're using SSH with our FQDN to connect. SSH is available by default on Linux, Mac, and modern Windows systems.
 
@@ -68,7 +72,7 @@ Now let's try accessing it from outside the VM. Opening a web browser and naviga
 
 Hmm, the connection times out after a while. The server is definitely running since we just tested it locally, so what's blocking the connection?
 
-## Configuring the Network Security Group
+---
 
 The issue is the Network Security Group - it's acting as a firewall and blocking incoming traffic on port 80. Let's fix that using the Portal, which gives us a nice visual interface for this type of network troubleshooting.
 
@@ -89,7 +93,7 @@ Now let's refresh our browser with the VM's FQDN...
 
 Excellent! The Nginx welcome page loads successfully. We can see the "Welcome to nginx!" message and all the default content. Our web server is now accessible from the internet thanks to the NSG rule we just created.
 
-## Managing VM State
+## Stop and Start the VM
 
 Virtual Machines incur compute charges while they're running. If you want to pause your work but keep the VM for later, you need to understand the important difference between stopping and deallocating.
 
@@ -105,7 +109,7 @@ Notice something interesting in the output - the ipAddress field is now empty or
 
 If we restart the VM later, it will get a new IP address from the pool, but here's the important part - the FQDN will still work. Azure automatically updates the DNS record to point to whatever IP address gets assigned, so you can always use the friendly name to access your VM.
 
-## Lab Challenge
+## Lab
 
 Here's a challenge for you to explore: what if you need a fixed IP address that doesn't change even when the VM is deallocated?
 

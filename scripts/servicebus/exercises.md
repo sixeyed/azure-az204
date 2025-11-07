@@ -1,233 +1,87 @@
-# Service Bus Messaging - Hands-On Exercises Narration Script
+# Service Bus Messaging
 
-## Exercise Overview
+## Reference
 
-Welcome to the hands-on exercises for Azure Service Bus. In this session, you'll get practical experience with Service Bus queues, publishers, subscribers, and reliability features. By the end, you'll understand how to build scalable, reliable messaging solutions in Azure.
+Service Bus is Azure's high-throughput, reliable message queue service designed for enterprise-grade messaging. Unlike simpler queuing systems, Service Bus stores messages until they're successfully processed, offers advanced features like dead-letter queues for problematic messages, and provides the durability guarantees needed for distributed systems. The standard messaging patterns you'll implement with queues enable fire-and-forget communication where publishers send messages without needing to know which component will process them or even if any component is currently running. This decoupling is fundamental to building resilient, scalable cloud applications.
 
-## Prerequisites Check
+## Create a Service Bus Namespace & Queue
 
-Before we begin, make sure you have Azure CLI installed and authenticated, .NET 6 SDK installed for running the sample applications, an active Azure subscription, and access to the lab source code.
+Service Bus starts with creating a namespace, which serves as a container for your messaging entities. Let's explore the options before committing to a configuration.
 
-Let's verify your .NET installation by running dotnet --version. You should see version 6.0 or later displayed in the output.
+**Navigate to the Portal**: We're opening the Azure Portal and searching for "service bus" to understand what's available. When creating a namespace, you'll see that the namespace name becomes your subdomain at servicebus.windows.net, which is why it must be globally unique. The pricing tiers are critical to understand because they define not just cost but capabilities.
 
-## Exercise 1: Create Service Bus Resources
+**Understanding Pricing Tiers**: The Basic tier provides queues with a maximum message size of 256 KB and pay-per-use pricing, perfect for development and learning. Standard tier adds topics and subscriptions for pub-sub patterns while maintaining the 256 KB message limit. Premium tier offers dedicated resources, supports messages up to 1 MB, provides predictable performance, and includes virtual network integration for enhanced security. For this lab, Basic tier is sufficient since we're working with queues only.
 
-### Step 1: Create Resource Group
+**TLS Configuration**: You can set the minimum TLS level for consumers, ensuring secure communication. Modern applications should use TLS 1.2 or higher.
 
-Let's start by creating a dedicated resource group for this lab. We're using the az group create command with the -n parameter set to "labs-servicebus", adding a tag with "courselabs=azure" so we can track lab resources, and using the -l parameter to specify West Europe as our location. The output confirms the resource group is created in West Europe.
+After exploring the Portal, we'll switch to the CLI for resource creation since it's more suitable for automation and repeatability.
 
-### Step 2: Understand Service Bus Tiers
+**Create Resource Group**: We're creating a resource group called "labs-servicebus" in West Europe with tags to help track resources created for this course. The tags parameter with "courselabs=azure" is a best practice for organizing and managing lab resources, especially when you're running multiple experiments.
 
-Before creating the namespace, let's understand the pricing tiers. Basic tier provides queues only with a 256 KB maximum message size and pay-per-use pricing. Standard tier adds topics and subscriptions while keeping the 256 KB message limit. Premium tier offers dedicated resources, supports 1 MB messages, and provides predictable performance. For this lab, we'll use Basic tier to keep costs low since we only need queue functionality.
+**Create the Namespace**: We're using az servicebus namespace create with the Basic SKU. Remember to choose a unique name - something like "sb-yourname-001" works well since Service Bus namespaces must be globally unique across Azure. The location should match your resource group for consistency.
 
-### Step 3: Create Service Bus Namespace
+**Understanding the Output**: The JSON output includes your serviceBusEndpoint, which shows that communication happens over HTTPS. This endpoint follows the pattern your-namespace-name.servicebus.windows.net and is what applications will connect to.
 
-Create the namespace using az servicebus namespace create. Remember, a namespace is a container for queues, topics, and subscriptions - it's the top-level organizational unit in Service Bus. We're specifying the resource group with -g, setting the location to West Europe, using --sku Basic for the pricing tier, and providing a unique namespace name with -n. Replace the placeholder with something unique, like "sb-yourname-001" since Service Bus namespaces must be globally unique.
+**Explore in Portal**: Opening the namespace in the Portal reveals several management sections. The Overview shows metrics and key information. The Queues section is currently empty. Shared access policies show the RootManageSharedAccessKey created by default, providing full administrative access to the namespace. These shared access tokens work similarly to storage account keys, but with a one-to-one relationship between policies and tokens, allowing fine-grained permission control.
 
-What to observe in the output: The serviceBusEndpoint shows your HTTPS endpoint, the location confirms deployment region, and the sku confirms Basic tier. The namespace is now accessible at your-namespace-name.servicebus.windows.net.
+**Create a Queue**: We're creating a queue named "echo" using az servicebus queue create. This is our messaging destination where publishers will send and subscribers will receive messages. The command is straightforward - specify the resource group, queue name, and namespace.
 
-### Step 4: Explore in Portal
+**Explore Queue in Portal**: Refreshing the Portal shows the new "echo" queue. Click into it to see the metrics on message counts, currently showing zero since we haven't sent anything. The Shared access policies blade provides queue-level access control separate from namespace-level policies, useful when you need different permissions for different queues. The Messages section lets you peek at queue contents without consuming messages, which is invaluable for debugging.
 
-Open the Azure Portal and navigate to your Service Bus namespace. Take a moment to explore the different sections. The Overview blade shows metrics and key information about your namespace. The Queues section is currently empty since we haven't created any yet. Under Shared access policies, you'll see the RootManageSharedAccessKey created by default - this provides full administrative access to the namespace. The Metrics section will show activity once we start sending messages, giving you visibility into throughput, message counts, and errors.
+---
 
-### Step 5: Create a Queue
+## Run a .NET Subscriber
 
-Now create your first queue named "echo" using az servicebus queue create. We're specifying the resource group with -g, the queue name with --name, and identifying which namespace to create it in with --namespace-name.
+Understanding how subscribers work is fundamental to Service Bus messaging. A subscriber connects to the queue and continuously polls for messages.
 
-In the Portal, refresh and you'll see the "echo" queue appear. Click on it to explore its configuration. The Overview shows message count metrics, currently zero since we haven't sent anything yet. The Shared access policies blade provides queue-level access control, separate from namespace-level policies. The Messages section allows you to peek at messages without removing them from the queue, which is incredibly useful for debugging.
+**Understanding the Subscriber Pattern**: The subscriber application in Program.cs creates a Service Bus client, establishes a receiver for the "echo" queue, enters an infinite loop listening for messages, processes each message by printing its content, and critically, acknowledges successful processing by calling CompleteMessageAsync. This acknowledgement tells Service Bus the message was handled successfully and can be removed from the queue. Without acknowledgement, messages would reappear for processing, ensuring at-least-once delivery semantics.
 
-## Exercise 2: Run a Subscriber Application
+**Understanding AMQP**: Service Bus uses Advanced Message Queuing Protocol, an open standard implemented by many messaging systems including RabbitMQ. This standardization means Service Bus can serve as a drop-in replacement for other AMQP-compliant systems, providing flexibility in your architecture choices.
 
-### Step 1: Understand the Subscriber Code
+**Get Connection String**: Your application needs credentials to connect. We're using az servicebus namespace authorization-rule keys list to retrieve the connection string for RootManageSharedAccessKey. The query parameter extracts just the primaryConnectionString, and the tsv output format gives us the raw value without JSON formatting. This connection string contains everything the application needs - the endpoint, the key name, and the shared access key itself.
 
-Before running the subscriber, let's understand what it does. The subscriber application connects to the Service Bus namespace, creates a receiver for the "echo" queue, enters an infinite loop listening for messages, prints the content when a message arrives, and acknowledges the message by calling CompleteMessageAsync. The acknowledgement is critical - it tells Service Bus the message was processed successfully and can be removed from the queue. Without this, messages would reappear for processing again.
+**Run the Subscriber**: We're starting the subscriber using dotnet run with the connection string passed as a parameter. The single quotes around the connection string are important because it contains special characters like semicolons and equals signs that shells might interpret incorrectly. The application displays "Listening for messages on queue: echo" and "Press Ctrl+C to exit", indicating it's actively polling the queue. Keep this terminal open so the subscriber continues running.
 
-### Step 2: Get Connection String
+---
 
-To connect, your application needs a connection string. We're using az servicebus namespace authorization-rule keys list with -n set to RootManageSharedAccessKey, specifying the resource group and namespace, and querying for the primaryConnectionString with --query and -o tsv to get just the value. This returns a connection string in the format "Endpoint=sb://namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=your-key". Copy this entire string - you'll need it for the next step.
+## Reliable & Scalable Messaging
 
-### Step 3: Run the Subscriber
+Service Bus provides powerful reliability and scalability features that distinguish it from simpler messaging systems.
 
-Start the subscriber application using dotnet run with --project pointing to src/servicebus/subscriber and the -cs parameter containing your connection string. Important: Keep the single quotes around the connection string to prevent shell interpretation of special characters.
+**Test Message Persistence**: Let's demonstrate Service Bus's reliability by stopping the subscriber while the publisher continues sending. Note the last batch number your subscriber processed, then press Ctrl+C to stop it. The publisher continues running in its terminal, sending batch after batch. These messages don't disappear - they're stored in the Service Bus queue, safely persisted to disk, waiting for a consumer.
 
-The application starts and displays "Listening for messages on queue: echo" along with "Press Ctrl+C to exit". The subscriber is now waiting for messages, continuously polling the queue. Keep this terminal window open so it continues running.
+**Observe Accumulation**: In the Azure Portal, navigate to your queue's Overview blade and watch the Active Message Count increase with each batch. This metric shows messages waiting for processing. Service Bus is durably storing every message even though no subscriber is listening.
 
-## Exercise 3: Run a Publisher Application
+**Restart the Subscriber**: Using the same dotnet run command, start the subscriber again. Watch carefully - it immediately starts processing messages from where the queue left off, not where the previous subscriber instance stopped. You'll see it receive and process every message that accumulated during the downtime.
 
-### Step 1: Understand the Publisher Code
+**Understanding the Guarantees**: No messages were lost during the subscriber's downtime. Service Bus persisted them until a consumer became available and acknowledged their successful processing. This reliability is essential for distributed systems where you need guarantees that work won't be lost during deployments, updates, or temporary failures. Deployment updates don't cause message loss, network issues don't result in dropped work, and maintenance windows don't impact message delivery.
 
-The publisher application connects to the Service Bus namespace, creates a sender for the "echo" queue, sends messages in batches which is more efficient than individual sends since it reduces network overhead, and waits between batches to simulate realistic workloads. Batch sending is a best practice - it significantly improves throughput and reduces costs.
+**Test Horizontal Scaling**: Service Bus supports the competing consumers pattern where multiple subscribers share the workload from a single queue. With your first subscriber still running, open another terminal and start a second subscriber using the exact same command. Now watch both terminals carefully.
 
-### Step 2: Run the Publisher
+**Observe Load Distribution**: Messages are distributed between the two subscribers in approximately round-robin fashion. Subscriber one might receive message one, message three, and message five, while subscriber two receives message two, message four, and message six. Critically, each message is processed by exactly one subscriber - there's no duplication of work. Service Bus handles the distribution logic automatically.
 
-Open a new terminal window and run the publisher using dotnet run with --project pointing to src/servicebus/publisher and -cs containing the same connection string you used for the subscriber. Use the exact same connection string value.
+**Test Scaling Behavior**: Stop one subscriber by pressing Ctrl+C. The remaining subscriber takes over all message processing, handling the full load alone. The throughput decreases because you have fewer processors, but no messages are lost. Start the subscriber again and load distribution resumes immediately - both subscribers start receiving messages in roughly equal proportions.
 
-### Step 3: Observe Message Flow
+**Understanding Horizontal Scaling**: This is a powerful capability. You can add more subscribers to handle increased load without any configuration changes or code modifications. During quiet periods, you can remove subscribers to save resources. Service Bus handles all the distribution mechanics, implementing a robust competing consumers pattern that's essential for building scalable cloud applications.
 
-Watch what happens in both terminal windows. In the publisher window, you'll see "Sending batch 1...", "Sent 10 messages", "Waiting...", and then "Sending batch 2..." continuing with more batches. In the subscriber window simultaneously, you'll see "Received message: Message 1 from batch 1", followed by message 2, message 3, and so on as messages are processed in real-time.
+---
 
-In the Azure Portal, navigate to your queue and watch the message count metrics. You might see brief spikes when batches are sent, followed by quick drops as the subscriber processes them. This is real-time messaging in action - the decoupled architecture allows publishers and subscribers to operate independently.
+## Lab
 
-## Exercise 4: Test Message Persistence
+Messaging systems need to handle complex real-world scenarios. Service Bus is designed for reliability and scale, but understanding its behavior under different conditions requires experimentation.
 
-Now we'll test Service Bus's reliability features to see how it handles failures.
+**Multiple Publishers**: What happens when multiple systems publish to the same queue simultaneously? Run two publisher instances in separate terminal windows using the same connection string. Observe how the subscriber handles messages from different publishers. Can you tell which publisher sent which message based on the message content? Does message ordering change when multiple publishers are active? Are all messages still processed exactly once, or do you see duplication or loss?
 
-### Step 1: Note Current Progress
+**Acknowledgement Testing**: Understanding message acknowledgement is crucial. Stop all subscribers to start fresh, then run a subscriber with the -ack False flag to disable acknowledgement. Let it process several messages, watching the output. Stop and restart the subscriber. What happens to the messages it already processed? Do they reappear?
 
-Look at your subscriber window and note the last batch number it processed. For example, you might see "Received message: Message 10 from batch 5". Remember this batch number - it's important for verifying that no messages are lost.
+**Understanding Why**: Without acknowledgement, Service Bus doesn't know messages were processed successfully. When the subscriber restarts, Service Bus re-delivers those messages because they were never completed. The messages remained in the queue, invisible to other consumers but not removed. This demonstrates why proper acknowledgement is critical for exactly-once processing semantics. Without it, you get at-least-once delivery, which can cause duplicate processing.
 
-### Step 2: Stop the Subscriber
-
-In the subscriber window, press Ctrl+C on Windows and Linux or Cmd+C on Mac to stop it. The subscriber shuts down gracefully and stops processing messages. The connection to Service Bus is terminated.
-
-### Step 3: Let Messages Accumulate
-
-Keep the publisher running in its terminal. It continues sending batches - you'll see "Sending batch 6...", "Sending batch 7...", "Sending batch 8..." in the publisher output. But there's no subscriber to process them. Where do these messages go? They're stored in the Service Bus queue, safely persisted to disk, waiting to be processed when a consumer becomes available.
-
-### Step 4: Check the Portal
-
-In the Azure Portal, go to your queue's Overview blade and watch the "Active Message Count" increase. Each batch adds 10 messages to the count. You can see the number growing steadily as the publisher continues. This demonstrates message persistence - messages are safely stored even when no subscribers are active. This is fundamentally different from in-memory messaging systems.
-
-### Step 5: Restart the Subscriber
-
-Now restart the subscriber using the exact same command: dotnet run --project src/servicebus/subscriber -cs with your connection string. Watch carefully what happens. The subscriber immediately starts processing messages from where the queue left off - you'll see "Received message: Message 1 from batch 6", followed by message 2, message 3, and so on.
-
-Critical observation: No messages were lost during the downtime. The subscriber picked up all messages sent while it was offline. It doesn't matter that the original subscriber process terminated - Service Bus persisted the messages, and the new subscriber process retrieves them seamlessly.
-
-### Why This Matters
-
-This reliability is essential for distributed systems. Subscribers can restart without losing messages, making deployments and updates safe. Deployment updates don't cause message loss - you can safely deploy new versions of your application. Temporary failures don't impact message delivery - network issues, crashes, or maintenance windows don't lose data. Service Bus stores messages until it receives a completion acknowledgement, only then removing messages from the queue. This durability guarantee is the foundation of reliable asynchronous messaging.
-
-## Exercise 5: Test Horizontal Scaling
-
-### Step 1: Understand Load Balancing
-
-Service Bus supports multiple subscribers consuming from the same queue, and messages are distributed across subscribers automatically. This is automatic load balancing - Service Bus handles the distribution logic, implementing a competing consumers pattern where multiple instances process messages in parallel.
-
-### Step 2: Run a Second Subscriber
-
-With your first subscriber still running, open a third terminal window and start another subscriber using the exact same dotnet run --project src/servicebus/subscriber command with your connection string. Now you have three terminal windows: Terminal 1 running the publisher, Terminal 2 running Subscriber 1, and Terminal 3 running Subscriber 2.
-
-### Step 3: Observe Load Distribution
-
-Watch both subscriber terminals carefully. You'll see messages distributed between them. Subscriber 1 might show "Received message: Message 1 from batch 10", "Received message: Message 3 from batch 10", and "Received message: Message 5 from batch 10". Meanwhile, Subscriber 2 shows "Received message: Message 2 from batch 10", "Received message: Message 4 from batch 10", and "Received message: Message 6 from batch 10".
-
-Service Bus distributes messages in a round-robin fashion, approximately. Each message is processed by exactly one subscriber - there's no duplication. This ensures each piece of work is done once, maintaining exactly-once processing semantics.
-
-### Step 4: Test Scaling Behavior
-
-Stop one subscriber by pressing Ctrl+C. Watch the remaining subscriber - it takes over all message processing, handling the full load alone. The throughput decreases because there's only one processor now, but no messages are lost.
-
-Start the subscriber again using the same command. Load distribution resumes immediately - both subscribers start receiving messages again in roughly equal proportions. This is horizontal scaling in action: Add more subscribers to handle increased load, improving throughput and reducing latency. Remove subscribers to save resources during quiet periods. Service Bus handles the distribution automatically without any configuration changes or code modifications.
-
-## Exercise 6: Portal Metrics
-
-### Viewing Queue Metrics
-
-In the Azure Portal, navigate to your queue and click Metrics in the left menu. Add charts for Incoming Messages showing messages published to the queue, Outgoing Messages showing messages delivered and acknowledged, and Active Messages showing messages waiting in the queue for processing.
-
-### Understanding the Metrics
-
-With both publisher and subscribers running, incoming and outgoing rates should be similar - what goes in comes out. The active message count should stay low, typically near zero, indicating messages are processed quickly. Stop all subscribers and watch the changes: Incoming messages continue at the same rate since the publisher keeps running, Outgoing messages stop completely because there are no consumers, and Active message count increases steadily as messages accumulate in the queue.
-
-This visual feedback helps you monitor queue health in production. High active message counts indicate either too many publishers or too few subscribers. The backlog depth tells you if you need to scale out consumers. These metrics are crucial for capacity planning and troubleshooting.
-
-## Lab Challenge: Experimentation Time
-
-Now that you understand the basics, try these challenges on your own.
-
-### Challenge 1: Multiple Publishers
-
-Scenario: Multiple systems publishing to the same queue, simulating a real-world scenario where different services send work items.
-
-Tasks: Run two publisher instances simultaneously in separate terminal windows. Observe how subscribers handle messages from different publishers - can you tell which publisher sent which message? Does message ordering change when multiple publishers are active? Are all messages still processed exactly once, or do you see any duplication or loss?
-
-### Challenge 2: Reliability Without Acknowledgement
-
-Scenario: Understanding message acknowledgement and its importance for reliability.
-
-Tasks: Stop all existing subscribers to start fresh. Run a subscriber with the command: dotnet run --project src/servicebus/subscriber -cs with your connection string and -ack False to disable acknowledgement. Let it process several messages, watching the output. Stop and restart the subscriber. What happens to the messages it already processed? Do they reappear?
-
-Question: Why does this happen? What does it teach you about acknowledgement importance?
-
-Hint: Without acknowledgement, Service Bus doesn't know messages were processed. When the subscriber restarts, Service Bus re-delivers those messages because they were never completed. The messages remain in the queue, invisible but not removed, until acknowledged or until they expire. This demonstrates why proper acknowledgement is critical for exactly-once processing.
-
-### Challenge 3: Exceeding Queue Capacity
-
-Scenario: Understanding queue limits and what happens when capacity is reached.
-
-Tasks: Check your queue's maximum size in the Portal under Properties - with Basic tier, queues have a 1 GB limit by default. What happens if you try to send messages when the queue is full? How does the publisher application behave? Does it receive an error, and if so, what kind?
-
-## Key Learnings
-
-Let's review what you've learned through these exercises.
-
-### About Service Bus Architecture
-
-Namespace serves as a container for messaging entities, providing organization and security boundaries. Queue enables point-to-point messaging channels where each message has exactly one consumer. Connection String contains endpoint and credentials, providing everything applications need to connect securely.
-
-### About Message Flow
-
-Publishers send messages to queues using the Service Bus SDK. Subscribers receive and process messages, pulling them from the queue. Batching improves throughput by reducing network round trips. Acknowledgement confirms successful processing, ensuring messages aren't lost.
-
-### About Reliability
-
-Messages persist until acknowledged, providing durability guarantees. Subscribers can restart without losing messages, enabling safe deployments. Message ordering is generally maintained within the queue, following FIFO principles for most scenarios.
-
-### About Scalability
-
-Multiple subscribers share the workload using the competing consumers pattern. Service Bus distributes messages automatically without additional configuration. Each message is processed exactly once, avoiding duplicate work. Easy to scale out by adding instances - just start more subscriber processes pointing to the same queue.
-
-### Best Practices Observed
-
-Use batch sending for better performance, reducing network overhead and costs. Always acknowledge messages after processing to ensure reliability. Handle connection strings securely, using Azure Key Vault or managed identities in production. Monitor queue metrics in production, watching for backlog growth and throughput issues. Scale subscribers based on queue depth, adding capacity when active message count grows.
-
-## Common Issues and Solutions
-
-### Issue: "Unauthorized" Errors
-
-Cause: Invalid or expired connection string, or insufficient permissions on the authorization rule.
-
-Solution: Re-fetch the connection string using the Azure CLI. Ensure you copied the entire string without truncating it. Check for extra spaces or line breaks that might have been introduced during copy-paste. Verify the authorization rule has the necessary permissions for your operation.
-
-### Issue: Messages Not Appearing
-
-Cause: Wrong queue name or namespace in the connection string or application configuration.
-
-Solution: Verify queue name matches exactly - it's case-sensitive, so "Echo" is different from "echo". Check namespace name in connection string matches your actual namespace. Confirm queue exists in Portal by navigating to your namespace and viewing the queue list.
-
-### Issue: Duplicate Message Processing
-
-Cause: Not calling CompleteMessageAsync after processing, or exceptions preventing acknowledgement.
-
-Solution: Ensure subscriber acknowledges messages after successful processing. Check for exceptions preventing acknowledgement - use try-catch blocks around CompleteMessageAsync. Use PeekLock mode which is the default, allowing you to complete or abandon messages explicitly.
+---
 
 ## Cleanup
 
-When you're finished with the exercises, proper cleanup is important.
+Proper resource cleanup prevents ongoing charges and keeps your subscription organized.
 
-### Step 1: Stop Applications
+**Delete Resource Group**: We're removing everything we created using az group delete. The -y flag confirms the deletion without prompting, and --no-wait returns immediately without waiting for the deletion to complete. The deletion happens asynchronously in the background, which is useful for large resource groups.
 
-Stop all running applications by pressing Ctrl+C in each terminal window. Verify all processes are stopped by checking that no dotnet processes are still running in the background.
-
-### Step 2: Delete Resources
-
-Delete the resource group and all contained resources using az group delete with -y to confirm without prompting and --no-wait to return immediately without waiting for deletion to complete. This removes everything we created - the namespace, queues, authorization rules, and the resource group itself.
-
-### Step 3: Verify Deletion
-
-After a few minutes, verify the resource group is gone using az group list with a query filter for our specific resource group name. This should return an empty array, confirming deletion was successful.
-
-## Next Steps
-
-Congratulations! You've completed the hands-on exercises for Service Bus queues. You now have practical experience with creating Service Bus namespaces and queues, publishing messages in batches, subscribing to queues and processing messages, and testing reliability and scalability features.
-
-To continue learning, explore Topics and Subscriptions for pub-sub messaging patterns implementing fan-out scenarios. Learn about Message Sessions for FIFO ordering guarantees and stateful message processing. Study Dead-Letter Queues for handling unprocessable messages and implementing retry logic. Review AZ-204 Scenarios focusing on exam-focused Service Bus patterns and best practices.
-
-The AZ-204 exam lab builds on these fundamentals with advanced features like duplicate detection, scheduled messages, and transaction support. You're now ready to tackle those more complex scenarios!
-
-## Additional Resources
-
-For deeper learning, explore the Service Bus documentation at Microsoft Learn, covering architecture, features, and best practices. Check out the Service Bus SDK for .NET on NuGet for detailed API documentation. Review the AMQP protocol overview to understand the underlying wire protocol. Complete the Microsoft Learn Service Bus module for structured learning paths aligned with certification goals.
-
-Thank you for working through these exercises! You now have hands-on experience with Azure Service Bus and understand the fundamentals of building reliable messaging solutions in the cloud.
+**Verify Deletion**: After a few minutes, you can verify the resource group is gone using az group list with a query filter. This should return an empty array, confirming successful cleanup.

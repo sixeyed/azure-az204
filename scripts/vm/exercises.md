@@ -1,6 +1,10 @@
-# Virtual Machines - Exercises
+# Virtual Machines
 
-## Exercise 1: Explore VMs in the Portal
+## Reference
+
+Virtual Machines in the cloud provide the same isolated compute environment you'd find in a datacenter or on your desktop. You get a full operating system with administrative permissions to install and configure whatever you need. Azure supports both Linux and Windows VMs with a large selection of preconfigured images and compute sizes. The documentation covers everything from basic provisioning to advanced configuration, and the Azure CLI provides complete control through the az vm commands that we'll use throughout these exercises.
+
+## Explore VMs in the Portal
 
 Let's start by opening the Azure Portal and searching to create a new Virtual Machine resource. This gives us a comprehensive view of all the configuration options available.
 
@@ -22,7 +26,7 @@ Next, check the Networking tab. You can configure network access at the port lev
 
 We won't actually create the VM in the portal. Instead, we'll use the Azure CLI for a more repeatable, scriptable approach that's better for automation and documentation.
 
-## Exercise 2: Create a Linux VM with the CLI
+## Create a Linux VM with the CLI
 
 First, we need to create a Resource Group where the new VM and its dependent resources will live. Resource groups are the foundation of resource organization in Azure.
 
@@ -44,7 +48,7 @@ Creating a new VM takes a few minutes as Azure provisions all the components. Wh
 
 When your VM creation completes, browse to the portal and open your resource group. Notice that the VM comes with several supporting resources that Azure created automatically - a virtual network provides the network infrastructure, a network interface connects the VM to that network, a public IP address enables external access, a network security group controls traffic like a firewall, and a managed disk stores the operating system. All of these were created with sensible defaults.
 
-## Exercise 3: Connect to the VM
+## Connect to the VM
 
 Now we have a Linux VM, we can connect using SSH. The SSH command-line tool is installed by default on MacOS, Linux, and modern Windows 10/11 machines. If you're on an older Windows version, you might need to install PuTTY.
 
@@ -74,7 +78,7 @@ Run "curl https://example.com" to make an HTTP request and verify internet conne
 
 When you're done exploring the VM environment, type "exit" to close the SSH session and return to your local terminal.
 
-## Lab Challenge
+## Lab
 
 For your lab exercise, use the Azure CLI to investigate the VM's disk configuration and understand the lifecycle of VM resources.
 

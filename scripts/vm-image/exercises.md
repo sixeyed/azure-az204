@@ -1,6 +1,10 @@
-# Building Custom VM Images - Exercise Walkthrough Script
+# Building Custom VM Images
 
-## Exercise 1: Create a Base VM
+## Reference
+
+Building custom VM images eliminates the need to configure software every time you create a new VM. Instead of adding deployment time with post-creation scripts, you can create your own VM image from a fully configured VM. The image serves as a template so any new VM created from it has your application and dependencies pre-installed and ready to go. Understanding image creation, generalization, and deployment is essential for efficient infrastructure management in Azure.
+
+## Create a Base VM
 
 Let's start by creating the foundation for our custom image - a base VM with our application deployed.
 
@@ -22,9 +26,11 @@ We're setting the size to Standard_D2s_v5 which provides 2 vCPUs and 8GB RAM, pr
 
 This will take a few minutes to complete. Azure is provisioning the VM, configuring Windows, and setting up all the supporting resources. Once it's ready, we'll connect via Remote Desktop.
 
-## Exercise 2: Deploy the Application
+---
 
-Now we're connected to the VM through Remote Desktop. We'll install IIS Web Server and deploy our application.
+## Prepare the VM for Imaging
+
+Now we're connected to the VM through Remote Desktop. First, we'll install IIS Web Server and deploy our application.
 
 In the PowerShell terminal on the VM, we're running Install-WindowsFeature to add the Web-Server role, the .NET Framework 4.5 ASP.NET support, and the Web-Asp-Net45 feature. These are the components needed to run ASP.NET applications on IIS.
 
@@ -38,7 +44,7 @@ Let's test the application locally to make sure it works. We're running curl.exe
 
 You should see HTML output that includes the name of the VM - the application is dynamically reading the computer name and displaying it in the page. Perfect - our application is running and functional.
 
-## Exercise 3: Prepare the VM for Imaging
+That's it for this application setup. When you build custom images for your own needs, you can configure whatever software and settings your application requires during this preparation phase.
 
 Before we can create an image, we need to generalize the VM. This is a critical step that removes machine-specific information so the image can be used to create new VMs with their own unique identities. Without generalization, you'd have multiple VMs with the same computer name and security identifiers, which causes serious problems.
 
@@ -58,7 +64,9 @@ Let's verify the VM is in the correct state. We're running az vm show with the -
 
 Look for the power state in the output - it should show "VM deallocated" confirming the VM is shut down. Also notice there's no public IP address anymore - deallocated VMs release their dynamic public IPs.
 
-## Exercise 4: Create the Image
+---
+
+## Create an Image from the VM
 
 Now comes the easy part - creating the image resource. Because we used a generation 2 SKU for our source VM, we need to specify that in the image creation.
 
@@ -70,7 +78,7 @@ Let's verify the image was created successfully. We're running az image list wit
 
 You should see your "app01-image" listed with details about its location, provisioning state, and source. This image is now ready to be used as a template for creating new VMs.
 
-## Exercise 5: Copy the Image to Another Resource Group
+---
 
 In practice, you'll want to keep your images separate from your application resources. They have different lifecycles - you might delete and recreate application resources frequently for testing or updates, but you want to preserve your carefully crafted images.
 
@@ -80,7 +88,7 @@ Now we'll copy the image to this new resource group. We're using az image copy w
 
 This command creates a snapshot of the source disk and copies it to the target location. The progress starts slowly as it initializes, but speeds up quickly once the actual data transfer begins. This is copying gigabytes of data, so it takes a few minutes.
 
-## Exercise 6: Deploy VMs from the Image
+---
 
 Now let's see the real benefit - deploying multiple VMs instantly with our application pre-installed. This is where all that preparation pays off.
 
@@ -88,7 +96,7 @@ We're running az vm create with the resource group "labs-vm-image", VM name "app
 
 This creates three VMs simultaneously, all from our custom image. Watch the progress - notice how much faster this is than deploying VMs with a standard image and then configuring them. These VMs boot up with IIS already installed, the .NET features configured, and our application already deployed.
 
-## Exercise 7: Configure Network Access
+---
 
 The VMs are created, but we can't access the web application yet because we need to configure the Network Security Group to allow HTTP traffic.
 
@@ -100,10 +108,12 @@ Click "Add" and wait for the rule to be created and applied to the NSG.
 
 Now browse to the public IP address of any of your VMs. You'll see the application running, displaying the unique VM name in the HTML. Each VM has its own identity even though they were all created from the same image. Try browsing to the other VMs' IP addresses - each shows its own hostname, confirming they're all properly individualized.
 
-## Conclusion
+## Lab
 
-You've successfully created a custom VM image and deployed multiple VMs from it. This technique dramatically reduces deployment time and ensures consistency across your VM fleet. Instead of spending 10-15 minutes per VM installing and configuring software, you can deploy a fully configured VM in just 2-3 minutes.
+You can't access the app yet because the Network Security Group blocks traffic by default. Your task is to add a new NSG rule to allow HTTP traffic on port 80 and confirm you can reach each of the three VMs. You'll see the same application from each, but with different VM names displayed.
 
-In a production environment, you might create images with pre-installed development tools for developer workstations, configured monitoring agents for all your servers, security baselines and hardening applied according to your organization's standards, or line-of-business applications that take a long time to install.
+These three instances of the same application work independently, but it would be better to have a single DNS address and let Azure load-balance between them. Try creating a Traffic Manager Profile resource in the Portal and configure it to distribute traffic across all three VMs.
 
-The process is always the same - configure once on a base VM, generalize it, create an image, and then deploy many instances quickly and consistently. This is a cornerstone technique for infrastructure as code and maintaining consistent environments.
+## Cleanup
+
+Delete the lab resource group, but don't delete the labs-vmss-win resource group where you copied the image - we'll use that in a future lab.
