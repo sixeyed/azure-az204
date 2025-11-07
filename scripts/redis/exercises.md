@@ -1,6 +1,6 @@
 # Azure Cache for Redis - Exercise Walkthrough
 
-## Exercise 1: Creating a Redis Cache
+## Creating a Redis Cache
 
 Let's start by creating our Redis cache instance. We'll use the Azure CLI for this.
 
@@ -30,7 +30,7 @@ Even with these limitations, a basic Redis cache is powerful for many scenarios 
 
 ---
 
-## Exercise 2: Using Redis as a Cache
+## Using Redis as a Cache
 
 Now let's see Redis in action as a cache. We have a Pi calculator application that computes Pi to a specified number of decimal places.
 
@@ -74,7 +74,7 @@ This is perfect for the Basic Redis tier, where data isn't replicated or persist
 
 ---
 
-## Exercise 3: Using Redis for Pub-Sub Messaging
+## Using Redis for Pub-Sub Messaging
 
 Redis also supports publish-subscribe messaging in the same instance used for data storage. It's not reliable like Service Bus - there's no guaranteed delivery or message persistence - but it's fast and simple.
 
@@ -117,6 +117,10 @@ Can you use the CLI to delete all cache entries at once? Look at the FLUSHDB or 
 These are important considerations for understanding Redis behavior in production scenarios.
 
 ---
+
+## Reference
+
+- [Azure documentation](https://docs.microsoft.com/azure/)
 
 ## Cleanup
 

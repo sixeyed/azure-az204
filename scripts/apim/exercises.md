@@ -4,7 +4,7 @@
 
 Welcome to the hands-on exercises for Azure API Management. In this session, we'll work through creating an APIM instance, deploying a backend API, configuring policies, publishing through the Developer Portal, and testing as an API consumer. Let's dive in!
 
-## Exercise 1: Create APIM Resource
+## Create APIM Resource
 
 First, we need to create our API Management resource. As I mentioned earlier, this takes time, so we'll do it through the CLI with the no-wait flag so we can continue working while it provisions.
 
@@ -14,7 +14,7 @@ Now, let's create the APIM instance. You'll need to provide three things: a uniq
 
 You'll receive an email when your APIM instance is ready to use. This typically takes 30 to 45 minutes, so this is a great time to grab a coffee or work on something else.
 
-## Exercise 2: Deploy Backend API
+## Deploy Backend API
 
 While we're waiting for APIM to provision, let's deploy our backend API. We'll use a random number generator API as our example. This is a simple .NET Core API that we'll deploy as an Azure Web App.
 
@@ -36,7 +36,7 @@ Once it's ready, let's import our API. In the APIM resource, we're opening the A
 
 Clicking Create, APIM imports all the operations from your OpenAPI spec. Pretty neat, right? In just a few clicks, you've got a fully defined API in APIM without manually creating each operation.
 
-## Exercise 3: Configure API Policies
+## Configure API Policies
 
 Now comes the fun part - configuring policies. This is where APIM really shines. We're going to configure three different policies on our three different endpoints.
 
@@ -58,13 +58,13 @@ For the "/reset" endpoint, if you're testing from the Azure Portal, this might f
 
 Testing the "/healthz" endpoint, clicking Send should give you a 404 response. This confirms that APIM is blocking this endpoint without calling the backend.
 
-## Exercise 4: Configure API Settings
+## Configure API Settings
 
 Before we can publish our API, we need to configure a few settings. In the API Settings tab, we're setting the Web service URL to your backend Web App URL, adding the API to a Product - you can use one of the default products like "Starter" or "Unlimited", or create your own - and saving the settings.
 
 Products are important - they're how you control access to your APIs. An API must be in at least one product to be accessible through the Developer Portal.
 
-## Exercise 5: Publish the Developer Portal
+## Publish the Developer Portal
 
 Now let's set up the Developer Portal. This is the self-service portal where your API consumers will sign up and get access to your APIs.
 
@@ -74,7 +74,7 @@ When you're happy with the design, going to Portal overview, we're enabling CORS
 
 The portal is now published and accessible to the public at your Developer Portal URL.
 
-## Exercise 6: Sign Up as a Consumer
+## Sign Up as a Consumer
 
 Now let's experience APIM from the consumer's perspective. Opening a private or incognito browser window and navigating to your Developer Portal URL, we're clicking on Sign Up and creating a new account with a username, a real email address, and a strong password.
 
@@ -119,6 +119,12 @@ Third, the endpoint policies are all applied by APIM, but is your backend Web Ap
 ## Important Note
 
 Don't clean up this resource group yet! APIM takes so long to provision that we'll reuse the same instance in the next few labs. One APIM instance can host multiple APIs, so we'll add more APIs to this instance as we progress through the course.
+
+## Reference
+
+- [Azure API Management documentation](https://docs.microsoft.com/azure/api-management/)
+- [APIM policies reference](https://docs.microsoft.com/azure/api-management/api-management-policies)
+- [Developer Portal overview](https://docs.microsoft.com/azure/api-management/api-management-howto-developer-portal)
 
 ## Conclusion
 

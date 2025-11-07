@@ -1,6 +1,6 @@
 # Application Insights - Exercises Walkthrough
 
-## Exercise 1: Creating Application Insights
+## Creating Application Insights
 
 Let's start by creating our Application Insights resource. We'll do this using the Azure CLI.
 
@@ -14,7 +14,7 @@ Now we can create the Application Insights instance linked to this workspace. We
 
 Great! Now if you browse to Application Insights in the Portal, you'll see lots of interesting features like Application Map, Live Metrics, and Failures. But they won't show anything yet because we don't have any applications sending data. Let's fix that.
 
-## Exercise 2: Deploy App with Custom Application Insights
+## Deploy App with Custom Application Insights
 
 Now we're going to deploy an application that uses the Application Insights SDK directly. This is a fulfillment processor application that explicitly tracks operations, events, and dependencies using custom code.
 
@@ -38,7 +38,7 @@ In the Performance view, you can analyze how long different operations take. For
 
 This approach gives you complete control over what telemetry is collected, but it requires writing custom code. For standard web applications, there's an easier way.
 
-## Exercise 3: Add Application Insights to a Web App
+## Add Application Insights to a Web App
 
 Now we're going to deploy a web application and enable Application Insights using auto-instrumentation. This is a .NET web application called the Random Number Generator. The code has standard logging but no Application Insights integration.
 
@@ -54,7 +54,7 @@ Browsing the application and refreshing a few times, try to get a random number 
 
 Clicking on a failure to open the End-to-end transaction details, this is incredibly powerful. You can see what happened before and after the failure, the complete timeline for this user, and drill down into error logs. All of this without writing a single line of monitoring code.
 
-## Exercise 4: Add the REST API to Application Insights
+## Add the REST API to Application Insights
 
 To fix our application, we need to deploy the backend API. Let's deploy it to the same App Service Plan using webapp up, specifying the same plan name to share infrastructure, with the same runtime and region, but a different unique name for the API.
 
@@ -83,6 +83,10 @@ Think about the tradeoffs: What are the benefits of having separate Application 
 Consider aspects like cost and resource management - more instances mean more billing entities to manage. Think about cross-component correlation and analysis - with a shared instance, you can trace requests across all your services in one place. Consider access control and separation of concerns - separate instances might be better when different teams own different components. And think about query complexity - is it easier to filter one large dataset or query multiple smaller ones?
 
 Take some time to think through these scenarios and experiment with the setup.
+
+## Reference
+
+- [Azure documentation](https://docs.microsoft.com/azure/)
 
 ## Cleanup
 

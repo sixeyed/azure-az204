@@ -1,6 +1,6 @@
 # Log Analytics - Exercise Walkthrough
 
-## Exercise 1: Setting Up the Environment
+## Setting Up the Environment
 
 ### Creating the Resource Groups
 
@@ -38,7 +38,7 @@ Give the containers a few minutes to start up and begin generating logs. You'll 
 
 ---
 
-## Exercise 2: Exploring the Query Interface
+## Exploring the Query Interface
 
 ### Navigating to Log Analytics
 
@@ -64,7 +64,7 @@ Now let's try AppMetrics pipe order by TimeGenerated desc pipe limit 10. Here we
 
 ---
 
-## Exercise 3: Querying Application Logs
+## Querying Application Logs
 
 ### Understanding Log Severity
 
@@ -94,7 +94,7 @@ This query filters to the specific event type "Fulfilment.Failed", counts occurr
 
 ---
 
-## Exercise 4: Aggregating Application Metrics
+## Aggregating Application Metrics
 
 ### Exploring the Metrics Table
 
@@ -122,7 +122,7 @@ The line chart works particularly well for our time-series queue size data. You 
 
 ---
 
-## Exercise 5: Lab Challenge - Building a Workbook
+## Lab Challenge - Building a Workbook
 
 ### Understanding Workbooks
 
@@ -173,6 +173,10 @@ When you're done with the lab, remember to clean up your resources. We're runnin
 This deletes the resource groups and all contained resources. The --no-wait flag returns immediately without waiting for completion - the deletion continues in the background.
 
 ---
+
+## Reference
+
+- [Azure documentation](https://docs.microsoft.com/azure/)
 
 ## Summary
 

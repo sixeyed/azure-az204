@@ -4,7 +4,7 @@
 
 Before we begin, make sure you have an existing API Management service from the previous API Management lab. We'll browse to it in the Azure Portal to start creating our new API.
 
-## Exercise 1: Create a New API
+## Create a New API
 
 Let's start by creating a new API in our API Management service.
 
@@ -14,7 +14,7 @@ Let's start by creating a new API in our API Management service.
 
 This creates the foundation for our API, and now we can define what operations it supports.
 
-## Exercise 2: Define API Objects
+## Define API Objects
 
 Now, let's define the data structures our API will work with. We're navigating to the Definitions tab where we can model our data schemas.
 
@@ -24,7 +24,7 @@ Now, let's define the data structures our API will work with. We're navigating t
 
 **StudentArray Definition**: Finally, we're creating an array definition called "StudentArray". Instead of using sample JSON, we're using a schema definition with type set to "array" and items referencing our Student definition. This defines an array that contains Student objects, which we'll use for list operations. The reference syntax links to the Student definition we created earlier.
 
-## Exercise 3: Add Mocked Operations
+## Add Mocked Operations
 
 Now for the core of our lab - adding mocked operations. We'll create four operations that represent a complete CRUD API - Create, Read, Update, and Delete.
 
@@ -46,13 +46,13 @@ This simulates deleting a student, using 204 No Content which is the standard re
 
 **Test the Operations**: We're testing each operation in the portal to verify you get the correct mocked responses with the appropriate data types and status codes.
 
-## Exercise 4: Publish the API
+## Publish the API
 
 Now let's make our mock API available to consumers.
 
 **Add to Product**: We're adding the new API to the "Unlimited" product. Products in APIM are how you bundle APIs and control access. Then we're creating a subscription for the product. This gives you a subscription key that clients will use to authenticate their requests.
 
-## Exercise 5: Test with curl
+## Test with curl
 
 Let's test our API from the command line using curl. curl is the standard tool for testing REST APIs - if it works with curl, it will work in any programming language.
 
@@ -62,7 +62,7 @@ Let's test our API from the command line using curl. curl is the standard tool f
 
 The responses demonstrate that APIM is generating realistic mock data based on your schema definitions.
 
-## Exercise 6: Test with Postman
+## Test with Postman
 
 While curl is great for testing, Postman provides a more user-friendly interface for working with REST APIs. You can either install Postman locally or use the web version at web.postman.co.
 
@@ -77,6 +77,12 @@ While curl is great for testing, Postman provides a more user-friendly interface
 Here's a question to consider: We've manually created this API spec in the APIM designer, which is easy to do but not easy to share with other teams or external partners. How could you distribute the API specification to API consumers so they can generate client libraries or test their integrations?
 
 Think about industry-standard formats for API specifications - APIM supports exporting APIs in OpenAPI (Swagger) format, which can be imported into tools like Postman, used to generate client libraries in various languages, and shared as documentation. Explore the export options in APIM to see how you can share your API definition.
+
+## Reference
+
+- [Mock API responses in APIM](https://docs.microsoft.com/azure/api-management/mock-api-responses)
+- [API definitions and schemas](https://docs.microsoft.com/azure/api-management/api-management-howto-add-operations)
+- [APIM products](https://docs.microsoft.com/azure/api-management/api-management-howto-add-products)
 
 ## Wrap Up
 
