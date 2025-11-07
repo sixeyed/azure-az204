@@ -1,85 +1,97 @@
-# Securing Key Vault Access - Exercise Walkthrough
+# Securing Key Vault Access
 
-## Exercise 1: Create Key Vault and Secret
+## Reference
 
-Let's start by creating a new Resource Group for this lab. We'll use the East US region and add our standard course labs tag using the group create command.
+Key Vaults are full of sensitive data, so securing access to them is paramount. You can use Azure AD to restrict access, which limits what users can do in the Portal and through the az command line interface. You also need to secure the Key Vault internally to ensure that only the components which need to read the data actually have access to the vault. In this lab we'll see how to restrict Key Vault access using virtual networks and Azure managed identities, implementing defense in depth with both network-level and identity-based security. The best practices documentation covers everything from access control to backup strategies and audit logging. Managed identities provide a secure way for Azure resources to authenticate to other Azure services without storing credentials. The command line interface gives you complete control through the az vm identity and az keyvault network-rule commands, which we'll be using throughout these exercises.
 
-Now we'll create the Key Vault. Remember, Key Vault names must be globally unique across all of Azure, so you'll need to choose your own unique name. Think of something like your initials plus a descriptive term plus some numbers.
+## Create RG, KeyVault and Secret
 
-We're using the keyvault create command with parameters for location, resource group, and the vault name. The Key Vault is created. Now let's add a secret to it. We'll create a secret called "secret01" with the value "azure-labs" using the keyvault secret set command with the name, value, and vault-name parameters.
+Let's start by creating a Key Vault in a new Resource Group.
 
-Let's verify we can read it back. We'll use the keyvault secret show command with the query parameter to extract just the value, and table output format for clean display.
+**Create the Resource Group**: We're creating a resource group named "labs-keyvault-access" in the East US region with the standard course tags. This will contain all the resources we create in this lab.
 
-Perfect - we can see our secret value. Right now, you have full access because you created the Key Vault. Let's look at the access policies in the Azure Portal.
+**Create the Key Vault**: We're creating a Key Vault using the keyvault create command. Remember that the Key Vault name must be globally unique across all of Azure, so choose something like your initials plus a descriptive term plus some numbers.
 
-Open your Key Vault and navigate to the Access policies tab. You'll see your account listed with all permissions granted. This is important - access policies control what authenticated principals can do with the vault's contents. You need two things to access a Key Vault: network connectivity and authorization via access policies or RBAC.
+**Create a Secret**: Let's add a secret to verify everything is working. We're creating a secret named "secret01" with the value "azure-labs" using the keyvault secret set command.
 
-Notice that you can't easily grant access to users outside your Azure Active Directory. Azure security is tied to your organization's identity provider. This is by design - it ensures only authorized identities from your organization can be granted access. No sharing passwords, no external accounts - everything goes through Azure AD authentication.
+**Verify Access**: We're confirming we can read it back again from our own machine using keyvault secret show with the query parameter to extract just the value. Perfect - we can see our secret value because we created the account and have all permissions automatically.
 
-## Exercise 2: Restrict Access to Virtual Network
+**Check Access Policies**: Open the Key Vault in the Portal and navigate to the Access policies tab. You'll see your account listed with all permissions granted. This is important - access policies control what authenticated principals can do with the vault's contents. You need two things to access a Key Vault: network connectivity and authorization via access policies or RBAC.
 
-Now we'll see how network-level restrictions work. We'll create a virtual network and configure the Key Vault so it can only be accessed from that network.
+**Understanding Principals**: Can you give someone outside your organization access to your Key Vault, for example by adding their external email address? Try adding a new access policy and entering an external email - you'll see no results found. The list of principals you can use is limited to your own Azure Active Directory account, and external identities are in different AD accounts. If you wanted to give external access, you'd need to add them as an external ID in your Azure Active Directory first.
 
-First, let's create a virtual network with the address space 10.10.0.0 slash 16. We're using the network vnet create command with parameters for the resource group, name, and address prefix.
+Azure talks about principals when you're applying security. That's a general term which could refer to a user with a Microsoft Account, a group of users, a system identity used by an Azure resource, or a managed identity for a resource which is managed by Azure. You need to consider all these options because you don't want any unauthorized access to your secrets.
 
-Now we'll add a subnet with the address prefix 10.10.1.0 slash 24 using the network vnet subnet create command.
+Before a principal can authenticate, they need network access to the Key Vault, which you can also restrict using network rules.
 
-Now let's try to add a network rule to allow Key Vault access from this subnet. If we try the keyvault network-rule add command right now, pointing to our virtual network and subnet, this will fail with an error about service endpoints.
+---
 
-Before Azure services like Key Vault can communicate with resources in a subnet, the subnet needs a service endpoint configured. Service endpoints are special routing rules that keep traffic on the Azure backbone network rather than going through the public internet. This improves security and performance.
+## Restrict Access to VNet
 
-Let's add the Key Vault service endpoint to our subnet using the network vnet subnet update command with the service-endpoints parameter set to Microsoft dot KeyVault.
+We'll create a Virtual Network and run a VM in the network. We'll set up Key Vault so it can only be used by the VM, demonstrating network-level security.
 
-Service endpoints are configured once per service type, per subnet. Now let's add the network rule again using the keyvault network-rule add command.
+**Create the Virtual Network**: We're starting with a VNet using the address prefix 10.10.0.0/16. This creates the virtual network container for our resources using the network vnet create command.
 
-This succeeds. Let's verify the service endpoint in the Portal. Open your virtual network, go to the Subnets tab, and select subnet1. You'll see Microsoft dot KeyVault listed in the Service Endpoints section.
+**Create the Subnet**: We're adding a subnet with the address prefix 10.10.1.0/24 where we'll deploy our VM. The subnet is a subdivision of the VNet's address space using the network vnet subnet create command.
 
-Now here's an important point. Let's try to access our secret from our local machine again using the keyvault secret show command.
+**Try to Add Network Rule**: Let's attempt to use the keyvault network-rule add command to give access to the Key Vault from any services running in the subnet. If you try this now, you'll see an error about service endpoints.
 
-It still works! Why is that? Open the Key Vault in the Portal and go to the Networking section. You'll see the default setting is "Allow public access from all networks". Adding a network rule doesn't automatically deny other access - it just adds an exception to the list. You need to explicitly change the default action to deny public access.
+**Understanding Service Endpoints**: Other services aren't allowed to route traffic to subnets unless you explicitly allow them with a service endpoint. Service endpoints are special routing rules that keep traffic on the Azure backbone network rather than going through the public internet, improving both security and performance. This sets the subnet so Key Vault resources are allowed into the subnet.
 
-Let's change that. We'll update the Key Vault's default action to Deny using the keyvault update command with the default-action parameter.
+**Add Service Endpoint**: We're updating the subnet with the service-endpoints parameter set to Microsoft.KeyVault. Any Azure resources which need access to a subnet have to have a service endpoint set up, but this only needs to be done once for each service type that's going to use the subnet.
 
-Now try to read the secret again with the same show command.
+**Add Network Rule**: Now we can add the network rule using keyvault network-rule add with the VNet name, subnet name, and Key Vault name. This succeeds because the service endpoint is now configured.
 
-This time it fails with a forbidden error. Your Key Vault is now locked down - only resources in the subnet can reach it over the network. You're being blocked at the network layer, before authentication even happens.
+**Verify Service Endpoint**: Open your VNet in the Portal, select the subnet in the Subnets tab, and you'll see Key Vault listed in the Service Endpoints. This confirms the configuration.
 
-## Exercise 3: Create VM with Managed Identity
+**Test Access**: Try and print the secret value from your local machine again using keyvault secret show. Your machine is not in the VNet, but you'll notice you can still print the secret. Why is that?
 
-Now we'll prove that resources in the subnet can still access the Key Vault. We'll create a virtual machine in the subnet and configure it to read secrets.
+**Check Default Action**: Open the Key Vault in the Portal and browse to Networking. You'll see the default value "Allow public access from all networks" is selected. Adding a network rule doesn't change this default - it just adds an exception to the allow list. You need to explicitly deny public access.
 
-We'll create an Ubuntu server and use a custom data script to install the necessary tools. This setup script installs Python and the Azure SDK libraries we need. The custom-data parameter accepts a file path with an @ symbol prefix.
+**Update Default Action**: We're updating the Key Vault so access is denied unless there's a network rule to allow it using keyvault update with the default-action parameter set to Deny.
 
-We're using the vm create command with parameters for resource group, name, image, virtual network, subnet, and custom-data. This will take a few minutes. When it completes, you'll see the VM's public IP address in the output. Let's connect to the VM via SSH using that IP address.
+**Test Denied Access**: Now try to print the secret again. This will fail with a forbidden error. Your Key Vault is locked down now, so only resources in the subnet can use it. You're being blocked at the network layer, before authentication even happens.
 
-Once connected, let's download a Python script that will attempt to read our secret. We're using curl to download it from the course GitHub repository.
+---
 
-Now let's try to run it using python3.
+## Create a VM with access to the KeyVault
 
-This fails with an authentication error. This is important - the VM is inside the subnet, so it can reach the Key Vault over the network. The network-level check passes. But it still needs to authenticate as an authorized principal to actually read secrets. Network access and authorization are two separate layers of security.
+Now we'll create a VM in the subnet to prove we can still access the secrets. This is a simple Ubuntu Server VM demonstrating that network access and identity-based access are two separate security layers.
 
-Let's fix this by adding a managed identity. Open a new terminal window on your local machine and run the vm identity assign command with the VM name and resource group.
+**Understanding the Scripts**: We're using two scripts for this exercise. The setup.sh script installs Python and the libraries we need to use Key Vault, and the read-secret.py script is the Python program we'll run on the machine to test access to the Key Vault.
 
-This command creates a system-assigned managed identity for the VM. The output includes a systemAssignedIdentity field with the identity's object ID. Copy this value - we'll need it to set up permissions.
+**Create the VM**: We're creating the VM with the setup script using vm create with parameters for resource group, name, image set to UbuntuLTS, the VNet name, subnet name, and custom-data pointing to the setup script. This takes a few minutes to complete.
 
-Now let's grant this identity permission to read secrets from our Key Vault. We're using the keyvault set-policy command with parameters for secret-permissions set to "get", the object-id of our managed identity, and the vault name.
+**Connect to the VM**: When the VM is ready, we're connecting via SSH using the VM's public IP address that was shown in the creation output.
 
-Now go back to your VM SSH session and run the Python script again.
+**Download the Python Script**: Inside the VM, we're downloading the Python script using curl from the course GitHub repository.
 
-Success! This time it prints the secret value. Let's review what happened.
+**Try to Read Secret**: Let's run it with python3. This will fail with an authentication error. This is the crucial point - the VM is inside the subnet which has access to the Key Vault at the network level, but to consume a secret you still need to use an authenticated Azure principal. Network access and authorization are two separate layers.
 
-The VM now has a managed identity that Azure manages automatically. When the Python script runs, it uses Azure's instance metadata service to get a token for the managed identity. That token is then used to authenticate with Key Vault. There's no password or credential stored anywhere - Azure handles the entire authentication flow securely behind the scenes.
+**Add Managed Identity**: In a new terminal on your local machine, we're adding a system-generated managed identity to the VM using vm identity assign. The output from this command contains the managed identity ID in the systemAssignedIdentity field. This ID is what we need to grant permissions.
 
-If you check the Access policies in the Portal, you'll see the managed identity listed with get permissions on secrets. This is how you securely connect applications to Key Vault without embedding credentials in your code.
+**Grant Key Vault Access**: We're giving the identity access to read secrets using keyvault set-policy with secret-permissions set to "get", the object-id set to the systemAssignedIdentity from the previous command, and the vault name.
 
-## Lab Challenge: Soft Delete and Recovery
+**Verify Access Works**: Now repeat the Python script in your VM shell session with python3. You'll see the secret value successfully displayed. The VM authenticates with Managed Identity, so there's no credential to supply for accessing Key Vault - Azure handles the entire authentication flow securely behind the scenes.
 
-Now it's your turn to explore. Key Vault has a soft-delete feature enabled by default. Try deleting the secret01 secret, then attempt to recreate it with a new value. What happens? What do you need to do to make it work? And finally, can you verify from the VM that your Python script reads the new value?
+**Understanding Managed Identities**: Managed identities are only used within Azure services to authenticate with other Azure services. When the Python script runs, it uses Azure's instance metadata service to get a token for the managed identity. That token is then used to authenticate with Key Vault. There's no password or credential stored anywhere. Check the access policies for your Key Vault in the Portal and you'll see the managed identity listed with get permissions on secrets.
 
-Take some time to work through this challenge. The hints and solution files are available if you need help. This challenge explores an important Key Vault feature that prevents accidental data loss.
+---
+
+## Lab
+
+Key Vault has a soft-delete policy by default - if you delete a secret by accident, then you can restore it.
+
+**The Scenario**: Try that with the secret01 secret. Delete it and then try to recreate it with a new value. What happens? What do you need to do to make that work?
+
+**Your Task**: Can you figure out how to successfully recreate the secret so that in the VM your Python script prints the new value of the secret?
+
+**Hints**: When you delete a secret with soft-delete enabled, it's not immediately gone - it enters a deleted state. You can't create a new secret with the same name until you either recover or purge the deleted secret. Explore the keyvault secret commands to find options for listing deleted secrets, recovering them, or purging them permanently. Remember that soft-delete is about preventing accidental data loss, so Azure makes you acknowledge the deletion before you can reuse the name.
+
+---
 
 ## Cleanup
 
-When you're done, clean up all the resources by deleting the resource group using the group delete command with the yes and no-wait flags.
+**Delete Azure Resources**: We're removing the resource group and all its contents using az group delete. The yes flag confirms the deletion without prompting, and the no-wait flag returns immediately without waiting for the deletion to complete. The deletion happens in the background, which is useful when cleaning up resource groups.
 
-This removes the resource group, the Key Vault, the virtual network, and the VM - everything we created in this lab. The no-wait flag means the command returns immediately while the deletion happens in the background.
+This removes the resource group, the Key Vault with its soft-deleted secrets, the virtual network with its service endpoint configuration, and the VM with its managed identity - everything we created in this lab.

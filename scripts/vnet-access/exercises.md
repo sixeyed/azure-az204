@@ -1,137 +1,77 @@
-# Securing VNet Access - Exercises Walkthrough
+# Securing VNet Access
 
-## Exercise 1: Creating a VM and Network Security Group
+## Reference
 
-Let's start by setting up our foundational infrastructure. We'll create a resource group, a virtual network, and a subnet to work with.
+Virtual Networks provide great capabilities for restricting traffic to services in Azure, and they give you a lot of options for securing access to resources. The Network Security Group is the main mechanism, where you can define rules allowing or denying traffic from specific sources and to specific ports. You can also join vnets together if you need different parts of an application to access each other, and use Bastion to access VMs which are in networks that don't allow public access. The documentation covers NSG rule configuration, VNet peering topologies, and Bastion deployment patterns. The az network nsg commands give you complete control over security rules and their application to subnets and network interfaces.
 
-First, we're creating a resource group in the East US region using az group create with the name "labs-vnet-access", adding our "courselabs=azure" tag for tracking, and specifying the location.
+## Create a VM and an NSG
 
-Now let's create our first virtual network with an address space. We're using az network vnet create with the resource group "labs-vnet-access", network name "vnet1", and address prefix "10.10.0.0/16". This gives us a large private IP address space with 65,536 possible addresses to work with.
+**Create the Foundation**: We're starting by creating a resource group, virtual network, and subnet for this lab. We're running az group create with the name "labs-vnet-access", adding our "courselabs=azure" tag for tracking, and placing it in East US. Then we're creating a virtual network with az network vnet create using the resource group "labs-vnet-access", VNet name "vnet1", and address prefix "10.10.0.0/16". This gives us a large private IP address space with 65,536 possible addresses. Then we're adding a subnet with az network vnet subnet create using the VNet name "vnet1", subnet name "subnet1", and address prefix "10.10.1.0/24" which can accommodate 256 addresses.
 
-And we'll add a subnet to this VNet. We're running az network vnet subnet create with the resource group, VNet name "vnet1", subnet name "subnet1", and address prefix "10.10.1.0/24". This subnet can accommodate 256 addresses, which is a good size for a typical subnet.
+**Create the Network Security Group**: Now we're creating a Network Security Group that will act as our firewall. We're running az network nsg create with the resource group "labs-vnet-access" and name "nsg01". If you explore the help for network commands, you'll see nsg is the group to use for Network Security Groups.
 
-### Creating the Network Security Group
+**Check the Location**: Open the NSG in the Portal and check its location along with the default rules. There are default rules applied to all new NSGs - they allow incoming from VNet and Azure Load Balancer, deny all other incoming, allow outgoing to VNet and internet, and default deny all outgoing. Also verify the location - if you didn't set the location explicitly in the command, your VNet and NSG may be in different regions.
 
-Now comes the important part - creating a Network Security Group that will act as our firewall. If you're not sure how to do this, you can explore the available commands using the help flag.
+**Fix Location Mismatch**: If your NSG is in a different region from your VNet then they can't be associated, which is an Azure requirement for network resources. You'll need to delete the NSG and create a new one in the same region as the VNet. We're running az network nsg delete to remove it, then az network nsg create again with the location parameter explicitly set to match your VNet's region.
 
-We're running az network nsg create with the resource group "labs-vnet-access" and name "nsg01".
+**Add a Custom Rule**: Let's add a new rule to allow incoming traffic from the internet on port 80. We're using az network nsg rule create with the resource group "labs-vnet-access", NSG name "nsg01", rule name "AllowHttp", direction set to Inbound, access set to Allow, priority set to 100 which is lower than the default deny rules so it takes precedence, source address prefixes set to "Internet" to allow from anywhere, and destination port ranges set to "80" for HTTP.
 
-Notice that we didn't specify a location explicitly. This is actually important - if your NSG ends up in a different region than your VNet, you won't be able to associate them. Azure has strict rules about network resource co-location. Let's check what happened and fix it if needed.
+**Attach NSG to Subnet**: Now we need to attach this NSG to our subnet. The NSG is actually a property of the subnet itself, not a separate attachment. We're running az network vnet subnet update with the resource group "labs-vnet-access", VNet name "vnet1", subnet name "subnet1", and network-security-group set to "nsg01". You can check the help for subnet update commands to see all the properties you can configure.
 
-If the NSG was created in the wrong region, we would need to delete it and recreate it with an explicit location parameter. We're running az network nsg delete to remove it, then az network nsg create again with the location explicitly set to East US to match our VNet's region.
+**Verify in Portal**: Open the VNet in the Portal and check the subnet configuration - you can confirm that the NSG is attached here. Any services deployed into the VNet are subject to these NSG rules now. That means port 22 for SSH and 3389 for RDP are blocked, so if we had VMs running in this VNet we couldn't access them directly anymore. We'll need to use another service to manage them.
 
-Always make sure to specify the location parameter to match your VNet's region when creating network resources - it prevents compatibility issues later.
+---
 
-### Understanding Default NSG Rules
+## Connect with Bastion
 
-Let's take a look at the NSG in the Portal to see what rules are automatically applied. Navigate to the NSG resource and look at the Inbound security rules section.
+**Create a Linux VM**: Let's create a basic Linux VM, and this time we'll use password authentication instead of the default SSH key. We're running az vm create with the resource group "labs-vnet-access", VM name "ubuntu01", image set to "UbuntuLTS", VNet name "vnet1", subnet "subnet1", admin username "labs", admin password that you'll specify, and location matching your VNet. Make sure to use the same location as the VNet to avoid compatibility issues.
 
-You'll notice there are already default rules applied even though we haven't added any custom ones. The defaults provide a secure baseline: Allow incoming traffic from within the VNet so resources can communicate with each other, allow incoming from Azure Load Balancer so health probes work, deny all other incoming traffic by default which is a security-first approach, allow outgoing to VNet and internet for typical connectivity needs, and a default deny for all other outgoing traffic.
+**Verify NSG Application**: Check the VM in the Portal and open the Networking tab - you'll see the NSG listed even though we didn't explicitly set it when we created the VM. That's because it's attached at the subnet level, so the VM automatically inherits those rules.
 
-These defaults provide a secure baseline, but we need to add a custom rule to allow HTTP traffic from the internet.
+**Test Direct Access**: Try to connect to the machine using SSH with the public IP address. This will time out because SSH uses port 22 which is blocked by the NSG rules. The connection attempt hangs and eventually fails, demonstrating that our NSG is working as intended.
 
-### Adding Custom Rules
+**Deploy Azure Bastion**: Azure has Bastion for accessing VMs which are in locked-down networks. We're opening the VM in the Portal, clicking Connect, and choosing Bastion from the dropdown. Then we're selecting "Create Azure Bastion using defaults". This will take a few minutes to deploy. The Bastion service is created at the VNet level, and the same Bastion instance can be used for all the VMs in the VNet, making it a shared resource.
 
-Let's add a rule to allow HTTP traffic from the internet on port 80. We're using az network nsg rule create with the resource group "labs-vnet-access", NSG name "nsg01", rule name "AllowHttp", direction set to Inbound, access set to Allow, priority set to 100 which is lower than the default deny rules so it takes precedence, source address prefixes set to "Internet" to allow from anywhere, and destination port ranges set to "80" for HTTP.
+**Connect via Bastion**: When the Bastion setup completes, we're entering "labs" as the username and the password you used to create the VM, then clicking Connect. A browser window opens with a terminal connection to the VM, but port 22 is still blocked for direct access. Bastion uses its own secure connection method that doesn't require exposing management ports publicly.
 
-Now we need to attach this NSG to our subnet. Remember, the NSG is actually a property of the subnet itself - it's not a separate attachment but part of the subnet configuration.
+**Install Web Server**: In your VM session, let's install the Nginx web server. We're running sudo apt update to refresh package lists, followed by sudo apt install nginx with the -y flag to automatically confirm the installation. This downloads and configures the web server.
 
-We're running az network vnet subnet update with the resource group "labs-vnet-access", VNet name "vnet1", subnet name "subnet1", and network-security-group set to "nsg01".
+**Test HTTP Access**: Browse to your VM's public IP address in a web browser to verify traffic is allowed through the NSG on port 80. You should see the Nginx welcome page, confirming that our HTTP rule is working correctly while management ports remain protected.
 
-If you check the VNet in the Portal now, you'll see the NSG is attached to the subnet in the configuration. This means any resources we deploy into this subnet will automatically be subject to these NSG rules.
+---
 
-Here's something important to understand - we've allowed port 80 for HTTP, but ports 22 for SSH and 3389 for RDP are now blocked by the default deny rule. So how do we access our VMs for management? That's where Bastion comes in.
+## Create second VNet and peer
 
-## Exercise 2: Connecting with Azure Bastion
+**Why Peering Matters**: VNets are a good way of isolating parts of an application, but sometimes you want components in one VNet to be able to reach components in a different VNet. Maybe you have VNets in different regions hosting different services. You can connect those two VNets together in Azure using peering.
 
-Let's create a Linux VM in our secured network. This time we'll use password authentication instead of SSH keys for simplicity.
+**Create Second VNet**: Let's create a new VNet with the IP address range "10.20.0.0/16" in a different region from the first VNet. We're running az network vnet create with the resource group "labs-vnet-access", VNet name "vnet2", address prefix "10.20.0.0/16", and location in a different region like West US. Then we're adding a new subnet using az network vnet subnet create with the VNet name "vnet2", subnet name "subnet2", and address prefix "10.20.1.0/24".
 
-We're running az vm create with the resource group "labs-vnet-access", VM name "ubuntu01", image set to "UbuntuLTS", VNet name "vnet1", subnet "subnet1", admin username, admin password, and location East US.
+**Address Space Planning**: Notice we're using 10.20.0.0/16 instead of 10.10.0.0/16 - this is crucial because you need to plan your networking in advance. If you want to peer two VNets they need to have non-overlapping IP address ranges. Overlapping ranges make routing impossible and prevent peering from working.
 
-Once the VM is created, you can check the Networking tab in the Portal - you'll see the NSG is automatically applied even though we didn't explicitly set it during VM creation. That's because it's attached at the subnet level, so any VM in that subnet inherits the rules.
+**Create Second VM**: Now we're creating a new VM attached to the new VNet which has no NSG. Azure will create a new NSG for the VM with an additional default rule to allow incoming SSH traffic. We're running az vm create with the resource group "labs-vnet-access", VM name "remote01", image "UbuntuLTS", VNet name "vnet2", subnet "subnet2", and location matching vnet2's region.
 
-### Testing Connectivity
+**Check IP Addresses**: Let's print the private IP addresses of both VMs. We're running az vm list with the resource group "labs-vnet-access", the show-details flag to include runtime information, a query to extract just the VM name, internal private IP, and public IP, and table output for readability. You'll see something like 10.10.1.4 for ubuntu01 in the first VNet and 10.20.1.4 for remote01 in the second VNet.
 
-If you try to SSH to the VM using its public IP address, you'll find it times out. Let's try it - the SSH command hangs and eventually fails because the connection can't get through.
+**Test Connectivity Before Peering**: Connect to the new VM using SSH with its public IP address - this will work because the VM's NSG allows port 22 by default. Once connected, try to reach the web server on the first VM using its private IP address with curl. Type curl followed by the private IP of ubuntu01. This will time out because the VNets are isolated networks by default - they can't communicate even though they're in the same resource group and subscription.
 
-This is expected because port 22 is blocked by our NSG rules - only port 80 is allowed.
+**Create the Peering**: Now let's peer the VNets. You need to peer both networks in both directions - this is a security feature ensuring you can't peer onto someone else's VNet that you don't have access to. We're running az network vnet peering create to create the first peering from vnet2 to vnet1. The resource group is "labs-vnet-access", peering name "vnet2to1" describes the direction, VNet name is "vnet2" where we're creating the peering, remote VNet is "vnet1" that we're peering to, and allow-vnet-access enables connectivity. Then we're creating the reverse peering from vnet1 to vnet2 using az network vnet peering create with the name "vnet1to2", VNet name "vnet1", and remote VNet "vnet2".
 
-### Setting up Azure Bastion
+**Verify Peering Status**: Open the new VNet in the Portal and navigate to the Peerings section - you should see that the VNets are peered with the status "Connected". Now VMs in subnet2 with addresses starting 10.20 can reach VMs in subnet1 with addresses starting 10.10.
 
-To access our locked-down VM, we'll use Azure Bastion, which provides secure RDP and SSH connectivity through the Azure Portal without exposing management ports to the internet.
+**Test Peered Connectivity**: In the SSH session for your second VM, try accessing the first VM again using curl with the private IP address. Now this works! You should see the Nginx HTML response. The VMs can now communicate using their private IP addresses through the peering connection. Check your IP addresses with the ip a command to show all network adapters - you'll only see a 10.20 address. Peering doesn't add a new NIC to the VM, it takes care of routing at the Azure network fabric level transparently.
 
-In the Portal, opening the VM resource and clicking Connect shows a dropdown menu. Choose Bastion from the options, and select "Create Azure Bastion using defaults".
+---
 
-This deployment takes a few minutes as Azure provisions the Bastion infrastructure. Bastion is created at the VNet level, so one Bastion instance can serve all VMs in the VNet - it's a shared service that provides secure access to multiple VMs.
+## Lab
 
-Once it's ready, enter your username and password in the Bastion connection form, then click Connect. A new browser window opens with a terminal session to your VM - but notice that port 22 is still blocked for direct access. Bastion uses its own secure connection method that doesn't require opening SSH or RDP ports publicly.
+**The Challenge**: Now the web server in subnet1 is accessible from any machine on the Internet, and from VMs in subnet2. But those VMs in subnet2 can access any port on the VM in subnet1, including SSH port 22 which we don't want. This is a security risk because peered networks have full connectivity by default.
 
-### Testing the Web Server
+**Your Task**: Update the NSG rules so that traffic is only allowed to the web server from subnet2 machines on port 80. Internet traffic should still work on port 80, but subnet2 should be restricted to only HTTP access and denied SSH or other ports. This requires careful planning of rule priorities and source address prefixes to achieve proper security isolation.
 
-In your Bastion session, let's install Nginx to test that our HTTP rule works. We're running sudo apt update to refresh package lists, followed by sudo apt install nginx with the -y flag to automatically confirm.
+**Think About**: How would you structure multiple NSG rules with different priorities and source address prefixes? You'll need rules that specifically target the subnet2 address range while maintaining internet access. Consider that lower priority numbers are evaluated first, so you can layer your security rules appropriately.
 
-The package manager is updating and installing Nginx. This will take a moment as it downloads and configures the web server.
+---
 
-Now browse to your VM's public IP address in a browser on your local machine. You should see the Nginx welcome page, confirming that traffic is allowed on port 80 through the NSG.
+## Cleanup
 
-## Exercise 3: VNet Peering
-
-Now let's explore a more complex scenario - connecting two virtual networks together so resources in different VNets can communicate.
-
-### Creating the Second VNet
-
-We'll create a second VNet in a different region with a different IP address range. This is important - peered VNets must have non-overlapping address spaces, otherwise routing wouldn't work.
-
-We're running az network vnet create with the resource group "labs-vnet-access", VNet name "vnet2", address prefix "10.20.0.0/16" which doesn't overlap with our 10.10.x.x range, and location West US which is a different region.
-
-Then we're adding a subnet using az network vnet subnet create with the VNet name "vnet2", subnet name "subnet2", and address prefix "10.20.1.0/24".
-
-Notice we're using 10.20.x.x instead of 10.10.x.x - completely separate address space with no overlap.
-
-Let's create a VM in this new network. Since we haven't attached an NSG to this subnet, Azure will create a default NSG for the VM that allows SSH by default.
-
-We're running az vm create with the resource group, VM name "remote01", image "UbuntuLTS", VNet name "vnet2", subnet "subnet2", and location West US.
-
-### Checking Connectivity Before Peering
-
-Let's list our VMs and their IP addresses to see what we have. We're running az vm list with the resource group "labs-vnet-access", --show-details flag, and a query to extract just the VM name, internal private IP, and public IP, showing it in table format.
-
-You'll see both private IPs - something like 10.10.1.4 for ubuntu01 in the first VNet and 10.20.1.4 for remote01 in the second VNet.
-
-Now SSH to the second VM using its public IP - this will work because its NSG allows port 22.
-
-Once connected, try to reach the first VM using its private IP address with curl. Type curl followed by the private IP of ubuntu01, something like 10.10.1.4.
-
-This will time out and fail. Even though both VMs are in the same resource group and subscription, they're in different VNets which are isolated networks by default. They can't communicate yet.
-
-### Creating the Peering
-
-To connect these networks, we need to create peering in both directions. This is a security feature - you can't peer onto someone else's VNet without their permission, so peering requires configuration on both sides.
-
-We're running az network vnet peering create to create the first peering from vnet2 to vnet1. The resource group is "labs-vnet-access", peering name "vnet2to1" describes the direction, VNet name is "vnet2" where we're creating the peering, remote VNet is "vnet1" that we're peering to, and allow-vnet-access enables connectivity.
-
-Then we're creating the reverse peering from vnet1 to vnet2 using az network vnet peering create with the name "vnet1to2", VNet name "vnet1", and remote VNet "vnet2".
-
-In the Portal, checking the Peerings section of either VNet shows you should see the status is "Connected" on both sides.
-
-### Testing Peered Connectivity
-
-Back in your SSH session to remote01, try the curl command again to the first VM's private IP.
-
-Now it works! You should see the Nginx HTML response. The VMs can now communicate using their private IP addresses through the peering connection.
-
-Check the network interfaces on remote01 using the ip a command to show all network adapters.
-
-You'll only see the 10.20.x.x address assigned to the VM - no new interface was added for the peering. The peering handles routing at the Azure network fabric level transparently. Your VM doesn't need to know anything about the peering - it just routes traffic to the 10.10.0.0/16 network and Azure's network fabric delivers it through the peering.
-
-## Lab Challenge
-
-Here's the challenge to deepen your understanding of NSG rules and security: right now, the web server in subnet1 is accessible from the entire internet on port 80 AND from VMs in subnet2. But those VMs in subnet2 can access ANY port on ubuntu01, including SSH port 22 and any other services.
-
-Your task is to update the NSG rules so that Internet traffic can still reach port 80, subnet2 VMs can only reach port 80 and not SSH or other ports, and the network remains secure overall.
-
-Think about how you would structure multiple NSG rules with different priorities and source address prefixes to achieve this. You'll need to add a rule that specifically allows port 80 from the subnet2 address range, and a higher-priority rule that denies other ports from that subnet.
-
-Remember that lower priority numbers are evaluated first, so you can create a deny rule with priority 90 to block SSH from subnet2, and your existing allow rule at priority 100 still allows HTTP from anywhere.
-
-Take some time to work through this challenge and test the connectivity from both the internet and from subnet2, and refer to the hints or solution files if you get stuck.
+**Delete Azure Resources**: When you're finished with the lab, delete the resource group to remove all resources and avoid ongoing charges. We're running az group delete with the -y flag to skip confirmation, the no-wait flag to return immediately without waiting for completion, and the resource group name "labs-vnet-access". This removes everything - VMs, VNets, NSGs, Bastion, all related resources.

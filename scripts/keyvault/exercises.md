@@ -1,149 +1,85 @@
-# Azure Key Vault - Exercises Narration Script
+# Azure Key Vault
 
-## Exercise: Explore Key Vault in the Portal
+## Reference
 
-Let's start by exploring Key Vault in the Azure Portal to understand its capabilities and configuration options.
+Key Vault is a specialized storage service designed specifically for small pieces of sensitive data. You use it for user credentials, API keys, certificates, and any other application configuration that shouldn't be visible in plain text. The service provides encryption at rest, fine-grained permission controls for who can read values, and the ability to block access to the entire Key Vault so it's only available when you need to read the data. The documentation covers everything from basic secret management to advanced features like hardware security modules and automated certificate renewal. The command line interface gives you complete control through the az keyvault commands, which we'll be using throughout these exercises.
 
-Open the Azure Portal and use the search bar at the top to find "Key vaults". Click on "Create" to start the creation wizard.
+## Explore Key Vault in the Portal
 
-### Review the Configuration Options
+Let's start by getting familiar with Key Vault options in the Portal.
 
-Take a moment to review the configuration options available on the Basics tab. You need to specify a resource group, region, and a globally unique name for your Key Vault. The name becomes part of the DNS, forming a URL like https colon slash slash your-name dot vault dot azure dot net. This is the endpoint your applications will use to connect.
+**Navigate to the Portal**: We're opening the Azure Portal and searching for "Key Vault" to create a new resource. Before creating anything, let's explore the available options to understand what Key Vault offers.
 
-Notice the Pricing tier options. There are Standard and Premium tiers. Premium tier offers HSM-backed keys for hardware-level encryption, which provides an additional layer of security with hardware security modules. For most applications, Standard tier is sufficient and cost-effective. Premium is typically used when you have compliance requirements that mandate HSM-backed keys.
+**Pricing Tiers**: You'll see two pricing tiers available. The Standard tier is sufficient for most applications and includes all the core functionality for storing and managing secrets, keys, and certificates. The Premium tier offers hardware security module backed keys, which provides hardware-level encryption for scenarios with stringent compliance requirements or when you need the highest level of cryptographic security.
 
-Look at the Recovery options. Soft-delete is enabled by default with a 90-day retention period. This is a safeguard against accidental deletion - if you delete a secret, key, or certificate, it's not immediately gone. It enters a deleted state for 90 days, during which you can recover it. This has saved many people from disaster.
+**Recovery Options**: Soft-delete is enabled by default with a retention period that acts as a safeguard against accidental deletion. When you delete a secret, key, or certificate, it's not immediately gone - it enters a deleted state during the retention period, and you can recover it. Purge protection adds an extra layer by preventing permanent deletion during the retention period, protecting against both accidental and malicious purging.
 
-Purge protection adds an extra layer by preventing permanent deletion during the retention period. Even if you want to permanently delete something, you can't until the retention period expires. This protects against malicious or accidental purging.
+**Access Configuration**: You can choose between Access Policies, which is the classic approach with fine-grained permissions for individual operations, and Azure RBAC, which is the newer role-based access control model that provides better integration with Azure's overall security model. For new vaults, Azure RBAC is generally recommended.
 
-For Access configuration, you can choose between Access Policies, which is the classic approach, and Azure RBAC, which is the newer role-based access control model. For new vaults, Azure RBAC is recommended as it provides better integration with Azure's overall security model. We'll explore both approaches in the exercises.
+After exploring the Portal, we'll switch to the command line to create our Key Vault with the Azure CLI - this approach is much more suitable for automation and repeatability.
 
-Don't complete the creation in the Portal yet - we'll use the Azure CLI instead for more precise control and better automation capabilities.
+---
 
-## Exercise: Create a Key Vault with the CLI
+## Create a Key Vault with the CLI
 
-Let's use the Azure CLI to create our Key Vault. This gives us better automation capabilities and is how you'd typically create resources in a production environment.
+**Create a Resource Group**: Every Azure resource needs a home, so we're starting by creating a resource group for this lab. We're calling it "labs-keyvault" and placing it in the East US region. The tags parameter helps you track resources created for this course - this is a best practice for organizing and managing resources, especially when you have multiple projects or labs running.
 
-### Step 1: Create a Resource Group
+**Find the Create Command**: Let's explore what options are available for creating a Key Vault by running az keyvault create with the help flag. The CLI offers many configuration options including network rules, retention policies, and encryption settings. Some of these can be configured later in the management pages, but it's good to know they exist upfront.
 
-First, create a new resource group for this lab using the group create command with parameters for the name, location, and tags. We're creating a resource group named "labs-keyvault" in the East US region. The tag helps us track lab resources and makes cleanup easier later.
+**Create Your Key Vault**: We're creating a Key Vault for this lab using the keyvault create command. You need to specify the resource group, location, and most importantly, a globally unique name. Remember to choose a unique name - something like "kv" followed by your initials and a random number works well.
 
-### Step 2: Create the Key Vault
+**Naming Rules**: The Key Vault name becomes part of your DNS endpoint with the vault.azure.net suffix, which is why it must be globally unique across all of Azure. If you see an error, check that your name contains only lowercase letters, numbers, and hyphens, is between 3 and 24 characters, starts with a letter, and doesn't end with a hyphen.
 
-Now create a Key Vault using the keyvault create command. Remember that the name must be globally unique across all of Azure. A good pattern is to use your initials and a random number, like "jd-kv-2024-001". We're specifying the location, resource group, and vault name.
+**What's Happening During Creation**: Azure is provisioning the Key Vault service in your specified region, setting up the vault's DNS name, configuring default access policies where you as the creator get full access automatically, enabling soft-delete by default, and setting up the underlying encrypted storage. This takes about a minute or two to complete.
 
-What's happening during creation? Azure is provisioning the Key Vault service in the specified region, setting up the vault's DNS name, configuring default access policies - you as the creator get full access automatically - enabling soft-delete by default, and setting up the underlying storage. This takes about a minute or two to complete.
+**Types of Data You Can Store**: While the Key Vault is being created, it's worth understanding what types of data you can store. Secrets are any sensitive data up to 25 kilobytes like passwords, connection strings, or API keys. Keys are cryptographic keys for encryption, signing, and verification operations where Azure can perform crypto operations without exposing the key itself. Certificates are X.509 certificates that Key Vault can automatically renew with supported certificate authorities, making certificate lifecycle management much easier.
 
-While it's being created, let's review what types of data you can store. Secrets are any sensitive data up to 25 kilobytes - passwords, connection strings, API keys, or any other sensitive text. Keys are cryptographic keys for encryption, signing, and verification operations - Azure can perform crypto operations without exposing the key itself. Certificates are X.509 certificates that Key Vault can automatically renew with supported certificate authorities, making certificate lifecycle management much easier.
+---
 
-## Exercise: Manage Secrets in the Portal
+## Manage Secrets in the Portal
 
-Now that our Key Vault is created, let's explore secret management through the Portal.
+Browse to your new Key Vault in the Portal to explore secret management.
 
-### Step 1: Navigate to Your Key Vault
+**Create a Secret**: We're creating a secret with the key "sql-password" which could represent database credentials. In the Secrets section, click the Generate/Import button. The workflow is straightforward - you provide a name and value, and optionally add metadata like content type to document what the secret contains, activation dates to control when the secret becomes accessible, expiration dates to enforce rotation policies, and an enabled toggle to disable secrets without deleting them.
 
-In the Azure Portal, navigate to your newly created Key Vault. You can use the search bar or find it in your resource group.
+**Viewing Secrets**: After creating the secret, when you click on it, you'll see the current version listed. Key Vault automatically versions everything, which is crucial for managing changes. Click on the version to see its details. Notice that the value is hidden by default - you must explicitly click "Show Secret Value" to reveal it. This is a security feature reducing the risk of shoulder surfing or accidental exposure.
 
-### Step 2: Create a Secret
+**Updating Secrets**: When you need to update a secret, use the New Version button. Key Vault creates a new version with your new value, and this new version automatically becomes the current version. The old version is preserved and still accessible if needed using its version ID. This versioning is crucial for several reasons - it enables secret rotation without downtime where applications automatically pick up new values on their next request, provides rollback capability if a new secret causes issues, and maintains a complete audit trail of changes.
 
-Let's create a secret that could represent a database password. In the left menu, click on "Secrets" under the Objects section. Click the Generate slash Import button at the top.
+---
 
-For upload options, leave "Manual" selected. Name the secret "sql-password". For the value, enter a sample password. Notice the optional settings available - Content type lets you add metadata like "password" or "connection-string" to document what the secret contains. Activation date means the secret won't be accessible before this date - useful for scheduling credential rotations. Expiration date makes the secret invalid after this date, enforcing rotation policies. And the Enabled toggle lets you disable a secret without deleting it, useful when investigating potential compromises.
+## Manage Secrets in the CLI
 
-Click "Create" to save the secret.
+Secrets have a unique identifier which contains the Key Vault name, secret name, and version. It's shown in the Portal - copy the identifier of the latest version of your secret to the clipboard, which will look something like https://your-kv-name.vault.azure.net/secrets/sql-password/some-version-guid.
 
-### Step 3: View the Secret
+**Show Secret by ID**: You can show the secret data using just the ID with the keyvault secret show command and the id parameter. The response includes all the secret fields including the value, version information, timestamps, enabled status, and metadata.
 
-After creation, click on your secret name to see its details. You'll see the current version listed - remember, Key Vault automatically versions everything. Click on the current version. Notice that the value is hidden by default - you must click "Show Secret Value" to reveal it. This is a security feature - you must explicitly choose to view sensitive data, reducing the risk of shoulder surfing or accidental exposure.
+**Extract Just the Value**: The response includes all the secret's metadata, but you might want to retrieve just the secret value for automation. You can add output and query parameters to display just the value in plain text. The query syntax "value" combined with tsv output format gives you just the secret value, perfect for storing in environment variables or passing to other commands.
 
-### Step 4: Update the Secret
+**Get Latest Version by Name**: If you don't know the full ID, you can get the latest version using the secret name parameter instead. Use the keyvault secret show command with the name and vault-name parameters. This always retrieves the current version, which is how your applications should reference secrets - by name without version, so rotation happens transparently.
 
-Let's see how versioning works. Go back to the Secrets list and click on your secret. Click the New Version button at the top. Enter a new value for the password and click "Create".
+**Update a Secret**: You can update the value using the secret set command, which works for both creating new secrets and updating existing ones. We're using secret set with the name, value, and vault-name parameters. This creates a new version and makes it the current version automatically.
 
-Now when you click on your secret, you'll see two versions listed. The newest version automatically becomes the current version - any application requesting this secret by name without specifying a version will get this new value. The old version is preserved and still accessible if needed using its version ID.
+**List All Versions**: Print all the versions using the keyvault secret list-versions command. This shows all versions with their IDs and timestamps, but notice it doesn't show the actual values - you need to query each version individually to see its value. It also doesn't explicitly show which is the current version, though the most recent one by timestamp is current.
 
-This versioning is crucial for several reasons. Secret rotation without downtime - you update the secret, applications pick up the new value on their next request. Rollback capability if a new secret causes issues - you can easily revert. And you have a complete audit trail of changes.
+---
 
-## Exercise: Manage Secrets with the CLI
+## Lab
 
-The Portal is great for exploration, but the CLI is essential for automation. Let's work with secrets using the Azure CLI.
+Secrets are just one type of data which you can store in Key Vault. You can also generate and store encryption keys and TLS certificates.
 
-### Step 1: Get Secret by ID
+**The Scenario**: Use the CLI to create a self-signed certificate where the subject common name CN is azure.courselabs.co and which is valid for 6 months. Download the public and private keys for your new certificate.
 
-Each secret has a unique identifier that includes the version. In the Portal, copy the Secret Identifier from your latest secret version - it looks like https colon slash slash your-vault dot vault dot azure dot net slash secrets slash sql-password slash some-version-guid.
+**Your Task**: You'll need to find the certificate commands and understand how to create a certificate policy. Certificate creation requires a policy that defines the certificate properties including the issuer, key type and size, subject name, and validity period.
 
-Now retrieve it using the keyvault secret show command with the id parameter.
+**Hints**: Start by exploring the keyvault certificate commands with the help flag. You'll need to create a policy file that specifies issuer parameters with name set to "Self" for self-signed certificates, key properties including exportable set to true so you can download the keys, keySize of 2048 bits, and keyType as RSA. The X.509 certificate properties need the subject as CN equals azure.courselabs.co and validityInMonths set to 6. After creation, use the certificate download command to get the certificate in PEM format which includes the full certificate chain.
 
-This returns a JSON object with all the secret's metadata. The secret value, version information, creation and update timestamps, enabled status, tags and content type - everything about the secret.
+**Understanding Certificates in Key Vault**: When you create a certificate in Key Vault, it automatically creates three objects - a certificate object that combines key and metadata, a key object for the private key, and a secret object containing the full certificate with private key in PKCS12 format. This means you can access the certificate through multiple interfaces depending on your needs.
 
-### Step 2: Extract Just the Value
-
-In automation scripts, you often need just the value. Use the query parameter to extract it. The query syntax "value" combined with table output format gives you just the secret value in plain text, perfect for storing in environment variables or passing to other commands.
-
-### Step 3: Get Latest Version by Name
-
-You don't always need to specify the version ID. To get the latest version, use the secret name parameter instead of the full ID. This always retrieves the current version. This is how your applications should reference secrets - by name without version, so rotation happens transparently.
-
-### Step 4: Update a Secret
-
-To update a secret, which creates a new version, use the keyvault secret set command with the name, value, and vault-name parameters. The secret set command works for both creating new secrets and updating existing ones, making your scripts simpler.
-
-### Step 5: List All Versions
-
-See the complete version history using the keyvault secret list-versions command. This shows all versions with their IDs and timestamps, but notice it doesn't show the actual values - you need to query each version individually to see its value. This is a security feature preventing bulk exposure of sensitive data.
-
-### Step 6: Working with Content Types
-
-Content types help document what type of data a secret contains. When setting a secret, use the content-type parameter. This metadata is useful when you have many secrets and need to understand their purpose at a glance. You might have hundreds of secrets in a vault, and content types help you organize and understand them.
-
-## Exercise: Advanced Secret Operations
-
-Let's explore some advanced features that are important for production environments.
-
-### Set Expiration Date
-
-Secrets can have expiration dates to enforce rotation policies. Use the expires parameter with an ISO 8601 formatted date. After the expiration date, attempts to retrieve the secret will fail with an error. This ensures secrets can't be used indefinitely, forcing regular rotation and improving security posture.
-
-### Disable a Secret
-
-You can temporarily disable a secret without deleting it using the keyvault secret set-attributes command with the enabled parameter set to false. This is useful when you suspect a secret may be compromised and want to immediately stop its use while investigating. Better to temporarily disable and investigate than to discover later that a compromised secret was used for malicious purposes.
-
-### Add Tags
-
-Tags help with organization and searching. Use the tags parameter when setting a secret. For example, you might tag secrets with environment equals production and tier equals database. This helps you manage secrets at scale, finding all production secrets or all database-related secrets with simple queries.
-
-## Lab: Working with Certificates
-
-For the lab exercise, you'll create and manage a TLS certificate. Certificates combine cryptographic keys with identity information, perfect for HTTPS, code signing, or authentication scenarios.
-
-### Goal
-
-Create a self-signed certificate with these requirements: Subject common name CN equals azure dot courselabs dot co, validity period of 6 months, and download both the public and private keys.
-
-### Hints
-
-Find the certificate commands using the keyvault certificate help command. Certificate creation requires a policy that defines the certificate properties. You can create a policy file or use inline JSON. Policy elements to consider include the Issuer set to "Self" for self-signed certificates, key type as RSA, key size of 2048 bits, subject as CN equals your domain, and validity in months set to 6.
-
-After creation, you can download the certificate using the certificate download command with different encoding formats - PEM or DER.
-
-### Solution Approach
-
-Create a policy file first with the required settings in JSON format. The policy specifies the issuer parameters, key properties with exportable set to true, and X.509 certificate properties with the subject and validity.
-
-Create the certificate using the keyvault certificate create command with the vault name, certificate name, and policy parameters.
-
-Download the certificate in PEM format, which includes the full certificate chain, using the certificate download command with encoding set to PEM.
-
-You can also download in DER format, which is a binary format, by specifying DER encoding.
-
-### What You've Learned
-
-In this lab, you've learned to create and configure a Key Vault, store and retrieve secrets through both Portal and CLI, work with secret versioning, set expiration dates and other secret attributes, and create and download certificates. These are fundamental skills for securing applications in Azure.
-
-## Key Takeaways
-
-Key Vault is purpose-built for secrets - it's not a general storage service but a specialized security service focused on protecting sensitive data. Versioning is automatic - every update creates a new version, giving you a complete audit trail without any extra work. Reference by name, not version - this enables transparent secret rotation where applications automatically get updated secrets. Portal for exploration, CLI for automation - both have their place in your workflow. Certificates are more than keys - they combine keys with identity metadata and Key Vault can manage their entire lifecycle including automatic renewal.
+---
 
 ## Cleanup
 
-When you're finished with the lab, remove all resources using the group delete command with the yes and no-wait flags. This deletes the resource group and all its contents, including the Key Vault and all secrets. The no-wait flag lets the deletion happen in the background. The resource group and all contents will be permanently deleted after the retention period expires due to soft-delete.
+**Delete Azure Resources**: We're removing the resource group and all its contents using az group delete. The yes flag confirms the deletion without prompting, and the no-wait flag returns immediately without waiting for the deletion to complete. The deletion happens in the background, which is useful when cleaning up resource groups.
+
+The resource group and all contents will be permanently deleted after the soft-delete retention period expires. Remember that soft-delete means the Key Vault and its contents are recoverable for the retention period if you need to restore them.
