@@ -1,6 +1,10 @@
 # AKS Ingress and Application Gateway - Exercise Walkthrough
 
-## Exercise 1: Creating the Application Gateway
+## Reference
+
+Ingress is a Kubernetes feature that lets you route HTTP traffic into your cluster using domain names rather than IP addresses. This means a single cluster can serve multiple applications through one public IP address. In Azure, the Application Gateway service integrates with Kubernetes Ingress objects to provide enterprise-grade HTTP load balancing with features like SSL termination and Web Application Firewall protection.
+
+## Create an Application Gateway
 
 Let's start by creating the Application Gateway. This is an unusual Azure resource - each configuration page must be completed before you can move on, unlike most resources where you can jump around. The setup includes several important sections: Basics where you choose between fixed scale or autoscaling, select a tier, and specify a VNet. Frontends where you configure the IP address that routes to the Application Gateway, usually a public IP. Backends where you define backend pools where traffic will be routed, similar to Azure Load Balancer. And Configuration where you set up routing rules for matching incoming requests to backends.
 
@@ -18,7 +22,7 @@ We're taking a different approach than the default. While you can create an AKS 
 
 This creation process takes several minutes - Application Gateway is a complex resource with multiple backend components. You can check progress in the Portal by navigating to the resource group and watching the deployment status. While it's creating, we can move on to the AKS cluster.
 
-## Exercise 2: Creating the AKS Cluster
+## AKS add-ons
 
 AKS has a concept of add-ons that you can use to add functionality to an existing cluster. We'll create the cluster now, and when both the cluster and the Application Gateway are ready, we can integrate them with an add-on.
 
@@ -30,8 +34,6 @@ AKS has a concept of add-ons that you can use to add functionality to an existin
 
 While this is creating, take a moment to check the Application Gateway in the Portal. The user interface is very similar to the Load Balancer resource, and that's because Application Gateway is essentially an enhanced load balancer with extra features. In particular, the Web Application Firewall feature is something you definitely want to explore for production deployments - it provides protection against common web exploits like SQL injection and cross-site scripting.
 
-## Exercise 3: Integrating Application Gateway with AKS
-
 Once both resources are ready, we can deploy the Application Gateway Ingress Controller add-on.
 
 **Get the Application Gateway ID**: First, we're getting the Application Gateway resource ID using az network application-gateway show with a query to extract the id field. Copy that ID - it's what we need to link the Application Gateway to AKS.
@@ -40,7 +42,7 @@ Once both resources are ready, we can deploy the Application Gateway Ingress Con
 
 What you're creating here is a production-grade deployment that's ready for scalable, reliable, public-facing applications. The AGIC controller will automatically configure the Application Gateway based on Kubernetes Ingress resources you create, eliminating manual configuration.
 
-## Exercise 4: Deploying an Application
+## Deploy with Application Gateway on AKS
 
 Now everything is ready. Let's deploy a simple application and make it accessible via a public URL.
 
@@ -60,7 +62,7 @@ Now everything is ready. Let's deploy a simple application and make it accessibl
 
 **Test the Application**: We're browsing to the hostname in a web browser. You should see the whoami application, routed via Application Gateway. The application shows information about which Pod handled the request. Refresh the page several times - the load balancing should distribute requests nicely between all the Pods, and you'll see different Pod names appearing.
 
-## Lab Challenge
+## Lab
 
 For the lab challenge, navigate through the Application Gateway setup in the Azure Portal. Explore the configuration to understand how the routing actually works.
 

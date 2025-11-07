@@ -1,6 +1,10 @@
 # AKS with KeyVault Secret Storage - Exercises Walkthrough
 
-## Exercise 1: Create the AKS Cluster
+## Reference
+
+Kubernetes has a pluggable storage architecture called the Container Storage Interface, which allows different types of storage to be connected to your cluster. In Azure Kubernetes Service, an add-on enables Key Vault as a storage provider, letting you mount sensitive configuration files directly from Key Vault into your containers without exposing them anywhere else in Kubernetes.
+
+## Create the AKS cluster
 
 Let's start by creating our resources for this lab. First, we're creating a new resource group to keep everything organized.
 
@@ -20,7 +24,7 @@ This will take several minutes to complete. While it's running, let's talk about
 
 **Troubleshooting Note**: If you ever need to troubleshoot issues with Key Vault integration, these are the pods whose logs you'll want to check. They contain detailed information about secret retrieval, authentication, and mounting operations.
 
-## Exercise 2: Create and Configure Key Vault
+## Create the KeyVault and authorize AKS
 
 Now let's create our Key Vault. For this lab, the default options are fine.
 
@@ -32,7 +36,7 @@ Now let's create our Key Vault. For this lab, the default options are fine.
 
 **Create the Access Policy**: Now we're creating an access policy that allows this identity to read secrets using az keyvault set-policy. We're granting the "get" permission on secrets to our AKS identity. Notice that we're not linking the entire AKS cluster to a specific Key Vault. Instead, we're authorizing an identity to access the vault. This means the same AKS cluster could potentially read from multiple Key Vaults, as long as the identity has appropriate permissions on each one. This is a flexible approach that supports complex scenarios.
 
-## Exercise 3: Create and Model KeyVault Secrets
+## Create and model KeyVault secrets
 
 Let's create a secret in Key Vault. We'll upload a JSON file containing configuration values.
 
@@ -50,7 +54,7 @@ This is a fine-grained approach - you explicitly declare which Key Vault objects
 
 **Customize and Deploy**: Now we're updating the YAML file with your tenant ID, identity ID, and Key Vault name, then deploying it using kubectl apply. This creates the SecretProviderClass in your cluster. It's now ready to mount volumes from your Key Vault secret.
 
-## Exercise 4: Deploy an Application
+## Deploy an app using KeyVault volumes
 
 Now let's deploy an application that uses our Key Vault secret. We're using the configurable app - the same one from previous labs.
 
@@ -64,7 +68,7 @@ Now let's deploy an application that uses our Key Vault secret. We're using the 
 
 **Test the Application**: Now let's browse to the application. We're getting the LoadBalancer IP using kubectl get svc. Open that IP in your browser and you should see the application displaying the configuration values from the Key Vault secret. The application is reading the file at /app/secrets/secret.json and displaying its contents, confirming the entire integration is working.
 
-## Lab Challenge
+## Lab
 
 Here's a challenge for you: In Kubernetes, when you update a ConfigMap or Secret that's mounted as a volume, the changes eventually propagate to running pods. It can take a few minutes due to kubelet caching, and there's no guarantee the application will pick up the changes without a restart.
 
