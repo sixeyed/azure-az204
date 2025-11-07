@@ -1,19 +1,13 @@
-# Docker Compose - Exercises Introduction
+We've covered Docker Compose as both a YAML specification for describing multi-container applications and a tool for managing them with a desired-state approach. Now let's orchestrate multiple containers together and see how the same patterns apply to Azure services.
 
-We've covered Docker Compose as both a YAML specification for describing multi-container applications and a tool for managing them with desired-state approach. Now let's orchestrate multiple containers together.
+You'll start with multi-container apps by running a broken random number generator that has a web frontend trying to connect to an API backend. When you first run it, the frontend can't find the API, which is exactly the kind of container networking issue you'll encounter in real projects. You'll use docker logs to see application output and nslookup to test DNS resolution between containers, discovering that containers on the same Compose network can reach each other using service names as hostnames. Once you understand the DNS issue and fix the configuration with the right service name, everything works perfectly.
 
-## What You'll Do
+Working through the compose app definition introduces you to the YAML specification, starting with a simple Nginx container to show how even basic apps benefit from Compose files. They act as both project documentation and executable specifications for your applications. You'll learn to read Compose files that define services, images, ports, and networks all in one place, making it clear what your application needs to run.
 
-You'll start with **a broken multi-container app** - a random number generator with web frontend and API backend. When you run it, the frontend can't connect to the API. Why? This is a common container networking issue that teaches you how to debug connectivity problems.
+When you build multi-container apps in Compose, you'll work with the complete random number generator application defined in YAML. This twenty-line specification describes two services, their images, exposed ports, environment variables for configuration, and the container network that connects them. You'll run detached containers and use the Compose CLI to manage everything together rather than individual Docker commands, seeing how Compose gives you a unified view of your distributed application.
 
-You'll use **docker logs** to see application output and **nslookup** to test DNS resolution between containers. You'll discover that containers on the same Compose network can reach each other using service names as hostnames. Once you fix the configuration with the right DNS name, everything works!
+Managing apps with Compose demonstrates the real power of the desired-state approach. You'll debug the web app's connection issues by checking the API independently, discover the API is working fine but the web can't reach it because of a DNS mismatch, and then deploy an updated Compose specification that fixes the service discovery. When you run docker-compose up again, Compose compares what's running to what you've declared and recreates only the web container with the new configuration. Change the YAML, run up, and Compose figures out the minimum changes needed without disrupting everything.
 
-Then you'll practice **desired-state updates**. Change the Compose file (add environment variables, adjust port mappings), run `docker-compose up` again, and watch as Compose intelligently determines which containers need recreation and which can stay running. This is infrastructure as code in action - declare what you want, Compose figures out how to get there.
+The lab challenge takes everything further by having you add an Nginx container to multiple networks in the RNG app definition. You'll configure the Nginx service to bridge between a new network and the original network, deploy the updated spec, and verify that containers can communicate across network boundaries even when added after the initial deployment. This demonstrates how Compose handles complex networking scenarios that you'll see in production.
 
-You'll explore **service discovery through DNS names** - how containers automatically get hostnames matching their service names in Compose. You'll see **aggregated logs** from all containers with `docker-compose logs`, making it easy to debug distributed applications.
-
-The **challenge** involves **adding containers to multiple networks** using an nginx reverse proxy. You'll create a network topology where the proxy sits between clients and backend services, demonstrating how Compose handles complex networking scenarios.
-
-The key learning: patterns you learn with Docker Compose apply directly to Azure Container Instances (multi-container groups) and AKS deployments.
-
-Let's orchestrate multi-container applications!
+The key learning here is that patterns you learn with Docker Compose apply directly to Azure Container Instances with multi-container groups and AKS deployments. Let's orchestrate multi-container applications!

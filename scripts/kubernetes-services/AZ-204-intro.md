@@ -1,21 +1,11 @@
-# Kubernetes Services: AZ-204 Exam Focus
+Great work! This Services lab is crucial for the Implement containerized solutions objective in the AZ-204 exam. Understanding service networking and discovery is essential for Azure Kubernetes Service.
 
-Great work! This Services lab is crucial for the "Implement containerized solutions" objective in the AZ-204 exam. Understanding service networking and discovery is essential for Azure Kubernetes Service.
+We'll start by exploring the API specs to understand how Services work with label selectors to find target Pods. The exam expects you to understand how Services and Pods are loosely coupled. When running sample Pods, you'll see that labels are the key to linking Services and Pods, and that Pod names have no effect on networking. The exam tests whether you understand how label selectors enable service discovery.
 
-## What We'll Cover
+As we deploy an internal Service, you'll examine Service types that the exam tests extensively. ClusterIP provides internal-only access as the default type for inter-service communication within the cluster, getting an IP address which is only accessible within the cluster. The Service has its own IP address which is static for the life of the Service. We'll cover endpoints and endpoint slices where services maintain lists of pod IPs matching selectors, and endpoints update automatically as pods are created or deleted.
 
-We'll examine Service types that the exam tests extensively. ClusterIP provides internal-only access as the default type for inter-service communication within the cluster. NodePort exposes services on node ports for development but rarely used in production. LoadBalancer creates cloud load balancers as the standard for external access in AKS. ExternalName maps services to external DNS names for integration with external services.
+When using DNS to find the Service, you'll explore service discovery mechanisms where Kubernetes DNS provides automatic service name resolution and cluster DNS resolves service names to service IPs. You'll see how when you recreate a Pod with a new IP address, service resolution still works because the Service IP address doesn't change. The exam tests whether you understand how DNS enables stable service discovery despite changing Pod IPs. You'll master load balancing and traffic management with services distributing requests across healthy backend pods, and readiness probes determining which pods receive traffic from services.
 
-We'll explore service discovery mechanisms where Kubernetes DNS provides automatic service name resolution, environment variables inject service endpoints into pods, and cluster DNS resolves service-name.namespace.svc.cluster.local to service IPs.
+In the section on deploying an external Service, you'll work with NodePort which exposes services on node ports for development but is rarely used in production, and LoadBalancer which creates cloud load balancers as the standard for external access in AKS. The exam tests Azure Load Balancer integration where LoadBalancer services automatically provision Azure Load Balancers, public IP addresses get assigned from Azure IP pools, and load balancer SKUs determine features and pricing. Know that multiple LoadBalancer services can share a single Azure Load Balancer using annotations.
 
-You'll master load balancing and traffic management with services distributing requests across healthy backend pods, session affinity controlling sticky sessions when needed, and readiness probes determining which pods receive traffic from services.
-
-The exam tests Azure Load Balancer integration where LoadBalancer services automatically provision Azure Load Balancers, public IP addresses get assigned from Azure IP pools, and load balancer SKUs determine features and pricing. Know that multiple LoadBalancer services can share a single Azure Load Balancer using annotations.
-
-We'll cover endpoints and endpoint slices where services maintain lists of pod IPs matching selectors, endpoints update automatically as pods are created or deleted, and endpoint slices provide scalability for services with many backends.
-
-You'll understand headless services for stateful workloads where ClusterIP None provides direct pod IP discovery, StatefulSets use headless services for predictable network identities, and DNS returns individual pod IPs instead of service IP enabling custom load balancing.
-
-The exam includes troubleshooting scenarios: services not routing traffic often indicates selector mismatches or missing pods, connection timeouts suggest health probe failures or network policy blocks, and DNS resolution failures point to CoreDNS issues or incorrect service names.
-
-Master Service types, load balancing, and Azure integration for the AZ-204!
+The lab challenge explores how Services route traffic based on label selectors, testing scenarios with zero or multiple matching Pods. Finally, we'll do cleanup. The exam tests ExternalName which maps services to external DNS names for integration with external services. You'll understand headless services for stateful workloads where ClusterIP None provides direct pod IP discovery and StatefulSets use headless services for predictable network identities. The exam includes troubleshooting scenarios where services not routing traffic often indicates selector mismatches or missing pods, connection timeouts suggest health probe failures, and DNS resolution failures point to CoreDNS issues. Master Service types and Azure integration for the AZ-204!

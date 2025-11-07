@@ -1,17 +1,15 @@
-# Azure Key Vault - Exercises Introduction
+We've covered Key Vault as Azure's specialized security service for storing secrets, keys, and certificates with encryption, access control, and audit logging. Now let's work with Key Vault hands-on to see how it protects sensitive application data.
 
-We've covered Key Vault as Azure's specialized security service for storing secrets, keys, and certificates with encryption, access control, and audit logging. Now let's work with Key Vault hands-on.
+When you explore Key Vault in the Portal, you'll search for Key Vault resources and examine the creation options including the Standard tier with software encryption and Premium tier with HSM-backed keys for higher security requirements. You'll see that both pricing tiers include automatic versioning for secrets and recovery features like soft delete that prevent accidental data loss. The access policy options let you set granular permissions for who can read and write secrets, keys, and certificates.
 
-## What You'll Do
+Creating a Key Vault with the CLI gives you the programmatic approach needed for automation. You'll use the az keyvault create command specifying your resource group, region, and a globally unique name. While the Key Vault provisions, you can review the documentation to understand that Key Vault supports three types of data - secrets for connection strings and passwords, keys for encryption operations, and certificates for TLS and authentication.
 
-You'll start by **creating Key Vaults via both Portal and CLI** to understand the options available. You'll choose between Standard tier (software encryption) and Premium tier (HSM-backed keys), and see how both pricing tiers include automatic versioning and recovery features like soft delete.
+Managing secrets in the Portal walks you through creating a secret called sql-password demonstrating the workflow for storing credentials. You'll see how the Portal asks for a key-value pair and provides options for activation and expiration dates. When you create the secret you'll discover the versioning system where each update creates a new version that becomes current while old versions remain accessible. Viewing the secret requires clicking through to see the actual value, showing how Key Vault protects sensitive data even in the Portal interface.
 
-Then you'll **store and retrieve secrets with versioning**. Each time you update a secret, Key Vault creates a new version while keeping old versions accessible. You can reference secrets by name (always gets latest) or by specific version (gets that exact version). You'll practice both approaches and understand why referencing by name is better for automatic rotation.
+Managing secrets in the CLI shows you the automation approach using az keyvault secret commands. You'll show secrets using their full identifier including version number, or just the name to get the latest version. You'll use query parameters to extract just the value in plain text for scripting scenarios. Then you'll practice updating secrets with secret set which creates new versions, and listing all versions to see the version history that Key Vault maintains automatically.
 
-Next comes **managing secret attributes** - expiration dates (secrets that automatically become invalid after a date), content types (hints about what the secret contains), tags (key-value metadata for organization), and enabled/disabled status (soft delete without removing the secret). These attributes provide lifecycle management without writing custom code.
+The lab challenge has you working with certificates which are another data type in Key Vault. You'll create a self-signed certificate with a specific subject common name and validity period, then download the certificate in different formats. This demonstrates Key Vault's certificate lifecycle management capabilities beyond just storing secrets.
 
-You'll **create self-signed certificates using policy files** that define certificate properties like subject name, validity period, and key properties. Then you'll **download certificates in different formats** - PEM for Linux systems, DER for Windows systems, demonstrating Key Vault's role in certificate lifecycle management.
-
-The key learning: Portal is great for exploration and one-off tasks, but CLI is essential for automation and production workflows. Everything you do in Portal has a CLI equivalent for scripting.
+The key learning is that Portal works great for exploration and one-off tasks, but CLI is essential for automation and production workflows. Everything you do in Portal has a CLI equivalent for scripting into your deployment pipelines.
 
 Let's secure sensitive data with Key Vault!

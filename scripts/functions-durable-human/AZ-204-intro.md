@@ -1,23 +1,17 @@
-# Durable Functions - Human Interaction Pattern - AZ-204 Exam Introduction
-
 Great work with human interaction! This pattern appears frequently in AZ-204 scenarios requiring approvals, verifications, or external input.
 
-## What We'll Cover
+External events sent via raiseEvent HTTP endpoint enable sending data into running orchestrations. The endpoint URL is provided in HTTP management APIs as sendEventPostUri, which you used to send the verification code to your running authentication orchestration. Event names must match exactly what the orchestrator is waiting for with case-sensitive matching like SmsChallengeResponse. Events can carry data payloads like the verification code you sent. The exam tests understanding of the external event mechanism and endpoint usage.
 
-**External events sent via raiseEvent HTTP endpoint** enable sending data into running orchestrations. The endpoint URL is provided in HTTP management APIs (sendEventPostUri). Event names must match exactly what the orchestrator is waiting for (case-sensitive). Events can carry data payloads. The exam tests understanding of the external event mechanism and endpoint usage.
+WaitForExternalEvent makes orchestrators pause until an event with a matching name arrives, exactly like your SmsVerify orchestrator waited for the SmsChallengeResponse event. The orchestration checkpoints state and stops consuming resources, not holding any HTTP connections or server memory. When the event arrives via HTTP POST to raiseEvent endpoint, the orchestration wakes up and continues. Multiple events can be sent but only those being waited for are consumed. The exam tests understanding of the pause/resume mechanism and how orchestrations can wait without consuming resources.
 
-**WaitForExternalEvent** makes orchestrators pause until an event with a matching name arrives. The orchestration checkpoints state and stops consuming resources. When the event arrives (via HTTP POST to raiseEvent endpoint), the orchestration wakes up and continues. Multiple events can be sent - only those being waited for are consumed. The exam tests understanding of the pause/resume mechanism.
+Durable timers with CreateTimer implement timeouts without blocking threads or consuming resources, like the timeout you configured for the SMS verification. Timers checkpoint their state so if the function app restarts, timers resume correctly. When combined with Task.WhenAny, timers enable racing against events for timeout scenarios where you want to fail if the user doesn't respond quickly enough. The exam tests configuring timeouts and understanding their behavior during failures.
 
-**Durable timers with CreateTimer** implement timeouts without blocking threads or consuming resources. Timers checkpoint their state - if the function app restarts, timers resume correctly. When combined with `Task.WhenAny`, timers enable racing against events for timeout scenarios. The exam tests configuring timeouts and understanding their behavior during failures.
+Task.WhenAny for racing timers against events is the core pattern for human interaction with timeouts. Create timer task, create WaitForExternalEvent task, await Task.WhenAny checking which completed first. In your two-factor auth, if the event arrived first authentication succeeded, but if the timer fired first authentication failed due to timeout. The exam tests implementing timeout logic correctly and understanding the race condition pattern.
 
-**Task.WhenAny for racing timers against events** is the core pattern for human interaction with timeouts. Create timer task, create WaitForExternalEvent task, await `Task.WhenAny(timerTask, eventTask)`, check which completed first. The exam tests implementing timeout logic correctly.
+HTTP management API URLs for human interaction scenarios must be understood. The sendEventPostUri raises external events like when you posted your verification code, statusQueryGetUri checks completion status, and terminatePostUri cancels orchestrations if user abandons the workflow. The exam tests which endpoint to use for different operations and how clients interact with long-running orchestrations.
 
-**HTTP management API URLs** for human interaction scenarios must be understood. sendEventPostUri for raising external events, statusQueryGetUri for checking completion, terminatePostUri if user cancels. The exam tests which endpoint to use for different operations.
+Security with secure parameters using the @secure decorator in Bicep or SecureString in ARM protects sensitive data like your Twilio credentials. Timeouts should be configurable parameters, not hardcoded magic numbers. The exam tests security best practices for credentials and configuration management in function apps.
 
-**Security with secure parameters** (@secure decorator in Bicep, SecureString in ARM) protects sensitive data like Twilio credentials. Timeouts should be configurable parameters, not hardcoded. The exam tests security best practices for credentials and configuration.
+Distinguishing external events from HTTP triggers is important. HTTP triggers like your Authenticate function start new orchestrations, while external events send data to already running orchestrations. The exam may present confusion scenarios requiring clarification about when to use each mechanism.
 
-**Distinguishing external events from HTTP triggers** is important. HTTP triggers start new orchestrations, external events send data to running orchestrations. The exam may present confusion scenarios requiring clarification.
-
-We'll cover **approval workflows**, **verification patterns**, **notification mechanisms**, **timeout strategies**, and **scenarios** about implementing multi-step approvals, two-factor authentication, and long-running processes requiring human input.
-
-Master human interaction patterns for the AZ-204!
+The exam also covers approval workflows where managers must approve requests, verification patterns like your two-factor authentication, notification mechanisms for alerting users of orchestration completion as discussed in the lab challenge, timeout strategies for different scenarios, and common patterns about implementing multi-step approvals, two-factor authentication, and long-running processes requiring human input. Master human interaction patterns for the AZ-204!

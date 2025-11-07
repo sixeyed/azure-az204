@@ -1,17 +1,13 @@
-# Virtual Networks: Exercises Introduction
-
 We've covered why Virtual Networks are fundamental to Azure security and how you need to plan networking architecture up front before deploying applications. Now let's create VNets and subnets, then deploy resources into them.
 
-## What You'll Do
+When you explore Virtual Networks in the Portal, you search to create a new Virtual Network resource and see configuration options. The name doesn't need to be globally unique, just unique within the Resource Group. For IP addresses, you select an address range for the whole vnet from a private CIDR range, and every vnet needs at least one subnet with subnets having their own IP range within the vnet range. You can create multiple subnets to isolate workloads in a single vnet.
 
-You'll explore Virtual Networks in the Azure Portal to understand the configuration options including address spaces from private CIDR ranges and subnet configuration. You'll see that VNet names don't need to be globally unique - just unique within your Resource Group.
+Creating a Virtual Network with the CLI uses az network vnet create with the resource group, vnet name, and address prefix like 10.10.0.0 slash 16. When you create a vnet in the Portal it has a subnet created by default, but a basic vnet create command doesn't give you a subnet. You create subnets with az network vnet subnet create, making two subnets called frontend and backend with address ranges 10.10.1.0 slash 24 and 10.10.2.0 slash 24. Subnets are where you actually deploy services, so you need at least one in your vnet. You can't have overlapping IP address ranges in a subnet or use a range that isn't in the parent vnet.
 
-Then you'll use the Azure CLI to create a VNet with the 10.10.0.0/16 address space, giving you 65,536 IP addresses. You'll discover that unlike the Portal, the basic CLI command doesn't create a default subnet - you'll add that yourself.
+Creating a Virtual Machine in the VNet uses az vm create specifying the vnet name and subnet parameters along with the usual VM settings. You use the UbuntuLTS image and generate SSH keys for authentication. The command takes care of setting up SSH so you can log into the remote machine, with output showing the public IP address you'll use to connect.
 
-You'll create two subnets to demonstrate network isolation - a frontend subnet at 10.10.1.0/24 and backend subnet at 10.10.2.0/24. Both carved from the larger VNet address space for organizing different application tiers.
+Connecting to the VM uses SSH with the public IP address. You run commands like ip address to see network configuration, and you'll notice VMs only know about their local IP address on the vnet. The public IP address is managed outside of the machine, while the private IP is assigned by the vnet in the expected range like 10.10.1.x.
 
-Next, you'll deploy a Linux VM into the frontend subnet and learn how to find VM images using the offer parameter and alias shortcuts. You'll connect via SSH and verify the VM only knows its private IP from the VNet - the public IP is managed externally by Azure.
+Exploring Networking in the Portal shows objects you didn't explicitly create. You open your Resource Group and see a disk which is the virtual storage unit attached to the VM, a NIC which connects the VM to the vnet, a Network Security Group which controls network access to the VM, and a Public IP Address. You click on Resource Visualizer to see how all the resources are related. They were all created with default configuration, but you can create and manage them independently with az commands if you need more control.
 
-You'll explore the Portal's Resource Visualizer to see all the networking resources Azure created automatically - the NIC connecting VM to VNet, NSG controlling access, and public IP for external connectivity.
-
-The key learning: VNets provide private network infrastructure where resources communicate securely using private IPs, but you can't typically move resources between VNets later - plan your addressing and subnets carefully from the start.
+VNets provide private network infrastructure where resources communicate securely using private IPs, but you can't typically move resources between VNets later, so plan your addressing and subnets carefully from the start.

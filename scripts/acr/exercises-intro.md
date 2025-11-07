@@ -1,19 +1,15 @@
-# Azure Container Registry - Exercises Introduction
-
 Now that we understand what Azure Container Registry is and why you need a private registry for production applications, let's get hands-on with creating and managing your own registry.
 
-## What You'll Do
+We'll start by exploring ACR in the Azure Portal, where you can see the three different SKU tiers available. The Basic tier is perfect for development work, Standard suits most production workloads, and Premium gives you enterprise features like geo-replication and private networking. You'll notice that registry names become DNS hostnames with the azurecr.io suffix, which is why they need to be globally unique across all of Azure.
 
-First, you'll **explore ACR in the Azure Portal** to understand the three SKU tiers - Basic for development, Standard for production, and Premium for enterprise deployments with geo-replication and private networking. You'll see how registry names become DNS hostnames and why they must be globally unique.
+From there, we'll move into creating an ACR instance with the CLI. This is where you'll learn the specific naming rules that ACR enforces, allowing only lowercase letters and numbers in a name that's between 5 and 50 characters long. The CLI actually gives you access to many more configuration options than you see when first creating a registry in the Portal, and you'll discover these by exploring the help documentation.
 
-Then we'll **create an ACR instance using the Azure CLI**. You'll learn the proper naming rules - only lowercase letters and numbers, 5-50 characters, globally unique. The CLI offers many more configuration options than the Portal's initial creation screen, and you'll see how to explore these with the help flag.
+The heart of working with container registries comes next when we pull and push images to ACR. You'll start by pulling the Nginx Alpine image from Docker Hub, then tag it with your own ACR domain name. When you try to push that image to your registry, you'll hit an authentication error on your first attempt, which teaches an important lesson about security. ACR requires proper authentication for all push operations, so you'll use the az acr login command to authenticate Docker with your Azure credentials before successfully pushing the image up to your registry.
 
-Next comes the core skill: **pulling images from Docker Hub and pushing them to your private registry**. You'll pull the Nginx Alpine image, tag it with your ACR domain name, and attempt to push it. The first attempt will fail with an authentication error, teaching you an important security principle - ACR requires authentication for all push operations. You'll then use `az acr login` to authenticate Docker with your Azure credentials and successfully push the image. Finally, you'll run a container from your private registry, demonstrating the full cycle.
+We'll also work through building and pushing a custom image, where you'll build a simple ASP.NET application and tag it with both a specific version number and the latest tag. This demonstrates how Docker's layer caching works efficiently, and how multiple tags can reference the same underlying image data.
 
-You'll also **build a custom application image**, tag it with both a version number and "latest", and push both tags to ACR. You'll see how Docker's layer caching makes this efficient - multiple tags can point to the same image data.
+After working with the command line, we'll browse to ACR in the Portal to see your repositories through the visual interface. You'll examine how images, tags, and manifests are organized, and explore some of the advanced features like webhooks for CI/CD automation, geo-replication for distributing your images globally, and the networking and encryption options available in higher SKUs.
 
-In the Portal, you'll **browse your ACR repositories** to see the visual organization of images, tags, and manifests. You'll explore webhooks for CI/CD automation, geo-replication settings, networking options, and encryption features.
+The lab exercise puts you into a real-world scenario. Imagine you're working in a CI/CD environment where your build pipeline pushes new images to ACR with every code change. Over time, this creates a lot of image versions, and since you're paying for storage, you might want to implement a cleanup strategy. You'll explore how to delete images using the az commands, and if you're comfortable with scripting, you can try writing a retention script that keeps only the five most recent versions of each image.
 
-The challenge exercise has you thinking about real-world scenarios: in a CI/CD environment where you push images frequently, how do you clean up old versions to manage storage costs? You'll explore the CLI commands for deleting images and potentially write a retention script.
-
-Let's build and manage your private container registry!
+Finally, when you're done experimenting, the cleanup section shows you how to delete the resource group to remove all the Azure resources and clean up your local Docker containers. Let's build and manage your private container registry!

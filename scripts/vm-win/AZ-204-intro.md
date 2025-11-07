@@ -1,15 +1,13 @@
-# Virtual Machines - Windows: AZ-204 Exam Focus
+Great work exploring Windows VMs in the Portal, creating a Windows VM with the CLI, adding a data disk to the VM, and connecting to install dev tools! This Windows VM lab is essential preparation for the Implement Infrastructure as a Service Solutions domain of the AZ-204 exam. While the exam emphasizes PaaS offerings, understanding IaaS with Virtual Machines remains a critical certification requirement.
 
-Great work! This Windows VM lab is essential preparation for the "Implement Infrastructure as a Service Solutions" domain of the AZ-204 exam. While the exam emphasizes PaaS offerings, understanding IaaS with Virtual Machines remains a critical certification requirement.
+Provisioning Windows VMs using Azure CLI requires knowing the right size, image, and network configuration. You master VM image URN structure, understanding the four components: publisher like MicrosoftWindowsDesktop, offer like windows-11, SKU like win11-22h2-pro, and version which can be a specific number or latest. Finding and specifying Windows images means using az vm image list-offers, az vm image list-skus, and az vm image list with appropriate filters.
 
-## What We'll Cover
+VM storage management distinguishes between OS disks and data disks. OS disks contain the operating system and are typically deleted when the VM is deleted. Data disks persist independently and can be retained when the VM is deleted, making them perfect for important files. Standard versus Premium storage tiers have different performance characteristics and costs. Premium storage uses SSDs offering better IOPS and throughput. The cost implications matter even when VMs are deallocated because you still pay for disk storage regardless of VM state.
 
-We'll examine how to provision Windows VMs using Azure CLI with the right size, image, and network configuration. You'll master VM image URN structure - understanding publisher, offer, SKU, and version components for finding and specifying Windows images.
+VM sizing for Windows workloads requires more resources than Linux. You query available sizes with specific resource requirements using az vm list-sizes with filters for cores and memory. The D series provides general purpose balanced CPU to memory ratio, suitable for development workstations and many applications.
 
-We'll explore VM storage management including OS disks versus data disks, Standard versus Premium storage tiers, and the cost implications of disk storage even when VMs are deallocated. You'll understand VM sizing for Windows workloads and how to query available sizes with specific resource requirements.
+Network security knowledge includes NSG rules controlling traffic by port, protocol, source, and destination. Port requirements differ by operating system: RDP uses port 3389 for Windows while SSH uses port 22 for Linux. Azure creates networking resources automatically alongside VMs including NICs, NSGs, and public IPs, though you can also create and configure these independently.
 
-The exam tests your knowledge of network security including NSG rules, port requirements (RDP on 3389 versus SSH on 22), and the networking resources Azure creates automatically alongside VMs.
-
-You'll learn when to choose VMs versus PaaS alternatives - VMs are right when you need full OS control, have specific dependencies, or need specialized development tools. For most modern applications, the exam emphasizes PaaS solutions instead.
+Choosing VMs versus PaaS alternatives depends on requirements. VMs are right when you need full OS control, have specific dependencies, need specialized development tools, or are doing lift-and-shift migrations. For most modern applications, the exam emphasizes PaaS solutions like App Service, Container Instances, or Azure Functions because they offer better scalability, management, and cost efficiency.
 
 Master Windows VM provisioning, configuration, and storage management for the AZ-204!

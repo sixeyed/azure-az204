@@ -1,19 +1,9 @@
-# Log Analytics - Exercises Introduction
+We've covered Log Analytics as Azure's centralized log data store providing rich query capabilities with Kusto Query Language. Now let's explore application telemetry and create monitoring dashboards.
 
-We've covered Log Analytics as Azure's centralized log data store providing rich query capabilities with Kusto Query Language (KQL). Now let's explore application telemetry and create monitoring dashboards.
+We'll start by generating some log data, and if you've done the Application Insights lab and still have those resources running, you can actually skip this step and use that existing data. Otherwise you'll create a Log Analytics workspace and deploy some containers that write telemetry to Application Insights, giving you plenty of real data to work with.
 
-## What You'll Do
+Once we have data flowing in, we'll move on to querying application logs using KQL. You'll open the Log Analytics workspace in the portal and use the query editor to explore the tables where Application Insights stores its data. These tables like AppEvents, AppDependencies, and AppTraces contain all the telemetry from your applications. You'll write queries to filter logs by severity level, find specific error codes, and see which application instances are generating different types of events. KQL uses pipe operators to chain operations together, and it's similar to SQL but with many more functions and a stricter syntax.
 
-You'll start by **setting up a Log Analytics workspace** - the central repository for all your telemetry data. Then you'll **link Application Insights to the workspace**, enabling all your application telemetry to flow into Log Analytics for querying.
+After getting comfortable with basic queries, you'll focus on aggregating application metrics. The AppMetrics table stores custom metrics reported by your applications, and you'll write queries to calculate averages, summarize data over time intervals, and identify trends. You'll use the bin function to group metrics into time buckets and create visualizations that show how values change over time.
 
-You'll **deploy a sample application** (Fulfilment Processor) that generates rich telemetry - custom events, metrics, traces, and dependencies. This gives you real data to query and analyze.
-
-Now comes the fun part: **writing KQL queries**. You'll use operators like `where` (filtering rows), `project` (selecting columns), `summarize` (aggregating data), `distinct` (unique values), `count` (counting rows), and `limit` (limiting results). KQL uses pipe operators (|) to chain transformations, making queries readable and composable.
-
-You'll practice **filtering and aggregating data** - finding logs by severity level, investigating custom events, analyzing metrics over time. The `bin()` function enables time-based aggregation (group by hour, day, etc.) for trend analysis.
-
-Then you'll **create visualizations** - line charts showing metrics over time, bar charts comparing values, and tables displaying detailed data. Finally, you'll **build comprehensive Workbooks** combining multiple queries, markdown text, and interactive visualizations into monitoring dashboards that update in real-time.
-
-The key learning: KQL is the query language you'll use throughout Azure Monitor, whether querying Application Insights, Log Analytics, or Azure Sentinel. Mastering KQL unlocks powerful monitoring and troubleshooting capabilities.
-
-Let's query and visualize application telemetry!
+Finally, for the lab challenge, you'll bring everything together by creating a workbook. Workbooks are powered by KQL queries and let you build comprehensive monitoring dashboards. You'll create one that shows all the running instances, breaks down events by instance, and graphs metrics over time. The workbook interface takes some getting used to, but it's the way to create production-ready monitoring views that update in real time. When you're done, you'll clean up all the resources by deleting the resource groups.

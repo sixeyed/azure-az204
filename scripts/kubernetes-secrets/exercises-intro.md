@@ -1,21 +1,11 @@
-# Kubernetes Secrets: Exercises Introduction
+We've covered how Secrets store sensitive data like passwords, tokens, and keys separately from pod specifications. Now let's create and use Secrets to understand their capabilities and limitations.
 
-We've covered how Secrets store sensitive data like passwords, tokens, and keys separately from pod specifications. Now let's create and use Secrets securely.
+We'll start by exploring the API specs to understand how Secrets are structured, seeing that the API is very similar to ConfigMaps but with additional safeguards. Then we'll work on creating Secrets from encoded YAML, deploying the configurable app using ConfigMaps first to see how all values are visible in plain text when you describe a ConfigMap, which is why you don't want sensitive data in there. You'll create a Secret from base64-encoded values and load it into environment variables in a Deployment. In the container environment, Secret values are presented as plain text even though they're encoded in the YAML.
 
-## What You'll Do
+Next, we'll explore creating Secrets from plaintext YAML. Encoding to base-64 is awkward and it gives you the illusion your data is safe, but encoding is not encryption and you can easily decode base-64. You can store sensitive data in plaintext YAML when your YAML is locked down, using stringData with values in plain text instead of encoded data. Kubectl always shows Secrets encoded as base-64, but that's just a basic safety measure.
 
-You'll create Secrets using kubectl create secret for imperative creation from literals or files, and YAML manifests for declarative management with base64-encoded values. You'll understand that base64 is encoding not encryption.
+Then we'll work with base-64 Secret values directly. You'll fetch the data item from a Secret and decode it into plaintext, demonstrating that the encoding provides minimal security. Secrets may be encrypted in the Kubernetes database but that is not the default setup, and you can integrate Kubernetes with third-party secure stores like Hashicorp Vault and Azure KeyVault.
 
-Then you'll consume Secrets as environment variables injecting secret data into containers. You'll use env and envFrom fields referencing secret keys, understanding that environment variables are visible to all container processes.
+From there, we'll explore creating Secrets from files. This demonstrates a decoupled workflow where configuration management teams have access to sensitive data and own Secret management, while the DevOps team owns the Deployment YAML that references the Secrets. You'll create secrets from env files and JSON files using kubectl create secret, then deploy the app using those existing secrets.
 
-You'll mount Secrets as volumes creating files in container filesystem where each secret key becomes a file. This is more secure than environment variables and supports automatic updates when secrets change.
-
-Next, you'll work with built-in secrets including default service account tokens automatically mounted in pods, TLS secrets for Ingress, and docker-registry secrets for pulling private images from Azure Container Registry.
-
-You'll explore Azure Key Vault integration using Secrets Store CSI Driver to sync secrets from Azure Key Vault into Kubernetes secrets. This provides centralized secret management with Key Vault's enhanced security and audit capabilities.
-
-You'll understand secret rotation and updates where mounted secrets update automatically when changed but environment variables require pod restart. Applications should implement hot-reload for mounted secret files.
-
-The lab challenge asks you to configure an application using Azure Key Vault provider for Secrets Store CSI Driver, avoiding storing sensitive data directly in Kubernetes secrets and leveraging Azure's managed secret service.
-
-The key learning: Never store sensitive data in ConfigMaps or source control. Use Secrets for basic scenarios and Azure Key Vault integration for enterprise security requirements with audit logging and access policies.
+The lab challenge explores how configuration loaded into volume mounts is managed by Kubernetes. If the source ConfigMap or Secret changes, Kubernetes pushes the change into the container filesystem, but the app might not check for file updates. You'll come up with an approach so when you apply changes to a Secret in YAML, the Deployment rollout happens as part of the same update. Finally, we'll do cleanup. The key learning is never store sensitive data in ConfigMaps or source control. Use Secrets for basic scenarios and understand their limitations, knowing that base64 encoding is not encryption and you should integrate with Azure Key Vault for enterprise security requirements with audit logging and access policies.

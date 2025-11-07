@@ -1,21 +1,11 @@
-# Virtual Network Applications: Exercises Introduction
-
 We've covered how virtual networks provide private connectivity for Azure resources and how to integrate applications with VNets for security and isolation. Now let's deploy applications using VNet integration.
 
-## What You'll Do
+Creating RG, VNet and Subnet establishes the core infrastructure. You create a Resource Group and VNet using standard az group create and az network vnet create commands, then create a subnet with az network vnet subnet create. Nothing new here. You're not actually deploying anything into the VNet, you'll use it as a bridge to secure communication between services.
 
-You'll explore Azure App Service VNet Integration enabling web apps to access resources in virtual networks including databases, APIs, and file shares. This allows apps to connect to private endpoints without public internet exposure.
+Creating Storage Account and KeyVault sets up the application dependencies. The app uses Blob Storage, so you create an account and grab the connection string using az storage account create and az storage account show-connection-string. The application has code to create the blob container so you don't need to do that in advance. That key gives complete access to everything in the Storage Account, so you need to keep it safe. You create a KeyVault with az keyvault create and store the connection string in a secret using az keyvault secret set. You check you can read the secret from your machine using az keyvault secret show. There's no need for this secret to be accessible outside of Azure, so you should lock it down.
 
-Then you'll configure regional VNet Integration connecting App Service to subnets in the same region. You'll see how outbound traffic from your app routes through the VNet enabling access to VNet resources and on-premises networks via VPN.
+Restricting Access uses service endpoints and firewall rules. You use az network vnet subnet update to set service endpoints for KeyVault and Storage allowing communication through the subnet. You restrict the KeyVault so it's only accessible from the vnet using az keyvault network-rule add to add the vnet and subnet, then az keyvault update to set default-action to Deny. When you check if you can read the secret with CLI or Portal again, it's blocked outside of the VNet after rules take effect.
 
-You'll work with private endpoints for Azure services creating private IP addresses for PaaS services like Azure SQL Database and Azure Storage within your VNet. This ensures traffic never traverses the public internet.
+Creating Web App using VNet, KeyVault and Blob Storage completes the integration. The app is a .NET web site, a good fit for PaaS. App Services don't run inside VNets, they're intended to be public facing, but you can still secure them with configuration. You deploy the app with az webapp up, then set app configuration settings using az webapp config appsettings set to tell the app to use Blob Storage for data and fetch the connection string from Key Vault. Browsing to the app shows an error page. Opening the logs shows a Forbidden error because the app isn't using an identity which KeyVault trusts. App Service can use managed identity to authenticate with KeyVault without credentials. You assign the identity using az webapp identity assign which outputs the identity id, then grant that identity permission to read secrets with az keyvault set-policy. The app still fails with a new error showing Client address is not authorized and ForbiddenByFirewall because the call isn't from a trusted location since KeyVault is restricted to the subnet. You add VNet integration to the web app using az webapp vnet-integration add so when the App Service makes internal Azure calls it uses the subnet which has Key Vault access. Now the app can connect to Key Vault where it reads the connection string for Storage Account and downloads data from the blob container.
 
-Next, you'll explore Azure Container Instances with VNet Integration deploying containers directly into virtual network subnets. This provides private IP addresses for container groups enabling direct communication with other VNet resources.
-
-You'll configure Azure Kubernetes Service with Azure CNI networking where pods receive IP addresses directly from VNet subnets. This enables pod-to-VNet resource communication and integration with network security groups.
-
-You'll understand service endpoints for Azure services allowing secure access to storage accounts and SQL databases from specific VNet subnets. Service endpoints use Azure backbone network for optimized routing.
-
-The lab challenge asks you to design a secure multi-tier application with web tier in public subnet using App Service, application tier using AKS with internal load balancer, and data tier using Azure SQL with private endpoint - all communicating through VNet.
-
-The key learning: VNet integration enables secure private connectivity between Azure services eliminating public internet exposure, integrating with on-premises networks, and implementing defense-in-depth security architectures.
+VNet integration enables secure private connectivity between Azure services eliminating public internet exposure, integrating with on-premises networks, and implementing defense-in-depth security architectures.

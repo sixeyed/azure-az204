@@ -1,31 +1,11 @@
-# Azure Blob Storage - AZ-204 Exam Introduction
+Excellent work on the hands-on exercises! Blob Storage is a major topic accounting for a significant portion of the "Develop for Azure Storage" domain, which makes up 15-20% of the total AZ-204 exam.
 
-Excellent work on the hands-on exercises! Now let's shift to what you need to know about Azure Blob Storage for the AZ-204 certification exam.
+When you were managing blob storage with the CLI, you learned about blob types which the exam tests. There are three kinds Azure supports. Block blobs for text and binary data which is the most common, append blobs optimized for append operations like logs, and page blobs for random read and write operations used by virtual hard disks. The exam tests when to use each type. You also used the upload-batch command with pattern filtering, which relates to CLI commands you must memorize including creating storage accounts and containers, uploading with patterns and filters, generating SAS tokens, managing stored access policies, and setting blob access tiers.
 
-## Exam Weight
+When you changed a blob to Archive tier and discovered it needed rehydration, that demonstrated access tiers which is heavily tested. Hot tier for frequently accessed data is fast but expensive storage. Cool tier for infrequent access with 30-day minimum storage has cheaper storage but higher access costs. Archive tier for rare access with 180-day minimum is cheapest storage but accessing data takes hours. Know the cost tradeoffs and minimum duration requirements because the exam loves questions about choosing the right tier for specific scenarios. This also relates to lifecycle management policies which are automated rules that transition blobs to cooler tiers or delete them based on age. These are crucial for cost optimization and appear frequently in exam scenarios.
 
-Blob Storage is a major topic, accounting for a significant portion of the "Develop for Azure Storage" domain, which makes up 15-20% of the total AZ-204 exam. Expect multiple questions on blob types, SAS tokens, lifecycle policies, and access tiers.
+The work with shared access tokens and policies is critical because SAS tokens and security appears on nearly every exam. You need to understand how to generate SAS tokens with specific permissions like read, write, delete, and list, set appropriate expiration times, and grant access to specific blobs, containers, or entire storage accounts. The key distinction you demonstrated is the difference between simple SAS tokens which can't be revoked and policy-based SAS tokens which are revocable by deleting the stored access policy. When you deleted the policy and the SAS token immediately failed, that showed how stored access policies provide centralized access control. This is your answer to the exam question "how do I revoke a SAS token before it expires?"
 
-## What We'll Cover
+The exam also covers blob versioning and soft delete for data protection. Versioning keeps previous versions of blobs automatically, while soft delete allows recovery of deleted blobs within a retention period. You need to know when to recommend each feature. Static website hosting from Blob Storage is another exam topic where you can host entire static websites directly from a special dollar-sign web container. Metadata and properties frequently appear in questions too, and you need to understand the difference between system properties which are read-only like Content-Type and ETag, and user-defined metadata which are custom key-value pairs you can set.
 
-We'll start with **blob types** - the three kinds Azure supports. Block blobs for text and binary data (most common), append blobs optimized for append operations like logs, and page blobs for random read/write operations used by virtual hard disks. The exam tests when to use each type.
-
-**Access tiers** is heavily tested. Hot tier for frequently accessed data (fast but expensive storage), Cool tier for infrequent access with 30-day minimum storage (cheaper storage, higher access costs), and Archive tier for rare access with 180-day minimum (cheapest storage, but accessing data takes hours). Know the cost tradeoffs and minimum duration requirements - the exam loves questions about choosing the right tier for specific scenarios.
-
-**SAS tokens and security** appears on nearly every exam. You need to understand how to generate SAS tokens with specific permissions (read, write, delete, list), set appropriate expiration times, and grant access to specific blobs, containers, or entire storage accounts. Know the difference between simple SAS tokens (can't be revoked) and policy-based SAS tokens (revocable by deleting the stored access policy). The exam tests which approach to use for different security requirements.
-
-**Stored access policies** provide centralized access control. We'll cover how to create policies with `az storage container policy create`, reference them when generating SAS tokens, and revoke access by deleting policies. This is your answer to "how do I revoke a SAS token before it expires?"
-
-We'll dive into **lifecycle management policies** - automated rules that transition blobs to cooler tiers or delete them based on age. These are crucial for cost optimization and appear frequently in exam scenarios. Know how to create policies that move 30-day-old blobs to Cool tier and delete blobs older than 180 days.
-
-**CLI commands** you must memorize include creating storage accounts and containers, uploading with patterns and filters, generating SAS tokens, managing stored access policies, and setting blob access tiers. The exam tests command syntax and parameter names.
-
-**Blob versioning and soft delete** are important features for data protection. Versioning keeps previous versions of blobs automatically, while soft delete allows recovery of deleted blobs within a retention period. Know when to recommend each feature.
-
-**Static website hosting** from Blob Storage is another exam topic. You can host entire static websites (HTML, CSS, JavaScript) directly from a special $web container. Know the configuration steps and when this is appropriate versus using App Service.
-
-**Metadata and properties** frequently appear in questions. Understand the difference between system properties (read-only like Content-Type and ETag) and user-defined metadata (custom key-value pairs you can set).
-
-Finally, we'll cover **common exam scenarios**: when to use which blob type, how to implement lifecycle policies, securing blob access with SAS tokens, optimizing costs with access tiers, and implementing data retention and recovery strategies.
-
-Ready to master Blob Storage for the AZ-204? Let's explore the exam-focused content!
+In the lab where you worked with different authentication mechanisms, that ties into understanding the various ways to access blob storage securely, which the exam tests through common scenarios about securing blob access with SAS tokens, optimizing costs with access tiers, and implementing data retention and recovery strategies.

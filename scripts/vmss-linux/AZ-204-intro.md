@@ -1,17 +1,13 @@
-# Virtual Machine Scale Sets - Linux: AZ-204 Exam Focus
+Great work creating a VM with cloud-init, using cloud-init for Linux VMSS, and updating VMSS! This Linux VM Scale Set lab directly supports the Implement IaaS solutions domain of the AZ-204 exam. Understanding VMSS creation, configuration, and updates is essential for the certification.
 
-Great work! This Linux VM Scale Set lab directly supports the "Implement IaaS solutions" domain of the AZ-204 exam. Understanding VMSS creation, configuration, and updates is essential for the certification.
+Creating VMSS instances with custom initialization scripts uses cloud-init, a powerful cross-platform system for configuring new machines. You master the custom-data parameter and the at symbol syntax for passing script files during VM provisioning. This approach works for both individual VMs and VM Scale Sets, providing consistency across your deployments.
 
-## What We'll Cover
+Load balancer configuration requires understanding two key components. Health probes monitor backend instance health by checking specific ports or paths, ensuring the load balancer only sends traffic to healthy instances. Load balancer rules specify frontend ports, backend ports, and protocols, defining how traffic is distributed. You understand why VMSS creates load balancers automatically but doesn't configure the rules, because the rules depend on your application's specific requirements like which ports it uses.
 
-We'll examine how to create VMSS instances with custom initialization scripts using cloud-init. You'll master the custom-data parameter and the @ symbol syntax for passing script files during VM provisioning.
+The exam tests your understanding of the VMSS model and instance lifecycle extensively. Model updates don't automatically affect running instances, which is intentional for maintaining service availability. The latestModelApplied flag tracks whether each instance matches the current model. You need to know when to use update-instances to apply model changes to existing instances versus reimage commands to completely rebuild instances from the current model.
 
-We'll explore load balancer configuration including health probes that monitor backend instance health, and load balancer rules that specify frontend ports, backend ports, and protocols. You'll understand why VMSS creates load balancers automatically but doesn't configure the rules.
+Custom data processing happens at different times depending on the mechanism. Cloud-init scripts only run during initial VM boot at provisioning time, so updating custom data in the model doesn't change already-running instances. This is why you see different behavior between new instances that scale up with the updated model and existing instances that keep their original configuration. Handling rolling updates when configurations change requires understanding these timing differences.
 
-The exam tests your understanding of the VMSS model and instance lifecycle - how model updates don't automatically affect running instances, the latestModelApplied flag for tracking state, and when to use update-instances versus reimage commands.
-
-You'll learn about custom data processing at provisioning time versus update time, why cloud-init scripts only run during initial VM boot, and how to handle rolling updates when configurations change.
-
-The exam expects you to know when VMSS is appropriate versus container-based solutions, and how to troubleshoot using run-command features for accessing logs and verifying deployments without SSH access.
+The exam expects you to know when VMSS is appropriate versus container-based solutions. VMSS works well for applications that need VM-level control or can't be containerized, while containers offer faster scaling and lighter resource usage. You troubleshoot using run-command features for accessing logs and verifying deployments without SSH access, which is essential when instances don't have public IPs or SSH isn't allowed by security rules.
 
 Master cloud-init automation and VMSS model management for the AZ-204!

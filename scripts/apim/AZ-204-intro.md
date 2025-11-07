@@ -1,23 +1,15 @@
-# Azure API Management - AZ-204 Exam Introduction
-
 Great job implementing API Management! This is a significant AZ-204 exam topic with questions appearing in multiple domains. Let's focus on what you need to know for the certification.
-
-## Exam Coverage
 
 APIM appears in questions about implementing API Management, integrating Azure services, and securing solutions. Expect both configuration questions and scenario-based questions about choosing the right policies and architectures.
 
-## What We'll Cover
+Service tier selection is critical for the exam. Developer tier is for dev and test environments with 99.9% SLA and no auto-scale capabilities. Consumption tier is serverless with per-call pricing, no SLA guarantee, and auto-scales to zero when not in use. Basic and Standard tiers are production-ready with 99.9% SLA and manual scaling. Premium tier is for enterprise deployments with 99.95% SLA, multi-region support, VNet integration, and auto-scaling. Scenario questions test which tier to choose based on requirements like SLA expectations, cost model preferences, and scale needs.
 
-**Service tier selection** is critical for the exam. Developer tier is for dev/test (99.9% SLA, no auto-scale). Consumption tier is serverless with per-call pricing (no SLA, auto-scales to zero). Basic/Standard tiers are production-ready (99.9% SLA, manual scale). Premium tier is for enterprise (99.95% SLA, multi-region, VNet integration, auto-scale). Scenario questions test which tier to choose based on requirements like SLA, cost model, and scale needs.
+Policy structure is heavily tested throughout the exam. Policies have four execution sections: inbound runs before the backend call, backend runs during backend routing, outbound runs before sending the client response, and on-error runs when errors occur. Know the order and what each section is for. Policy scope hierarchy goes from Operation to API to Product to Global, and the base tag controls inheritance. Without the base tag, parent policies don't execute, which is an important concept for layering policies correctly.
 
-**Policy structure** is heavily tested. Policies have four execution sections: inbound (before backend call), backend (during backend routing), outbound (before client response), and on-error (when errors occur). Know the order and what each section is for. Policy scope hierarchy goes Operation > API > Product > Global, and the `<base />` tag controls inheritance - without it, parent policies don't execute.
+Common policies you must know include rate-limit for throttling requests, caching which requires both cache-lookup in inbound and cache-store in outbound, validate-jwt for token authentication, set-header to add modify or delete headers, find-and-replace to transform response content, CORS for cross-origin resource sharing, and ip-filter to restrict access by IP address. The exam tests when to use each policy and how to configure them properly.
 
-**Common policies** you must know include rate-limit (throttling), caching (requires BOTH cache-lookup in inbound AND cache-store in outbound), validate-jwt (token authentication), set-header (add/modify/delete headers), find-and-replace (transform response content), CORS (cross-origin resource sharing), and ip-filter (restrict by IP address). The exam tests when to use each and how to configure them.
+Authentication methods appear frequently in exam questions. Subscription keys via the Ocp-Apim-Subscription-Key header are the simplest approach. JWT validation works for OAuth and OpenID Connect tokens. Client certificates enable mutual TLS authentication. Azure AD integration provides enterprise identity management. Know that APIs must belong to at least one Product to be accessible, and Products require subscriptions with keys unless configured otherwise.
 
-**Authentication methods** appear frequently. Subscription keys via Ocp-Apim-Subscription-Key header (simplest), JWT validation for OAuth/OpenID Connect tokens, client certificates for mutual TLS, and Azure AD integration. Know that APIs must belong to at least one Product to be accessible, and Products require subscriptions (with keys) unless configured otherwise.
+Versions versus Revisions is a key exam concept. Revisions are for non-breaking changes like adding optional parameters or fixing bugs, and they're tested via semicolon rev equals N syntax before making them current. Versions are for breaking changes like adding required parameters or removing endpoints, and they create new URL paths requiring client migration. Know the three versioning schemes: Header using a custom header, Query string using a parameter, and Path using a URL segment.
 
-**Versions vs Revisions** is a key exam concept. Revisions are for non-breaking changes (optional parameters, bug fixes) - tested via ;rev=N syntax before making them current. Versions are for breaking changes (required parameters, removed endpoints) - create new URL paths requiring client migration. Know three versioning schemes: Header (custom header), Query string (parameter), and Path (URL segment).
-
-We'll cover **OpenAPI integration**, **products and subscriptions**, **developer portal customization**, **monitoring and analytics**, **integration with App Service deployment slots**, and **common exam scenarios** about securing APIs, transforming responses, and troubleshooting access issues.
-
-Master APIM for the AZ-204!
+Throughout our review, we'll cover OpenAPI integration for importing API specifications, products and subscriptions for managing API access, developer portal customization for API consumers, monitoring and analytics for tracking usage, integration with App Service deployment slots for testing, and common exam scenarios about securing APIs, transforming responses, and troubleshooting access issues. Master APIM for the AZ-204!
