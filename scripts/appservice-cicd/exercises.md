@@ -1,12 +1,14 @@
-# App Service CI/CD - Exercises Script
+# App Service CI/CD
 
-## Exercise 1: Setting Up GitHub Fork
+## Reference
+
+Continuous Integration and Continuous Deployment are supported with two features of Azure App Service: deployments which can be triggered every time source code is changed and pushed to a Git repo, and deployment slots which let you deploy to a staging environment and test it before you send the new version to production.
+
+## App Service Deployment from GitHub
 
 First, we need to ensure you have your own fork of the lab repository. If you haven't done this yet, we're navigating to the GitHub repository and clicking the Fork button. This creates a copy in your own GitHub account that you have write access to - this is essential because Azure needs to connect to a repository where it can set up webhooks and read your code.
 
 Once you have your fork, we're adding it as a remote to your local repository using git remote add with the name "fork" and your fork's URL. Make sure to replace the placeholder with your actual GitHub username.
-
-## Exercise 2: Create Azure Resources
 
 Now let's create our Azure resources. We'll need a Resource Group and an App Service Plan to host our application.
 
@@ -16,13 +18,9 @@ Now we're creating a Linux App Service Plan with 2 workers. Note that we're usin
 
 The plan is now ready to host our application with the redundancy and features we need.
 
-## Exercise 3: Create Web App and Configure Deployment Path
-
 We're creating the web app with .NET Core 6.0 runtime, specifying the resource group, the App Service Plan we just created, and a globally unique DNS name. Remember to replace the placeholder with your unique app name.
 
 Now we're setting the project path so Azure knows which application to deploy. This is important because our repository contains multiple projects, and we need to tell Azure specifically which one to build and deploy. We're adding an application setting called "PROJECT" with the path to the Numbers API project file. This setting tells Azure's build system exactly where to find the project to compile.
-
-## Exercise 4: Manual Deployment from GitHub
 
 If you browse to your App Service URL now, you'll see a waiting page. The app isn't deployed yet - we've created the hosting infrastructure, but we haven't actually put any code on it.
 
@@ -32,11 +30,7 @@ Opening the Azure Portal and navigating to your App Service, clicking on the Dep
 
 You can watch the progress in real-time as Azure clones your repository, detects that it's a .NET Core application, runs dotnet restore to fetch dependencies, runs dotnet build to compile the code, and finally deploys the compiled application.
 
-## Exercise 5: Test the Deployed API
-
 Once deployment completes, we're testing your API using curl to call the "/rng" endpoint. You should receive a random number in the response. Calling it multiple times, you'll get different numbers each time, confirming the API is working correctly.
-
-## Exercise 6: Make a Code Change
 
 Now let's make a change to the application. We're navigating to the appsettings.json file in your GitHub fork at the path "src/rng/Numbers.Api/appsettings.json".
 
@@ -44,15 +38,13 @@ Editing the file directly on GitHub, we're changing the RngSettings to set minim
 
 Alternatively, you can make these changes locally. We're opening the file in your editor, making the same changes, using git add to stage the file, git commit to save the change with a message, and git push to send it to your fork. Both approaches work - it's about what fits your workflow better.
 
-## Exercise 7: Manual Sync
-
 Checking the Deployment Center in the Portal, you'll notice there's no new deployment, even though the source repository has changed. This is because we're using manual integration - Azure doesn't automatically monitor for changes.
 
 Clicking the Sync button triggers an update to pull the latest code from the repository. This is manual CI/CD - you control when deployments happen by clicking Sync.
 
 Waiting for the deployment to complete, then testing again with curl to call the "/rng" endpoint, now you should see much larger random numbers, between 1000 and 10000. This confirms that your code change was deployed successfully.
 
-## Exercise 8: Configure Continuous Integration
+## Configure CI/CD
 
 Manual deployment works, but it's not automated. Let's switch to Continuous Integration so every push to GitHub triggers a deployment automatically.
 
@@ -70,23 +62,19 @@ Note: Sometimes this command may appear to hang. If it doesn't return within a f
 
 Checking the Deployment Center in the Settings tab, you'll now see your GitHub username, confirming the connection is authenticated. Azure has set up a webhook in your repository that will notify it of any changes.
 
-## Exercise 9: Test Continuous Deployment
-
 Making another change to the appsettings.json file, perhaps changing the range again or adjusting another setting, we're committing and pushing to GitHub.
 
 This time, watching the Deployment Center, within moments you should see a new deployment automatically triggered. No manual sync required! Azure received a notification from GitHub, pulled the latest code, built it, and deployed it automatically.
 
 This is the power of continuous deployment - your changes flow from development to production with minimal manual intervention.
 
-## Exercise 10: Create Staging Slot
+## Add a Staging Deployment Slot
 
 Now let's add a staging deployment slot. This allows us to test changes before they go to production - you deploy to staging, verify everything works, then swap staging and production.
 
 We're creating the staging slot using the deployment slot create command with the slot parameter set to "staging".
 
 Now we're configuring the project path for the staging slot. Deployment slots have their own configuration, so we need to set the PROJECT setting for the staging slot separately using the same setting as production but with the --slot parameter.
-
-## Exercise 11: Configure Staging Branch
 
 Deployment slots typically match source code branches. This gives you a clean workflow - the main branch deploys to production, the staging branch deploys to staging.
 
@@ -96,15 +84,15 @@ Now we're configuring the staging slot to deploy from the staging branch using d
 
 Again, this might take a moment. Cancel and retry if it appears stuck - it's processing the webhook setup in the background.
 
-## Exercise 12: Test Both Slots
-
 In the Portal, navigating to Deployment slots, you can switch between your production and staging slots. Each has its own URL, its own configuration, and its own deployment source.
 
 We're testing both endpoints using curl. The production slot is at your normal app URL, and the staging slot has "-staging" appended to the hostname.
 
 Both should return random numbers, and since they're running the same code version right now, they'll have the same range. But soon we'll make them different to demonstrate the slot workflow.
 
-## Exercise 13: Lab Challenge
+---
+
+## Lab
 
 Now for your challenge: Update the app settings in the staging slot so the random number range is 50 to 500. Test your changes in the staging environment to verify they work correctly. Once you're satisfied the changes are good, swap the slots so production uses the new range.
 
@@ -112,14 +100,8 @@ Think about the workflow: How do you update configuration in a specific slot? Th
 
 Take some time to work through this, and check the solution guide if you get stuck.
 
-## Conclusion
-
-You've now learned how to deploy App Service applications from GitHub with manual integration, configure continuous deployment with automated builds triggered by Git pushes, create and manage deployment slots for staging and production environments, and test changes in staging before promoting to production.
-
-These skills are essential for modern DevOps practices and are important for the AZ-204 certification exam.
+---
 
 ## Cleanup
 
 When you're finished, we're deleting the Resource Group to avoid ongoing charges using the group delete command with the -y flag to skip confirmation.
-
-Great work!

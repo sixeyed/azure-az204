@@ -1,6 +1,10 @@
-# App Service Configuration and Administration - Exercises
+# App Service Configuration and Administration
 
-## Exercise 1: Deploy an Application with Configuration
+## Reference
+
+App Service is a PaaS which gives you features that would take a lot of effort to implement with an IaaS deployment. Your applications will need different configuration settings and App Service lets you set them without manually logging in and editing files. App Service is also able to monitor your application health, restarting instances which are unhealthy.
+
+## Deploy an Application which Fails
 
 Let's start by deploying our application. We're using a .NET 6.0 REST API that generates random numbers.
 
@@ -20,8 +24,6 @@ Let's test our API using curl to call the "/rng" endpoint. The first response ma
 
 Now, let's look at the application's configuration. The app has a setting called "FailAfter__CallCount" in the appsettings.json file. By default, this is set high enough that the app won't fail during normal use. But we're going to override this to make it fail after just 3 calls so we can demonstrate health monitoring.
 
-## Exercise 2: Configure App Settings
-
 Let's set an app setting that will cause our API to fail after 3 requests. We're using the config appsettings set command with a setting named "Rng__FailAfter__CallCount" set to the value "3".
 
 Notice the syntax here. The double underscore represents a nested configuration value in .NET - it maps to Rng:FailAfter:CallCount in the application's configuration hierarchy. This overrides the default configuration without changing the source code, which is exactly what you want for environment-specific settings.
@@ -34,7 +36,7 @@ The API includes a health endpoint at "/healthz". Let's check it with the verbos
 
 You'll see a 500 status code - Internal Server Error. This indicates the app is unhealthy. The health endpoint is reporting that something is wrong with the application.
 
-## Exercise 3: Configure Health Checks
+## Add an App Service Healthcheck
 
 Now we'll configure App Service to monitor this health endpoint automatically. Opening the Azure Portal and navigating to your App Service, we're finding the Health check blade under the Monitoring section.
 
