@@ -1,6 +1,10 @@
-# VM Configuration Automation - Exercises
+# Automating VM Configuration
 
-## Exercise 1: Exploring Configuration Options
+## Reference
+
+All new Virtual Machines need additional configuration after creation, and manual setup simply doesn't scale. Azure provides multiple options to automate VM configuration during or after deployment. Extensions run scripts and install software after the VM is created. Applications are packaged software components you can attach during provisioning. Cloud-init provides industry-standard Linux configuration on first boot. Run commands let you execute scripts on-demand without persistent extensions. These automation capabilities are essential for consistent, repeatable infrastructure deployments.
+
+## Explore VM Configuration in the Portal
 
 Let's start by exploring the configuration options available when creating a VM.
 
@@ -20,7 +24,7 @@ These all serve the same purpose: automating the configuration so you don't have
 
 Don't actually create this VM through the Portal - we'll do that from the CLI for better repeatability. Cancel out of the creation wizard.
 
-## Exercise 2: Linux VM with Custom Script Extension
+## Linux with Custom Script Extension
 
 Now let's create a Linux VM and use a custom script extension to install Nginx web server automatically.
 
@@ -42,7 +46,7 @@ Now we're adding the extension to the VM using az vm extension set. We specify t
 
 The extension starts running on the VM immediately. You can watch the progress in the Portal - navigate to your VM and look at the Extensions and applications blade. You'll see the extension listed with its status, and you can watch it progress from Installing to Succeeded.
 
-## Exercise 3: Configuring Network Access
+## Test the Web Server
 
 When the extension completes, Nginx is installed and running on the VM. But if you try to browse to the VM's public IP address, you won't be able to access the web server. The connection will timeout.
 
@@ -60,7 +64,7 @@ We're creating a new rule using az network nsg rule create. The resource group i
 
 Now when the rule is created and applied, browse to your VM's DNS name or public IP address. You should see the default Nginx welcome page displaying in your browser. The custom script extension successfully installed and started Nginx, and now we've opened the network path to access it.
 
-## Exercise 4: Windows VM with Run Command
+## Windows with VM Extension
 
 Windows VMs also support custom script extensions, but there's an easier option for running scripts on Windows: the run-command feature. This lets you execute PowerShell scripts on-demand without installing an extension.
 
@@ -78,7 +82,7 @@ The command executes on the remote VM and returns the output. The output isn't v
 
 You can connect to the VM with Remote Desktop Protocol to verify the tools are actually installed and working. The RDP connection will show you the Windows desktop with all the development tools ready to use.
 
-## Lab Exercise
+## Lab
 
 Here's a challenge for you. We've created two VMs in this lab - web01 running Linux and dev01 running Windows. They're both in the same resource group called "labs-vm-config".
 

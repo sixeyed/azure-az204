@@ -1,4 +1,8 @@
-# Kubernetes Namespaces - Exercises Narration
+# Kubernetes Namespaces
+
+## Reference
+
+Namespaces provide virtual clusters within a physical Kubernetes cluster, enabling resource isolation, access control, and resource quota management across different teams or projects. They create scope for names so that resources in one namespace don't conflict with resources in another namespace, and they support role-based access control to limit what users can see and modify. Namespaces are fundamental to multi-tenancy in Kubernetes because they allow multiple teams to share the same cluster safely while maintaining logical separation.
 
 ## Opening
 

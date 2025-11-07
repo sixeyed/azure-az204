@@ -1,4 +1,8 @@
-# Kubernetes Services - Lab Exercises Narration
+# Kubernetes Services
+
+## Reference
+
+Services provide stable network endpoints for accessing Pods in Kubernetes, solving the problem of ephemeral Pod IP addresses that change whenever Pods are recreated or rescheduled. They use label selectors to dynamically discover and route traffic to matching Pods, supporting multiple service types including ClusterIP for internal communication, NodePort for external access, and LoadBalancer for cloud-based load balancing. Services are fundamental to Kubernetes networking because they enable reliable communication between components regardless of Pod lifecycle changes.
 
 ## Introduction
 

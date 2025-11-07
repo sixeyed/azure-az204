@@ -1,6 +1,6 @@
 # Azure Signin - Exercises
 
-## Exercise 1: Exploring the Azure Portal
+## Exploring the Azure Portal
 
 Let's start by exploring the Azure Portal, which is the web-based interface for Azure.
 
@@ -32,7 +32,7 @@ Return to the Azure Home page by clicking the Azure icon in the top left. Find t
 
 The Portal is excellent for browsing services and exploring resources visually. It's great for learning, for ad-hoc investigations, and for one-off tasks. However, it doesn't provide a repeatable, automatable experience. Every time you need to create a resource, you have to click through the same screens. For professional development work and production deployments, we need the command line instead.
 
-## Exercise 2: Using the Azure CLI
+## Using the Azure CLI
 
 The Azure CLI, accessed through the "az" command, is a powerful tool for managing Azure resources. Let's see why it's the recommended approach for developers.
 
@@ -66,7 +66,7 @@ The CLI is always up-to-date with the latest Azure features - often new features
 
 The CloudName field you see in the output indicates which Azure cloud environment you're connected to. Most users will see "AzureCloud", which is the public Azure cloud available worldwide. But you might see "AzureUSGovernment" for US government cloud, "AzureChinaCloud" for Azure in China, or other specialized clouds.
 
-## Exercise 3: The Azure Cloud Shell
+## The Azure Cloud Shell
 
 Sometimes you need to use Azure tools but can't install the CLI locally. Maybe you're on a locked-down corporate machine, or you're traveling and using a borrowed computer. That's where the Azure Cloud Shell comes in.
 
@@ -117,6 +117,10 @@ Now run your application using dotnet run. The .NET SDK compiles your code and e
 **Key Takeaway**
 
 The Cloud Shell provides a fully-configured development environment in your browser. It's perfect for quick tasks when you need to run commands or test code. It's great for demos and teaching when you want to show Azure concepts without local setup complexity. And it's invaluable when working from a computer where you can't install tools locally, like borrowed machines or locked-down corporate workstations.
+
+## Reference
+
+- [Azure documentation](https://docs.microsoft.com/azure/)
 
 ## Summary
 

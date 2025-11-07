@@ -1,6 +1,10 @@
-# Resource Groups - Exercises Narration
+# Resource Groups
 
-## Exercise 1: Creating a Resource Group in the Portal
+## Reference
+
+Resource Groups are containers for all other Azure resources. VMs, SQL databases, Kubernetes clusters all get created inside a Resource Group. You might have one Resource Group for each application, containing all the components that app needs. Management permissions can be applied at the Resource Group level, and it's easy to remove all the resources by deleting the group. Understanding how to effectively organize and manage Resource Groups is fundamental to working with Azure, as they provide the organizational structure for your entire cloud infrastructure.
+
+## Create a new RG in the portal
 
 Let's start by creating our first Resource Group using the Azure Portal.
 
@@ -20,7 +24,7 @@ Let me click "Go to resource" to explore the Resource Group. Here you can see al
 
 ---
 
-## Exercise 2: Creating a Resource Group with the Azure CLI
+## Create an RG with the Azure CLI
 
 Now let's create a Resource Group using the Azure CLI. This is often faster and more convenient, especially when you're automating tasks or working with infrastructure as code.
 
@@ -40,7 +44,7 @@ The command runs and waits until the Resource Group is created, then outputs the
 
 ---
 
-## Exercise 3: Managing Resource Groups
+## Manage Resource Groups
 
 Now that we have multiple Resource Groups, let's learn how to manage them.
 
@@ -56,7 +60,7 @@ JMESPath is powerful for filtering and extracting specific data from JSON result
 
 ---
 
-## Exercise 4: Deleting Resource Groups
+## Delete Resource Groups
 
 Finally, let's talk about deletion. The "group delete" command removes a Resource Group and all resources inside it. This is a powerful operation - you could have an entire application with databases, virtual machines, storage accounts, and networking components, and deleting the Resource Group will remove everything in one operation.
 
@@ -74,8 +78,12 @@ And as you can see, "labs-rg-1" is no longer in the list. Only labs-rg-2 remains
 
 ---
 
-## Conclusion
+## Lab
 
-That covers the basics of working with Resource Groups! You've learned how to create them using both the Portal and CLI, how to list and filter them using tags and queries, and how to delete them safely. These skills form the foundation for managing all your Azure resources effectively.
+Sometimes you do want to delete all the resources that match in a query. How can you delete all the RGs with the courselabs tag with a single command?
 
-Resource Groups are the fundamental organizational unit in Azure. Understanding how to manage them well will make your entire Azure experience more efficient and organized.
+---
+
+## Cleanup
+
+When you're done, delete the remaining resource group to clean up all resources and avoid ongoing charges.

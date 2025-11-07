@@ -1,6 +1,10 @@
-# Azure Container Instances - Exercises Walkthrough
+# Azure Container Instances
 
-## Exercise 1: Explore Azure Container Instances in the Portal
+## Reference
+
+Azure Container Instances is where you run Docker containers directly in Azure without managing any virtual machines or container orchestration platforms. The service gives you the simplest path to running containers in the cloud with per-second billing and isolated container groups. The documentation covers everything from basic container deployment to advanced scenarios like virtual network integration and volume mounting. The command line interface provides complete control through the az container commands, which we'll be using extensively in these exercises.
+
+## Explore Azure Container Instances
 
 Let's start by exploring what ACI offers through the Azure Portal interface.
 
@@ -18,7 +22,7 @@ We're not going to create the container through the portal - instead, we'll use 
 
 ---
 
-## Exercise 2: Create an ACI Container with the Azure CLI
+## Create an ACI container with the CLI
 
 Now let's deploy a real container using the command line. This approach is much more suitable for automation and version control than clicking through the portal.
 
@@ -40,7 +44,7 @@ Now let's deploy a real container using the command line. This approach is much 
 
 ---
 
-## Exercise 3: Deploy to ACI from Docker CLI
+## Deploy to ACI from Docker
 
 If you're a Docker user, you'll love this integration. The Docker CLI can deploy directly to Azure Container Instances using a feature called contexts.
 
@@ -64,7 +68,7 @@ If you're a Docker user, you'll love this integration. The Docker CLI can deploy
 
 ---
 
-## Exercise 4: Lab Challenge - Windows Containers
+## Lab
 
 Here's your challenge: The simple-web image has both Windows and Linux variants, and we want to explore the differences between them.
 
@@ -80,7 +84,7 @@ To specify a Windows container in ACI, you'll need to add the --os-type paramete
 
 ---
 
-## Exercise 5: Resource Management and Monitoring
+## Cleanup
 
 Let's explore how to manage and monitor your running containers once they're deployed.
 
@@ -109,17 +113,3 @@ This is important - ACI containers continue running and incurring charges until 
 **Remove Docker Context**: Clean up the ACI context from your Docker configuration using docker context rm. This removes the context definition so it doesn't clutter your context list.
 
 **Verify Cleanup**: You can check that containers are gone by listing containers in the labs-aci resource group. This should return an error or empty list since the resource group has been deleted.
-
----
-
-## Key Takeaways
-
-Looking back at what we've covered - ACI is the simplest way to run containers in Azure with no infrastructure management required. You get multiple deployment methods including the Azure CLI, Portal, Docker CLI, and ARM templates, giving you flexibility in how you work. The Docker integration is particularly powerful, letting you use familiar commands while actually deploying to Azure in the cloud.
-
-You have flexibility in what you run - both Linux and Windows containers are supported, with custom compute sizes ranging from small to large configurations. The networking options let you expose containers publicly or keep them private.
-
-Understanding the container paradigm is crucial - treat containers as ephemeral resources that you recreate rather than modify in place. This is different from virtual machines, but it leads to cleaner, more reliable deployments.
-
-And finally, cost awareness - remember to delete containers when you're done to avoid ongoing charges. Unlike some services that only charge when actively used, ACI charges for running time.
-
-Excellent work! You now understand how to deploy and manage containers in Azure Container Instances.

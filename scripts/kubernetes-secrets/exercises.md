@@ -1,4 +1,8 @@
-# Kubernetes Secrets - Exercise Walkthrough
+# Kubernetes Secrets
+
+## Reference
+
+Secrets are Kubernetes objects designed to store sensitive information like passwords, tokens, and API keys, providing basic protection through base64 encoding and access controls. Unlike ConfigMaps which store data in plain text, Secrets offer additional security features including RBAC integration and the option to encrypt data at rest in etcd. Understanding the distinction between Secrets and ConfigMaps is crucial for implementing proper security practices in containerized applications.
 
 ## Introduction
 

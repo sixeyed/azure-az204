@@ -1,4 +1,8 @@
-# Kubernetes ConfigMaps - Lab Exercises Narration Script
+# Kubernetes ConfigMaps
+
+## Reference
+
+ConfigMaps are Kubernetes objects that store non-sensitive configuration data as key-value pairs, allowing you to separate configuration from your container images. This decoupling means you can use the same container image across different environments while providing environment-specific settings through ConfigMaps. They're fundamental to building portable, cloud-native applications because they enable the Twelve-Factor App principle of externalizing configuration.
 
 ## Introduction to the Lab
 

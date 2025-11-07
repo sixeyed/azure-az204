@@ -1,111 +1,87 @@
-# Securing Apps with Key Vault and Virtual Networks - Exercises
+# Securing Apps with Key Vault and Virtual Networks
 
-## Exercise 1: Create Resource Group, VNet and Subnet
+## Reference
 
-Let's begin by creating our foundational resources. We'll start with a resource group to contain all our resources, and then create a Virtual Network with a subnet.
+The ideal application in Azure uses managed identities for all authentication and restricted virtual networks for all communication. This eliminates credentials to manage and store, and ensures no services are exposed beyond where they should be accessible. However, not all services in Azure support VNet connections, and not all components in your app will have integrated authentication. In this lab we'll deploy an app which uses Blob Storage, storing the connection details in a KeyVault which is restricted to a VNet. The documentation covers storage account firewall and virtual networks configuration, VNet integration for App Service apps, and how to combine these features for secure application architectures.
 
-We're running az group create with the name "labs-vnet-apps", adding the "courselabs=azure" tag to help us track resources that belong to this course.
+## Create RG, VNet and Subnet
 
-This creates our resource group. The tag helps us identify and manage resources associated with this lab later.
+**Create Foundation Resources**: Let's start with the core resources - the resource group and VNet. We're running az group create with the name "labs-vnet-apps" and adding our "courselabs=azure" tag for tracking. Then we're creating a virtual network with az network vnet create using the resource group "labs-vnet-apps", VNet name "vnet1", and address prefix "10.30.0.0/16". Finally, we're creating a subnet with az network vnet subnet create using the VNet name "vnet1", subnet name "subnet1", and address prefix "10.30.1.0/24".
 
-Now let's create a Virtual Network with an address space. We're running az network vnet create with the resource group "labs-vnet-apps", network name "vnet1", and address prefix "10.30.0.0/16". This gives us a private IP range for our virtual network.
+**Understanding the Pattern**: Nothing new here if you've worked with VNets before. The interesting thing is that we're not actually going to deploy anything into the VNet traditionally. Instead, we'll use it as a bridge to secure communication between services. This is a common pattern when working with PaaS services that don't run inside VNets natively but need secure connectivity.
 
-And within that VNet, we'll create a subnet using az network vnet subnet create with the resource group, VNet name "vnet1", subnet name "subnet1", and address prefix "10.30.1.0/24". This subnet will be our secure communications bridge.
+---
 
-There's nothing particularly new here if you've worked with VNets before. The interesting thing is that we're not actually going to deploy any VMs or traditional compute resources into this VNet. Instead, we'll use it as a secure bridge for communication between PaaS services. This is a common pattern in Azure when working with platform services that don't run inside VNets natively.
+## Create Storage Account and KeyVault
 
-## Exercise 2: Create Storage Account and KeyVault
+**Create Storage Account**: The app uses Blob Storage, so we'll need to create an account and grab the connection string. We're running az storage account create with the resource group "labs-vnet-apps", SKU Standard_ZRS for zone-redundant storage, and a unique name that you'll provide. This application has code to create the blob container, so we don't need to do that in advance. Remember that storage account names must be globally unique across all of Azure.
 
-Our application needs Blob Storage to persist data, so let's create a storage account. Remember to use a unique name that's globally unique across all of Azure.
+**Get Connection String**: Now let's print the connection string using az storage account show-connection-string with tab-separated value output, resource group "labs-vnet-apps", and storage account name. That key gives complete access to everything in the Storage Account - read, write, delete, everything. It's extremely sensitive, so we need to keep it safe.
 
-We're running az storage account create with the resource group "labs-vnet-apps", SKU set to Standard_ZRS for zone-redundant storage which provides good durability, and a unique name you'll need to provide.
+**Create Key Vault**: We'll create a KeyVault and store the connection string in a secret. We're running az keyvault create with the resource group "labs-vnet-apps" and a unique name for your Key Vault. Again, use a globally unique name - something like your initials followed by "kv" and today's date works well.
 
-We're using Zone-Redundant Storage here which replicates data across multiple availability zones for durability. The application code will create the blob container it needs automatically, so we don't need to manually create that.
+**Store the Secret**: Now we're storing the secret using az keyvault secret set with the secret name "ConnectionStrings--AssetsDb". Notice the double dashes - this is a naming convention that the .NET configuration system understands for hierarchical configuration keys. The vault name is your Key Vault, and the value is the connection string we retrieved earlier.
 
-Now let's get the connection string for this storage account. We're running az storage account show-connection-string with tab-separated value output, the resource group "labs-vnet-apps", and storage account name.
+**Verify Access**: Let's check you can read the secret from your machine using az keyvault secret show with the secret name "ConnectionStrings--AssetsDb" and vault name. You should see the secret value returned. Right now, this KeyVault is accessible from anywhere on the internet if you have the right permissions. There's no need for this secret to be accessible outside of Azure, so we should lock it down.
 
-This connection string gives complete access to everything in the Storage Account - read, write, delete, everything. It's extremely sensitive - anyone with this key can access all your data. This is exactly the kind of secret we need to protect with Key Vault.
+---
 
-Let's create an Azure Key Vault to store it securely. We're running az keyvault create with the resource group "labs-vnet-apps" and a unique name for your Key Vault.
+## Restrict Access
 
-Again, use a globally unique name for your Key Vault - something like "mykv" followed by your initials and a date often works well.
+**Enable Service Endpoints**: We'll use the subnet for communication to KeyVault and Storage, so we need to set service endpoints to allow that. We're running az network vnet subnet update with the resource group "labs-vnet-apps", VNet name "vnet1", subnet name "subnet1", and service-endpoints parameter enabling both "Microsoft.KeyVault" and "Microsoft.Storage". Service endpoints allow Azure PaaS services to communicate privately over the Azure backbone network.
 
-Now we'll store the connection string as a secret in Key Vault. We're using az keyvault secret set with the secret name "ConnectionStrings--AssetsDb". Notice the double dashes - this is a naming convention that the .NET configuration system understands for hierarchical configuration keys. The vault name is your Key Vault, and the value is the connection string we retrieved earlier.
+**Add Network Rule to Key Vault**: Now let's restrict the KeyVault so it's only accessible from the vnet. We're running az keyvault network-rule add with the VNet name "vnet1", subnet "subnet1", resource group "labs-vnet-apps", and Key Vault name. This adds our subnet to the allowed list.
 
-Let's verify we can read this secret from our current machine using az keyvault secret show with the secret name "ConnectionStrings--AssetsDb" and vault name.
+**Set Default Deny**: We're setting the default action to deny all other traffic using az keyvault update with default-action set to "Deny", resource group "labs-vnet-apps", and Key Vault name. This ensures that only explicitly allowed networks can access the vault.
 
-You should see the secret value returned in the output. Right now, this Key Vault is accessible from anywhere on the internet if you have the right permissions. There's no need for this secret to be accessible outside of Azure's internal network, so let's lock it down.
+**View Network Rules**: Let's list the network rules using az keyvault network-rule list with the resource group "labs-vnet-apps" and Key Vault name to see what we've configured.
 
-## Exercise 3: Restrict Access to Key Vault
+**Test Restriction**: Check if you can read the secret with the CLI or the Portal again. It may take a few minutes for the rules to take effect, but now the secret should be blocked outside of the VNet. Your local machine isn't on the allowed subnet, so access is denied - this is exactly what we want for security.
 
-To restrict Key Vault to only be accessible from our subnet, we first need to enable service endpoints on the subnet. Service endpoints allow Azure PaaS services to communicate privately over the Azure backbone network instead of going through the public internet.
+---
 
-We're running az network vnet subnet update with the resource group "labs-vnet-apps", VNet name "vnet1", subnet name "subnet1", and service-endpoints parameter set to enable both "Microsoft.KeyVault" and "Microsoft.Storage". We're enabling endpoints for both services because we'll secure both the Key Vault and Storage Account.
+## Create Web App using VNet, KeyVault and Blob Storage
 
-Now let's add our subnet to the Key Vault's network rules. We're using az keyvault network-rule add with the VNet name "vnet1", subnet "subnet1", resource group "labs-vnet-apps", and Key Vault name.
+**Understanding App Service**: Our app is a .NET 6 web site, so it's a good fit for PaaS. An important thing to understand - App Services don't run inside VNets. They're intended to be public facing platform services. We can still secure them, but it needs some more configuration through VNet integration.
 
-And set the default action to deny all other traffic using az keyvault update with default-action set to "Deny", the resource group, and Key Vault name.
+**Deploy the Application**: Let's start by deploying the app as a Web App. We're changing to the src/asset-manager directory, then running az webapp up with the resource group "labs-vnet-apps", app plan name "app-plan-02", OS type Linux, runtime "dotnetcore:6.0", SKU B1 for basic tier, and a unique app name. This command packages and deploys the application.
 
-Let's view our network rules using az keyvault network-rule list with the resource group "labs-vnet-apps" and Key Vault name.
+**Configure Application Settings**: Now we're setting some app configuration settings. These tell the app to use Blob Storage for data, and to fetch the connection string from Key Vault. We're running az webapp config appsettings set with the resource group "labs-vnet-apps", multiple settings including Database__Api set to "BlobStorage", KeyVault__Enabled set to "true", KeyVault__Name set to your Key Vault name, and the app name.
 
-Now try to read the secret again using the CLI or opening the Azure Portal. It may take a few minutes for the rules to propagate through Azure's infrastructure, but soon you should find that access is denied. Your local machine isn't on the allowed subnet, so you can't access the Key Vault anymore. This is exactly what we want - the secret is now protected from external access.
+**Check for Errors**: Browse to the app - it will show an error page. Let's investigate by opening the logs.
 
-## Exercise 4: Deploy and Configure the Web Application
+**View Application Logs**: Open Advanced tools for the web app in the Portal and launch the Kudu session. This is Azure App Service's diagnostic and management interface. Open the Log stream link and be patient - logs take time to appear. The app will keep restarting because the failure causes it to exit. Eventually you'll see a useful error log indicating the app doesn't have permission to access Key Vault secrets.
 
-Our application is a .NET 6 web site, which is perfect for Azure App Service. An important thing to understand about App Services: they don't run inside Virtual Networks by default. They're platform services designed to be publicly accessible web applications. However, we can still secure them through VNet integration for outbound calls.
+**The Problem**: The error shows that the application's identity doesn't have secrets list permission on Key Vault. This makes sense - we haven't given the app any identity or permissions yet. The app isn't using an identity which KeyVault trusts.
 
-Let's deploy the application. First, change to the application directory, then we're running az webapp up with the resource group "labs-vnet-apps", app plan name "app-plan-02", OS type Linux, runtime "dotnetcore:6.0", SKU B1 for the basic tier, and a unique app name.
+**Assign Managed Identity**: App Service can use managed identity, so it can authenticate with KeyVault without needing any connection strings or other credentials. We're running az webapp identity assign with the resource group "labs-vnet-apps" and app name. The output contains the principalId of the identity that was created.
 
-This command packages up the application source code and deploys it to a new or existing App Service plan. Use a unique name for your app since it becomes part of the URL.
+**Grant Key Vault Access**: Now we're giving the identity access to read secrets using az keyvault set-policy with the secret-permissions parameter set to "get list", object-id set to the principalId from the previous command, and Key Vault name. This grants the managed identity permission to retrieve secrets.
 
-Now we need to configure the application with settings that tell it to use Blob Storage and to fetch secrets from Key Vault. We're running az webapp config appsettings set with the resource group "labs-vnet-apps", and multiple settings: Database__Api set to "BlobStorage" to use blob storage instead of in-memory, KeyVault__Enabled set to "true" to enable Key Vault integration, KeyVault__Name set to your Key Vault name, and the app name.
+**Test Again**: Try the app again in your browser. It will still fail, but with a different error this time.
 
-If you browse to the app now at its URL, you'll see an error page instead of the application working. Let's investigate why by checking the logs.
+**New Error**: Open the logs for the app again using the same Kudu process. After waiting for the logs, you'll see a new error indicating "Client address is not authorized and caller is not a trusted service" with a "ForbiddenByFirewall" error code. Now the App Service is using an authorized identity but the call is not coming from a trusted location, because the KeyVault is restricted to the subnet.
 
-## Exercise 5: Troubleshooting Authentication Issues
+**VNet Integration Solution**: One option we have here is to get the outbound IP addresses of the webapp and add them to the KeyVault firewall. But IP addresses change when apps scale or restart, so it's better to add VNet integration to the web app. Then when the App Service makes internal Azure calls, it will be via the subnet which has Key Vault access.
 
-Open the Advanced Tools for your web app in the Azure Portal - this is called Kudu. It's a diagnostic and management interface for App Service. From there, open the Log stream and wait patiently for logs to appear. The app will keep restarting because it's encountering an error during startup.
+**Add VNet Integration**: We're running az webapp vnet-integration add with the VNet "vnet1", subnet "subnet1", resource group "labs-vnet-apps", and app name. This connects the app's outbound traffic to the VNet.
 
-Eventually, you'll see an error message about a Forbidden response from Key Vault. The error tells us that the application's identity doesn't have permission to list secrets on the Key Vault. This makes sense - we haven't given the app any identity or permissions yet.
+**Verify Configuration**: Let's check the app using az webapp show with the resource group "labs-vnet-apps" and app name to see the VNet integration settings.
 
-App Service supports managed identities, which means it can authenticate with other Azure services without storing any credentials in your code or configuration. Let's enable this feature.
+**Test Success**: Now when the changes filter through, the app can connect to Key Vault where it reads the connection string for the Storage Account and then it downloads the data from the blob container. The full security chain is working - managed identity for authentication, VNet integration for network access, service endpoints for private connectivity, and Key Vault for secret storage.
 
-We're running az webapp identity assign with the resource group "labs-vnet-apps" and app name.
+---
 
-The output includes a principalId - this is the unique identifier of the managed identity that was created for your app. Copy this value because we need it for the next step.
+## Lab
 
-Now we'll grant that identity permission to read secrets from Key Vault using az keyvault set-policy with the secret-permissions parameter set to "get" and "list", the object-id parameter set to the principalId we just got, and the Key Vault name.
+**The Challenge**: But the Storage Account is still open to the Internet. Storage Accounts can't be deployed inside a VNet like traditional resources because they're intended to have public connections, but they can be restricted using network rules just like Key Vault.
 
-Try the app again in your browser. It will still fail, but with a different error this time, which means we're making progress.
+**Your Task**: Fix the Storage Account so only services using the subnet have access. You'll need to use similar commands to what we used for Key Vault, but for storage accounts. The app should continue working because it accesses storage through the VNet integration we've already configured.
 
-## Exercise 6: Troubleshooting Network Access Issues
+**What to Consider**: Think about the storage account network-rule commands, setting appropriate default actions, and ensuring the app can still access the storage through the integrated VNet. When complete, you'll have a fully secured architecture with no public access to backend services.
 
-Back in the log stream, you'll see a new error message. This time it says "Client address is not authorized and caller is not a trusted service" with a "ForbiddenByFirewall" error code.
+---
 
-Now the App Service is using an authorized managed identity, so authentication works. But the network call is being blocked because the outbound request from the App Service is not coming from our trusted subnet.
+## Cleanup
 
-We have a couple of options here. We could get the outbound IP addresses of the webapp and add them to the Key Vault firewall. But IP addresses can change when the App Service scales or restarts, which would break our application.
-
-The better solution is VNet integration. When we integrate the Web App with our VNet, its outbound calls to Azure services will go through the subnet, which has access to Key Vault thanks to the service endpoint.
-
-We're running az webapp vnet-integration add with the VNet "vnet1", subnet "subnet1", resource group "labs-vnet-apps", and app name.
-
-Let's check the configuration using az webapp show with the resource group "labs-vnet-apps" and app name to see the VNet integration settings.
-
-Wait a few moments for the changes to take effect and for the app to restart. Then try the app again in your browser.
-
-This time it should work! The app can now successfully authenticate with Key Vault using its managed identity, make the call through the VNet subnet which has access to Key Vault via the service endpoint, retrieve the connection string for Blob Storage, connect to Blob Storage and read or write data, and serve the application properly.
-
-The full security flow is working: managed identity for authentication without secrets, VNet integration for network-level access control, service endpoints for private connectivity, and Key Vault for secure secret storage.
-
-## Exercise 7: Lab Challenge - Secure the Storage Account
-
-There's still a security gap in our architecture that needs to be addressed. The Storage Account is still open to the public internet. Just like Key Vault, Storage Accounts can't be deployed inside a VNet directly, but they can be restricted using network rules to only allow access through specific subnets.
-
-Your challenge is to configure the Storage Account so that only services using our subnet have access, just like we did with Key Vault. This involves several steps working together.
-
-Here are some hints to get you started: Storage Accounts have similar network rule capabilities to Key Vault in their firewall and virtual networks settings. You'll need to add a network rule that allows access from the subnet using the storage account network-rule commands. Don't forget to set the default action appropriately to deny other traffic. The app will need to be able to access the storage account through the VNet integration we've already set up.
-
-If you complete this successfully, you'll have a fully secured application architecture where all communication happens through controlled network paths, all authentication uses managed identities with no secrets exposed, resources are only accessible through the VNet, and there's no public access to your backend services.
-
-This is the gold standard for secure Azure application architecture - defense in depth with multiple layers of security working together!
+**Delete Resources**: You can delete the resource group with az group delete using the -y flag to skip confirmation and resource group name "labs-vnet-apps". This removes all the resources - Web App, App Service Plan, Storage Account, Key Vault, VNet, and everything else we created.

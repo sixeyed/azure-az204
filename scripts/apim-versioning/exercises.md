@@ -1,6 +1,6 @@
 # API Management Versioning - Exercise Walkthrough
 
-## Exercise 1: Deploy Version 1.0 of the API
+## Deploy Version 1.0 of the API
 
 Let's start by deploying the first version of our Random Number Generator API. We'll deploy this to an Azure App Service in the same Resource Group as our API Management instance.
 
@@ -18,7 +18,7 @@ Once your web app is running, you'll need to set its URL as the Web Service URL 
 
 **Test Version 1.0**: Now let's test it. We're going to the Test tab in APIM and trying the rng operation. Notice something important: the HTTP request includes the API version in the header with x-api-version: 1.0. This is now a requirement for all consumers - versioned APIs need to know which version you're calling.
 
-## Exercise 2: Add a Revision to Version 1.1
+## Add a Revision to Version 1.1
 
 Now we're going to add some new functionality, but we want to do it in a backward-compatible way. We're adding optional min and max parameters to control the range of random numbers. Since this is a non-breaking change - existing clients can continue working without changes - we'll use a revision instead of a new version.
 
@@ -44,7 +44,7 @@ Notice that APIM adds the revision to the URL to distinguish this from the live 
 
 You can test with curl and you'll see that you can add the min and max parameters to the original URL. If you don't include them, the app still works, so existing consumers don't need to change anything - they just keep working.
 
-## Exercise 3: Publish Version 2.0 of the API
+## Publish Version 2.0 of the API
 
 The optional parameters work, but they're not ideal. We can't properly validate them - what if someone sends min=1000 and max=1? What if they send letters instead of numbers? Version 1.0 clients never expected they might get a 400 Bad Request response, so if we add that validation to a revision, we could break their code. This would violate the backward compatibility promise.
 
@@ -61,6 +61,10 @@ We're importing the OpenAPI spec from labs/apim-versioning/rng-v2.0.json using t
 **Test Version 2.0**: Now we're testing the version 2.0 rng operation. Notice that min and max are now mandatory parameters - the spec requires them. If you try to call it without them, you'll get a 400 Bad Request response. This is a breaking change, which is why it needed to be a new version rather than a revision.
 
 **Multiple Versions Live**: The beautiful thing is that we can have both versions live simultaneously. Consumers using version 1.1 continue to work with optional parameters, while new consumers can use version 2.0 with required parameters and proper validation. You can support both, and we can continue to support them with revisions and deployment slots as needed. Each version can evolve independently.
+
+## Reference
+
+- [Azure documentation](https://docs.microsoft.com/azure/)
 
 ## Challenge Lab
 

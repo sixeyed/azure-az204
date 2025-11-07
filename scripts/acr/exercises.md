@@ -1,6 +1,10 @@
-# Azure Container Registry - Exercise Walkthrough
+# Azure Container Registry
 
-## Exercise 1: Explore ACR in the Azure Portal
+## Reference
+
+Azure Container Registry is where you host your own private container images. The service integrates with Docker Hub and provides the same features you're used to, but with Azure security and regional hosting. The documentation covers everything from basic operations to advanced features like geo-replication and content trust. The command line interface gives you complete control through the az acr commands, which we'll be using extensively in these exercises.
+
+## Explore ACR in the Portal
 
 Let's start by getting familiar with Azure Container Registry options in the Portal.
 
@@ -14,7 +18,7 @@ After exploring the Portal, we'll switch to the command line to create our regis
 
 ---
 
-## Exercise 2: Create an ACR Instance with the CLI
+## Create an ACR instance with the CLI
 
 **Create a Resource Group**: Every Azure resource needs a home, so we're starting by creating a resource group for this lab. We're calling it "labs-acr" and placing it in the East US region. The tags parameter helps you track resources created for this course - this is a best practice for organizing and managing resources, especially when you have multiple projects or labs running.
 
@@ -28,7 +32,7 @@ After exploring the Portal, we'll switch to the command line to create our regis
 
 ---
 
-## Exercise 3: Pull and Push Images to ACR
+## Pull and Push Images to ACR
 
 **Understanding Image Names**: Docker image names can include a registry domain, and understanding how this works is crucial. For example, the short name "nginx:alpine" is actually interpreted as "docker.io/nginx:alpine" - when no domain is specified, Docker defaults to Docker Hub at docker.io. You can see this full name when you pull images.
 
@@ -50,7 +54,7 @@ We're browsing to localhost:8080 to see the Nginx welcome page. The container is
 
 ---
 
-## Exercise 4: Build and Push a Custom Image
+## Build and Push a Custom Image
 
 **Build with ACR Tag**: When building images, you can include the registry domain directly in the tag to save a step later. We're building the simple ASP.NET web application with docker build, tagging it with your ACR domain, repository path "labs-acr/simple-web", and version "6.0". The build should be quick if you've built this image before, thanks to Docker's layer caching that reuses unchanged layers.
 
@@ -62,7 +66,7 @@ We're browsing to localhost:8080 to see the Nginx welcome page. The container is
 
 ---
 
-## Exercise 5: Browse ACR in the Portal
+## Browse to ACR in portal
 
 ACR provides a rich management experience in the Azure Portal that goes beyond what the CLI offers.
 
@@ -76,7 +80,7 @@ ACR provides a rich management experience in the Azure Portal that goes beyond w
 
 ---
 
-## Lab Challenge: Image Cleanup Script
+## Lab
 
 **The Scenario**: In a real CI/CD environment, you might push new images to ACR with every code change, every pull request, or every commit to certain branches. Over time, this can result in hundreds or thousands of image versions accumulating in your registry. Each version consumes storage, and Azure charges you for that storage, so keeping old versions indefinitely increases your costs unnecessarily.
 

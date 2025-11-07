@@ -1,6 +1,10 @@
-# ARM Templates with Bicep - Exercises Narration Script
+# ARM Templates with Bicep
 
-## Exercise 1: Deploying Your First Bicep Template
+## Reference
+
+The concepts behind ARM templates are important - infrastructure as code, parameterized deployments, desired-state delivery. But the JSON format is difficult to work with, especially for larger applications with multiple resources. Bicep is the evolution of ARM, using a custom language to define resources in a simpler and more manageable format. The cleaner syntax, better IDE support, and more intuitive structure make Bicep the preferred choice for new infrastructure as code projects on Azure.
+
+## Deploying Your First Bicep Template
 
 Let's start by deploying a simple Bicep template. We'll create a storage account using a pre-built Bicep file.
 
@@ -14,7 +18,9 @@ Alternatively, we can supply the parameters directly in the command line. We're 
 
 The output from this deployment command is exactly the same whether we're deploying JSON or Bicep templates. Azure processes them identically because Bicep is transpiled to ARM JSON before deployment.
 
-## Exercise 2: Using What-If Analysis
+---
+
+## Using What-If Analysis
 
 One powerful feature available with both ARM and Bicep is the what-if capability. This lets you preview changes before actually applying them.
 
@@ -22,7 +28,9 @@ Let's run the same deployment again, but this time with a different SKU paramete
 
 Watching the output carefully, it shows you exactly what would change if you applied this deployment. You'll see it comparing your template to the existing resources and highlighting the differences. This is invaluable for avoiding surprises in production environments - you can see exactly what will change before making any actual modifications.
 
-## Exercise 3: Installing and Using Bicep Tools
+---
+
+## Installing and Using Bicep Tools
 
 Now let's explore the Bicep tooling. We can install the Bicep CLI directly from the Azure CLI using the bicep install command. This downloads and configures the Bicep compiler on your machine.
 
@@ -30,7 +38,9 @@ Once installed, we can access the Bicep commands using the bicep help command to
 
 The Bicep tools give us the ability to convert between JSON and Bicep formats. This is particularly useful when working with legacy ARM templates that were written in JSON, or when you need to migrate existing infrastructure code to the more readable Bicep syntax.
 
-## Exercise 4: Decompiling JSON to Bicep
+---
+
+## Decompiling JSON to Bicep
 
 We have a complex ARM template for a Linux virtual machine that's written in JSON. All the resources - the VM itself, the network interface, the virtual network, the public IP, the disk - are defined in JSON format which can be verbose and hard to read.
 
@@ -48,7 +58,9 @@ Let's validate that the generated Bicep file works correctly using a what-if dep
 
 You'll see output showing all the resources that would be created - the virtual network, subnet, public IP, network interface, and the VM. You might also see some warnings about the generated template - these are common when decompiling from JSON because the decompiler has to make assumptions about how the template was structured.
 
-## Exercise 5: Editing and Deploying Bicep Templates
+---
+
+## Editing and Deploying Bicep Templates
 
 Now let's make some improvements. The generated Bicep file might have warnings we should fix, and we want to customize the network interface to use a specific static IP address instead of dynamic allocation.
 
@@ -58,7 +70,9 @@ Once we've made these changes, we can deploy the template using the deployment g
 
 Notice how much easier it is to navigate and edit the Bicep file compared to the original JSON template. This is one of Bicep's major advantages - maintainability. You can quickly find and modify resources without getting lost in nested JSON objects and string concatenations.
 
-## Exercise 6: Evolving Infrastructure Specifications
+---
+
+## Evolving Infrastructure Specifications
 
 Bicep templates typically describe all the resources in a resource group. Let's look at how we can evolve our infrastructure over time.
 
@@ -70,14 +84,14 @@ Let's preview what this deployment would do using what-if. We're deploying the c
 
 Watching the output, you'll see it plans to add three new resources - the SQL Server, the database, and related components - while making no changes to the existing VM infrastructure. The VM resources match what's already deployed, so they're ignored. This is incremental deployment in action.
 
-## Understanding Incremental Deployment
+---
 
-This incremental deployment model is powerful. It means you can safely evolve your infrastructure specifications over time. You don't have to redeploy everything from scratch when adding new components - you just update your template with the new resources and Azure figures out what needs to change.
+## Lab
 
-This makes Bicep ideal for continuous infrastructure development, where your requirements grow and change over time. You maintain one template that represents your complete infrastructure, and each deployment brings the actual resources in sync with your desired state.
+Bicep templates have very clear inputs and outputs. A common maintenance task is to move fixed settings in the template to parameters to make the deployment more flexible. Update the Bicep template to make the SQL Database SKU and sample database schema configurable with appropriate constraints.
 
-## Conclusion
+---
 
-We've covered the core workflows with Bicep: deploying templates with parameters, using what-if analysis to preview changes safely, converting between JSON and Bicep formats for migration, editing Bicep files with a more maintainable syntax, and evolving infrastructure incrementally without disruption.
+## Cleanup
 
-In the lab exercise, you'll get to practice parameterizing Bicep templates to make them more flexible and reusable across different environments.
+Remember you need to delete the Resource Groups, not the deployment. Deleting just the deployment only removes metadata, not the actual resources that were created.

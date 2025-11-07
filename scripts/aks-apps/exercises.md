@@ -1,6 +1,10 @@
 # Securing AKS Apps with Key Vault and Virtual Networks - Exercises
 
-## Exercise 1: Create Resource Group, Virtual Network and Subnet
+## Reference
+
+Securing containerized applications in AKS requires integrating multiple Azure services to implement defense-in-depth security. By deploying AKS clusters into virtual networks with Azure CNI networking, every pod receives its own IP address from the subnet range, which allows you to use Azure's network security features to restrict access to other services. This lab demonstrates a production-ready pattern where AKS applications access secrets from Key Vault and data from Storage Accounts, with all resources secured using virtual network rules and managed identities.
+
+## Create RG, VNet and Subnet
 
 Let's start by creating our foundational networking infrastructure.
 
@@ -10,7 +14,7 @@ Let's start by creating our foundational networking infrastructure.
 
 **Create the AKS Subnet**: Now we need a subnet specifically for our AKS cluster. We're creating it within the appnet virtual network, naming it "aks", and using the 10.30.1.0/24 address space. This subnet provides 256 IP addresses, which is important because when using Azure CNI with AKS, each Pod gets its own IP address from this subnet. You need to plan your address space carefully based on how many Pods you expect to run - if you run out of IPs in the subnet, you can't scale your cluster any further.
 
-## Exercise 2: Create the AKS Cluster
+## Create AKS cluster
 
 **Get the Subnet Resource ID**: Before creating the AKS cluster, we need to get the resource ID of our subnet. This ID will be used to tell AKS which subnet to use for the cluster. We're using az network vnet subnet show with a query parameter to extract just the ID field. This returns a long string that looks like /subscriptions/YOUR-SUBSCRIPTION-ID/resourceGroups/labs-aks-apps/providers/Microsoft.Network/virtualNetworks/appnet/subnets/aks. Copy this value - we'll need it in the next command.
 
@@ -20,7 +24,9 @@ Let me break down what's happening here. The node-count of 2 gives us redundancy
 
 This creation process takes several minutes because Azure needs to provision the infrastructure and propagate Active Directory role assignments for the network. The cluster needs permission to manage network resources, and setting up these permissions takes time. Feel free to open a second terminal to continue with the next steps while this completes.
 
-## Exercise 3: Create Storage Account and Container
+---
+
+## Create Storage Account and KeyVault
 
 **Create the Storage Account**: Our application uses Blob Storage, so we need to create a storage account. We're using the Standard ZRS SKU for zone-redundant storage, deploying to the labs-aks-apps resource group in East US. Remember that storage account names must be globally unique, lowercase, and contain only letters and numbers - something like "saaksapps" followed by your initials or a random number works well.
 
@@ -30,8 +36,6 @@ This creation process takes several minutes because Azure needs to provision the
 
 **Edit the Configuration File**: Now we need to edit the file at labs/aks-apps/secrets/asset-manager-connectionstrings.json and replace the placeholder with your actual connection string. This file contains the application configuration in JSON format, and it will become our Key Vault secret.
 
-## Exercise 4: Create Key Vault and Store the Secret
-
 **Create the Key Vault**: This connection string contains sensitive credentials, so we'll store it in Azure Key Vault rather than in Kubernetes directly. We're creating a Key Vault in our resource group in East US. Again, Key Vault names must be globally unique - something like "kv-aks-apps" followed by your initials works well.
 
 **Store the Secret**: Now we're storing our connection string file as a secret using az keyvault secret set. The secret name is "asset-manager-connectionstrings", and we're using the file parameter to upload the entire JSON file as the secret value. The file contents become the secret value, preserving the JSON structure.
@@ -40,7 +44,9 @@ This creation process takes several minutes because Azure needs to provision the
 
 **Security Consideration**: Right now, this Key Vault is accessible from the Internet. Anyone with proper authentication can read these secrets from anywhere in the world. That's not ideal for a production scenario - we want to restrict access to only our AKS cluster.
 
-## Exercise 5: Restrict Key Vault Access with Network Rules
+---
+
+## Restrict KeyVault Access
 
 **Enable Service Endpoints**: First, we need to enable service endpoints on our AKS subnet for both Key Vault and Storage using az network vnet subnet update. We're adding Microsoft.KeyVault and Microsoft.Storage to the service-endpoints list. Service endpoints enable the subnet to communicate efficiently with these Azure services while allowing those services to identify traffic from the subnet. It's a special routing configuration that keeps traffic on the Azure backbone network rather than going out to the internet.
 
@@ -50,8 +56,6 @@ This creation process takes several minutes because Azure needs to provision the
 
 **Verify Network Rules**: Let's verify our network rules using az keyvault network-rule list. You should see your VNet and subnet listed in the allowed rules, confirming that the firewall is configured correctly.
 
-## Exercise 6: Grant AKS Managed Identity Access
-
 **Understanding the Architecture**: The KeyVault Secrets Provider add-on created a managed identity for AKS to use when accessing Key Vault. We need to grant this identity permission to read secrets. This follows Azure's principle of least privilege - give only the permissions needed, nothing more.
 
 **Get the Identity Client ID**: First, we're getting the identity's client ID using az aks show with a query parameter to extract the addonProfiles.azureKeyvaultSecretsProvider.identity.clientId value. This returns a GUID that uniquely identifies the managed identity. Copy this value.
@@ -60,7 +64,9 @@ This creation process takes several minutes because Azure needs to provision the
 
 **Test the Restriction**: Now try reading the secret again from your local machine or the Azure Portal. After the network rules propagate (this can take a few minutes), you should find that access is denied. You're seeing an error because you're not connecting from the AKS subnet - you're connecting from the internet. The only way to access this secret now is through the AKS managed identity from within the cluster. This is exactly what we want for production security.
 
-## Exercise 7: Deploy the Application to AKS
+---
+
+## Deploy app to AKS
 
 **Review the Manifests**: Let's review the Kubernetes manifests we'll deploy. There are three files in the directory. The service.yaml defines a LoadBalancer Service to expose our app on a public IP - this creates an Azure Load Balancer automatically. The deployment.yaml contains the Pod specification with volume mounts that load the Key Vault secret into the container's filesystem. The secretProviderClass.yaml is the most interesting - this tells the CSI driver which Key Vault to use, which secret to fetch, and which identity to authenticate with.
 
@@ -76,7 +82,9 @@ This creation process takes several minutes because Azure needs to provision the
 
 **Test the Application**: We're browsing to that IP address, and the application should load successfully. In the background, it's reading the connection string from the mounted Key Vault secret at /app/secrets, connecting to Blob Storage using that connection string, and creating some sample data in the blob container. You should see asset information displayed on the page, confirming that the entire chain is working - Key Vault secret mounted into the Pod, application reading the secret, connecting to Blob Storage, and serving the data.
 
-## Lab Challenge
+---
+
+## Lab
 
 The application is working, but we have one more security gap. The Storage Account is still accessible from the Internet. Anyone who obtains the connection string - through a code leak, log file, or other exposure - can access the data directly, bypassing our application and its security.
 
@@ -85,6 +93,8 @@ Your challenge is to configure the Storage Account firewall to only allow access
 Think about: What service endpoint do we need? We already configured Microsoft.Storage on the subnet earlier, so that's done. What network rules do we need to add to the storage account? The commands will be similar to what we used for Key Vault, but applied to the storage account instead. What should the default action be? You want to deny all traffic except from your AKS subnet.
 
 Try it on your own, and test that the application still works after you make the change. If the app continues to work, you've successfully locked down both the Key Vault and the Storage Account to only allow access from your AKS cluster.
+
+---
 
 ## Cleanup
 

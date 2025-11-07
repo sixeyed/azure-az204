@@ -1,6 +1,6 @@
 # API Management Policies - Exercise Walkthrough
 
-## Exercise 1: Explore the Backend API
+## Explore the Backend API
 
 Let's start by exploring the backend API directly to understand what security issues we need to address.
 
@@ -14,7 +14,7 @@ Let's start by exploring the backend API directly to understand what security is
 
 **Respecting the Backend**: There's also a performance consideration. SWAPI is a public service provided for free, and we should respect its bandwidth. The API has its own rate limiting, restricting calls by IP address. Normally this is fine - one end-user is unlikely to max out the limit. But when we use APIM, all calls will come from one APIM IP address, so we could hit the limit much faster. We'll use caching to reduce the load on SWAPI and improve response times.
 
-## Exercise 2: Create the API in API Management
+## Create the API in API Management
 
 Now let's create our API in APIM to front the SWAPI backend.
 
@@ -28,7 +28,7 @@ In the Responses section, we're adding a response with Status code 200 OK and ad
 
 Notice all those URLs in the sample response - we'll need to replace those with our APIM URLs using policies.
 
-## Exercise 3: Configure Header and Cache Policies
+## Configure Header and Cache Policies
 
 Now for the important part - let's add policies to secure and optimize our API.
 
@@ -50,7 +50,7 @@ We're placing this in the outbound section, before the base tag, so it processes
 
 Looking at the response, we're verifying: The Server header should be gone - you shouldn't see nginx anymore. The x-server header should show "swapi-apim", confirming our custom header was added. All URLs in the response body should point to your APIM domain, not swapi.dev - every reference should now go through your gateway.
 
-## Exercise 4: Publish and Test the API
+## Publish and Test the API
 
 Now let's publish this API through a Product so it's available with subscription key authentication.
 
@@ -71,5 +71,11 @@ Here's a challenge to think about: The SWAPI response contains URLs linking to r
 **Think About**: Do we have those other operations defined in our APIM? We only created a /people/{personId} operation, so what happens if someone tries to access /species/2 or /planets/8? What would users experience if they try to follow those links? How might you handle this in a production scenario - would you add all the SWAPI operations to your APIM, or use a different approach?
 
 This is a real consideration when proxying APIs - you need to think about the entire API surface, not just individual operations.
+
+## Reference
+
+- [APIM policies reference](https://docs.microsoft.com/azure/api-management/api-management-policies)
+- [Policy expressions](https://docs.microsoft.com/azure/api-management/api-management-policy-expressions)
+- [Transformation policies](https://docs.microsoft.com/azure/api-management/api-management-transformation-policies)
 
 Great work! You've successfully secured an API using APIM policies to remove sensitive information from headers, add custom headers for identification, rewrite response content to hide backend URLs, and implement caching to improve performance and reduce backend load.

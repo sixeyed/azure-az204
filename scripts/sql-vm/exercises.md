@@ -1,6 +1,6 @@
 # SQL Server VMs - Exercises Script
 
-## Exercise 1: Explore Azure SQL in the Portal
+## Explore Azure SQL in the Portal
 
 Let's start by exploring the available options in the Azure Portal to understand what choices we have for running SQL Server.
 
@@ -10,13 +10,13 @@ Notice the variety of choices available when you browse the options. You can cho
 
 We won't create the database through the portal today. Instead, we'll use the Azure CLI to get hands-on experience with infrastructure-as-code approaches. This is more repeatable and easier to automate than clicking through the portal.
 
-## Exercise 2: Create a Resource Group
+## Create a Resource Group
 
 First, we need to create a Resource Group where our new SQL resources will live, providing organization and making cleanup easier later.
 
 Run the az group create command, using your own preferred location. We're creating a resource group called "labs-sql-vm" with -n for the name, adding --tags courselabs=azure for tracking, and using -l westeurope for the location. Remember, these are placeholder values - you would use your own naming conventions and preferred Azure region based on where your users are located or data residency requirements.
 
-## Exercise 3: Find the SQL Server VM Image
+## Find the SQL Server VM Image
 
 Next, we need to identify the right VM image to use. We're looking for SQL Server 2019 Standard on a Windows Server 2022 machine - this gives us a recent SQL Server version on the latest Windows Server.
 
@@ -28,7 +28,7 @@ Finally, list all available images for our chosen configuration using az vm imag
 
 Take note of the URN for the latest image version. It will look something like: MicrosoftSQLServer:sql2019-ws2022:standard:15.0.220913. The URN uniquely identifies this specific image and is what we'll use to create our VM.
 
-## Exercise 4: Create the SQL Server VM
+## Create the SQL Server VM
 
 Now we'll create the SQL Server VM using the standard vm create command. This is just like creating any other VM, but the image we're using has SQL Server pre-installed and configured.
 
@@ -38,7 +38,7 @@ Remember to replace the placeholders: use the actual image URN you identified ea
 
 Once created, open the VM in the Portal by navigating to your resource group and clicking on the VM. You'll notice it appears as a standard VM with the usual options - compute, networking, storage. You won't see any special SQL Server management options visible yet. This is because we created it as a regular VM - we haven't registered it for SQL Server management yet.
 
-## Exercise 5: Check Network Security
+## Check Network Security
 
 Let's examine the Network Security Group to understand the default security configuration. SQL Server listens on port 1433 by default for database connections. Check whether you can access it from the Internet by looking at the NSG rules.
 
@@ -46,7 +46,7 @@ At this point, even if you could access the VM over the network, you don't have 
 
 To add enhanced management options and configure SQL authentication, we need to register the VM with the SQL Server IaaS extension. This transforms your VM from a generic virtual machine into a managed SQL Server resource.
 
-## Exercise 6: Register the VM for SQL Server Management
+## Register the VM for SQL Server Management
 
 The SQL Server extension transforms your VM by providing Azure-integrated management capabilities for SQL Server.
 
@@ -58,13 +58,13 @@ This command does several things behind the scenes. It installs the SQL IaaS ext
 
 Now browse to the VM in the Portal and look at the resource list. The UI looks similar for the VM itself, but check the Resource Group - you'll see a new SQL Virtual Machine resource has been created. This is a separate Azure resource that provides SQL-specific management capabilities.
 
-## Exercise 7: Verify Security Configuration
+## Verify Security Configuration
 
 In the Portal, navigate to your SQL Virtual Machine resource and open the Security Configuration blade to see what changed.
 
 Verify that Connectivity is set to Public, allowing connections from the internet. Check that the Network Security Group has a new rule allowing incoming traffic on port 1433. Click on the networking section and you'll see this rule was automatically added when we registered the VM with the SQL Server extension. This is one of the conveniences of the extension - it handles common configuration tasks automatically.
 
-## Exercise 8: Enable RDP Access
+## Enable RDP Access
 
 SQL Server images come with SQL Server Management Studio pre-installed, so we can log in remotely and use the graphical UI to work with the database. First, we need to enable RDP access so we can connect to the Windows desktop.
 
@@ -74,7 +74,7 @@ Add an NSG rule to allow port 3389 connections for RDP using az network nsg rule
 
 Now you can connect to the VM using Remote Desktop Protocol. In the Portal, click the Connect button on your VM, download the RDP file, and open it. Enter your Windows admin credentials - the labs username and password you specified when creating the VM.
 
-## Exercise 9: Create a Custom User-Defined Function
+## Create a Custom User-Defined Function
 
 We'll demonstrate a SQL Server feature that isn't available on managed services like Azure SQL Database: creating a custom function that calls .NET code. This showcases the flexibility you get with full control over SQL Server.
 
@@ -86,7 +86,7 @@ Click New Query to open a query window. Run this SQL script to register a User-D
 
 You couldn't perform these operations with Azure SQL Database or SQL Managed Instance for several reasons. You don't have access to upload files to disk since those are fully managed services. Some of these configuration commands would be restricted because they affect server-level settings. The managed services prioritize security and consistency, so they don't allow arbitrary .NET code execution. This demonstrates why you might choose a VM - you get complete control at the cost of managing the infrastructure yourself.
 
-## Exercise 10: Test the User-Defined Function
+## Test the User-Defined Function
 
 Now let's test the UDF we just created to see it in action.
 
@@ -99,6 +99,10 @@ For your final challenge, you'll create a new SQL Server login with custom crede
 Your task includes several steps. Create a new SQL Server login with a username and password of your choosing using CREATE LOGIN. Configure appropriate permissions using GRANT statements to give the login access to specific databases. Connect to the database server from your own machine using those credentials rather than the admin account - you'll use SQL Server Management Studio or another SQL client installed locally. Run the SELECT dbo.LegacyDate() query to verify access and confirm the function works for this new login.
 
 This demonstrates another key advantage of SQL VMs: you can own authentication without using standard Azure auth mechanisms. You can create multiple users with whatever access levels you need. You have complete control over security policies and configurations. This level of control isn't available with managed database services.
+
+## Reference
+
+- [Azure documentation](https://docs.microsoft.com/azure/)
 
 ## Cleanup
 

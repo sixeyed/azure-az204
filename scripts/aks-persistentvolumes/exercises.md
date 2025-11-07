@@ -1,6 +1,10 @@
 # Kubernetes Storage - Exercise Walkthrough
 
-## Exercise 1: Setting Up the Environment
+## Reference
+
+Kubernetes uses abstractions to model storage so your applications can work on any cluster. Volumes represent storage units that can be mounted into Pods, appearing as part of the container filesystem but actually stored outside the container. In Azure Kubernetes Service, these volumes use standard Azure resources like managed disks and file shares, letting you store application state and configuration outside your containers.
+
+## Create an AKS cluster
 
 Let's start by creating a new Resource Group for our lab.
 
@@ -12,7 +16,7 @@ Let's start by creating a new Resource Group for our lab.
 
 **Verify Connection**: We're verifying we're connected to the local cluster by running kubectl get nodes. We should see our Docker Desktop node listed with a Ready status.
 
-## Exercise 2: Working with ConfigMaps and Volume Mounts
+## Volumes and VolumeMounts
 
 Now let's deploy the first version of our application. This version uses a ConfigMap to load configuration settings.
 
@@ -28,7 +32,7 @@ Now let's deploy the first version of our application. This version uses a Confi
 
 **Check the Database File**: Similarly, we're examining the database file at /mnt/database/app.db. Notice that each line includes the hostname, which in Kubernetes is actually the Pod name. This will help us track which Pod wrote which data, which becomes important when we test Pod replacement.
 
-## Exercise 3: Understanding Container Storage Lifecycle
+## Container writeable storage
 
 Here's a critical concept: When you write data inside a container without using volumes, that data has the same lifecycle as the container. Let's prove this.
 
@@ -38,7 +42,7 @@ Here's a critical concept: When you write data inside a container without using 
 
 **Check the Database Again**: When the new Pod is running, we're checking the database file again. You'll see that the database file only has entries from the new Pod. All the data from the previous Pod is gone - completely lost. This happens every time you update to a new container image, change any part of the Pod spec, or experience a node failure. The data lives and dies with the container.
 
-## Exercise 4: EmptyDir and PersistentVolumeClaims
+## EmptyDirs and PersistentVolumeClaims
 
 Now let's deploy version 2 of our application, which adds two writeable volumes to handle this problem.
 
@@ -60,7 +64,7 @@ PersistentVolumeClaim is different - it's a request for the cluster to provide s
 
 This is the key difference. The PersistentVolume has a separate lifecycle from any Pod, so the data persists until the volume itself is explicitly deleted.
 
-## Exercise 5: Moving to AKS
+## PVCs and Storage Classes in AKS
 
 Now let's try the same thing on our AKS cluster. First, we're connecting to it using az aks get-credentials. The overwrite flag replaces any existing credentials for a cluster with the same name.
 
@@ -70,15 +74,13 @@ Now let's try the same thing on our AKS cluster. First, we're connecting to it u
 
 **Test Pod Replacement**: Let it run for a bit, then we're deleting it to test persistence. Watch the replacement Pod come up, then check the database file using kubectl exec. You'll see entries from both Pods, just like on Docker Desktop. But where is this data actually stored?
 
-## Exercise 6: Storage Classes
-
 Kubernetes uses Storage Classes to define different types of storage. Let's see what's available using kubectl get storageclass.
 
 **Understanding Platform Differences**: These are platform-specific. AKS offers Azure storage services - managed disks and file shares. Docker Desktop just uses the disk on your machine. But they both have a default Storage Class, which is why our PVC works without specifying a storage class - Kubernetes automatically uses the default.
 
 **AKS Default Storage**: The default in AKS uses Azure managed disks. These provide excellent I/O performance with SSD-backed storage, but they can only be attached to one node at a time. This is called ReadWriteOnce access mode - one Pod can mount the volume for reading and writing, but you can't share it across multiple Pods on different nodes.
 
-## Lab Challenge
+## Lab
 
 For the lab exercise, you'll work with the Azure Files storage class. Unlike managed disks, Azure Files provides shared storage that can be accessed by multiple Pods on multiple nodes simultaneously using the ReadWriteMany access mode.
 

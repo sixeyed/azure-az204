@@ -1,6 +1,10 @@
-# Docker 101 - Exercises Narration Script
+# Docker 101
 
-## Exercise 1: Run Your First Container
+## Reference
+
+Docker is where you build all your application components and dependencies into a package called an image and use that to run instances of your apps called containers. The great thing about Docker containers is they're portable, so your app runs in the same way on Docker Desktop as it does on any other container runtime. The documentation covers everything from basic concepts to advanced topics like networking and volumes. Docker Desktop is the easiest way to run containers on your local machine, and the docker command line interface gives you complete control over building images and managing containers.
+
+## Run a .NET web container
 
 Let's start by running our first container. We'll use the Docker CLI, and just like the Azure CLI, it has built-in help functionality. The docker --help command shows all the available commands and options.
 
@@ -18,7 +22,9 @@ The -p 8081:80 flag publishes a port. This tells Docker to listen on port 8081 o
 
 Now open your browser and go to localhost port 8081. You should see the Nginx welcome page. Congratulations - you're running your first containerized web server!
 
-## Managing Containers
+---
+
+## Runtime & SDK images
 
 Now let's learn how to manage our running containers. Docker provides several commands for inspecting and controlling container lifecycle.
 
@@ -30,7 +36,9 @@ To see the logs from a container, use the docker logs command followed by the co
 
 This shows you everything the container has written to stdout and stderr. For web servers, you'll typically see access logs, error logs, and startup messages.
 
-## Exercise 2: Running an ASP.NET Container
+---
+
+## Build .NET apps in containers
 
 Now it's your turn to practice. I want you to run another container - this time from Microsoft's ASP.NET sample application image.
 
@@ -44,7 +52,9 @@ Now browse to localhost port 8082 and you'll see the ASP.NET sample application 
 
 Here's a quick check: Is your Nginx container still running? Run docker ps again. You should see both containers running simultaneously on different ports. Each container is completely isolated and running its own web server. They don't interfere with each other despite both serving on port 80 internally - the port mapping keeps them separate.
 
-## Exercise 3: Exploring Runtime Images
+---
+
+## Lab
 
 Microsoft publishes different variations of .NET images for different purposes: runtime images for running compiled apps, ASP.NET images that include the ASP.NET runtime for web apps, and SDK images that include everything needed for building applications.
 
@@ -60,7 +70,9 @@ Nothing appears! This is a runtime image - you can run compiled applications tha
 
 Type exit to leave the container and return to your terminal.
 
-## Exercise 4: Using the SDK Image
+---
+
+## Cleanup
 
 Now let's try the SDK image. Your task is to run an interactive container from the .NET 6.0 SDK image and use it to create and run a new console application.
 
@@ -72,7 +84,6 @@ You should see "Hello, World!" printed out. We just created and ran a .NET appli
 
 Type exit to leave the container. Notice that when the container stops, everything you did inside it is gone - the application you created no longer exists. Containers are ephemeral by default.
 
-## Exercise 5: Building Your Own Docker Image
 
 Building apps inside a running container is useful for experimenting, but the real power of Docker comes from packaging your own images that can be deployed consistently anywhere.
 
@@ -90,7 +101,6 @@ The command is docker run -d -p 8083:80 simple-web.
 
 Browse to localhost port 8083 and you'll see your simple web application running - a basic ASP.NET application with some diagnostic information.
 
-## Making Changes
 
 The application is quite basic, but you can improve it. Try editing the code in the src/simple-web/src folder - maybe change the welcome message, adjust the styling, or add new features.
 
@@ -100,7 +110,6 @@ Now try to test your changes by running docker run -d -p 8083:80 simple-web agai
 
 Wait - this gives an error! The error message says the port is already in use. Why? Because port 8083 is already bound to your first container which is still running. Each container needs its own unique port mapping on the host machine, so you'd need to either stop the first container using docker rm -f with the container ID, or use a different port like 8085 for the new container.
 
-## Lab Challenge: Environment Variables
 
 Container images are static packages. They're essentially ZIP files containing your application, runtime, and OS tools. Wherever you run a container from an image, it behaves the same way because it starts from the same immutable package.
 
@@ -114,20 +123,3 @@ The solution involves using the -e flag to set an environment variable when runn
 
 Browse to localhost port 8084 and you should see "PROD" displayed as the environment name. This demonstrates how the same image can be configured differently for different environments using environment variables. The application reads the Environment variable and displays it, allowing you to run identical images in development, staging, and production with just different environment variables.
 
-## Cleanup
-
-You probably have several containers running now. Let's clean them up. Containers are designed to be disposable - you can easily stop and remove them without any data loss issues because they're meant to be temporary.
-
-To remove all containers at once, we're using a command that combines docker ps -aq to list all container IDs (both running and stopped, with -q for quiet mode showing only IDs) and pipes that output to docker rm -f which forcibly removes them.
-
-This command is a quick way to clean up your Docker environment when you're done experimenting.
-
-## Wrap Up
-
-In this lab, you've learned the fundamentals of Docker. You learned how to run containers from pre-built images hosted on Docker Hub and other registries. You practiced managing containers with Docker CLI commands like ps, logs, and rm.
-
-You explored the difference between runtime and SDK images - runtime images for running applications versus SDK images for building applications. This is an important distinction for understanding container image design.
-
-You built your own Docker images from Dockerfiles, seeing how multi-stage builds create efficient production images. And you learned how to configure containers with environment variables, enabling the same image to work across different environments.
-
-These skills form the foundation for deploying containerized applications to Azure, which we'll explore in upcoming labs. Container orchestration services like Azure Container Instances, Azure Container Apps, and Azure Kubernetes Service all build on these fundamentals.

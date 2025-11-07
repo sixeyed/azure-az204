@@ -1,4 +1,8 @@
-# Kubernetes Nodes - Exercise Narration
+# Kubernetes Nodes
+
+## Reference
+
+Nodes are the worker machines in Kubernetes clusters that run containerized applications, with each node containing the kubelet agent that manages Pods, a container runtime like Docker or containerd, and the kube-proxy that handles network routing. In Azure Kubernetes Service, nodes are Azure virtual machines that can be organized into node pools with different sizes and configurations to support different workload requirements. Understanding node capacity, resource allocation, and health monitoring is essential for operating production Kubernetes clusters effectively.
 
 ## Introduction
 

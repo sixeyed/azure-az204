@@ -1,6 +1,12 @@
-# IaaS Bicep - Exercises Narration Script
+# IaaS - Automating App Deployment
 
-## Exercise 1: Understanding the Bicep Structure
+## Reference
+
+The IaaS approach doesn't mean you have to manually log in to VMs and deploy applications. You can take advantage of automation with ARM templates or Bicep to model your infrastructure, and include deployment scripts that run automatically. Those scripts can install application dependencies, the application itself, and set up configuration files. This approach provides repeatable, reliable deployments that you can version control and integrate into CI/CD pipelines.
+
+## Core resources
+
+Bicep supports larger infrastructure requirements by letting you split the model across multiple files. You can share variable names between files, which lets you refer to resources defined in different Bicep files.
 
 Let's start by examining how our Bicep templates are organized. Open the templates folder and you'll see we have a modular structure.
 
@@ -14,8 +20,6 @@ All the resource names come from the variables file - keeping the template clean
 
 And notice how the subnet is defined. It's not nested inside the virtual network definition, even though it's a child resource. Instead, we use the parent property to specify the relationship. This keeps the file much more readable than deeply nested definitions.
 
-## Exercise 2: Deploying Core Resources
-
 Let's deploy these core networking resources. First, we'll create a resource group using the group create command with parameters for the name, location, and tags. We're placing it in the East US region and adding our courselabs equals azure tag.
 
 Now we'll deploy the core Bicep template to that resource group. We're using the deployment group create command, specifying the resource group name, giving the deployment a name of "core", and pointing to our Bicep template file with the template-file parameter.
@@ -26,7 +30,9 @@ Once it's complete, let's verify what was created. We'll use the resource list c
 
 You'll see the NSG and the virtual network listed here. Notice the subnet isn't shown - that's because it's a child resource of the virtual network, so it doesn't appear at the top level in resource lists. But it's there, nested inside the virtual network.
 
-## Exercise 3: SQL Server Deployment
+---
+
+## SQL Server
 
 Now let's look at the SQL Server Bicep template. This is our second modular file, and it demonstrates some important concepts.
 
@@ -54,7 +60,9 @@ The SQL Server has a virtual network rule configured. This is a firewall setting
 
 Perfect. Our database tier is ready.
 
-## Exercise 4: Windows VM and Application Deployment
+---
+
+## Windows Application VM
 
 Now for the finale - the VM Bicep template. This is where it all comes together.
 
@@ -82,14 +90,14 @@ Perfect. Everything ran successfully - IIS installed, application deployed, data
 
 And there it is - a fully functional web application, running on IIS, connected to SQL Server, all deployed completely automatically using Bicep templates and custom script extensions.
 
-## What We've Demonstrated
+---
 
-Let's review what we've accomplished in this lab.
+## Lab
 
-We've deployed a complete application infrastructure using modular Bicep templates. We split the deployment across three files - core networking, SQL Server, and the application VM. This modular approach makes the templates easier to understand, test, and maintain.
+There are a couple of issues with the VM Bicep file. The first is the warning you get when you deploy - it's not really an issue for us, but we should follow the best practice. Also we had to query the VM and manually build the URL to test. Update the Bicep file to address both of those issues then deploy it again. Does the setup script get run again?
 
-We used incremental deployment mode to safely add resources without affecting existing infrastructure. This is crucial when working with multiple templates or when updating existing deployments.
+---
 
-We automated the entire application deployment process using VM custom script extensions. No manual steps, no RDP sessions, no clicking through the portal - everything is coded and repeatable.
+## Cleanup
 
-And we ended up with a repeatable, reliable deployment process that we can run as many times as we need, always getting the same result. This is the power of Infrastructure as Code with Azure Bicep and IaaS. You can version control your infrastructure, review changes through code reviews, and deploy with confidence knowing exactly what will happen.
+When you're finished with the lab, we're deleting the resource group to remove all resources and stop incurring charges. The delete command uses the -y flag to confirm without prompting, and the --no-wait flag to return immediately while the deletion continues in the background.

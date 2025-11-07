@@ -1,6 +1,6 @@
 # Deploying Database Schemas - Exercises
 
-## Exercise 1: Create a SQL Server
+## Create a SQL Server
 
 Let's start by creating a SQL Server that will host our database.
 
@@ -12,7 +12,7 @@ Before we move on, let's open the Azure Portal and find our new SQL Server. Navi
 
 Click on the "Import Database" option in the top menu bar. Notice the configuration choices available in this wizard. You can import a database directly from the Portal, which is convenient for ad-hoc imports. However, you need the Bacpac file to already be stored in Azure - specifically in Azure Blob Storage. You can't upload directly from your local machine through the Portal import wizard. That's what we'll set up next.
 
-## Exercise 2: Upload the Bacpac File
+## Upload the Bacpac File
 
 To import a database, the Bacpac file needs to be stored in Azure. We'll use Azure Storage for this, which is the standard approach for database import operations.
 
@@ -28,7 +28,7 @@ Click on the file itself and you'll see its details page, including a URL. Your 
 
 Can you download from that URL? Try copying it and pasting it into a new browser tab. You'll find you can't access it - you'll get an error. By default, blob containers are private, meaning they can only be accessed by authenticated requests within Azure. You can't just browse to the URL like a public website. That's exactly what we want for security - database backups shouldn't be publicly accessible on the internet.
 
-## Exercise 3: Import the Database
+## Import the Database
 
 Now we're ready to import our database schema from the Bacpac file we uploaded.
 
@@ -46,7 +46,7 @@ Now run the import command, plugging in all the values we've gathered - the admi
 
 The import process can take several minutes, especially for larger databases. The Bacpac format contains the entire database structure and data, and importing involves recreating all of this. You can monitor the progress in the Portal - open your SQL Server resource and look at the "Import/Export history" tab under Operations. You'll see the import operation listed with a status indicator showing whether it's in progress, completed, or failed.
 
-## Exercise 4: Verify the Database
+## Verify the Database
 
 Once the import completes successfully, let's verify everything worked correctly and that we can access our data.
 
@@ -59,6 +59,10 @@ Once connected, you'll see the object explorer on the left showing your database
 The Bacpac included some reference data, so the tables aren't empty. Let's run a query to verify the data is there. In the query window, run SELECT star FROM Locations. You'll see location data for different countries displayed in the results pane - rows containing country names, postal codes, and other location information.
 
 Now try a more specific query to test filtering: SELECT PostalCode FROM Locations WHERE Country equals 'UK'. This demonstrates that both the schema structure was correctly imported - the columns and data types are right - and the data itself is intact and queryable. You'll see postal codes for UK locations returned in the results.
+
+## Reference
+
+- [Azure documentation](https://docs.microsoft.com/azure/)
 
 ## Lab Exercise: Export a Database
 

@@ -1,6 +1,10 @@
-# IaaS Apps - Exercises Narration Script
+# IaaS - Deploying Applications
 
-## Exercise 1: Create Resource Group
+## Reference
+
+Infrastructure-as-a-Service is an easy way to get started with cloud deployments or cloud migrations. You can configure VMs with whatever they need and deploy any type of application. While you might have a roadmap to move your apps to Platform-as-a-Service, IaaS can be a good starting point. This approach doesn't mean you have to manually manage everything - you can use automation with scripts and infrastructure as code to deploy and configure applications consistently.
+
+## Create Resource Group
 
 Let's begin by setting up our environment variables and creating a resource group.
 
@@ -12,7 +16,9 @@ Now let's create the resource group using the Azure CLI. We're using the group c
 
 Great! Our resource group is created and ready to hold our resources.
 
-## Exercise 2: Create SQL Database
+---
+
+## Create SQL Database
 
 The application we'll deploy needs a SQL database to store user information. We'll create both a SQL Server and a database.
 
@@ -24,7 +30,9 @@ Now let's create the database. We're using the sql db create command with parame
 
 The database is now being created in the background. We can move on to setting up our virtual machine.
 
-## Exercise 3: Create Windows Server VM
+---
+
+## Create Windows Server VM
 
 Our .NET Framework application requires Windows Server. Let's create a VM using the Windows Server 2022 Datacenter Core image.
 
@@ -38,29 +46,25 @@ This command creates several resources automatically: the VM itself, a network i
 
 The VM creation takes a few minutes. While we wait, let's discuss what Windows Server Core means. It's a minimal installation without the full graphical interface - no Start menu, no desktop, just a command prompt. This makes it lighter on resources, faster to boot, and more secure because there are fewer components that could be exploited. It's perfect for server workloads where you don't need the GUI.
 
-## Exercise 4: Deploy the Application
+---
+
+## Deploy the app
 
 Now that our VM is running, let's connect using Remote Desktop and deploy our application.
 
 We're connecting to the VM using the DNS name and the credentials we specified during creation. When you connect to a Server Core VM, you'll see a command prompt rather than the familiar Windows desktop. This can be disorienting at first, but everything you need is accessible through PowerShell.
 
-### Step 4.1: Verify .NET Framework
-
-First, let's verify that .NET Framework 4.8 is installed. We'll run a PowerShell command that queries the Windows registry to check installed .NET Framework versions. This command looks at the registry key where Microsoft stores .NET Framework installation information, retrieving the version and release numbers for all installed frameworks.
+**Verify .NET Framework**: First, let's verify that .NET Framework 4.8 is installed. We'll run a PowerShell command that queries the Windows registry to check installed .NET Framework versions. This command looks at the registry key where Microsoft stores .NET Framework installation information, retrieving the version and release numbers for all installed frameworks.
 
 Perfect! We can see that .NET Framework 4.8 Full is installed. This is exactly what our application needs, and it comes pre-installed with Windows Server 2022.
 
-### Step 4.2: Install Web Server
-
-Next, we need to install IIS and the ASP.NET components. Let's first verify that IIS isn't already installed using the Get-WindowsFeature PowerShell command. This lists all available Windows features and their installation status.
+**Install Web Server**: Next, we need to install IIS and the ASP.NET components. Let's first verify that IIS isn't already installed using the Get-WindowsFeature PowerShell command. This lists all available Windows features and their installation status.
 
 As expected, the web server features show as Available, not Installed. Let's install them now using the Install-WindowsFeature command. We're installing three components: Web-Server for IIS itself, NET-Framework-45-ASPNET for the ASP.NET runtime, and Web-Asp-Net45 for the ASP.NET integration with IIS.
 
 This installs IIS, the ASP.NET runtime, and other required components. The installation completes quickly on Windows Server - usually just a minute or two. You'll see a progress bar and then a success message indicating whether a restart is required. In most cases, no restart is needed.
 
-### Step 4.3: Install the Application
-
-Our application is packaged as an MSI file hosted on GitHub. Let's download it using curl. We're saving it to a file called signup dot msi in the current directory.
+**Install the Application**: Our application is packaged as an MSI file hosted on GitHub. Let's download it using curl. We're saving it to a file called signup dot msi in the current directory.
 
 Now we'll install it silently using msiexec. The Start-Process command launches msiexec with several arguments: the /i flag indicates installation, we specify our MSI file name, /quiet suppresses any user interface, and /norestart prevents an automatic reboot. The NoNewWindow and Wait parameters ensure we can see the output and the command doesn't return until installation completes.
 
@@ -70,15 +74,15 @@ Good! We can see the application files - DLL files, configuration files, and web
 
 Perfect! The application is registered at the /signup path. This means IIS knows about our application and will serve it when users request that URL path.
 
-### Step 4.4: Test and Troubleshoot
-
-Let's try accessing the application locally using curl. We're making a request to localhost on port 80 with the /signup path. The -L flag tells curl to follow redirects.
+**Test and Troubleshoot**: Let's try accessing the application locally using curl. We're making a request to localhost on port 80 with the /signup path. The -L flag tells curl to follow redirects.
 
 As expected, we get an error. The application is running, but it can't connect to the database yet. Let's look at the connection string configuration by viewing the contents of the connectionStrings dot config file.
 
 The application is using a default connection string pointing to a local SQL Server at localhost with a database named SignUpDb. But our database is in Azure SQL, not on this VM. We need to update this configuration with our Azure SQL Database connection details.
 
-## Exercise 5: Configure Database Connection
+---
+
+## Configure Database Connection
 
 Let's edit the configuration file to use our Azure SQL Database. We'll open it in Notepad - even in Server Core, we have access to basic GUI applications like Notepad.
 
@@ -88,7 +92,9 @@ After saving the file, let's test again using curl.
 
 We're getting a different error now. The database exists, but our VM can't access it due to firewall rules. This is actually good security - Azure SQL databases aren't publicly accessible by default. We need to explicitly grant network access.
 
-## Exercise 6: Configure Network Access
+---
+
+## Configure Network Access
 
 Let's switch to the Azure Portal to configure network access. We're opening the SQL Server resource and navigating to the Networking tab under Security settings.
 
@@ -104,7 +110,9 @@ Let's test the application again from the VM using curl.
 
 Excellent! We're getting HTML content with no errors. The application is successfully connecting to the Azure SQL Database, processing the request, and returning the web page. This confirms our networking configuration is correct.
 
-## Exercise 7: Make the Application Publicly Accessible
+---
+
+## Make the Application Publicly Accessible
 
 Currently, the application is only accessible from within the VM. To access it from the internet, we need to configure the Network Security Group.
 
@@ -120,7 +128,9 @@ Let me create a test user by filling out the form - entering a first name, last 
 
 The form submission completes successfully, and we see a confirmation message. The data has been saved to our database.
 
-## Exercise 8: Verify Database Storage
+---
+
+## Verify Database Storage
 
 Let's verify that the data was saved to our SQL Database. In the Portal, we're opening the SQL Database and navigating to the Query Editor. This browser-based tool lets us run SQL queries without needing SQL Server Management Studio.
 
@@ -128,11 +138,13 @@ After authenticating with our SQL admin credentials, we'll run a simple SELECT q
 
 Excellent! We can see the test user data we just entered through the web application. The first name, last name, email, and role are all there, along with a timestamp showing when the record was created. This confirms the complete data flow - from web form, through our application, into Azure SQL Database.
 
-## Summary
+---
 
-In this lab, we've successfully created an Azure SQL Database, deployed a Windows Server VM, installed IIS and a .NET Framework application, configured secure connectivity between the VM and database using virtual network service endpoints, made the application publicly accessible through Network Security Group rules, and verified end-to-end functionality from web form to database storage.
+## Lab
 
-This demonstrates the complete lifecycle of deploying a traditional application to Azure IaaS. While this approach requires more management than Platform-as-a-Service options, it gives you complete control over the infrastructure and is often necessary when migrating legacy applications to the cloud.
+Now the app is working locally, we need to publish it so we can access it from the Internet. Make the changes you need so you can browse to a DNS name from your local machine and see the application at http colon slash slash your-vm-fqdn slash signup. Click the Sign Up button and add some details. Run some queries in the SQL database to verify your data is saved.
+
+---
 
 ## Cleanup
 

@@ -1,4 +1,8 @@
-# Kubernetes Persistent Volumes - Lab Walkthrough
+# Kubernetes Persistent Volumes
+
+## Reference
+
+Persistent Volumes provide durable storage that survives Pod restarts and rescheduling, separating storage lifecycle from Pod lifecycle through an abstraction layer consisting of PersistentVolumes and PersistentVolumeClaims. PersistentVolumes represent actual storage resources provisioned by administrators or dynamically created using StorageClasses, while PersistentVolumeClaims are requests for storage that Pods use to mount volumes. This decoupling allows applications to request storage without knowing implementation details like whether it's backed by Azure Disks, Azure Files, or other storage systems.
 
 ## Introduction
 

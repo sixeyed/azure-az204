@@ -1,6 +1,10 @@
-# App Service for Web Apps - Exercises
+# App Service for Web Apps
 
-## Exercise 1: Exploring App Service in the Portal
+## Reference
+
+IaaS options are great when you need access to the host machine, but they leave you with significant management overhead. Platform-as-a-Service takes care of that complexity for you, simplifying deployment and updates. Azure App Service is the PaaS option you'll use for most web applications, and in this lab you'll deploy an app by pushing source code from your local machine. Azure will compile and configure everything for you.
+
+## Explore App Service
 
 Let's start by exploring what App Service offers through the Azure Portal.
 
@@ -12,7 +16,7 @@ This gives you a lot of flexibility in how you deploy and run your applications.
 
 Now, as usual, we won't actually create the resources from the Portal. Instead, we'll use the Azure CLI for better repeatability and automation. We're canceling out of this creation wizard.
 
-## Exercise 2: Creating an App Service Plan
+## Create an App Service Plan
 
 Let's switch to the command line. First, we'll create a Resource Group for this lab in the West Europe region with our courselabs tag to help us track resources from this course.
 
@@ -22,13 +26,11 @@ Let's create an App Service Plan with the basic B1 SKU and two worker instances.
 
 Now, going back to the Portal and opening the labs-appservice resource group, you'll see the App Service Plan is the only resource. Opening it, notice the empty applications list. You can also see the scale up and scale out options, though these are limited by the SKU we selected - each tier has different scaling capabilities.
 
-## Exercise 3: Checking Available Runtimes
+## Create an app for Git deployment
 
 Before creating our web app, let's see what runtime environments are available. We're running the webapp list-runtimes command to display all supported platforms.
 
 You'll see a comprehensive list of supported platforms. Under the Windows options, you'll find ASP.NET 4.8. This runtime is perfect for older .NET applications and is an excellent choice for migrating legacy applications to the cloud - provided you have the source code and don't need the low-level control you'd get with IaaS virtual machines.
-
-## Exercise 4: Creating a Web App for Git Deployment
 
 Now let's create our web app. We'll configure it to use the ASP.NET 4.8 runtime and set it up for deployment from a local Git repository.
 
@@ -40,15 +42,13 @@ Opening the web app resource, you'll see it has a public URL using the applicati
 
 Clicking on the URL to browse to your application, you'll see a default landing page that says "Your web app is running and waiting for your content." Our app is live and accessible on the internet, but we haven't deployed any code yet.
 
-## Exercise 5: Configuring Deployment Settings
+## Deploy the web app
 
 Deploying to App Service from a local Git repository is as simple as running git push, but we need to configure a few things first.
 
 We need to tell Azure which branch to deploy from and where our application code is located within the repository. We do this using application settings with the webapp config appsettings set command. We're setting DEPLOYMENT_BRANCH to 'main' which tells Azure to use the main branch for deployment.
 
 Next, we need to specify the path to our project file. We're setting PROJECT to point to the specific project file at 'src/WebForms/WebApp/WebApp.csproj'. This tells Azure exactly which project to build - important when you have multiple projects in the same repository.
-
-## Exercise 6: Setting Up Git Remote
 
 Here's how the deployment works: the web app acts as a Git server. You'll add it as a remote repository and push your code. Whenever code is pushed, Azure automatically compiles it and configures the web app to run it.
 
@@ -60,8 +60,6 @@ Now we're adding this URL as a Git remote. We're using single quotes because the
 
 Verifying that the remote was saved correctly using git remote -v, you should see your new webapp remote listed along with any other remotes you have configured like origin.
 
-## Exercise 7: Deploying the Application
-
 Now for the exciting part - deploying the application. We're simply pushing your local repository to the webapp remote using git push webapp main.
 
 Watching the output carefully, you'll see the usual Git messages about compressing and writing objects, but then you'll see much more. The remote Git server generates a deployment script automatically, detecting that you're pushing a .NET project. Then you'll see MSBuild output as your application is being compiled in real-time on Azure's build servers.
@@ -70,11 +68,9 @@ This is all happening automatically - Azure is detecting that you're pushing a .
 
 When the git push completes, your application has been compiled and deployed.
 
-## Exercise 8: Verifying the Deployment
+## Check the build
 
 Going back to your browser and refreshing the URL for your web app, instead of the landing page, you should now see a standard ASP.NET homepage. It's a simple application, but think about what we just accomplished - we deployed a compiled .NET application from source code with no virtual machines to manage, no build servers to configure, no deployment pipelines to set up. The entire process took just a few minutes.
-
-## Exercise 9: Exploring the Runtime Environment
 
 Even though there's no VM where you can SSH in to diagnose issues, the Portal provides excellent tools to help you understand your runtime environment.
 
@@ -86,7 +82,9 @@ Now looking at the bin directory with "dir bin", here you'll find all the compil
 
 Listing the environment variables with "set", you'll see numerous App Service-specific environment variables that your application can use. These include things like the website name, resource group, subscription ID, the region it's running in, and many platform-specific settings that applications can read to understand their environment.
 
-## Lab Challenge
+---
+
+## Lab
 
 Now it's your turn. The web app we deployed is pretty basic. Your challenge is to make a change to the content of the home page, redeploy the application, and measure how long it takes for your update to appear.
 
@@ -94,14 +92,10 @@ This will help you understand the deployment workflow and timing for updates - f
 
 Hint: You'll need to modify the source code in the WebForms project, commit the change using git add and git commit, and push again to the webapp remote with git push. Time the entire process from push to seeing your change live.
 
+---
+
 ## Cleanup
 
 When you're finished with the lab, we're cleaning up your resources to avoid unnecessary charges using the group delete command with the -y flag to skip the confirmation prompt.
 
 This will delete the resource group and all resources within it - the App Service Plan, the Web App, and all their configurations.
-
-## Summary
-
-In this lab, you've learned how to create an App Service Plan to host web applications, deploy a web app from source code using Git with automated builds, configure application settings to control build behavior, explore the runtime environment using the console, and update and redeploy an application.
-
-App Service is a powerful platform that handles all the infrastructure complexity, letting you focus on building and deploying your applications rather than managing servers.
